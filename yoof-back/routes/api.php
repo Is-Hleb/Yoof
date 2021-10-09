@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\Auth\RegisterController;
+use App\Http\Controllers\Api\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => '/auth'], function (){
-    Route::post('/login', function(){
-        return 'data';
-    });
+Route::group(['prefix' => '/auth', 'middleware' => 'guest:api'], function (){
+    Route::post('/login', [LoginController::class, 'index']);
+    Route::post('/register', [RegisterController::class, 'index']);
+});
+
+Route::group(['middleware' => 'auth:api'], function(){
+   Route::get('/', function(){
+       return "data";
+   });
 });

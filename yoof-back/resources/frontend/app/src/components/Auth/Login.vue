@@ -7,7 +7,6 @@
 </template>
 
 <script>
-   const axios = require('axios')
     module.exports = {
         name: "login",
         data(){
@@ -18,9 +17,10 @@
         },
         methods: {
             formSubmit() {
+                console.log(this.$store.state.message)
                 console.log(this.email)
                 console.log(this.password)
-                axios.post('api/auth/login').then(r => {
+                this.axios.post('api/auth/login').then(r => {
                     console.log(r.data)
                 })
             }
