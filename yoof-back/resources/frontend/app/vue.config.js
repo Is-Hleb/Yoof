@@ -1,13 +1,6 @@
 module.exports = {
     devServer: {
-        proxy: 'http://localhost:8081/',
-        before: app => {
-            app.set('etag', 'strong')
-            app.use((req, res, next) => {
-                res.set('Cache-Control', 'main resources')
-                next()
-            })
-        }
+        proxy: 'http://laravel.test'
     },
 
     // output built static files to Laravel's public dir.
