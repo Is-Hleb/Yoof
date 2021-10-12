@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Category;
+use App\Models\CategoryProperty;
 use App\Models\Product;
 use App\Models\Property;
 use Illuminate\Console\Command;
@@ -55,6 +56,7 @@ class fillDB extends Command
             return strlen($item['name']) > 0;
         }); // Убираем пустые характеристики
 
+        CategoryProperty::insert($characteristics);
 
         for ($i = 1; $i < sizeof($rows); $i++) { // Начинаем идти по строкам
             $cur_row = $rows[$i]; // Текущая строка
@@ -69,8 +71,8 @@ class fillDB extends Command
                 $properties = [ // Создаём свойста продукта
                     'name' => $characteristic['name'], // Название текущей характеристики
                     'value' => $cur_row[$iteration++], // Значение столбца
-                    'category_id' => $category->id, // Внешние ключи
                     'product_id' => $product->id,
+                    'category_property_id' => $characteristic['id'],
                 ];
                 Property::insert($properties);
             }
@@ -99,6 +101,8 @@ class fillDB extends Command
             return strlen($item['name']) > 0;
         });
 
+        CategoryProperty::insert($characteristics);
+        $characteristics = CategoryProperty::where('category_id', $category->id)->get()->toArray();
 
         for ($i = 1; $i < sizeof($rows); $i++) {
             $properties_to_insert = [];
@@ -124,18 +128,26 @@ class fillDB extends Command
                         if(strpos($property, "программ")) { // Если находим программ, то нужно оторвать от строки число
                             $value = intval($property[strlen($property) - 1]) + intval($property[strlen($property) - 2]) * 10; // Переводим 2 последних символа в число
                             $name = substr($property, 0, strlen($property) - 2);
+                            $category_property = CategoryProperty::create([
+                               'name' => $name,
+                               'category_id' => $category->id
+                            ]);
                             $properties_to_insert[] = [
                                 'value' => trim($value), // На всякий пытаемся убрать лишние пробелы
                                 'name' => trim($name),
-                                'category_id' => $category->id,
+                                'category_property_id' => $category_property->id,
                                 'product_id' => $product->id,
                             ];
                             continue;
                         } // Если не нашли программ, то свойство типа bool
+                        $category_property = CategoryProperty::create([
+                           'name' => trim($property),
+                           'category_id' => $category->id
+                        ]);
                         $properties_to_insert[] = [
                             'name' => trim($property),
                             'value' => true,
-                            'category_id' => $category->id,
+                            'category_property_id' => $category_property->id,
                             'product_id' => $product->id,
                         ];
                     }
@@ -143,7 +155,7 @@ class fillDB extends Command
                     $properties_to_insert[] = [
                         'name' => trim($characteristic['name']),
                         'value' => trim($cur_row[$iteration++]),
-                        'category_id' => $category->id,
+                        'category_property_id' => $characteristic['id'],
                         'product_id' => $product->id,
                     ];
                 }

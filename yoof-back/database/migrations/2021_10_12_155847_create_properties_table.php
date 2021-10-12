@@ -17,7 +17,7 @@ class CreatePropertiesTable extends Migration
             $table->id();
             $table->string('name')->charset('UTF8');
             $table->string('value')->charset('UTF8');
-            $table->foreignId('category_id')->references('id')->on('categories');
+            $table->foreignId('category_property_id')->references('id')->on('category_properties');
             $table->foreignId('product_id')->references('id')->on('products');
         });
     }

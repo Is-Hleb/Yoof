@@ -9,7 +9,15 @@ class Category extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $fillable = [
-        'name',
-    ];
+    protected $guarded = ['id'];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
+
+    public function categoryProperties()
+    {
+        return $this->hasMany(CategoryProperty::class);
+    }
 }
