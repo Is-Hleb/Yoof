@@ -15,6 +15,11 @@ class Property extends Model
         return $this->belongsTo(Product::class);
     }
 
+    public function categoryProperty()
+    {
+        return $this->belongsTo(CategoryProperty::class);
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);
