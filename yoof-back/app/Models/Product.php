@@ -9,4 +9,14 @@ class Product extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function properties()
+    {
+        return $this->hasMany(Property::class);
+    }
+
+    public function category()
+    {
+        return $this->hasOne(Category::class);
+    }
 }

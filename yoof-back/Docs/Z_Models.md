@@ -14,4 +14,4 @@
 ## CategoryProperty 
 Эта модель относитя только к категории, она описывает одно конкретное свойство категории
 
-<img src="/Users/admin/Documents/Projects/Yoof/yoof-back/app/Models/Z_models.png">
+<img src="./Z_models.png" alt="Вид БД">
