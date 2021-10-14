@@ -16,13 +16,26 @@ use App\Http\Controllers\Api\Auth\LoginController;
 |
 */
 
-Route::group(['prefix' => '/auth', 'middleware' => 'guest:api'], function (){
+Route::group(['prefix' => '/auth', 'middleware' => 'guest:api'], function () {
     Route::post('/login', [LoginController::class, 'index']);
     Route::post('/register', [RegisterController::class, 'index']);
 });
 
-Route::group(['middleware' => 'auth:api'], function(){
-   Route::get('/', function(){
-       return "data";
-   });
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::get('/', function () {
+        return "data";
+    });
 });
+
+Route::get('/category', function () {
+    return json_encode(\App\Models\Category::all());
+});
+
+Route::get('/category/{id}', function ($id) {
+    return json_encode(\App\Models\Category::where('id', $id)->first()->categoryProperties);
+});
+
+Route::get('/category/prop/{id}', function ($id) {
+    return json_encode(\App\Models\CategoryProperty::find($id)->products);
+});
+
