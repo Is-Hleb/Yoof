@@ -12,7 +12,7 @@ let routes = [
 	{
 		path: '/',
 		name: 'Главная',
-		redirect: '/dashboard',
+		redirect: '/dashboard'
 	},
 	{
 		path: '/dashboard',

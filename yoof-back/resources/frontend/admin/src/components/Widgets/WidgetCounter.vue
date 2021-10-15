@@ -4,7 +4,6 @@
 		<a-statistic
 			:title="title"
 			:value="value"
-			:prefix="prefix"
 			:precision="0"
 			class="text-success"
 			:class="'text-' + status"
@@ -27,14 +26,6 @@
 				default: 0,
 			},
 			prefix: {
-				type: String,
-				default: "",
-			},
-			suffix: {
-				type: String,
-				default: "",
-			},
-			icon: {
 				type: String,
 				default: "",
 			},
