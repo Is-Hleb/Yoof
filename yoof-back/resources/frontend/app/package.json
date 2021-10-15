@@ -11,6 +11,7 @@
   "dependencies": {
     "axios": "^0.22.0",
     "core-js": "^3.6.5",
+    "jquery": "^3.6.0",
     "vue": "^2.6.11",
     "vue-axios": "^3.3.7",
     "vue-router": "^3.5.2",

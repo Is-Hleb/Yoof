@@ -13,6 +13,11 @@ const routes = [
         path: '/register',
         name: 'register',
         component: () => import('../components/Auth/Register')
+    },
+    {
+        path: '/cabinet',
+        name: 'cabinet',
+        component: () => import('../components/BuyerCabinet/Index')
     }
 ]
 
