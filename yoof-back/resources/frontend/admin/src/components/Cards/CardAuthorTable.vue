@@ -1,9 +1,11 @@
 <template>
 
+
 	<!-- Authors Table Card -->
 	<a-card :bordered="false" class="header-solid h-full" :bodyStyle="{padding: 0,}">
         <template #title>
-			<a-row type="flex" align="middle">
+
+            <a-row type="flex" align="middle">
 				<a-col :span="24" :md="12">
 					<h5 class="font-semibold m-0">Поиск и управление пользователями</h5>
 				</a-col>
@@ -76,6 +78,7 @@
 </template>
 
 <script>
+
 
 	export default ({
         name: 'App',
@@ -154,8 +157,8 @@
 			return {
 				// Active button for the "Authors" table's card header radio button group.
 				authorsHeaderBtns: 'all',
-                isModalVisible: false,
-			}
+                isModalVisible: false
+            }
 		},
 	})
 
