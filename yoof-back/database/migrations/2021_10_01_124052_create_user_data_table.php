@@ -19,7 +19,7 @@ class CreateUserDataTable extends Migration
             $table->string('surname');
             $table->string('patronymic');
             $table->string('phone')->nullable();
-            $table->float('bakance')->nullable();
+            $table->float('balance')->nullable();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
