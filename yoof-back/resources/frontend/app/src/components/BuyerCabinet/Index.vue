@@ -108,7 +108,7 @@
                             <div>
                                 <h2 class="h8">Текущая цена</h2>
                                 <div class="mh45"></div>
-                                <h1 class="data0103">18 000₽</h1>
+                                <h1 class="data0103">18 000₽</h1>
                             </div>
                             <div>
                                 <h2 class="h8">Статус</h2>
@@ -169,7 +169,7 @@
                                         </h1>
                                     </div>
                                     <h1 class="data0103 p10d">Ноутбук ASUS VivoBook<br>Max X541NC-DM114T</h1>
-                                    <h1 class="data0103 p10d">18 000₽</h1>
+                                    <h1 class="data0103 p10d">18 000₽</h1>
                                     <div class="flex p10d">
                                         <div class="boxcifra4">4</div>
                                         <h1 class="data0144 color-zel">Посмотреть отклики</h1>
@@ -220,7 +220,7 @@
                             <div>
                                 <h2 class="h8">Текущая цена</h2>
                                 <div class="mh45"></div>
-                                <h1 class="data0103">18 000₽</h1>
+                                <h1 class="data0103">18 000₽</h1>
                             </div>
                             <div>
                                 <h2 class="h8">Статус</h2>
@@ -257,7 +257,7 @@
                                 <h2 class="data1103 pds">Аукцион <span class="color-zel">№325478</span><br>от
                                     01.03.2021</h2>
                                 <h2 class="data0103 ps20">Ноутбук ASUS VivoBook<br>Max X541NC-DM114T</h2>
-                                <h1 class="data0103 p10d">18 000₽</h1>
+                                <h1 class="data0103 p10d">18 000₽</h1>
                                 <div class="flex p10d">
                                     <div class="boxcifra4">4</div>
                                     <h1 class="data2103 color-zel">Посмотреть отклики</h1>
@@ -934,7 +934,7 @@
                     <div class="flexdddd">
                         <div class="flex">
                             <input type="text" placeholder="Введите модель техники..." class="text-popup plac">
-                            <img src="lypa.png" class="lypa">
+                            <img src="./img/lypa.png" class="lypa">
                             <button class="button-filtr"><h1 class="pppp2">ИСКАТЬ</h1></button>
                         </div>
                     </div>
@@ -944,10 +944,10 @@
                         <div class="box-mini">
                             <div class="dsa">
                                 <div class="box-img"></div>
-                                <img src="super.png" class="size50">
+                                <img src="./img/super.png" class="size50">
                             </div>
                             <h1 class="pppp10">Ноутбук ASUS VivoBook Max X541NC-DM114T</h1>
-                            <div class="set"><img src="sitiling.png" class="sitiling"></div>
+                            <div class="set"><img src="./img/sitiling.png" class="sitiling"></div>
                             <div class="FLEX6">
                                 <h1 class="akty">Актуальная<br>текущая цена</h1>
                                 <a href="#" class="cena">20 000 ₽</a>
@@ -957,10 +957,10 @@
                         <div class="box-mini2">
                             <div class="dsa">
                                 <div class="box-img"></div>
-                                <img src="analog.png" class="size50">
+                                <img src="./img/analog.png" class="size50">
                             </div>
                             <h1 class="pppp10">Ноутбук ASUS VivoBook Max X541NC-DM114T</h1>
-                            <div class="set"><img src="Mvideo.png" class="Mvideo"></div>
+                            <div class="set"><img src="./img/Mvideo.png" class="Mvideo"></div>
                             <div class="FLEX6">
                                 <h1 class="akty">Актуальная<br>текущая цена</h1>
                                 <a href="#" class="cena">20 000 ₽</a>
@@ -973,7 +973,7 @@
                                 <img src="analog.png" class="size50">
                             </div>
                             <h1 class="pppp10">Ноутбук ASUS VivoBook Max X541NC-DM114T</h1>
-                            <div class="set"><img src="eldorado.png" class="eldorado"></div>
+                            <div class="set"><img src="./img/eldorado.png" class="eldorado"></div>
                             <div class="FLEX6">
                                 <h1 class="akty">Актуальная<br>текущая цена</h1>
                                 <a href="#" class="cena">20 000 ₽</a>
