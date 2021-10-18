@@ -23,7 +23,10 @@
 				return "layout-" + ( this.$route.meta.layout || "default" ).toLowerCase() ;
 			}
 		},
-	})
+        beforeMount() {
+		    this.$store.dispatch('getToken');
+        }
+    })
 
 </script>
 

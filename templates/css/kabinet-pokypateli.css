@@ -99,7 +99,7 @@ background: #EBF005;
 
 font-family: Roboto;
 font-style: normal;
-font-weight: 10px;
+font-weight: 100;
 font-size: 18px;
 line-height: 21px;
 color: #000000;
@@ -330,7 +330,7 @@ color: #000000;
 }
 
 .button-1.active{
-	font-weight: 500px;
+	font-weight: 500;
 }
 
 
@@ -464,7 +464,7 @@ color: #000000;
 	cursor: pointer;
 font-family: Roboto;
 font-style: normal;
-font-weight: 500px;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 color: #000000;
@@ -488,7 +488,7 @@ color: #000000;
 		margin: 0;
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500PX;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 	width: 92.28px;
@@ -617,7 +617,7 @@ color: #000000;
 	margin: 0;
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500px;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 width: 300px;
@@ -629,7 +629,7 @@ width: 300px;
 	margin: 0;
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500PX;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 }
@@ -638,7 +638,7 @@ line-height: 21px;
 	margin: 0;
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500PX;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 }
@@ -646,7 +646,7 @@ line-height: 21px;
 	margin: 0;
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500PX;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 }
@@ -655,7 +655,7 @@ line-height: 21px;
 	margin: 0;
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500PX;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 }
@@ -664,7 +664,7 @@ line-height: 21px;
 	margin: 0;
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500PX;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 }
@@ -673,7 +673,7 @@ line-height: 21px;
 	margin: 0;
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500PX;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 }
@@ -682,7 +682,7 @@ line-height: 21px;
 	margin: 0;
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500PX;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 }
@@ -808,7 +808,7 @@ color: #000000;
 	margin-top: 0;
 	font-family: Roboto;
 	font-style: normal;
-	font-weight: 500px;
+	font-weight: 500;
 	font-size: 18px;
 	line-height: 21px;
 	color: #000000;
@@ -1002,7 +1002,7 @@ border-radius: 10px;
 	cursor: pointer;
 	font-family: Roboto;
 	font-style: normal;
-	font-weight: 500px;
+	font-weight: 500;
 	font-size: 18px;
 	line-height: 21px;
 	color: #000000;
@@ -1012,7 +1012,7 @@ border-radius: 10px;
 	cursor: pointer;
 	font-family: Roboto;
 	font-style: normal;
-	font-weight: 500px;
+	font-weight: 500;
 	font-size: 18px;
 	line-height: 21px;
 	color: #000000;
@@ -1293,7 +1293,7 @@ body{
 .pppp{
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500px;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 color: #000000;
@@ -1301,7 +1301,7 @@ color: #000000;
 .pppp22{
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500px;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 color: #000000;
@@ -1312,7 +1312,7 @@ margin-bottom: 20px;
 	font-weight: normal;width: 100%;
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500px;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 color: #000000;
@@ -1322,7 +1322,7 @@ color: #000000;
 	margin-right: 10px;
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500px;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 color: #000000;
@@ -1381,7 +1381,7 @@ width: 100%;
 .pppp2{
 	font-family: Roboto;
 font-style: normal;
-font-weight: 900px;
+font-weight: 900;
 font-size: 14px;
 line-height: 15px;
 text-align: center;
@@ -1575,7 +1575,7 @@ color: #000000;
 	margin-right: 5px;
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500px;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 color: #000000;
@@ -1584,11 +1584,11 @@ color: #000000;
 .a3{
 	margin-right: 5px;
 	font-family: Roboto;
-font-style: normal;
-font-weight: 500px;
-font-size: 18px;
-line-height: 21px;
-color: #000000;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 21px;
+	color: #000000;
 	margin-right: 20px;
 }
 .top{
@@ -1609,7 +1609,7 @@ text-decoration: none;
 	margin-bottom: 20px;
 	font-family: Roboto;
 font-style: normal;
-font-weight: 900px;
+font-weight: 900;
 font-size: 22px;
 line-height: 124.68%;
 color: #000000;
@@ -1784,12 +1784,12 @@ text-decoration: none;
 .gyl2{
 	margin-bottom: 44px;
 	font-family: Roboto;
-font-style: normal;
-font-weight: 500px;
-font-size: 18px;
-line-height: 21px;
-color: #000000;
-}
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 21px;
+	color: #000000;
+	}
 .lb{
 	margin-top: 42px;
 	font-family: Roboto;
@@ -1825,7 +1825,7 @@ color: #000000;
 	padding-top: 100px;
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500px;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 
@@ -1836,7 +1836,7 @@ color: #000000;
 .pppp10{
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500px;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 color: #000000;
@@ -1954,7 +1954,7 @@ text-decoration: none;
 .fonsize-slim{
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500px;
+font-weight: 500;
 font-size: 22px;
 line-height: 21px;
 color: #000000;
@@ -2107,7 +2107,7 @@ color: #000000;
 	margin: 0;
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500PX;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 }
@@ -2219,7 +2219,7 @@ border: 0;
 .data0106663{
 	font-family: Roboto;
 font-style: normal;
-font-weight: 500PX;
+font-weight: 500;
 font-size: 18px;
 line-height: 21px;
 }

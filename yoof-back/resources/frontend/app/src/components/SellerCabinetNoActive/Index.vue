@@ -1,0 +1,553 @@
+<template>
+    <div>
+        <div class="main_bloc">
+            <notifications group="foo" class="text-notification" />
+            <div class="head">
+                <div class="body">
+                    <div class="flexbetwen22 aicc">
+                        <div class="menu">
+                            <hr class="ml">
+                            <hr class="ml1">
+                            <hr class="ml">
+                        </div>
+                        <img src="./img/logo1.png" class="sdfqw">
+
+                        <div class="m2">
+                            <h1 class="m">Вход</h1>
+                            <hr class="hr2">
+                            <h1 class="m">Регистрация</h1>
+                        </div>
+                    </div>
+                </div>
+                <hr class="line">
+            </div>
+            <img src="./img/heade.png" class="g42gsdf">
+            <div class="body">
+                <div class="flexbetwen3">
+                    <h1 class="a">ЛИЧНЫЙ КАБИНЕТ</h1>
+                    <div class="flexalin">
+                        <h1 class="a26">Аккаунт</h1>
+                        <a href="#" class="yelow">НЕ АКТИВЕН</a>
+                        <img class="img" src="./img/Mvideo.png">
+                        <h1 class="a25">ООО “М.Видео”</h1>
+                        <img class="exit" src="./img/exit.png" >
+                    </div>
+                </div>
+                <div class="flexcenter">
+                    <button class="button-1"><span class="bh1 h1a">Данные компании</span></button>
+                    <button class="button-2"><span class="bh2 h1a">Новые заявки</span><div class="boxcifra8">2</div></button>
+                    <button class="button-3"><span class="bh3 h1a">Активные аукционы</span></button>
+                    <button class="button-4"><span class="bh4 h1a">История аукционов</span></button>
+                </div>
+
+
+                <div class="Company-data">
+                    <div class="flex3001">
+                        <div>
+                            <div class="flex103"><h1 class="h1_1">Название организации или ИП</h1><input type="text" class="text1"></div>
+                            <div class="flex1"><h1 class="h1_1">Юридический адрес</h1><input type="text" class="text1"></div>
+                            <div class="flex1"><h1 class="h1_1">ИНН</h1><input type="number" class="text1"></div>
+                            <div class="flex1"><h1 class="h1_1">Банк</h1><input type="text" class="text1"></div>
+                            <div class="flex1"><h1 class="h1_1">Расчетный счет</h1><input type="number" class="text1"></div>
+                            <div class="flex1"><h1 class="h1_1">КПП</h1><input type="number" class="text1"></div>
+                            <div class="flex1"><h1 class="h1_1">БИК банка</h1><input type="number" class="text1"></div>
+                            <div class="flex1"><h1 class="h1_1">Адрес электронной почты</h1><input type="text" class="text1"></div>
+                            <div class="flex1"><h1 class="h1_1">Сменить пароль</h1><input type="text" class="text1"></div>
+                            <div class="flex1"><h1 class="h1_1">Повторить пароль</h1><input type="text" class="text1"></div>
+                            <div class="lrok"><button class="button1"><span class="cox">СОХРАНИТЬ ИЗМЕНЕНИЯ</span></button></div>
+                        </div>
+                        <div class="adres">
+                            <div>
+                                <h1 class="h1a-0 mtt">Продаваемые вами категории</h1>
+                                <div>
+                                    <div class="flex"><input type="checkbox" class="checkboxi"><h1 class="h1_1 m5t">Смартфоны</h1></div>
+                                    <div class="flex"><input type="checkbox" class="checkboxi"><h1 class="h1_1 m5t">Холодильники</h1></div>
+                                    <div class="flex"><input type="checkbox" class="checkboxi"><h1 class="h1_1 m5t">Телевизоры</h1></div>
+                                    <div class="flex"><input type="checkbox" class="checkboxi"><h1 class="h1_1 m5t">Ноутбуки</h1></div>
+                                    <h1 class="zeleni">Показать все ></h1>
+                                </div>
+                            </div>
+                            <div >
+                                <h1 class="h1a mtaw">Физическое расположение<br>магазина/склада (для самовывоза)</h1>
+                                <div>
+                                    <input type="text" class="text1 txt" placeholder="Физическое расположение">
+                                    <h1 class="h1_1 mdm">Возможные города доставки</h1>
+                                    <input type="text" class="text1 txt" placeholder="Возможные города доставки">
+                                </div>
+                            </div>
+                            <h1 class="h1a">Документы компании</h1>
+                            <div class="flexalingce">
+                                <h1 class="ogr">Свидетельство ОГРН (или<br>лист записи ЕГРЮЛ)</h1>
+                                <div class="example-2">
+                                    <div class="form-group">
+                                        <input type="file" name="file" id="file" class="input-file">
+                                        <label for="file" class="btn btn-tertiary js-labelFile">
+                                            <img src="./img/skrepka.png" class="size1530">
+                                            <span class="js-fileName">Прикрепить</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flexalingce">
+                                <h1 class="ogr2">Свидетельство ИНН</h1>
+                                <div class="example-2">
+                                    <div class="form-group">
+                                        <input type="file" name="file" id="file" class="input-file">
+                                        <label for="file" class="btn btn-tertiary js-labelFile">
+                                            <img src="./img/skrepka.png" class="size1530">
+                                            <span class="js-fileName">Прикрепить</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="button999"><span class="cox">АКТИВИРОВАТЬ АККАУНТ</span></button>
+                            <h1 class="rdftgh">*Активация аккаунта занимает от 1 до 24 часов</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="applications">
+                    <div class="body222">
+                        <div class="hr_big">
+                            <div class="flexaround">
+                                <div>
+                                    <h2 class="h8">Номер заявки</h2>
+                                    <div class="mh45"></div>
+                                    <div class="flex">
+                                        <img src="./img/boxgal.png" class="size2020">
+                                        <h1 class="data0100"><span class="color-zel">№325478</span> от<br>01.03.2021</h1>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="h8">Наименование товара</h2>
+                                    <div class="mh45"></div>
+                                    <h1 class="data3303">Ноутбук ASUS VivoBook<br>Max X541NC-DM114T</h1>
+                                </div>
+                                <div>
+                                    <h2 class="h8">Текущая цена</h2>
+                                    <div class="mh45"></div>
+                                    <h1 class="data0103">18 000₽</h1>
+                                </div>
+                                <div>
+                                    <h2 class="h8">Статус</h2>
+                                    <div class="mh45"></div>
+                                    <div class="flex">
+                                        <div class="boxcifra4">4</div>
+                                        <div class="aoaa"><h1 class="data4 color-zel">Прием заявок</h1>
+                                            <h2 class="ys4">4 участника</h2></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="h8">Чат с покупателем</h2>
+                                    <div class="mh45"></div>
+                                    <div class="flex">
+                                        <div class="boxcifra4">2</div>
+                                        <h1 class="data0103 color-zel mess">Сообщения</h1>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="h8">Настройки</h2>
+                                    <div class="mh45"></div>
+                                    <div>
+                                        <div class="flex"><img src="./img/izmene.png" class="size17"><h1 class="rededal2">Участвовать</h1></div>
+                                        <div class="flex"><img src="./img/ydal.png" class="size1419"><h1 class="rededal2">Отказаться</h1></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="hr_min">
+                        </div>
+                    </div>
+                    <div class="adap">
+                        <div class="bodyl">
+                            <div class="flex">
+                                <div class="hr_big2 mr10">
+                                    <h2 class="h88">Номер заявки</h2>
+                                    <h2 class="h88">Наименование товара</h2>
+                                    <h2 class="h88">Текущая цена</h2>
+                                    <h2 class="h88">Статус</h2>
+                                    <h2 class="h88">Чат</h2>
+                                    <h2 class="h88">Настройки</h2>
+                                </div>
+                                <div class="tal">
+                                    <div class="flex pds">
+                                        <img src="./img/boxgal.png" class="size2020">
+                                        <h1 class="data0100"><span class="color-zel">№325478</span> от 01.03.2021</h1>
+                                    </div>
+                                    <h1 class="data3303 p10d">Ноутбук ASUS VivoBook<br>Max X541NC-DM114T</h1>
+                                    <h1 class="data0103 p10d">18 000₽</h1>
+                                    <div class="flex p10d">
+                                        <div class="boxcifra4">4</div>
+                                        <div class="aoaa"><h1 class="data4 color-zel">Прием заявок</h1>
+                                            <h2 class="ys4">4 участника</h2></div>
+                                    </div>
+                                    <div class="flex p8d">
+                                        <div class="boxcifra4">2</div>
+                                        <h1 class="data0103 color-zel mess">Сообщения</h1>
+                                    </div>
+                                    <div class="p10d">
+                                        <div class="flex"><img src="./img/izmene.png" class="size17"><h1 class="rededal2">Участвовать</h1></div>
+                                        <div class="flex"><img src="./img/ydal.png" class="size1419"><h1 class="rededal2">Отказаться</h1></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="hr_mini2">
+                        </div>
+                    </div>
+                </div>
+                <div class="aykcion">
+                    <div class="body222">
+                        <div class="hr_big">
+                            <div class="flexaround">
+                                <div>
+                                    <h2 class="h8">Номер заявки</h2>
+                                    <div class="mh45"></div>
+                                    <div class="flex">
+                                        <h1 class="data1111">Аукцион<span class="color-zel"> №325478</span><br>от 01.03.2021</h1>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="h8">Наименование товара</h2>
+                                    <div class="mh45"></div>
+                                    <h1 class="data33030">Ноутбук ASUS VivoBook<br>Max X541NC-DM114T</h1>
+                                </div>
+                                <div>
+                                    <h2 class="h8">Текущая цена</h2>
+                                    <div class="mh45"></div>
+                                    <h1 class="data0103">18 000₽</h1>
+                                </div>
+                                <div>
+                                    <h2 class="h8">Статус</h2>
+                                    <div class="mh45"></div>
+                                    <div class="flex">
+                                        <div class="aoaa"><h1 class="data0144 color-zel">Прием ставок</h1></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="h8">Чат с покупателем</h2>
+                                    <div class="mh45"></div>
+                                    <div class="flex">
+                                        <div class="boxcifra4">2</div>
+                                        <h1 class="data0103 color-zel mess">Сообщения</h1>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="h8">Настройки</h2>
+                                    <div class="mh45"></div>
+                                    <div>
+                                        <div class="flex"><img src="./img/izmene.png" class="size17"><h1 class="rededal">Предложить цену</h1></div>
+                                        <div class="flex"><img src="./img/ydal.png" class="size1419"><h1 class="rededal">Отказаться</h1></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="hr_min">
+                        </div>
+                    </div>
+                    <div class="adap2">
+                        <div class="bodyl">
+                            <div class="flex">
+                                <div class="hr_big2 mr10">
+                                    <h2 class="h88">Номер заявки</h2>
+                                    <h2 class="h88">Наименование товара</h2>
+                                    <h2 class="h88">Текущая цена</h2>
+                                    <h2 class="h88">Статус</h2>
+                                    <h2 class="h88">Чат с покупателями</h2>
+                                    <h2 class="h88">Настройки</h2>
+                                </div>
+                                <div class="tal">
+                                    <h1 class="data1111 pds">Аукцион<span class="color-zel"> №325478</span> от 01.03.2021</h1>
+                                    <h1 class="data33030 p10d">Ноутбук ASUS VivoBook<br>Max X541NC-DM114T</h1>
+                                    <h1 class="data0103 p10d">18 000₽</h1>
+                                    <div class="flex p10d">
+                                        <div class="aoaa"><h1 class="data0144 color-zel">Прием ставок</h1></div>
+                                    </div>
+                                    <div class="flex p10d">
+                                        <div class="boxcifra4">2</div>
+                                        <h1 class="data0103 color-zel mess">Сообщения</h1>
+                                    </div>
+                                    <div class="p30d">
+                                        <div class="flex"><img src="./img/izmene.png" class="size17"><h1 class="rededal">Предложить цену</h1></div>
+                                        <div class="flex"><img src="./img/ydal.png" class="size1419"><h1 class="rededal">Отказаться</h1></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="hr_min">
+                        </div>
+                    </div>
+                </div>
+                <div class="histori">
+                    <div class="body222">
+                        <div class="hr_big">
+                            <div class="flexaround">
+                                <div>
+                                    <h2 class="h8">Номер заявки</h2>
+                                    <div class="mh45"></div>
+                                    <div class="flex">
+
+                                        <h1 class="data2">Аукцион<span class="color-zel"> №325478</span><br>от 01.03.2021</h1>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="h8">Наименование товара</h2>
+                                    <div class="mh45"></div>
+                                    <h1 class="data6">Ноутбук ASUS VivoBook<br>Max X541NC-DM114T</h1>
+                                </div>
+                                <div>
+                                    <h2 class="h8">Итоговая цена</h2>
+                                    <div class="mh45"></div>
+                                    <h1 class="data0103">17 200₽</h1>
+                                </div>
+                                <div>
+                                    <h2 class="h8">Результат</h2>
+                                    <div class="mh25"></div>
+                                    <img src="./img/win.png" class="size80">
+                                </div>
+                                <div>
+                                    <h2 class="h8">Доставка</h2>
+                                    <div class="mh45"></div>
+                                    <h1 class="data0103">Самовывоз</h1>
+                                </div>
+                                <div>
+                                    <h2 class="h8">Статус</h2>
+                                    <div class="mh45"></div>
+                                    <h1 class="data0103 color-zel w">Доставлен<br>в магазин</h1>
+                                </div>
+                            </div>
+                            <hr class="hr_min">
+                        </div>
+                        <div class="flexaround mt192 wid">
+                            <div>
+                                <div class="mh45"></div>
+                                <div class="flex">
+
+                                    <h1 class="data2">Аукцион<span class="color-zel"> №325478</span><br>от 01.03.2021</h1>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mh45"></div>
+                                <h1 class="data6">Ноутбук ASUS VivoBook<br>Max X541NC-DM114T</h1>
+                            </div>
+                            <div>
+                                <div class="mh45"></div>
+                                <h1 class="data0103 w2">17 200₽</h1>
+                            </div>
+                            <div>
+                                <div class="mh25"></div>
+                                <img src="./img/lose.png" class="size80">
+                            </div>
+                            <div>
+                                <div class="mh45"></div>
+                                <h1 class="data0103">Доставка</h1>
+                                <h2 class="ylica">123456, Москва, ул. Багратиона, д.9, кв. 35</h2>
+                            </div>
+                            <div>
+                                <div class="mh45"></div>
+                                <h1 class="data0103 color-zel">Доставлен<br><span class="color-zel2">Отслеживание</span></h1>
+                            </div>
+                        </div>
+                        <hr class="hr_min">
+                    </div>
+                    <div class="adap3">
+                        <div class="bodyl">
+                            <div class="flex">
+                                <div class="hr_big2 mr10">
+                                    <h2 class="h88">Номер заявки</h2>
+                                    <h2 class="h88">Наименование товара</h2>
+                                    <h2 class="h88">Итоговая цена</h2>
+                                    <h2 class="h88">Результат</h2>
+                                    <h2 class="h88">Доставка</h2>
+                                    <h2 class="h88">Статус</h2>
+                                </div>
+                                <div class="tal">
+                                    <h1 class="data2 pds">Аукцион<span class="color-zel"> №325478</span> от 01.03.2021</h1>
+                                    <h1 class="data6 p10d">Ноутбук ASUS VivoBook<br>Max X541NC-DM114T</h1>
+                                    <h1 class="data0103 w2 p10d">17 200₽</h1>
+                                    <img src="./img/lose.png" class="size50 p8d">
+                                    <div class="flex p8d">
+                                        <h1 class="data0103">Доставка</h1>
+                                        <h2 class="ylica4">123456, Москва, ул. Багратиона, д.9, кв. 35</h2>
+                                    </div>
+                                    <h1 class="data0103 color-zel p10d">Доставлен<br><span class="color-zel2">Отслеживание</span></h1>
+                                </div>
+                            </div>
+                            <hr class="hr_min">
+                            <div class="flex">
+                                <div class="hr_big2 mr10">
+                                    <h2 class="h88">Номер заявки</h2>
+                                    <h2 class="h88">Наименование товара</h2>
+                                    <h2 class="h88">Итоговая цена</h2>
+                                    <h2 class="h88">Результат</h2>
+                                    <h2 class="h88">Доставка</h2>
+                                    <h2 class="h88">Статус</h2>
+                                </div>
+                                <div class="tal">
+                                    <h1 class="data2 pds">Аукцион<span class="color-zel"> №325478</span> от 01.03.2021</h1>
+                                    <h1 class="data6 p10d">Ноутбук ASUS VivoBook<br>Max X541NC-DM114T</h1>
+                                    <h1 class="data0103 w2 p10d">17 200₽</h1>
+                                    <img src="./img/win.png" class="size50 p8d">
+                                    <div class="flex p8d">
+                                        <h1 class="data0103">Самовывоз</h1>
+                                    </div>
+                                    <h1 class="data0103 color-zel p10d">Доставлен в магазин</h1>
+                                </div>
+                            </div>
+                            <hr class="hr_min">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="bodybetwenn">
+                    <img src="./img/logo2.png" class="fsds3f">
+                    <div class="asd24gd">
+                        <h1 class="hh1">О сервисе</h1>
+                        <div class="mr20"><a class="hh2">Как работает сервис?</a></div>
+                        <div class="mr20"><a class="hh2">Правила использования</a></div>
+                        <div class="mr20"><a class="hh2">Отзывы о нас</a></div>
+                    </div>
+                    <div class="asf04n">
+                        <h1 class="hh1">Контакты</h1>
+                        <div class="flexasf2"><img src="./img/ins.png" class="asd2b mr5"><a class="hh2">Instagram</a></div>
+                        <div class="flexasf2"><img src="./img/fac.png" class="asd2b mr5"><a class="hh2">Facebook</a></div>
+                        <div class="flexasf2"><img src="./img/tel.png" class="asd2b mr5"><a class="hh2">Telegram</a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- main bloc -->
+
+        <input type="file" class="inp_file none"/>
+        <input type="file" class="inp_file2 none"/>
+    </div>
+</template>
+
+<script>
+import jQuery from "jquery";
+import Notifications from 'vue-notification'
+import Vue from 'vue'
+
+Vue.use(Notifications);
+
+const $ = jQuery;
+window.$ = $;
+
+
+export default {
+    name: "Index",
+    data() {
+        return {
+
+        }
+    },
+    mounted() {
+        $('.data0100').on('click', function () {
+            $('.popup-66').addClass('active');
+        });
+        $('.pofigy').on('click', function () {
+            $('.popup-88').addClass('active');
+        });
+        $('.data3303').on('click', function () {
+            $('.popup-66').addClass('active');
+        });
+        $('.rededal').on('click', function () {
+            $('.popup-88').addClass('active');
+        });
+        $('.rededal2').on('click', function () {
+            Vue.notify({
+                group: 'foo',
+                type: 'warn',
+                title: 'Произошла ошибка',
+                text: 'Активируйте аккаунт для выполнения данного действия!',
+                speed: 500,
+                duration: 6000
+            })
+        });
+        $('.data4').on('click', function () {
+            Vue.notify({
+                group: 'foo',
+                type: 'warn',
+                title: 'Произошла ошибка',
+                text: 'Активируйте аккаунт для выполнения данного действия!',
+                speed: 500,
+                duration: 6000
+            })
+        })
+        $('.data0144').on('click', function () {
+            $('.popup-88').addClass('active');
+        });
+        $('.krest3').on('click', function () {
+            $('.popup-88').removeClass('active');
+            $('.popup-66').removeClass('active');
+        });
+        $('.button-2').on('click', function () {
+            $('.histori').removeClass('active');
+            $('.applications').addClass('active');
+            $('.Company-data').addClass('remove');
+            $('.aykcion').removeClass('active');
+            $('.button-1').addClass('active');
+            $('.button-2').addClass('active');
+            $('.boxcifra8').addClass('active');
+            $('.button-3').removeClass('active');
+            $('.button-4').removeClass('active');
+        });
+
+        $('.button-1').on('click', function () {
+            $('.histori').removeClass('active');
+            $('.applications').removeClass('active');
+            $('.Company-data').removeClass('remove');
+            $('.aykcion').removeClass('active');
+            $('.button-1').removeClass('active');
+            $('.button-2').removeClass('active');
+            $('.boxcifra8').removeClass('active');
+            $('.button-3').removeClass('active');
+            $('.button-4').removeClass('active');
+        });
+
+        $('.button-3').on('click', function () {
+            Vue.notify({
+                group: 'foo',
+                type: 'warn',
+                title: 'Произошла ошибка',
+                text: 'Переход на страницу "Активные аукционы" при не активном аккаунте запрещен.<br><b>Активируйте аккаунт во вкладке "Данные компании"!</b>',
+                speed: 500,
+                duration: 6000
+            })
+        });
+
+        $('.button-4').on('click', function () {
+            Vue.notify({
+                group: 'foo',
+                type: 'warn',
+                title: 'Произошла ошибка',
+                text: 'Переход на страницу "История аукционов" при не активном аккаунте запрещен.<br><b>Активируйте аккаунт во вкладке "Данные компании"!</b>',
+                speed: 500,
+                duration: 6000
+            })
+        });
+
+        $('.mess').on('click', function () {
+            Vue.notify({
+                group: 'foo',
+                type: 'warn',
+                title: 'Произошла ошибка',
+                text: 'Активируйте аккаунт для выполнения данного действия!',
+                speed: 500,
+                duration: 6000
+            })
+        });
+
+        $('.krep1').click(function(){
+            $('.inp_file').click();
+
+        });
+
+        $('.krep2').click(function(){
+            $('.inp_file2').click();
+        });
+    }
+}
+</script>
+
+<style scoped lang="css" src="./assets/Styles.css">
+</style>
+
