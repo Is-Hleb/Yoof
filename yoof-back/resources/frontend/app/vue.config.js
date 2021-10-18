@@ -1,6 +1,7 @@
 module.exports = {
     devServer: {
-        proxy: 'http://laravel.test'
+        proxy: 'http://localhost:8081/',
+        host: 'localhost'
     },
 
     // output built static files to Laravel's public dir.

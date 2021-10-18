@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'api_token'
     ];
 
     /**
@@ -41,4 +43,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function data() {
+        switch ($this->role) {
+            case 'user':
+                return $this->hasOne(UserData::class);
+            case 'company':
+                return $this->hasOne(CompanyData::class);
+        }
+    }
 }
