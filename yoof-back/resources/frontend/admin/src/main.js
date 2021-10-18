@@ -1,6 +1,4 @@
 import Vue from 'vue'
-import axios from 'axios';
-import VueAxios from 'vue-axios';
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
 import App from './App.vue'
@@ -10,12 +8,9 @@ import DashboardRTLLayout from './layouts/DashboardRTL.vue'
 import router from './router'
 
 // import './plugins/click-away'
+import './scss/app.scss'
 
-import './scss/app.scss';
-
-import store from './store'
-
-Vue.use(Antd, VueAxios, axios);
+Vue.use(Antd);
 
 Vue.config.productionTip = false
 
@@ -26,6 +21,5 @@ Vue.component("layout-dashboard-rtl", DashboardRTLLayout);
 
 new Vue({
   router,
-  store,
   render: h => h(App)
 }).$mount('#app')

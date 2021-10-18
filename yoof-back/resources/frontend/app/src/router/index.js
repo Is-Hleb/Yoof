@@ -6,10 +6,9 @@ import middlewarePipeline from './middlewarePipeline'
 
 Vue.use(VueRouter)
 
-
 const router = new VueRouter({
-    mode: 'history',
-    base: process.env.BASE_URL,
+    mode: 'hash',
+    base: '/',
     routes,
 })
 

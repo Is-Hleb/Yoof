@@ -7,16 +7,6 @@ const routes = [
         component: () => import('../components/IndexPage/Index')
     },
     {
-        path: '/login',
-        name: 'login',
-        component: () => import('../components/Auth/Login'),
-    },
-    {
-        path: '/register',
-        name: 'register',
-        component: () => import('../components/Auth/Register')
-    },
-    {
         path: '/cabinet',
         name: 'cabinet',
         meta: {
@@ -27,7 +17,10 @@ const routes = [
         component: () => import('../components/BuyerCabinet/Index')
 
     },
-
+    {
+        path: '/cabinet2',
+        component: () => import('../components/SellerCabinetNoActive/Index')
+    }
 ]
 
 export default routes

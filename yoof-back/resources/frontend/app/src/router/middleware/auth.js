@@ -3,7 +3,7 @@ const axios = require('axios')
 export default function auth ({next, store}){
 
     if(!store.state.user.isAuth) {
-        next('/')
+        next({name: 'index'})
     }
 
     axios.get('/api/is-auth', {
@@ -16,7 +16,7 @@ export default function auth ({next, store}){
         if(data.code === 'success') {
             next()
         } else {
-            next('/')
+            next({name: 'index'})
         }
     }).catch(e => {
         console.log(e.message)

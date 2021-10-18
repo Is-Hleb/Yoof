@@ -83,7 +83,7 @@ routes = routes.map( ( route ) => addLayoutToRoute( route ) ) ;
 
 const router = new VueRouter({
 	mode: 'hash',
-	base: process.env.BASE_URL,
+	base: '/admin/',
 	routes,
 	scrollBehavior (to, from, savedPosition) {
 		if ( to.hash ) {

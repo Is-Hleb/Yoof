@@ -1634,6 +1634,21 @@ export default {
             repeatPassword: ''
         }
     },
+    methods: {
+        checkForm: function (e) {
+
+            this.errors = [];
+
+            if (this.name && (this.name.length < 2 || this.name.length > 20)) {
+                this.errors.push('Некорреткно введено имя');
+            }
+            if (this.surname && (this.surname.length <= 3 || this.surname.length > 20)) {
+                this.errors.push('Некорреткно введеная фамилия');
+            }
+
+            e.preventDefault();
+        }
+    },
     mounted() {
 
         $(function () {
@@ -1822,23 +1837,6 @@ export default {
             $('.button-5').addClass('active');
         });
     },
-    methods: {
-        checkForm: function (e) {
-
-            this.errors = [];
-
-            if (this.name && (this.name.length < 2 || this.name.length > 20)) {
-                this.errors.push('Некорреткно введено имя');
-            }
-            if (this.surname && (this.surname.length <= 3 || this.surname.length > 20)) {
-                this.errors.push('Некорреткно введеная фамилия');
-            }
-
-
-
-            e.preventDefault();
-        }
-    }
 }
 </script>
 
