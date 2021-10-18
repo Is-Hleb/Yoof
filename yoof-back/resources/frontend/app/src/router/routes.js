@@ -1,13 +1,15 @@
+import auth from "@/router/middleware/auth";
+
 const routes = [
+    {
+        path: '/',
+        name: 'index',
+        component: () => import('../components/IndexPage/Index')
+    },
     {
         path: '/login',
         name: 'login',
         component: () => import('../components/Auth/Login'),
-        beforeEnter: (to, from, next) => { // middleware example
-            next() // Accept hook function
-            // to() ->  The route you are going
-            // from() -> Rout, which the makes direction
-        }
     },
     {
         path: '/register',
@@ -17,8 +19,14 @@ const routes = [
     {
         path: '/cabinet',
         name: 'cabinet',
+        meta: {
+            middleware: [
+                auth,
+            ]
+        },
         component: () => import('../components/BuyerCabinet/Index')
-    }
+
+    },
 ]
 
 export default routes

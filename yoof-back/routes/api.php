@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\Auth\LoginController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,13 @@ Route::group(['prefix' => '/auth', 'middleware' => 'guest:api'], function () {
     Route::post('/register', [RegisterController::class, 'index']);
 });
 
+Route::get('/token', [\App\Http\Controllers\Api\AuthUser::class, 'token']);
+Route::get('/user', [\App\Http\Controllers\Api\AuthUser::class, 'user']);
+Route::get('/logout', [\App\Http\Controllers\Api\AuthUser::class, 'logout']);
+
 Route::group(['middleware' => 'auth:api'], function () {
-    Route::get('/', function () {
-        return "data";
+    Route::get('/is-auth', function(){
+        return json_encode(['code' => 'success']);
     });
 });
 
