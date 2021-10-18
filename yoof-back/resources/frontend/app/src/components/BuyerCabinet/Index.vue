@@ -9,9 +9,9 @@
                         <hr class="ml1">
                         <hr class="ml">
                     </div>
-                    <img src="./img/logoYoofEnd (1).png" class="yoof2poy">
+                    <img src="./img/logo1.png" class="yoof2poy">
                     <div class="flex200000">
-                        <img src="./img/tocha.png" class="tocha mr5">
+                        <img src="./img/tocha.png" class="tocha">
                         <h1 class="m mm2">Москва</h1>
                     </div>
                     <div class="m2">
@@ -35,7 +35,6 @@
                         </div>
                         <h1 class="a2 top"><span class="yelow" s>+</span> Пополнить баланс</h1>
                     </div>
-
                     <img class="img" src="./img/img.png">
                     <h1 class="a2">Иван</h1>
                     <h1 class="a3">Иванов</h1>
@@ -50,33 +49,37 @@
                 <button class="button-3"><span class="bh3 h1a">Активные аукционы</span></button>
                 <button class="button-4"><span class="bh4 h1a">Избранное</span></button>
                 <button class="button-5"><span class="bh5 h1a">История покупок</span></button>
+
             </div>
             <div class="moi-dani">
+                <div>
+                    <p v-if="errors.length" class="p_error">
+                        <b>Пожалуйста, исправьте указанные ошибки:</b>
+                    <ul class="ul_error">
+                        <li v-for="error in errors" v-bind:key="error" class="li_error">{{ error }}</li>
+                    </ul>
+                    </p>
+                </div>
                 <div class="flexnomer1">
-                    <div>
-                        <div class="flex6661"><h1 class="h1_1">Имя</h1><input type="text" class="text1"></div>
-                        <div class="flex1"><h1 class="h1_1">Фамилия</h1><input type="text" class="text1"></div>
-                        <div class="flex1"><h1 class="h1_1">Отчество</h1><input type="text" class="text1"></div>
-                        <div class="flex1"><h1 class="h1_1">Телефон</h1><input type="text" class="text1"></div>
-                        <div class="flex1"><h1 class="h1_1">Электронная почта</h1><input type="text" class="text1">
+
+                        <div>
+                            <div class="flex6661"><h1 class="h1_1">Имя</h1><input type="text" class="text1" v-model="name"></div>
+                            <div class="flex1"><h1 class="h1_1">Фамилия</h1><input type="text" class="text1" v-model="surname"></div>
+                            <div class="flex1"><h1 class="h1_1">Отчество</h1><input type="text" class="text1" v-model="patronymic"></div>
+                            <div class="flex1"><h1 class="h1_1">Телефон</h1><input type="tel" class="text1" v-model="telephone"></div>
+                            <div class="flex1"><h1 class="h1_1">Электронная почта</h1><input type="email" class="text1" v-model="email"></div>
+                            <div class="flex1"><h1 class="h1_1">Сменить пароль</h1><input type="password" class="text1" v-model="password"></div>
+                            <div class="flex1"><h1 class="h1_1">Повторить пароль</h1><input type="password" class="text1" v-model="repeatPassword"></div>
+                            <div class="flexkyky"><button class="button1" type="button" v-on:click="checkForm">СОХРАНИТЬ ИЗМЕНЕНИЯ</button></div>
                         </div>
-                        <div class="flex1"><h1 class="h1_1">Сменить пароль</h1><input type="text" class="text1">
-                        </div>
-                        <div class="flex1"><h1 class="h1_1">Повторить пароль</h1><input type="text" class="text1">
-                        </div>
-                        <div class="flexkyky">
-                            <button class="button1">СОХРАНИТЬ ИЗМЕНЕНИЯ</button>
-                        </div>
-                    </div>
+
                     <div class="adres">
                         <h1 class="h1a">Адреса доставки</h1>
                         <div class="papap">
                             <h1 class="steli">123456, Москва, ул. Багратиона, д.9, кв. 35</h1>
                             <div class="flex ml15 pob">
-                                <div class="flex"><img src="./img/izmene.png" class="size17">
-                                    <h1 class="rededal">Редактировать</h1></div>
-                                <div class="flex"><img src="./img/ydal.png" class="size1418">
-                                    <h1 class="rededal">Удалить</h1></div>
+                                <div class="flex"><img src="./img/izmene.png" class="size17"><h1 class="rededal">Редактировать</h1></div>
+                                <div class="flex"><img src="./img/ydal.png" class="size1418"><h1 class="rededal">Удалить</h1></div>
                             </div>
                         </div>
                         <div class="flex top3">
@@ -438,7 +441,7 @@
         </div>
         <div class="footer">
             <div class="bodyilp">
-                <img src="./img/logoYoofEnd (2).png" class="yoof-yelomhgl">
+                <img src="./img/logo2.png" class="yoof-yelomhgl">
                 <div class="gdsfgs">
                     <h1 class="hh1">О сервисе</h1>
                     <div class="margin-bottom20"><a class="hh2">Как работает сервис?</a></div>
@@ -465,21 +468,21 @@
                 <div class="flexlhlooi">
                     <div class="flex aopop">
                         <div>
-                            <div class="flex298"><h1 class="h1_1">Индекс</h1><input type="text" class="text2"></div>
-                            <div class="flex2"><h1 class="h1_1">Индекс</h1><input type="text" class="text2"></div>
-                            <div class="flex2"><h1 class="h1_1">Район</h1><input type="text" class="text2"></div>
+                            <div class="flex298"><h1 class="h1_1">Индекс</h1><input type="text" class="text2" placeholder="Индекс"></div>
+                            <div class="flex2"><h1 class="h1_1">Город</h1><input type="text" class="text2" placeholder="Город"></div>
+                            <div class="flex2"><h1 class="h1_1">Район</h1><input type="text" class="text2" placeholder="Район"></div>
                             <div class="flex2"><h1 class="h1_1">Населенный пункт</h1><input type="text"
-                                                                                            class="text2"></div>
-                            <div class="flex2"><h1 class="h1_1">Улица</h1><input type="text" class="text2"></div>
+                                                                                            class="text2" placeholder="Населенный пункт"></div>
+                            <div class="flex2"><h1 class="h1_1">Улица</h1><input type="text" class="text2" placeholder="Улица"></div>
                         </div>
                     </div>
                     <div class="flex aopop">
                         <div>
-                            <div class="flex3678"><h1 class="h1_1">Дом</h1><input type="text" class="text2"></div>
-                            <div class="flex3"><h1 class="h1_1">Корпус</h1><input type="text" class="text2"></div>
-                            <div class="flex3"><h1 class="h1_1">Подъезд</h1><input type="text" class="text2"></div>
-                            <div class="flex3"><h1 class="h1_1">Квартира</h1><input type="text" class="text2"></div>
-                            <div class="flex3"><h1 class="h1_1">Этаж</h1><input type="text" class="text2"></div>
+                            <div class="flex3678"><h1 class="h1_1">Дом</h1><input type="text" class="text2" placeholder="Дом"></div>
+                            <div class="flex3"><h1 class="h1_1">Корпус</h1><input type="text" class="text2" placeholder="Корпус"></div>
+                            <div class="flex3"><h1 class="h1_1">Подъезд</h1><input type="text" class="text2" placeholder="Подъезд"></div>
+                            <div class="flex3"><h1 class="h1_1">Квартира</h1><input type="text" class="text2" placeholder="Квартира"></div>
+                            <div class="flex3"><h1 class="h1_1">Этаж</h1><input type="text" class="text2" placeholder="Этаж"></div>
                         </div>
                     </div>
                 </div>
@@ -970,7 +973,7 @@
                         <div class="box-mini3">
                             <div class="dsa">
                                 <div class="box-img"></div>
-                                <img src="analog.png" class="size50">
+                                <img src="./img/analog.png" class="size50">
                             </div>
                             <h1 class="pppp10">Ноутбук ASUS VivoBook Max X541NC-DM114T</h1>
                             <div class="set"><img src="./img/eldorado.png" class="eldorado"></div>
@@ -996,7 +999,7 @@
                     <div class="header-city">
                         <div class="header-min">
                             <img src="./img/krest.png" class="krest">
-                            <img src="./img/logoYoofEnd (1).png" class="sizelog">
+                            <img src="./img/logo1.png" class="sizelog">
                             <div class="wid75">
                                 <input type="input" placeholder="Введите название города" class="input-city">
                                 <img src="./img/lypa.png" class="lypa3">
@@ -1634,8 +1637,21 @@ import JQuery from 'jquery'
 const $ = JQuery
 window.$ = $
 
+
 export default {
     name: "buyer-cabinet",
+    data () {
+        return {
+            errors: [],
+            name: '',
+            surname: '',
+            patronymic: '',
+            telephone: '',
+            email: '',
+            password: '',
+            repeatPassword: ''
+        }
+    },
     mounted() {
 
         $(function () {
@@ -1823,6 +1839,23 @@ export default {
             $('.button-4').removeClass('active')
             $('.button-5').addClass('active');
         });
+    },
+    methods: {
+        checkForm: function (e) {
+
+            this.errors = [];
+
+            if (this.name && (this.name.length < 2 || this.name.length > 20)) {
+                this.errors.push('Некорреткно введено имя');
+            }
+            if (this.surname && (this.surname.length <= 3 || this.surname.length > 20)) {
+                this.errors.push('Некорреткно введеная фамилия');
+            }
+
+
+
+            e.preventDefault();
+        }
     }
 }
 </script>

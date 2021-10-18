@@ -6,14 +6,18 @@
     cursor: pointer;
     align-items: center;
     display: flex;
+    margin-top: -30px;
 }
 .mm2{
-    margin: 0;
+    font-weight: 500px;
+    align-items: center;
+    margin-bottom: -35px;
 }
 .tocha{
     padding-bottom: 4px;
     width: 13px;
     height: 18px;
+    margin-bottom: -35px;
 }
 .lypa{
     position: absolute;
@@ -37,7 +41,7 @@
     margin-right: 5px;
 }
 .head{
-    height: 50px;
+    height: 60px;
     width: 100%;
     position: relative;
     background-color: #fff;
@@ -99,14 +103,13 @@
 
     font-family: Roboto;
     font-style: normal;
-    font-weight: 10px;
+    font-weight: 500px;
     font-size: 18px;
     line-height: 21px;
     color: #000000;
 }
 
 .m2{
-    cursor: pointer;
     display: flex;
 }
 
@@ -123,7 +126,8 @@
 
 .yoof2poy{
     width: 150px;
-    margin-left: 24.5%;
+    margin-right: 100px;
+    align-items: center;
 }
 
 .ml{
@@ -415,6 +419,7 @@
     border: 0;
     width: 270px;
     height: 40px;
+    cursor: pointer;
 }
 
 .button2{
@@ -791,6 +796,7 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
+    padding-left: 11px;
 }
 
 .pp{
@@ -805,6 +811,7 @@
 }
 
 .h1a{
+    margin-left: 7px;
     margin-top: 0;
     font-family: Roboto;
     font-style: normal;
@@ -812,6 +819,7 @@
     font-size: 18px;
     line-height: 21px;
     color: #000000;
+    text-align: left;
 
 }
 .rededal{
@@ -854,7 +862,7 @@
 .steli{
     padding-top: 20px;
     margin-left: 15px;
-
+    text-align: left;
     font-family: Roboto;
     font-style: normal;
     font-weight: 300;
@@ -1537,6 +1545,14 @@ body{
     margin-top: 40px;
     display: none;
 }
+.ul_error {
+    width: 200px;
+    text-align: left;
+}
+.p_error {
+    text-align: left;
+
+}
 
 .izbranoe.active{
     display: block;
@@ -1552,20 +1568,22 @@ body{
 
 .img{
     margin-right: 20px;
-    height: 60px;
-    width: 60px;
+    height: 55px;
+    width: 55px;
     border-radius: 50%;
 }
 
 .exit{
     width: 25px;
     height: 26.67px;
+    cursor: pointer;
 }
 .poptop{
     margin-top: 10%;
 }
 .top{
     margin-top: 3px;
+    cursor: pointer;
 }
 .bottom{
     margin-bottom: 44px;
@@ -1579,6 +1597,19 @@ body{
     font-size: 18px;
     line-height: 21px;
     color: #000000;
+}
+
+.name {
+    margin-right: 15px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+}
+.name-block {
+
 }
 
 .a3{
@@ -1603,6 +1634,7 @@ body{
     line-height: 23px;
     color: #1D8C00;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .hh1{
@@ -2313,6 +2345,11 @@ body{
 .popup-city-2.active{
     display: block;
 }
+.li_error {
+    color: black;
+    list-style-type: inherit;
+    width: 300px;
+}
 .popup-city-2:before {
     content: '';
     background: #000;
@@ -2433,10 +2470,7 @@ ul{
     flex-wrap: wrap;
     flex-direction: column;
 }
-li{
-    list-style-type: none;
-    color: #07bb14;
-}
+
 .city-div{
     width: calc(12.5% - 10px);
 }
@@ -2618,6 +2652,29 @@ li{
     }
 }
 @media (max-width: 767px){
+    .head {
+        height: 150px;
+    }
+    .text1{
+        width: 220px;
+        height: 40px;
+        margin-left: -215px;
+        border: 0;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+    }
+    .h1_1 {
+        margin-left: -215px;
+    }
+    .yoof2poy {
+        margin-bottom: 70px;
+    }
+    .m2 {
+        margin-top: 80px;
+        margin-left: -300px;
+    }
+
     .body{
         padding-left: 15px;
         padding-right: 15px;

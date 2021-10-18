@@ -6,14 +6,14 @@
                     <div class="head">
                         <div class="body">
                             <div class="FLEX ai">
-                                <div class="menu">
+                                <div class="menu" @click="openNav()">
                                     <hr class="ml">
                                     <hr class="ml1">
                                     <hr class="ml">
                                 </div>
-                                <img src="img/logo1.png" class="iuiuiu">
+                                <img src="./img/logo1.png" class="iuiuiu">
                                 <div class="flex200000">
-                                    <img src="img/tocha.png" class="tocha">
+                                    <img src="./img/tocha.png" class="tocha">
                                     <h1 class="m mm2">Москва</h1>
                                 </div>
                                 <div class="m2">
@@ -38,7 +38,7 @@
                             <div class="flex mt60">
                                 <input type="text" class="text"
                                        placeholder="Введите модель техники или воспользуйтесь фильтрами">
-                                <img src="img/lypa.png" class="lypa">
+                                <img src="./img/lypa.png" class="lypa">
                                 <button class="llll"><span class="lllll">ИСКАТЬ</span></button>
                             </div>
                             <h3 class="lll"><span class="plusy">+</span> Применить фильтры</h3>
@@ -62,23 +62,19 @@
                         <div>
                             <div class="FLEXspec">
                                 <div class="box_2028">
-                                    <div class="flex width350">
                                         <div class="mt22">
-                                            <img src="img/1.png" class="img_2">
-                                            <h3 class="H3">Зарегистрируйтесь, или войдите в<br>свой личный кабинет</h3>
-
+                                            <div><img src="./img/1.png" class="img_2"></div>
+                                            <h3 class="H32">Зарегистрируйтесь, или войдите в<br>
+                                                свой личный кабинет</h3>
                                         </div>
-                                    </div>
                                 </div>
                                 <div class="box_2028">
                                     <div class="flex">
-
                                         <div class="mt22">
-                                            <div><img src="img/2.png" class="img_3"></div>
+                                            <div><img src="./img/2.png" class="img_3"></div>
                                             <h3 class="H32">Введите в форму поиска модель нужного вам товара,<br>или
                                                 подберите
                                                 его при помощи наших умных фильтров</h3>
-
                                         </div>
                                     </div>
                                 </div>
@@ -88,7 +84,7 @@
                                     <div class="flex">
 
                                         <div class="mt22">
-                                            <img src="img/3.png" class="img_4">
+                                            <img src="./img/3.png" class="img_4">
                                             <h3 class="H33">Поздравляем, вы почти у цели. Ваша заявка отправлена
                                                 нашим<br>партнёрам,
                                                 которые готовы предложить вам лучшую цену. Вы<br>можете видеть сколько
@@ -105,7 +101,7 @@
                                     <div class="flex">
 
                                         <div class="mt22">
-                                            <img src="img/4.png" class="img_5">
+                                            <img src="./img/4.png" class="img_5">
                                             <h3 class="H34">Для запуска аукциона, вам нужно внести необходимую сумму,
                                                 обычно
                                                 это
@@ -123,7 +119,7 @@
                                     <div class="flexcenter2">
 
                                         <div class="mt22">
-                                            <img src="img/5.png" class="img_6">
+                                            <img src="./img/5.png" class="img_6">
                                             <h3 class="H35">Ура!!! Торги завершились. Вы можете быть уверены, что купили
                                                 свой
                                                 товар по самой лучшей цене. Вам остаётся только дождаться, когда вам
@@ -146,25 +142,25 @@
                         <h2 class="fghfgh">Наш сервис предоставляет широкие возможности</h2>
                         <div class="FLEXspectest">
                             <div class="a444">
-                                <img src="img/clock.png" class="size">
+                                <img src="./img/clock.png" class="size">
                                 <h2 class="h4">ЭКОНОМИЯ ВРЕМЕНИ</h2>
                                 <h3 class="h5">Вам не нужно тратить время на посещение магазинов в поиске нужного
                                     товара</h3>
                             </div>
                             <div class="a44">
-                                <img src="img/money.png" class="size">
+                                <img src="./img/money.png" class="size">
                                 <h2 class="h4">ЭКОНОМИЯ ДЕНЕГ</h2>
                                 <h3 class="h5">Вы приобретаете товар по минимальной цене</h3>
                             </div>
                             <div class="a4">
-                                <img src="img/ocenka.png" class="size">
+                                <img src="./img/ocenka.png" class="size">
                                 <h2 class="h4">ЧЕСТНЫЙ СЕРВИС</h2>
                                 <h3 class="h5">Yoof – место, где покупатели знают, что сделанные им предложения
                                     абсолютно
                                     честны, и условия будут исполнены магазинами так, как они это обещали</h3>
                             </div>
                             <div class="a4">
-                                <img src="img/star.png" class="size">
+                                <img src="./img/star.png" class="size">
                                 <h2 class="h4">ЗАБОТА О КЛИЕНТАХ</h2>
                                 <h3 class="h5">Мы стоим на стороне покупателей, и будем делать все, что в наших силах,
                                     для
@@ -181,7 +177,7 @@
                             <div class="flex">
                                 <input type="text" class="text"
                                        placeholder="Введите модель техники или воспользуйтесь фильтрами">
-                                <img src="img/lypa.png" class="lypa">
+                                <img src="./img/lypa.png" class="lypa">
                                 <button class="llll22"><span class="lllll">ИСКАТЬ</span></button>
                             </div>
                             <div class="FLEX5">
@@ -198,16 +194,16 @@
                         </div>
                         <h2 class="fghfgh">Статьи, обзоры, новости рынка</h2>
                         <div class="FLEXpngtest">
-                            <img src="img/11.png" class="png123">
-                            <img src="img/22.png" class="png123">
-                            <img src="img/33.png" class="png123">
+                            <img src="./img/11.png" class="png123">
+                            <img src="./img/22.png" class="png123">
+                            <img src="./img/33.png" class="png123">
                         </div>
                         <button class="buton"><span class="jkj">Читать все новости</span></button>
                     </div>
 
                     <div class="footer">
                         <div class="body3333">
-                            <img src="img/yoof2.png" class="yoof-yelo">
+                            <img src="./img/logo2.png" class="yoof-yelo">
                             <div>
                                 <h1 class="agh">О сервисе</h1>
                                 <a class="aa" href="#">Как работает сервис?</a>
@@ -216,13 +212,13 @@
                             </div>
                             <div>
                                 <h1 class="agh">Контакты</h1>
-                                <div class="flex"><img src="img/ins.png" class="ift"><a class="aa"
+                                <div class="flex"><img src="./img/ins.png" class="ift"><a class="aa"
                                                                                         href="#">Instagram</a>
                                 </div>
-                                <div class="flex"><img src="img/fac.png" class="ift"><a class="aa"
+                                <div class="flex"><img src="./img/fac.png" class="ift"><a class="aa"
                                                                                         href="#">Facebook</a>
                                 </div>
-                                <div class="flex"><img src="img/tel.png" class="ift"><a class="aa"
+                                <div class="flex"><img src="./img/tel.png" class="ift"><a class="aa"
                                                                                         href="#">Telegram</a>
                                 </div>
                             </div>
@@ -233,7 +229,7 @@
                     <div class="k">
                         <div class="popup192">
                             <div class="popup_reg">
-                                <img src="img/krest.png" class="krest">
+                                <img src="./img/krest.png" class="krest">
                                 <button class="button_popup"><span class="text_popup">Регистрация</span></button>
                                 <button class="button_popup3"><span class="text_popup1">Вход</span></button>
                             </div>
@@ -272,9 +268,9 @@
                             </div>
                             <h1 class="asdasdasd">Или авторизуйтесь через аккаунт в социальной сети</h1>
                             <div class="dsa">
-                                <a href="#"><img src="img/goo.png" class="gvf"></a>
-                                <a href="#"><img src="img/vk.png" class="vvv"></a>
-                                <a href="#"><img src="img/fec.png" class="gvf"></a>
+                                <a href="#"><img src="./img/goo.png" class="gvf"></a>
+                                <a href="#"><img src="./img/vk.png" class="vvv"></a>
+                                <a href="#"><img src="./img/fec.png" class="gvf"></a>
                             </div>
                         </div>
                     </div>
@@ -316,18 +312,18 @@
                 </div>
                 <div class="popup_password">
                     <div class="pas">
-                        <img src="img/krest.png" class="krest1">
+                        <img src="./img/krest.png" class="krest1">
                         <h1 class="asdasdad">ВВЕДИТЕ АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ</h1>
                         <h1 class="R50">Адрес электронной почты</h1>
                         <input type="text" class="text1">
                         <div class="flex000">
-                            <button class="button_popup2"><span class="text_popup">восстановить пароль</span></button>
+                            <button class="button_popup2"><span class="text_popup">ВОССТАНОВИТЬ ПАРОЛЬ</span></button>
                         </div>
                     </div>
                 </div>
                 <div class="pop_vos">
                     <div class="pas1">
-                        <img src="img/krest.png" class="krest1">
+                        <img src="./img/krest.png" class="krest1">
                         <h1 class="asdasdad">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</h1>
                         <h1 class="R50">Адрес электронной почты</h1>
                         <div class="fdsaf"><p class="p">Мы отправили письмо со ссылкой для смены пароля на указанный
@@ -343,7 +339,7 @@
                     <div class="k">
                         <div class="popup192">
                             <div class="popup_reg">
-                                <img src="img/krest.png" class="krest">
+                                <img src="./img/krest.png" class="krest">
                                 <button class="button_popup5"><span class="text_popup">Регистрация</span></button>
                                 <button class="button_popup--1"><span class="text_popup333">Вход</span></button>
                             </div>
@@ -370,9 +366,9 @@
                             </div>
                             <h1 class="asdasdasd">Или авторизуйтесь через аккаунт в социальной сети</h1>
                             <div class="dsa">
-                                <a href="#"><img src="img/goo.png" class="gvf"></a>
-                                <a href="#"><img src="img/vk.png" class="vvv"></a>
-                                <a href="#"><img src="img/fec.png" class="gvf"></a>
+                                <a href="#"><img src="./img/goo.png" class="gvf"></a>
+                                <a href="#"><img src="./img/vk.png" class="vvv"></a>
+                                <a href="#"><img src="./img/fec.png" class="gvf"></a>
                             </div>
                         </div>
                     </div>
@@ -401,7 +397,7 @@
 
             <div class="popup-2">
                 <div class="popup_22">
-                    <img src="img/krest.png" class="krest">
+                    <img src="./img/krest.png" class="krest">
                     <div class="body0 pad0">
                         <div class="flex100"><h1 class="pppp">ФИЛЬТРЫ</h1></div>
                         <h1 class="pppp fon-size300">Введите модель техники, которую Вы ищете, или воспользуйтесь нашими
@@ -409,7 +405,7 @@
                             фильтрами ниже</h1>
                         <div class="flex asw">
                             <input type="text" placeholder="Введите модель техники..." class="text-popup plac">
-                            <img src="img/lypa.png" class="lypa2">
+                            <img src="./img/lypa.png" class="lypa2">
                             <button class="button-filtr"><h1 class="pppp2">искать</h1></button>
                         </div>
                         <div class="flex100proc">
@@ -531,7 +527,7 @@
 
             <div class="popup-21">
                 <div class="popup_22">
-                    <img src="img/krest.png" class="krest">
+                    <img src="./img/krest.png" class="krest">
                     <div class="body0 pad0">
                         <div class="flex100"><h1 class="pppp">ФИЛЬТРЫ</h1></div>
                         <h1 class="pppp fon-size300">Введите модель техники, которую Вы ищете, или воспользуйтесь нашими
@@ -539,7 +535,7 @@
                             фильтрами ниже</h1>
                         <div class="flex asw">
                             <input type="text" placeholder="Введите модель техники..." class="text-popup plac">
-                            <img src="img/lypa.png" class="lypa2">
+                            <img src="./img/lypa.png" class="lypa2">
                             <button class="button-filtr22"><h1 class="pppp2">искать</h1></button>
                         </div>
                         <div class="flex100proc">
@@ -662,14 +658,14 @@
             <div class="popup-3">
 
                 <div class="popup_33">
-                    <img src="img/krest.png" class="krest">
+                    <img src="./img/krest.png" class="krest">
                     <div class="body0">
 
 
                         <div class="flexdddd">
                             <div class="flex wid">
                                 <input type="text" placeholder="Введите модель техники..." class="text-popup plac">
-                                <img src="img/lypa.png" class="lypa2">
+                                <img src="./img/lypa.png" class="lypa2">
                                 <button class="button-filtr"><h1 class="pppp2">искать</h1></button>
                             </div>
                         </div>
@@ -679,10 +675,10 @@
                             <div class="box-mini">
                                 <div class="dsa">
                                     <div class="box-img"></div>
-                                    <img src="img/super.png" class="size50">
+                                    <img src="./img/super.png" class="size50">
                                 </div>
                                 <h1 class="pppp10">Ноутбук ASUS VivoBook Max X541NC-DM114T</h1>
-                                <div class="set"><img src="img/sitiling.png" class="sitiling"></div>
+                                <div class="set"><img src="./img/sitiling.png" class="sitiling"></div>
                                 <div class="FLEX6">
                                     <h1 class="akty">Актуальная<br>текущая цена</h1>
                                     <a href="#" class="cena">20 000 ₽</a>
@@ -692,10 +688,10 @@
                             <div class="box-mini2">
                                 <div class="dsa">
                                     <div class="box-img"></div>
-                                    <img src="img/analog.png" class="size50">
+                                    <img src="./img/analog.png" class="size50">
                                 </div>
                                 <h1 class="pppp10">Ноутбук ASUS VivoBook Max X541NC-DM114T</h1>
-                                <div class="set"><img src="img/mvideo-2.png" class="Mvideo"></div>
+                                <div class="set"><img src="./img/mvideo-2.png" class="Mvideo"></div>
                                 <div class="FLEX6">
                                     <h1 class="akty">Актуальная<br>текущая цена</h1>
                                     <a href="#" class="cena">20 000 ₽</a>
@@ -705,10 +701,10 @@
                             <div class="box-mini3">
                                 <div class="dsa">
                                     <div class="box-img"></div>
-                                    <img src="img/analog.png" class="size50">
+                                    <img src="./img/analog.png" class="size50">
                                 </div>
                                 <h1 class="pppp10">Ноутбук ASUS VivoBook Max X541NC-DM114T</h1>
-                                <div class="set"><img src="img/eldorado.png" class="eldorado"></div>
+                                <div class="set"><img src="./img/eldorado.png" class="eldorado"></div>
                                 <div class="FLEX6">
                                     <h1 class="akty">Актуальная<br>текущая цена</h1>
                                     <a href="#" class="cena">20 000 ₽</a>
@@ -730,7 +726,7 @@
             </div>
             <div class="popup-4">
                 <div class="popup_44">
-                    <img src="img/krest.png" class="krest1">
+                    <img src="./img/krest.png" class="krest1">
                     <div class="body0">
                         <h1 class="gyl">СРАВНЕНИЕ</h1>
                         <div class="hr-medle">
@@ -764,15 +760,15 @@
             </div>
         </div>
         <div class="popup-city-2">
-            <div class="popup-city popup-city-2" id="modal_cinw_ctnr">
+            <div class="popup-city" id="modal_cinw_ctnr">
                 <div class="body-city">
                     <div class="header-city">
                         <div class="header-min">
-                            <img src="img/krest.png" class="krest">
-                            <img src="img/logoYoofEnd (1).png" class="sizelog">
+                            <img src="./img/krest.png" class="krest">
+                            <img src="./img/logo1.png" class="sizelog">
                             <div class="wid75">
                                 <input type="input" placeholder="Введите название города" class="input-city">
-                                <img src="img/lypa.png" class="lypa3">
+                                <img src="./img/lypa.png" class="lypa3">
                                 <hr class="hr-city">
                             </div>
                         </div>
@@ -1404,6 +1400,7 @@
 </template>
 
 <script>
+
 import jQuery from "jquery";
 
 const $ = jQuery;

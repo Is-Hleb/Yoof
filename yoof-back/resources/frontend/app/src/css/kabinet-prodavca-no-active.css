@@ -152,7 +152,7 @@ color: #000000;
 	background: #000;
 }
 
-.menu{ 
+.menu{
 	width: 45px;
 	background-color: #fff;
 }
@@ -393,7 +393,7 @@ color: #000000;
 
 .h1_11{
 	margin: 0;margin-bottom: 10px;
-	
+
 	margin-bottom: 20px;
 	font-family: Roboto;
 	font-style: normal;
@@ -541,7 +541,7 @@ color: #C4C4C4;
 	position: absolute;
 	top: 100px;
 	width: 100%;
-	display: none; 
+	display: none;
 	z-index: 100;
 }
 
@@ -551,10 +551,10 @@ color: #C4C4C4;
 .popup-66:before {
 	content: '';
 	background: #000;
-	position: fixed; 
+	position: fixed;
 	left: 0;
 	top: 0;
-	width: 100%; 
+	width: 100%;
 	height: 100%;
 	opacity: 0.7;
 	z-index: 9;
@@ -563,7 +563,7 @@ color: #C4C4C4;
 	position: absolute;
 	top: 100px;
 	width: 100%;
-	display: none; 
+	display: none;
 	z-index: 100;
 }
 
@@ -573,10 +573,10 @@ color: #C4C4C4;
 .popup-88:before {
 	content: '';
 	background: #000;
-	position: fixed; 
+	position: fixed;
 	left: 0;
 	top: 0;
-	width: 100%; 
+	width: 100%;
 	height: 100%;
 	opacity: 0.7;
 	z-index: 9;
@@ -633,7 +633,7 @@ body{
 	top: 470px;
 	margin: 0 auto;
 	width: 100%;
-	display: none; 
+	display: none;
 	z-index: 100;
 }
 
@@ -656,27 +656,27 @@ body{
 .popup:before {
 	content: '';
 	background: #000;
-	position: fixed; 
+	position: fixed;
 	left: 0;
 	top: 0;
-	width: 100%; 
+	width: 100%;
 	height: 100%;
 	opacity: 0.7;
 	z-index: 9;
 }
 
 .krest{
-	width: 30px; height: 30px; 
-	margin-top: 15px; 
+	width: 30px; height: 30px;
+	margin-top: 15px;
 	position: absolute;
-	right: 15px; 
+	right: 15px;
 	cursor: pointer;
 }
 .krest3{
-	width: 30px; height: 30px; 
-	margin-top: 15px; 
+	width: 30px; height: 30px;
+	margin-top: 15px;
 	position: absolute;
-	right: 15px; 
+	right: 15px;
 	cursor: pointer;
 }
 .moi-dani{
@@ -716,7 +716,7 @@ body{
 	position: absolute;
 	margin: 0 auto;
 	width: 100%;
-	display: none; 
+	display: none;
 	z-index: 100;
 }
 
@@ -727,10 +727,10 @@ body{
 .popup-2:before {
 	content: '';
 	background: #000;
-	position: fixed; 
+	position: fixed;
 	left: 0;
 	top: 0;
-	width: 100%; 
+	width: 100%;
 	height: 100%;
 	opacity: 0.7;
 	z-index: 9;
@@ -781,9 +781,9 @@ color: #1D8C00;
 }
 .ppppp:after {
 display: block;
-content: ""; 
-height: 3px; 
-width: 0%; 
+content: "";
+height: 3px;
+width: 0%;
 background-color: #EBF005;
 transition: width 0.4s ease-in-out;
 }
@@ -965,7 +965,7 @@ color: #000000;
 	cursor: pointer;
 
 	margin: 0;
-	
+
 	font-family: Roboto;
 font-style: normal;
 font-weight: normal;
@@ -1382,7 +1382,7 @@ color: #000000;
 	position: absolute;
 	top: 100px;
 	width: 100%;
-	display: none; 
+	display: none;
 	z-index: 100;
 }
 
@@ -1392,10 +1392,10 @@ color: #000000;
 .popup-10:before {
 	content: '';
 	background: #000;
-	position: fixed; 
+	position: fixed;
 	left: 0;
 	top: 0;
-	width: 100%; 
+	width: 100%;
 	height: 100%;
 	opacity: 0.7;
 	z-index: 9;
@@ -1543,7 +1543,7 @@ width: 300px;
 @media (max-width: 992px){
 	.body{
 		max-width: 750px;
-	}	
+	}
 	.flex1{
 		display: block;
 	}
