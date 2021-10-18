@@ -17,11 +17,12 @@
 					id="components-form-demo-normal-login"
 					:form="form"
 					class="login-form"
-					@submit="handleSubmit"
+					@click="handleSubmit"
 					:hideRequiredMark="true"
 				>
 					<a-form-item class="mb-10" label="Email" :colon="false">
 						<a-input
+                            v-model="user.email"
 						v-decorator="[
 						'email',
 						{ rules: [{ required: true, message: 'Это поле обязательно!' }] },
@@ -29,6 +30,7 @@
 					</a-form-item>
 					<a-form-item class="mb-5" label="Пароль" :colon="false">
 						<a-input
+                            v-model="user.password"
 						v-decorator="[
 						'password',
 						{ rules: [{ required: true, message: 'Это поле обязательно!' }] },
@@ -38,21 +40,21 @@
     					<a-switch v-model="rememberMe" /> Запомнить меня
 					</a-form-item>
 					<a-form-item>
-						<a-button type="primary" block html-type="submit" class="login-form-button">
+						<a-button v-on:click="login" type="primary" block html-type="submit" class="login-form-button">
 							ВОЙТИ
 						</a-button>
 					</a-form-item>
 				</a-form>
 				<!-- / Sign In Form -->
 
-			</a-col>
-			<!-- / Sign In Form Column -->
+            </a-col>
+            <!-- / Sign In Form Column -->
 
-			<!-- Sign In Image Column -->
-			<a-col class="col-img">
-				<img src="images/yoof2.png" alt="">
-			</a-col>
-			<!-- Sign In Image Column -->
+            <!-- Sign In Image Column -->
+            <a-col class="col-img">
+                <img src="public/images/yoof2.png" alt="">
+            </a-col>
+            <!-- Sign In Image Column -->
 
 		</a-row>
 
@@ -66,6 +68,10 @@
 			return {
 				// Binded model property for "Sign In Form" switch button for "Remember Me" .
 				rememberMe: true,
+                user: {
+				    email: '',
+                    password: ''
+                }
 			}
 		},
 		beforeCreate() {
@@ -82,6 +88,9 @@
 					}
 				});
 			},
+            login() {
+			    this.$store.dispatch('loginUser', this.user )
+            }
 		},
 	})
 

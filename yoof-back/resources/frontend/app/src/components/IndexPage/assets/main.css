@@ -711,7 +711,6 @@ input{outline:none;}
 }
 
 .img_2{
-    display: flex;
     margin-bottom: 3%;
     width: 200px;
 }

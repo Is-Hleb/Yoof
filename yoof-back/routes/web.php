@@ -17,3 +17,7 @@ Route::any('/{any}', function(){
     return view('app');
 })->where('any', '^(?!api).*$');
 
+Route::get('/admin{any}', function () {
+    return view('admin');
+})->where('any', '.*');
+

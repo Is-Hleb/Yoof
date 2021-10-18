@@ -27,6 +27,7 @@ const routes = [
         component: () => import('../components/BuyerCabinet/Index')
 
     },
+
 ]
 
 export default routes

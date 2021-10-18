@@ -32,6 +32,10 @@ Route::group(['middleware' => 'auth:api'], function () {
     });
 });
 
+Route::get('/token', function () {
+   return 'Hello World';
+});
+
 Route::get('/category', function () {
     return json_encode(\App\Models\Category::all());
 });

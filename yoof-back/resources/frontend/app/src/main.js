@@ -6,7 +6,10 @@ import router from './router'
 import store from './store'
 
 
+import './components/IndexPage/assets/main.css';
+
 Vue.use(VueAxios, axios);
+Vue.config.productionTip = false;
 
 new Vue({
   router,

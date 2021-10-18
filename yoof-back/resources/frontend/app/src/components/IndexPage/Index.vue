@@ -6,6 +6,7 @@
 
                     <head-component/>
 
+                   
                     <hr class="line">
                     <div class="body">
                         <div class="ta">
@@ -44,23 +45,20 @@
                         <div>
                             <div class="FLEXspec">
                                 <div class="box_2028">
-                                    <div class="flex width350">
                                         <div class="mt22">
-                                            <img src="./img/1.png" class="img_2">
-                                            <h3 class="H3">Зарегистрируйтесь, или войдите в<br>свой личный кабинет</h3>
 
+                                            <div><img src="./img/1.png" class="img_2"></div>
+                                            <h3 class="H32">Зарегистрируйтесь, или войдите в<br>
+                                                свой личный кабинет</h3>
                                         </div>
-                                    </div>
                                 </div>
                                 <div class="box_2028">
                                     <div class="flex">
-
                                         <div class="mt22">
                                             <div><img src="./img/2.png" class="img_3"></div>
                                             <h3 class="H32">Введите в форму поиска модель нужного вам товара,<br>или
                                                 подберите
                                                 его при помощи наших умных фильтров</h3>
-
                                         </div>
                                     </div>
                                 </div>
@@ -189,7 +187,8 @@
 
                     <div class="footer">
                         <div class="body3333">
-                            <img src="./img/yoof2.png" class="yoof-yelo">
+
+                            <img src="./img/logo2.png" class="yoof-yelo">
                             <div>
                                 <h1 class="agh">О сервисе</h1>
                                 <a class="aa" href="#">Как работает сервис?</a>
@@ -199,13 +198,14 @@
                             <div>
                                 <h1 class="agh">Контакты</h1>
                                 <div class="flex"><img src="./img/ins.png" class="ift"><a class="aa"
-                                                                                          href="#">Instagram</a>
+
+                                                                                        href="#">Instagram</a>
                                 </div>
                                 <div class="flex"><img src="./img/fac.png" class="ift"><a class="aa"
-                                                                                          href="#">Facebook</a>
+                                                                                        href="#">Facebook</a>
                                 </div>
                                 <div class="flex"><img src="./img/tel.png" class="ift"><a class="aa"
-                                                                                          href="#">Telegram</a>
+                                                                                        href="#">Telegram</a>
                                 </div>
                             </div>
                         </div>
@@ -306,7 +306,7 @@
                         <h1 class="R50">Адрес электронной почты</h1>
                         <input type="text" class="text1">
                         <div class="flex000">
-                            <button class="button_popup2"><span class="text_popup">восстановить пароль</span></button>
+                            <button class="button_popup2"><span class="text_popup">ВОССТАНОВИТЬ ПАРОЛЬ</span></button>
                         </div>
                     </div>
                 </div>
@@ -757,12 +757,13 @@
             </div>
         </div>
         <div class="popup-city-2">
-            <div class="popup-city popup-city-2" id="modal_cinw_ctnr">
+            <div class="popup-city" id="modal_cinw_ctnr">
                 <div class="body-city">
                     <div class="header-city">
                         <div class="header-min">
                             <img src="./img/krest.png" class="krest">
-                            <img src="./img/logoYoofEnd (1).png" class="sizelog">
+
+                            <img src="./img/logo1.png" class="sizelog">
                             <div class="wid75">
                                 <input type="input" placeholder="Введите название города" class="input-city">
                                 <img src="./img/lypa.png" class="lypa3">
@@ -1397,6 +1398,7 @@
 </template>
 
 <script>
+
 import jQuery from "jquery";
 import HeadComponent from "@/components/Templates/Header";
 
