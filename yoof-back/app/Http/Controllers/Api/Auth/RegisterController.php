@@ -7,6 +7,7 @@ use App\Models\CompanyData;
 use App\Models\User;
 use App\Models\UserData;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -21,14 +22,14 @@ class RegisterController extends Controller
             'role' => 'required',
         ]);
         if($validator->fails()) {
-            return $validator->errors();
+            return ['errors' => $validator->errors(), 'code'=> 'err'];
         }
         $userToFill = $validator->safe();
         $user = new User([
             'email' => $userToFill['email'],
             'password' => Hash::make($userToFill['password']),
             'role' => $userToFill['role'],
-            'api_token' => Str::random(60);
+            'api_token' => Str::random(60),
         ]);
         $role = $userToFill['role'];
         $responseData = [
@@ -78,8 +79,10 @@ class RegisterController extends Controller
             $responseData['data'] = $companyData;
         }
 
+        Auth::login($user);
 
         $responseData['token'] = $user->api_token;
+        $responseData['code'] = 'success';
         return response($responseData, '200');
     }
 }

@@ -1,20 +1,32 @@
+import auth from "@/router/middleware/auth";
+
 const routes = [
     {
-        path: '',
+        path: '/',
         name: 'index',
         component: () => import('../components/IndexPage/Index')
     },
     {
-        path: '/cabinet',
-        name: 'buyer-cabinet',
-        component: () => import('../components/BuyerCabinet/Index')
+        path: '/login',
+        name: 'login',
+        component: () => import('../components/Auth/Login'),
     },
     {
-        path: '/cabinet2',
-        name: 'seller-cabinet-no-active',
-        component: () => import('../components/SellerCabinetNoActive/Index')
+        path: '/register',
+        name: 'register',
+        component: () => import('../components/Auth/Register')
     },
+    {
+        path: '/cabinet',
+        name: 'cabinet',
+        meta: {
+            middleware: [
+                auth,
+            ]
+        },
+        component: () => import('../components/BuyerCabinet/Index')
 
+    },
 
 ]
 

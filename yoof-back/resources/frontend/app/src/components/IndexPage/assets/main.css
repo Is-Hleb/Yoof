@@ -97,11 +97,7 @@
     color: #909090;
 }
 
-.head{
-    width: 100%;
-    height: 50px;
-    background-color: #fff;
-}
+
 
 .lypa{
     position: absolute;
@@ -123,11 +119,7 @@
 .mm2{
     margin: 0;
 }
-.tocha{
-    margin-right: 3px;
-    width: 13px;
-    height: 18px;
-}
+
 .plac{
     padding-left: 55px;
 }
@@ -259,10 +251,7 @@
     border-radius: 3px;
 }
 
-.iuiuiu{
-    width: 150px;
-    margin-left: 30px;
-}
+
 .menu{
     justify-content: flex-start;
     width: 45px;
@@ -357,24 +346,6 @@
     text-align: left;
 }
 
-
-.ml1{
-    border: 0;
-    height: 3px;
-    background: #000;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.ml{
-    height: 3px;
-    border: 0;
-    background: #000;
-    margin: 0;
-}
-
 .mt22{
     margin-top: 2%;
 }
@@ -417,11 +388,7 @@
 .ai{
     align-items: center;
 }
-.FLEX{
-    justify-content: space-between;
-    position: relative;
-    display: flex;
-}
+
 .FLEXpngtest{
     justify-content: space-between;
     position: relative;

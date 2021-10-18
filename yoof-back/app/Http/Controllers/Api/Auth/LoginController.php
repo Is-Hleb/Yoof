@@ -17,10 +17,16 @@ class LoginController extends Controller
         ]);
         $data = $validator->safe()->toArray();
         if(!Auth::attempt($data)) {
-            return response(['register']);
+            return response(json_encode([
+                'code' => 'err',
+            ]));
         }
         Auth::user()->api_token = Str::random(60);
         Auth::user()->save();
-        return response(['user' => Auth::user(), 'token' => Auth::user()->api_token]);
+        return response([
+            'user' => Auth::user(),
+            'token' => Auth::user()->api_token,
+            'data' => Auth::user()->data
+        ]);
     }
 }

@@ -3,27 +3,10 @@
         <div class="wrapper">
             <div class="main_blok">
                 <div class="blok">
-                    <div class="head">
-                        <div class="body">
-                            <div class="FLEX ai">
-                                <div class="menu" @click="openNav()">
-                                    <hr class="ml">
-                                    <hr class="ml1">
-                                    <hr class="ml">
-                                </div>
-                                <img src="./img/logo1.png" class="iuiuiu">
-                                <div class="flex200000">
-                                    <img src="./img/tocha.png" class="tocha">
-                                    <h1 class="m mm2">Москва</h1>
-                                </div>
-                                <div class="m2">
-                                    <h1 class="m">Вход</h1>
-                                    <hr class="hr2">
-                                    <h1 class="m">Регистрация</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    <head-component/>
+
+                   
                     <hr class="line">
                     <div class="body">
                         <div class="ta">
@@ -63,6 +46,7 @@
                             <div class="FLEXspec">
                                 <div class="box_2028">
                                         <div class="mt22">
+
                                             <div><img src="./img/1.png" class="img_2"></div>
                                             <h3 class="H32">Зарегистрируйтесь, или войдите в<br>
                                                 свой личный кабинет</h3>
@@ -203,6 +187,7 @@
 
                     <div class="footer">
                         <div class="body3333">
+
                             <img src="./img/logo2.png" class="yoof-yelo">
                             <div>
                                 <h1 class="agh">О сервисе</h1>
@@ -213,6 +198,7 @@
                             <div>
                                 <h1 class="agh">Контакты</h1>
                                 <div class="flex"><img src="./img/ins.png" class="ift"><a class="aa"
+
                                                                                         href="#">Instagram</a>
                                 </div>
                                 <div class="flex"><img src="./img/fac.png" class="ift"><a class="aa"
@@ -225,7 +211,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="popup_iner">
+
+                <!-- ## REGISTER Block-->
+                <div v-bind:class="{visible: !isAuth}" class="popup_iner">
                     <div class="k">
                         <div class="popup192">
                             <div class="popup_reg">
@@ -244,26 +232,26 @@
                             <div class="flex32323223">
                                 <div class="margin-right">
                                     <h1 class="R">Фамилия</h1>
-                                    <input class="text666" type="text" name="1">
+                                    <input class="text666" v-model="reg.user.surname" type="text" name="1">
                                     <h1 class="R">Телефон</h1>
-                                    <input class="text1" type="text" name="1">
+                                    <input class="text1" v-model="reg.user.phone" type="text" name="1">
                                 </div>
                                 <div class="ittt">
                                     <h1 class="R">Имя</h1>
-                                    <input class="text666" type="text" name="1">
+                                    <input class="text666" v-model="reg.user.name" type="text" name="1">
                                     <h1 class="R">Адрес электронной почты</h1>
-                                    <input class="text1" type="text" name="1">
+                                    <input class="text1" v-model="reg.user.email" type="text" name="1">
                                 </div>
                                 <div>
                                     <h1 class="R">Отчество</h1>
-                                    <input class="text666" type="text" name="1">
+                                    <input v-model="reg.user.patronymic" class="text666" type="text" name="1">
                                     <div class="FLEXasd"><h1 class="R">Пароль</h1>
                                         <h1 href="#" class="R2">Забыли пароль?</h1></div>
-                                    <input class="text1" type="text" name="1">
+                                    <input v-model="reg.user.password" class="text1" type="text" name="1">
                                 </div>
                             </div>
                             <div class="flex000">
-                                <button class="button_popup1"><span class="text_popup">ЗАРЕГИСТРИРОВАТЬСЯ</span>
+                                <button class="button_popup1" v-on:click="registerFormSend"><span class="text_popup">ЗАРЕГИСТРИРОВАТЬСЯ</span>
                                 </button>
                             </div>
                             <h1 class="asdasdasd">Или авторизуйтесь через аккаунт в социальной сети</h1>
@@ -275,7 +263,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="popup_iner_2">
+                <!--## REGISTER Block-->
+                <div v-bind:class="{visible: !isAuth}" class="popup_iner_2">
                     <div class="popup1922">
 
                         <div class="noflex">
@@ -310,7 +299,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="popup_password">
+                <div v-bind:class="{visible: !isAuth}" class="popup_password">
                     <div class="pas">
                         <img src="./img/krest.png" class="krest1">
                         <h1 class="asdasdad">ВВЕДИТЕ АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ</h1>
@@ -335,7 +324,7 @@
                     </div>
                 </div>
 
-                <div class="popup_iner_3">
+                <div v-bind:class="{visible: !isAuth}" class="popup_iner_3">
                     <div class="k">
                         <div class="popup192">
                             <div class="popup_reg">
@@ -344,25 +333,33 @@
                                 <button class="button_popup--1"><span class="text_popup333">Вход</span></button>
                             </div>
                             <h1 class="ki">ВОЙТИ КАК</h1>
-                            <div class="dsa">
-                                <div class="flex"><input class="rado2" type="radio" name="10" id="answer1"
-                                                         checked="checked">
-                                    <h3 class="p1">Покупатель</h3></div>
-                                <div class="flex"><input class="rado3" type="radio" name="10" id="answer2">
-                                    <h3 class="p1">Продавец (юридическое лицо)</h3></div>
-                            </div>
+                            <form>
+                                <div class="dsa">
+                                    <div class="flex"><input class="rado2" v-model.lazy="reg" value="true" type="radio"
+                                                             name="10"
+                                                             id="answer1"
+                                                             checked="checked">
+                                        <h3 class="p1">Покупатель</h3></div>
+                                    <div class="flex"><input class="rado3" v-model.lazy="reg" value="false" type="radio"
+                                                             name="10"
+                                                             id="answer2">
+                                        <h3 class="p1">Продавец (юридическое лицо)</h3></div>
+                                </div>
+                            </form>
+
                             <div class="dsa3">
                                 <div><h1 class="R">Адрес электронной почты</h1>
-                                    <input class="text2928" type="text" name="1"></div>
+                                    <input v-model="log.user.email" class="text2928" type="email" name="1"></div>
                                 <div>
                                     <div class="FLEX wid250">
                                         <h1 class="R">Пароль</h1>
                                         <a href="#" class="R2">Забыли пароль?</a>
                                     </div>
-                                    <input class="text1" type="text" name="1"></div>
+                                    <input v-model="log.user.password" class="text1" type="password" name="1"></div>
                             </div>
                             <div class="flex000">
-                                <button class="button_popup1"><span class="text_popup904">ВОЙТИ</span></button>
+                                <button v-on:click="loginFormSend" class="button_popup1"><span class="text_popup904">ВОЙТИ</span>
+                                </button>
                             </div>
                             <h1 class="asdasdasd">Или авторизуйтесь через аккаунт в социальной сети</h1>
                             <div class="dsa">
@@ -765,6 +762,7 @@
                     <div class="header-city">
                         <div class="header-min">
                             <img src="./img/krest.png" class="krest">
+
                             <img src="./img/logo1.png" class="sizelog">
                             <div class="wid75">
                                 <input type="input" placeholder="Введите название города" class="input-city">
@@ -1402,17 +1400,49 @@
 <script>
 
 import jQuery from "jquery";
+import HeadComponent from "@/components/Templates/Header";
 
 const $ = jQuery;
 window.$ = $;
 
 export default {
     name: 'Index',
-    props: {
-        msg: String
+    components: {HeadComponent},
+    computed: {
+        isAuth() {
+            return this.$store.state.user.isAuth
+        },
     },
     data() {
-        return {}
+        return {
+            reg: {
+                user: {
+                    name: '',
+                    surname: '',
+                    password: '',
+                    email: '',
+                    patronymic: '',
+                    phone: '',
+                    role: 'user',
+                }
+            },
+            log: {
+                user: {
+                    email: '',
+                    password: '',
+                }
+            }
+        }
+    },
+    methods: {
+        registerFormSend() {
+            let data = this.reg.user
+            this.$store.dispatch('registerUser', data)
+        },
+        loginFormSend() {
+            let data = this.log.user
+            this.$store.dispatch('loginUser', data)
+        }
     },
     mounted() {
         $(function () {
@@ -1614,4 +1644,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="css" src="./assets/main.css">
+    .visible {
+        visibility: hidden;
+    }
 </style>

@@ -1,3 +1,6 @@
 export const state = {
-    message: "VANIA PIDOR"
+    user: {
+        isAuth: localStorage.getItem('isAuth') === 'true',
+        token: localStorage.getItem('token') || '',
+    },
 }

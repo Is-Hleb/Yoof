@@ -1,27 +1,7 @@
 <template>
     <div>
     <div class="main_bloc">
-        <div class="head">
-            <div class="body">
-                <div class="flexbetween aiic">
-                    <div class="menu">
-                        <hr class="ml">
-                        <hr class="ml1">
-                        <hr class="ml">
-                    </div>
-                    <img src="./img/logo1.png" class="yoof2poy">
-                    <div class="flex200000">
-                        <img src="./img/tocha.png" class="tocha">
-                        <h1 class="m mm2">Москва</h1>
-                    </div>
-                    <div class="m2">
-                        <h1 class="m">Вход</h1>
-                        <hr class="hr2">
-                        <h1 class="m">Регистрация</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <head-component></head-component>
         <hr class="line">
         <img src="./img/heade.png" class="headepo">
         <div class="bodynomer1">
@@ -31,9 +11,9 @@
                     <div class="poptop">
                         <div class="flex">
                             <h1 class="a2">Мой баланс:</h1>
-                            <a href="#" class="yelow">0</a><span class="yelow" s>₽</span>
+                            <a href="#" class="yelow">0</a><span class="yelow">₽</span>
                         </div>
-                        <h1 class="a2 top"><span class="yelow" s>+</span> Пополнить баланс</h1>
+                        <h1 class="a2 top"><span class="yelow">+</span> Пополнить баланс</h1>
                     </div>
                     <img class="img" src="./img/img.png">
                     <h1 class="a2">Иван</h1>
@@ -1634,12 +1614,14 @@
 </template>
 <script>
 import JQuery from 'jquery'
+import HeadComponent from "@/components/Templates/Header";
 const $ = JQuery
 window.$ = $
 
 
 export default {
-    name: "buyer-cabinet",
+    name: "cabinet",
+    components: {HeadComponent},
     data () {
         return {
             errors: [],
