@@ -90,7 +90,7 @@
 			value: 5011,
 		},
 		{
-			title: "На проверке документов от ЮЛ: ",
+			title: "Документов на проверке:",
 			value: 0
 		},
 	] ;
@@ -183,7 +183,7 @@
 		{
 			key: '6',
 			company: {
-				name: 'Redesign Online Store',
+                    name: 'Redesign Online Store',
 				logo: 'images/logos/logo-invision.svg',
 			},
 			members: [ "images/face-1.jpg", "images/face-4.jpg", "images/face-3.jpg", ],

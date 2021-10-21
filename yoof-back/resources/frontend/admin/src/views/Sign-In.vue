@@ -22,7 +22,6 @@
 				>
 					<a-form-item class="mb-10" label="Email" :colon="false">
 						<a-input
-                            v-model="user.email"
 						v-decorator="[
 						'email',
 						{ rules: [{ required: true, message: 'Это поле обязательно!' }] },
@@ -30,17 +29,16 @@
 					</a-form-item>
 					<a-form-item class="mb-5" label="Пароль" :colon="false">
 						<a-input
-                            v-model="user.password"
 						v-decorator="[
 						'password',
 						{ rules: [{ required: true, message: 'Это поле обязательно!' }] },
 						]" type="password" placeholder="Пароль" />
 					</a-form-item>
 					<a-form-item class="mb-10">
-    					<a-switch v-model="rememberMe" /> Запомнить меня
+    					<a-switch /> Запомнить меня
 					</a-form-item>
 					<a-form-item>
-						<a-button v-on:click="login" type="primary" block html-type="submit" class="login-form-button">
+						<a-button type="primary" block html-type="submit" class="login-form-button">
 							ВОЙТИ
 						</a-button>
 					</a-form-item>
@@ -66,12 +64,6 @@
 	export default ({
 		data() {
 			return {
-				// Binded model property for "Sign In Form" switch button for "Remember Me" .
-				rememberMe: true,
-                user: {
-				    email: '',
-                    password: ''
-                }
 			}
 		},
 		beforeCreate() {
@@ -88,9 +80,6 @@
 					}
 				});
 			},
-            login() {
-			    this.$store.dispatch('loginUser', this.user )
-            }
 		},
 	})
 

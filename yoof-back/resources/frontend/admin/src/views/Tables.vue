@@ -82,7 +82,7 @@
 			key: '1',
 			author: {
 				avatar: 'images/face-2.jpg',
-				name: 'Васкович Иван Вадимович',
+				name: 'Иван Иванов Инанонович',
 				email: 'ivan@mail.com',
 			},
 			status: 1,
@@ -92,8 +92,8 @@
 			key: '2',
 			author: {
 				avatar: 'images/face-3.jpg',
-				name: 'Ищенко Глеб Владимирович',
-				email: 'hleb@mail.com',
+				name: 'Иван Иванов Инанонович',
+				email: 'ivanov@mail.com',
 			},
 			status: 0,
 			employed: '23/12/20',
@@ -102,8 +102,8 @@
 			key: '3',
 			author: {
 				avatar: 'images/face-1.jpg',
-				name: 'Галимская Татьяна Николаевна',
-				email: 'galimskaya@mail.com',
+				name: 'Иван Иванов Инанонович',
+				email: 'ivanonich@mail.com',
 			},
 			status: 1,
 			employed: '13/04/19',
@@ -112,8 +112,8 @@
 			key: '4',
 			author: {
 				avatar: 'images/face-4.jpg',
-				name: 'Кондратьева Людмила Николаевна',
-				email: 'kondratyava@mail.com',
+				name: 'Иван Иванов Инанонович',
+				email: 'ivan@mail.com',
 			},
 			status: 1,
 			employed: '03/04/21',
@@ -122,8 +122,8 @@
 			key: '5',
 			author: {
 				avatar: 'images/face-5.jpeg',
-				name: 'Мельник Константин Александрович',
-				email: 'melnik@mail.com',
+				name: 'Иван Иванов Инанонович',
+				email: 'ivanov@mail.com',
 			},
 			status: 0,
 			employed: '23/03/20',
@@ -132,8 +132,8 @@
 			key: '6',
 			author: {
 				avatar: 'images/face-6.jpeg',
-				name: 'Степанова Надежда Александровна',
-				email: 'stepanova@mail.com',
+				name: 'Иван Иванов Инанонович',
+				email: 'ivanovich@mail.com',
 			},
 			status: 0,
 			employed: '14/04/17',

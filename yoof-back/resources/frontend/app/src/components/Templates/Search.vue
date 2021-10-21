@@ -1,0 +1,316 @@
+<template>
+    <div class="background-image">.
+        <div class="people">
+            <h1 class="h1">ПОЛУЧИТЕ СВОЕ ЭКСКЛЮЗИВНОЕ ПРЕДЛОЖЕНИЕ</h1>
+        </div>
+        <div class="connect">
+            <h2 class="connect2">Сотни магазинов электроники готовы участвовать в аукционе, за право предложить вам свой товар</h2>
+        </div>
+        <div class="flex mt60">
+            <a-input-search
+                placeholder="Введите модель техники или воспользуйтесь фильтрами"
+                enter-button="Искать"
+                size="large"
+                class="width-input"
+            />
+        </div>
+        <div class="flex-space-between">
+            <h2 class="h202"></h2>
+            <h3 class="text-add-filter" @click="() => visibleModalFilter = true"><span class="plusy">+</span> Применить фильтры</h3>
+        </div>
+        <a-modal
+            title="Применение фильтров"
+            :visible="visibleModalFilter"
+            @cancel="handleExit"
+            width="1200px"
+        >
+            <a-form
+                class="login-form"
+                @submit="handleSubmit"
+            >
+                <div class="body0 pad0">
+                    <img src="./img/logo2.png" class="slider-icon" style="display: block">
+                    <div><h1 class="pppp">ФИЛЬТРЫ</h1></div>
+                    <h1 class="pppp fon-size300">Введите модель техники, которую Вы ищете, или воспользуйтесь нашими умными фильтрами ниже</h1>
+                    <div class="flex asw">
+                        <a-input-search placeholder="Введите модель техники..."
+                                        enter-button="Искать"
+                                        size="large"
+                                        style="margin-bottom: 10px; margin-top: 10px">
+                        </a-input-search>
+                    </div>
+                    <div class="flex-filter-block">
+                        <h1 class="ppppp">Холодильники</h1>
+                        <h1 class="ppppp43">Ноутбуки</h1>
+                        <h1 class="ppppp90">Пылесосы</h1>
+                    </div>
+                    <div class="flex-filter-block">
+                        <h1 class="ppppp">Телевизоры</h1>
+                        <h1 class="ppppp">Смартфоны</h1>
+                        <h1 class="ppppp">Стиральные машины</h1>
+                    </div>
+                    <div class="flex-filter-block">
+                        <div>
+                            <h1 class="pppp">Диагональ</h1>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">23”–24” (58 см–60см)</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">30”–32” (76 см–81см)</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">40”–43” (101 см–109см)</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">49”–55” (127 см–139см)</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">60”–70” (152 см–178см)</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">70”–80” (178 см–203см)</p></div>
+                            <h1 class="ppppp">Показать все ></h1>
+                        </div>
+                        <div>
+                            <h1 class="pppp-pop">Цвет</h1>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">Белый</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">Серебристый</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">Черный</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">Серый</p></div>
+                            <h1 class="ppppp">Показать все ></h1>
+                        </div>
+                        <div>
+                            <h1 class="pppp">Диагональ</h1>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">23”–24” (58 см–60см)</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">30”–32” (76 см–81см)</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">40”–43” (101 см–109см)</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">49”–55” (127 см–139см)</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">60”–70” (152 см–178см)</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">70”–80” (178 см–203см)</p></div>
+                            <h1 class="ppppp">Показать все ></h1>
+                        </div>
+                    </div>
+                    <div class="flex-filter-block">
+                        <div>
+                            <h1 class="pppp">Бренд</h1>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">LG</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">SAMSUNG</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">SONY</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">TCL</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">BBK</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">XIAOMI</p></div>
+                            <h1 class="ppppp">Показать все ></h1>
+                        </div>
+                        <div>
+                            <h1 class="pppp">Бренд</h1>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">LG</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">SAMSUNG</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">SONY</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">TCL</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">BBK</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">XIAOMI</p></div>
+                            <h1 class="ppppp">Показать все ></h1>
+                        </div>
+                        <div>
+                            <h1 class="pppp">Бренд</h1>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">LG</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">SAMSUNG</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">SONY</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">TCL</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">BBK</p></div>
+                            <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">XIAOMI</p></div>
+                            <h1 class="ppppp">Показать все ></h1>
+                        </div>
+                    </div>
+                    <div class="FLEX5 ai fmtp">
+                        <h1 class="ppppp10">Очистить фильтры</h1>
+                        <div class="flex-pop" style="margin-left: 10px"><button class="button-filter-search"><span class="pppp">НАЧАТЬ ПОИСК</span></button></div>
+                        <h1 class="colwhi">Очистить фильтры</h1>
+                    </div>
+                </div>
+            </a-form>
+        </a-modal>
+    </div>
+</template>
+
+<script>
+export default {
+    name: "Search",
+    data() {
+        return {
+            visible: true,
+            visibleModalFilter: false
+        };
+    },
+    methods: {
+        showModal() {
+            this.visible = true;
+        },
+        handleExit() {
+            this.visibleModalFilter = false;
+        },
+    }
+}
+</script>
+
+<style scoped>
+
+.ant-form-item {
+    margin-bottom: 1px;
+}
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: 350px;
+    line-height: 160px;
+    background: white;
+    overflow: hidden;
+}
+
+.ant-carousel .custom-slick-arrow {
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+    color: black;
+    background-color: rgba(31, 45, 61, 0.11);
+    opacity: 0.3;
+}
+.ant-carousel .custom-slick-arrow:before {
+    display: none;
+}
+.ant-carousel .custom-slick-arrow:hover {
+    opacity: 0.5;
+}
+
+.ant-carousel .slick-slide h3 {
+    color: #fff;
+}
+
+.ant-carousel >>> .slick-slide h3 {
+    color: #fff;
+}
+
+.slider-icon {
+    width: 200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.flex-filter-block {
+    justify-content: space-between;width: 100%;
+    position: relative;
+    display: flex;
+}
+#components-layout-demo-side .logo {
+    height: 40px;
+    width: 150px;
+}
+
+.background-image {
+    background-image: url("./img/background.png");
+    height: 510px;
+}
+
+
+.width-input {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-add-filter {
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: white;
+    right: 15px;
+    margin-right: 10px;
+}
+.h1 {
+
+    margin-top: -15px;
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 124.68%;
+    text-align: center;
+    color: white;
+    -webkit-text-stroke: 0.5px black;
+
+}
+
+.ant-modal-footer {
+    display: none;
+}
+
+.checkbox {
+    margin-bottom: 10px;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.p {
+
+}
+
+.button-filter-search{
+    border: 0;
+    width: 200px;
+    height: 60px;
+    background: #EBF005;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.flex {
+    position: relative;
+    display: flex;
+}
+
+.people {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-top: 8%;
+}
+.h1 {
+    color: white;
+    margin-bottom: 3%;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 45px;
+    letter-spacing: 0.02em;
+}
+.connect {
+    margin: 0;
+}
+.connect2 {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 150%;
+    line-height: 124.68%;
+    color: white;
+}
+
+@media screen and (max-width: 550px) {
+    #components-layout-demo-side .logo {
+        height: 30px;
+        width: 100px;
+        margin-left: -30px;
+    }
+
+    .width-input {
+        width: 98%;
+    }
+    .checkbox {
+        font-size: 12px
+    }
+    .flex-filter-block {
+        display: block;
+    }
+    .h1 {
+        font-size: 36px;
+    }
+
+}
+
+</style>
