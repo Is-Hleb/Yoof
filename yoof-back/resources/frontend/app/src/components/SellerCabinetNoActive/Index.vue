@@ -16,14 +16,14 @@
                     </div>
                 </div>
                 <div class="flexcenter">
-                    <button class="button-1"><span class="bh1 h1a">Данные компании</span></button>
-                    <button class="button-2"><span class="bh2 h1a">Новые заявки</span><div class="boxcifra8">2</div></button>
+                    <button class="button-1"><span class="bh1 h1a" v-on:click="onDataCompany">Данные компании</span></button>
+                    <button class="button-2"><span class="bh2 h1a" v-on:click="onNewApplication">Новые заявки</span><div class="boxcifra8">2</div></button>
                     <button class="button-3"><span class="bh3 h1a">Активные аукционы</span></button>
                     <button class="button-4"><span class="bh4 h1a">История аукционов</span></button>
                 </div>
 
 
-                <div class="Company-data">
+                <div class="CompanyData" v-bind:class="{ display:isActive }">
                     <div class="flex3001">
                         <div>
                             <div class="flex103"><h1 class="h1_1">Название организации или ИП</h1><input type="text" class="text1"></div>
@@ -74,8 +74,8 @@
                                 <h1 class="ogr2">Свидетельство ИНН</h1>
                                 <div class="example-2">
                                     <div class="form-group">
-                                        <input type="file" name="file" id="file" class="input-file">
-                                        <label for="file" class="btn btn-tertiary js-labelFile">
+                                            <input type="file" name="file" id="file2" class="input-file">
+                                            <label for="file" class="btn btn-tertiary js-labelFile">
                                             <img src="./img/skrepka.png" class="size1530">
                                             <span class="js-fileName">Прикрепить</span>
                                         </label>
@@ -88,7 +88,7 @@
                     </div>
                 </div>
 
-                <div class="applications">
+                <div class="applications" v-bind:class="{ displayTrue:dontActive }">
                     <div class="body222">
                         <div class="hr_big">
                             <div class="flexaround">
@@ -420,7 +420,18 @@ export default {
     components: {HeadComponent},
     data() {
         return {
-
+            isActive: false,
+            dontActive: false
+        }
+    },
+    methods: {
+        onNewApplication() {
+            this.isActive = true;
+            this.dontActive = true;
+        },
+        onDataCompany() {
+            this.isActive = false;
+            this.dontActive = false;
         }
     },
     mounted() {
@@ -464,15 +475,6 @@ export default {
             $('.popup-66').removeClass('active');
         });
         $('.button-2').on('click', function () {
-            $('.histori').removeClass('active');
-            $('.applications').addClass('active');
-            $('.Company-data').addClass('remove');
-            $('.aykcion').removeClass('active');
-            $('.button-1').addClass('active');
-            $('.button-2').addClass('active');
-            $('.boxcifra8').addClass('active');
-            $('.button-3').removeClass('active');
-            $('.button-4').removeClass('active');
         });
 
         $('.button-1').on('click', function () {

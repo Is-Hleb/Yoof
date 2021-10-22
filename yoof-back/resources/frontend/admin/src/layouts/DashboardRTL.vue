@@ -1,4 +1,4 @@
-<!-- 
+<!--
 	This is the dashboard's rtl layout, used in rtl page.
  -->
 
@@ -7,7 +7,7 @@
 
 		<!-- Dashboard Layout -->
 		<a-layout class="layout-dashboard layout-dashboard-rtl" id="layout-dashboard" :class="[navbarFixed ? 'navbar-fixed' : '', ! sidebarCollapsed ? 'has-sidebar' : '', layoutClass]">
-			
+
 			<!-- Settings Drawer -->
 			<DashboardSettingsDrawer
 				:showSettingsDrawer="showSettingsDrawer"
@@ -20,7 +20,7 @@
 				@updateSidebarColor="updateSidebarColor"
 			></DashboardSettingsDrawer>
 			<!-- / Settings Drawer -->
-			
+
 			<!-- Main Sidebar -->
 			<DashboardSidebar
 				:sidebarCollapsed="sidebarCollapsed"
@@ -55,7 +55,7 @@
 				<!-- Sidebar Overlay -->
 				<div class="sidebar-overlay" @click="sidebarCollapsed = true" v-show="! sidebarCollapsed"></div>
 				<!-- / Sidebar Overlay -->
-					
+
 				<!-- Floating Action Button For Toggling Settings Drawer -->
 				<a-button class="fab" shape="circle" @click="showSettingsDrawer = true">
 					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -91,10 +91,10 @@
 			return {
 				// Sidebar collapsed status.
 				sidebarCollapsed: false,
-				
+
 				// Main sidebar color.
 				sidebarColor: "primary",
-				
+
 				// Main sidebar theme : light, white, dark.
 				sidebarTheme: "light",
 
@@ -128,6 +128,7 @@
 				return this.$route.meta.layoutClass ;
 			}
 		},
+
 	})
 
 </script>

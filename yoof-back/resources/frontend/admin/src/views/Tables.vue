@@ -1,271 +1,179 @@
 <template>
-	<div>
+    <div>
+        <a-spin v-if="this.loading"></a-spin>
+        <!-- Authors Table -->
+        <a-row :gutter="24" type="flex">
 
-		<!-- Authors Table -->
-		<a-row :gutter="24" type="flex">
+            <!-- Authors Table Column -->
+            <a-col :span="24" class="mb-24">
 
-			<!-- Authors Table Column -->
-			<a-col :span="24" class="mb-24">
+                <!-- Authors Table Card -->
+                <CardAuthorTable
+                    @onChangeUserStatus="changeUserStatus"
+                    @onDelete="onDeleteInUsers"
+                    @sortTableByRole="sortTableByRole"
+                    @onSearch="searchInUsers"
+                    :data="table1Data"
+                    :columns="table1Columns"
+                    :row-key="record => record.key"
+                    :loading="loading"
+                ></CardAuthorTable>
+                <!-- / Authors Table Card -->
 
-				<!-- Authors Table Card -->
-				<CardAuthorTable
-					:data="table1Data"
-					:columns="table1Columns"
-				></CardAuthorTable>
-				<!-- / Authors Table Card -->
+            </a-col>
+            <!-- / Authors Table Column -->
 
-			</a-col>
-			<!-- / Authors Table Column -->
+        </a-row>
+        <!-- / Authors Table -->
 
-		</a-row>
-		<!-- / Authors Table -->
+        <!-- Projects Table -->
+        <a-row :gutter="24" type="flex">
 
-		<!-- Projects Table -->
-		<a-row :gutter="24" type="flex">
+            <!-- Projects Table Column -->
+            <a-col :span="24" class="mb-24">
 
-			<!-- Projects Table Column -->
-			<a-col :span="24" class="mb-24">
+                <!-- Projects Table Column -->
+                <CardCategoriesTable></CardCategoriesTable>
+                <!-- / Projects Table Column -->
 
-				<!-- Projects Table Column -->
-				<CardProjectTable2
-					:data="table2Data"
-					:columns="table2Columns"
-				></CardProjectTable2>
-				<!-- / Projects Table Column -->
+            </a-col>
+            <!-- / Projects Table Column -->
 
-			</a-col>
-			<!-- / Projects Table Column -->
+        </a-row>
+        <!-- / Projects Table -->
 
-		</a-row>
-		<!-- / Projects Table -->
-
-	</div>
+    </div>
 
 </template>
 
 <script>
 
-	// "Authors" table component.
-	import CardAuthorTable from '../components/Cards/CardAuthorTable' ;
+// "Authors" table component.
+import CardAuthorTable from '../components/Cards/CardAuthorTable' ;
 
-	// "Projects" table component.
-	import CardProjectTable2 from '../components/Cards/CardProjectTable2' ;
+// "Projects" table component.
+import CardCategoriesTable from '../components/Cards/CardCategoriesTable' ;
+import Preloader from "@/components/Preloader/Preloader";
 
-	// "Authors" table list of columns and their properties.
-	const table1Columns = [
-		{
-			title: 'ФИО И EMAIL',
-			dataIndex: 'author',
-			scopedSlots: { customRender: 'author' },
-		},
+// "Authors" table list of columns and their properties.
+const table1Columns = [
+    {
+        title: 'ФИО И EMAIL',
+        dataIndex: 'author',
+        scopedSlots: {customRender: 'author'},
+    },
 
-		{
-			title: 'СТАТУС АККАУНТА',
-			dataIndex: 'status',
-			scopedSlots: { customRender: 'status' },
-		},
-		{
-			title: 'РЕГИСТРАЦИЯ',
-			dataIndex: 'employed',
-			class: 'text-muted',
-		},
-		{
-			title: 'ВЗАИМОДЕЙСТВИЕ',
-			scopedSlots: { customRender: 'editBtn' },
-			width: 50,
-		},
-	];
+    {
+        title: 'СТАТУС АККАУНТА',
+        dataIndex: 'status',
+        filters: [
+            {text: 'ПОДВЕРЖДЕНЫ', value: 'true'},
+            {text: 'НЕ ПОДВЕРЖДЕНЫ', value: 'false'},
+        ],
+        onFilter: (value, record) => {
+            if (value === 'true')
+                return record.status;
+            return !record.status;
+        },
+        width: 20,
+        scopedSlots: {customRender: 'status'},
+    },
+    {
+        title: 'РЕГИСТРАЦИЯ',
+        dataIndex: 'employed',
+        class: 'text-muted',
+    },
+    {
+        title: 'ВЗАИМОДЕЙСТВИЕ',
+        scopedSlots: {customRender: 'editBtn'},
+        width: 60,
+    },
+];
 
-	// "Authors" table list of rows and their properties.
-	const table1Data = [
-		{
-			key: '1',
-			author: {
-				avatar: 'images/face-2.jpg',
-				name: 'Васкович Иван Вадимович',
-				email: 'ivan@mail.com',
-			},
-			status: 1,
-			employed: '23/04/18',
-		},
-		{
-			key: '2',
-			author: {
-				avatar: 'images/face-3.jpg',
-				name: 'Ищенко Глеб Владимирович',
-				email: 'hleb@mail.com',
-			},
-			status: 0,
-			employed: '23/12/20',
-		},
-		{
-			key: '3',
-			author: {
-				avatar: 'images/face-1.jpg',
-				name: 'Галимская Татьяна Николаевна',
-				email: 'galimskaya@mail.com',
-			},
-			status: 1,
-			employed: '13/04/19',
-		},
-		{
-			key: '4',
-			author: {
-				avatar: 'images/face-4.jpg',
-				name: 'Кондратьева Людмила Николаевна',
-				email: 'kondratyava@mail.com',
-			},
-			status: 1,
-			employed: '03/04/21',
-		},
-		{
-			key: '5',
-			author: {
-				avatar: 'images/face-5.jpeg',
-				name: 'Мельник Константин Александрович',
-				email: 'melnik@mail.com',
-			},
-			status: 0,
-			employed: '23/03/20',
-		},
-		{
-			key: '6',
-			author: {
-				avatar: 'images/face-6.jpeg',
-				name: 'Степанова Надежда Александровна',
-				email: 'stepanova@mail.com',
-			},
-			status: 0,
-			employed: '14/04/17',
-		},
-	];
 
-	// "Projects" table list of columns and their properties.
-	const table2Columns = [
-		{
-			title: 'COMPANIES',
-			dataIndex: 'company',
-			scopedSlots: { customRender: 'company' },
-			width: 300,
-		},
-		{
-			title: 'BUDGET',
-			dataIndex: 'budget',
-			class: 'font-semibold text-muted',
-		},
-		{
-			title: 'STATUS',
-			dataIndex: 'status',
-			class: 'font-semibold text-muted text-sm',
-		},
-		{
-			title: 'COMPLETION',
-			scopedSlots: { customRender: 'completion' },
-			dataIndex: 'completion',
-		},
-		{
-			title: '',
-			scopedSlots: { customRender: 'editBtn' },
-			width: 50,
-		},
-	];
 
-	// "Projects" table list of rows and their properties.
-	const table2Data = [
-		/*{
-			key: '1',
-			company: {
-				name: 'Spotify Version',
-				logo: 'images/logos/logo-spotify.svg',
-			},
-			status: "working",
-			budget: '$14,000',
-			completion: 60,
-		},
-		{
-			key: '2',
-			company: {
-				name: 'Progress Track',
-				logo: 'images/logos/logo-atlassian.svg',
-			},
-			status: "working",
-			budget: '$3,000',
-			completion: 10,
-		},
-		{
-			key: '3',
-			company: {
-				name: 'Jira Platform Errors',
-				logo: 'images/logos/logo-slack.svg',
-			},
-			status: "done",
-			budget: 'Not Set',
-			completion: {
-				status: 'success',
-				value: 100,
-			},
-		},
-		{
-			key: '4',
-			company: {
-				name: 'Launch new Mobile App',
-				logo: 'images/logos/logo-spotify.svg',
-			},
-			status: "canceled",
-			budget: '$20,600',
-			completion: {
-				status: 'exception',
-				value: 50,
-			},
-		},
-		{
-			key: '5',
-			company: {
-				name: 'Web Dev',
-				logo: 'images/logos/logo-webdev.svg',
-			},
-			status: "working",
-			budget: '$4,000',
-			completion: 80,
-		},
-		{
-			key: '6',
-			company: {
-				name: 'Redesign Online Store',
-				logo: 'images/logos/logo-invision.svg',
-			},
-			status: "canceled",
-			budget: '$2,000',
-			completion: {
-				status: 'exception',
-				value: 0,
-			},
-		},*/
-	];
+// "Projects" table list of columns and their properties.
 
-	export default ({
-		components: {
-			CardAuthorTable,
-			CardProjectTable2,
-		},
-		data() {
-			return {
-				// Associating "Authors" table data with its corresponding property.
-				table1Data: table1Data,
 
-				// Associating "Authors" table columns with its corresponding property.
-				table1Columns: table1Columns,
+// "Projects" table list of rows and their properties.
+const table2Data = [
+    {
+        key: 123,
+        id: 123,
+        name: 'name',
+        children: [
+            {
+                key: 1,
+                id: 23,
+                name: 'propName1'
+            },
 
-				// Associating "Projects" table data with its corresponding property.
-				table2Data: table2Data,
+            {
+                key: 2,
+                id: 24,
+                name: 'propName2'
+            },
 
-				// Associating "Projects" table columns with its corresponding property.
-				table2Columns: table2Columns,
-			}
-		},
-	})
+        ],
+    },
+
+];
+
+export default ({
+    components: {
+        CardAuthorTable,
+        CardCategoriesTable,
+        Preloader
+    },
+    methods: {
+        onDeleteInUsers(key) {
+            let user = this.table1Data[key]
+            this.$store.dispatch('deleteUser', user.id)
+        },
+        changeUserStatus(key) {
+            let user = this.table1Data[key]
+            this.$store.dispatch('changeUserStatus', user.id)
+        },
+        sortTableByRole(role) {
+            this.sortArguments.string = role
+            this.sortArguments.type = 'role'
+        },
+        searchInUsers(string) {
+            this.sortArguments.string = string
+            this.sortArguments.type = 'search'
+        },
+    },
+    computed: {
+        loading() {
+            return this.$store.getters.loading;
+        },
+        table1Data() {
+            return this.$store.getters.searchInUsers(this.sortArguments.type, this.sortArguments.string)
+        }
+
+    },
+    data() {
+        return {
+            sortArguments: {
+                type: 'role',
+                string: 'all',
+            },
+            // Associating "Users" table data with its corresponding property.
+            // Associating "Users" table columns with its corresponding property.
+            table1Columns: table1Columns,
+
+            // Associating "Categories" table data with its corresponding property.
+            table2Data: table2Data,
+
+            // Associating "Projects" table columns with its corresponding property.
+        }
+    },
+
+})
 
 </script>
 
-<style lang="scss">
+<style lang="css">
+
+
 </style>

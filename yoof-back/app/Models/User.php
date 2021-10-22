@@ -17,12 +17,16 @@ class User extends Authenticatable
      *
      * @var string[]
      */
+    public $timestamps = true;
+
     protected $fillable = [
         'name',
         'email',
         'password',
         'role',
-        'api_token'
+        'api_token',
+        'created_at',
+        'status'
     ];
 
     /**
@@ -44,12 +48,23 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
+    public static function UsersWithData(): array
+    {
+        $users = self::all();
+        $data = [];
+        foreach ($users as $user) {
+            $data[] = array_merge($user->only(['id', 'email', 'role', 'created_at', 'status']), ['data' => $user->data]);
+        }
+        return $data;
+    }
+
     public function data() {
         switch ($this->role) {
-            case 'user':
-                return $this->hasOne(UserData::class);
             case 'company':
                 return $this->hasOne(CompanyData::class);
+            default:
+                return $this->hasOne(UserData::class);
         }
     }
 }

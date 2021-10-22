@@ -4,7 +4,7 @@ const routes = [
     {
         path: '/',
         name: 'index',
-        component: () => import('../components/IndexPage/Index')
+        component: () => import('../components/Templates/Index')
     },
     {
         path: '/cabinet',
