@@ -16,9 +16,9 @@ class CreatePropertiesTable extends Migration
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
             $table->string('name')->charset('UTF8');
-            $table->string('value')->charset('UTF8');
-            $table->foreignId('category_property_id')->references('id')->on('category_properties');
-            $table->foreignId('product_id')->references('id')->on('products');
+            $table->longText('value')->charset('UTF8');
+            $table->foreignId('category_property_id')->references('id')->on('category_properties')->onDelete('cascade');
+            $table->foreignId('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

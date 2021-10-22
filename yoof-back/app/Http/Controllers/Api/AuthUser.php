@@ -12,12 +12,12 @@ class AuthUser extends Controller
     {
         if(Auth::user())
             return \response(json_encode([
-              'token' => Auth::user()->api_token,
+              'api_token' => Auth::user()->api_token,
               'code' => 'success'
             ]));
 
         return \response(json_encode([
-            'token' => null,
+            'api_token' => null,
             'code' => 'err'
         ]));
     }
@@ -33,6 +33,18 @@ class AuthUser extends Controller
         return \response(json_encode([
             'code' => 'err'
         ]));
+    }
+
+    public function isAuth()
+    {
+        if(Auth::user()) {
+            return \response([
+               'code' => 'success'
+            ]);
+        }
+        return \response([
+           'code'=> 'err'
+        ]);
     }
 
     public function logout()

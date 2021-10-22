@@ -15,7 +15,7 @@ class CreateCompanyDataTable extends Migration
     {
         Schema::create('company_data', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('company_name');
             $table->string('legal_address');
             $table->string('inn');
             $table->string('bank');

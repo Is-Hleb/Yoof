@@ -23,6 +23,12 @@
 				return "layout-" + ( this.$route.meta.layout || "default" ).toLowerCase() ;
 			}
 		},
+        beforeCreate() {
+		    this.$store.dispatch('preload')
+            this.$store.dispatch('loadUsers')
+            this.$store.dispatch('getAllCategories')
+
+        },
 
     })
 

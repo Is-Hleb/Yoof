@@ -1,5 +1,17 @@
 const axios = require('axios')
 
+// function sendAuthRequest(state, method, url, data = []) {
+//     return axios({
+//         method,
+//         url,
+//         data,
+//         headers: {
+//             'Authorization': 'Bearer ' + state.user.api_token,
+//             'Accept' : 'application/json'
+//         },
+//     })
+// }
+
 export const actions = {
     registerUser({commit}, userData) {
         axios.post('api/auth/register', userData).then(r => {

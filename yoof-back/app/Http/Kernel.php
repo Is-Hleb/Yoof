@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\EncryptCookies;
+use App\Http\Middleware\isAdmin;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Session\Middleware\StartSession;
 
@@ -67,5 +68,6 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'is-admin' => isAdmin::class,
     ];
 }
