@@ -88,8 +88,6 @@ import WidgetCounter from '../components/Widgets/WidgetCounter' ;
 import CardProjectTable from '../components/Cards/CardProjectTable' ;
 
 
-// Counter Widgets stats
-
 
 // "Projects" table list of columns and their properties.
 const tableColumns = [

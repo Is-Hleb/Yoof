@@ -16,6 +16,7 @@
         <div class="brand"><img src="../../../public/images/yoof2.png" alt="Yoof"></div>
         <hr>
 
+
         <!-- Sidebar Navigation Menu -->
         <a-menu theme="light" mode="inline">
             <a-menu-item>
@@ -78,6 +79,7 @@
             </a-menu-item>
         </a-menu>
         <!-- / Sidebar Navigation Menu -->
+
 
     </a-layout-sider>
     <!-- / Main Sidebar -->

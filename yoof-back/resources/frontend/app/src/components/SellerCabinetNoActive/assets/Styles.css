@@ -1667,7 +1667,7 @@ width: 300px;
     display: none;
 }
 
-.example-2 .btn-tertiary{color:#555;padding:0;line-height:40px;width:200px;margin:auto;display:block;border:2px solid #555}
+.example-2 .btn-tertiary{color:#555;padding:0;width:200px;margin:auto;display:block; margin-bottom: 10px}
 .example-2 .btn-tertiary:hover,.example-2 .btn-tertiary:focus{color:#888;border-color:#888}
 .example-2 .input-file{width:.1px;height:.1px;opacity:0;overflow:hidden;position:absolute;z-index:-1}
 .example-2 .input-file + .js-labelFile{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 10px;cursor:pointer;
@@ -1683,6 +1683,16 @@ width: 300px;
 
 .form-group {
     align-items: center;
-    margin-left: 15 px;
+    margin-left: 15px;
 }
 
+.js-labelFile {
+    margin-bottom: 20px;
+}
+.display {
+    display: none;
+}
+
+.displayTrue {
+    display: flex;
+}
