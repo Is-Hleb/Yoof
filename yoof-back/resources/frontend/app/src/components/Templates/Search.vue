@@ -1,6 +1,7 @@
 <template>
     <div class="background-image">.
         <div class="people">
+            <Sidebar  />
             <h1 class="h1">ПОЛУЧИТЕ СВОЕ ЭКСКЛЮЗИВНОЕ ПРЕДЛОЖЕНИЕ</h1>
         </div>
         <div class="connect">
@@ -26,7 +27,6 @@
         >
             <a-form
                 class="login-form"
-                @submit="handleSubmit"
             >
                 <div class="body0 pad0">
                     <img src="./img/logo2.png" class="slider-icon" style="display: block">
@@ -61,7 +61,7 @@
                             <h1 class="ppppp">Показать все ></h1>
                         </div>
                         <div>
-                            <h1 class="pppp-pop">Цвет</h1>
+                            <h1 class="pppp">Цвет</h1>
                             <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">Белый</p></div>
                             <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">Серебристый</p></div>
                             <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">Черный</p></div>
@@ -123,8 +123,13 @@
 </template>
 
 <script>
+import Sidebar from "./Sidebar";
+
 export default {
     name: "Search",
+    components: {
+      Sidebar
+    },
     data() {
         return {
             visible: true,

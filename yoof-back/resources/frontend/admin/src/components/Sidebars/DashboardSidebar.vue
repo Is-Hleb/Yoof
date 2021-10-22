@@ -13,7 +13,7 @@
 		:class="['ant-layout-sider-' + sidebarColor, 'ant-layout-sider-' + sidebarTheme]"
 		theme="light"
 		:style="{ backgroundColor: 'transparent',}">
-			<div class="brand"><img src="../../../public/images/yoof2.png" alt="Yoof"></div>
+			<div class="brand"><img src=".." alt="Yoof"></div>
 			<hr>
 
 			<!-- Sidebar Navigation Menu -->

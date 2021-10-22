@@ -1,5 +1,6 @@
 <template>
     <a-layout-header style="background: #fff; padding: 0" >
+
         <a-row>
             <a-col :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }">
                 <span class="text-city"><img src="./img/tocha.png" class="icon-city">Москва</span>
@@ -30,7 +31,7 @@
                                 <h1 v-if="!login.action" class="text-auth-registration">ЗАРЕГИСТРИРОВАТЬСЯ КАК</h1>
                                 <div class="block-checkbox">
                                     <div class="flex"><input class="checkbox-button" type="radio" name="5" id="answer1" v-model="login.isUser" v-bind:value="true" checked="checked"><h3 class="p1">Покупатель</h3></div>
-                                    <div class="flex"><input class="checkbox-button" type="radio" name="5" id="answer2" v-model="login.isUser" v-bind:value="false"><h3 class="p1">Продавец (юридическое лицо)</h3></div>
+                                    <div class="flex"><input class="checkbox-button" type="radio" name="5" id="answer2" v-model="login.isUser" v-bind:value="false"><h3 class="p1">Продавец (ЮЛ)</h3></div>
                                 </div>
                             </div>
                         </a-form-item>
@@ -397,6 +398,7 @@ export default {
         this.form = this.$form.createForm(this, { name: 'normal_login' });
     },
     name: 'Header',
+    components: {},
     data() {
         return {
             collapsed: false,
@@ -427,6 +429,23 @@ export default {
 </script>
 
 <style>
+#components-layout-demo-custom-trigger .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#components-layout-demo-custom-trigger .trigger:hover {
+    color: #1890ff;
+}
+
+#components-layout-demo-custom-trigger .logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+}
 
 .ant-form-item {
     margin-bottom: 1px;
@@ -593,6 +612,9 @@ export default {
         width: 120px;
         font-size: 10px;
         margin-left: -50px;
+    }
+    .text-city {
+        display: none;
     }
 
 }

@@ -1,4 +1,4 @@
-<!-- 
+<!--
 	This is the dashboard layout, used in dashboard, tables, billing and profile pages.
  -->
 
@@ -6,8 +6,8 @@
 	<div>
 
 		<!-- Dashboard Layout -->
-		<a-layout class="layout-dashboard" id="layout-dashboard" :class="[navbarFixed ? 'navbar-fixed' : '', ! sidebarCollapsed ? 'has-sidebar' : '', layoutClass]">
-			
+		f<a-layout class="layout-dashboard" id="layout-dashboard" :class="[navbarFixed ? 'navbar-fixed' : '', ! sidebarCollapsed ? 'has-sidebar' : '', layoutClass]">
+
 			<!-- Main Sidebar -->
 			<DashboardSidebar
 				:sidebarCollapsed="sidebarCollapsed"
@@ -39,7 +39,7 @@
 				<DashboardFooter></DashboardFooter>
 				<!-- / Layout Footer -->
 
-				
+
 				<!-- Floating Action Button For Toggling Settings Drawer -->
     			<a-button class="fab" shape="circle" @click="showSettingsDrawer = true">
 					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +54,7 @@
 
 			</a-layout>
 			<!-- / Layout Content -->
-			
+
 			<!-- Settings Drawer -->
 			<DashboardSettingsDrawer
 				:showSettingsDrawer="showSettingsDrawer"
@@ -91,10 +91,10 @@
 			return {
 				// Sidebar collapsed status.
 				sidebarCollapsed: false,
-				
+
 				// Main sidebar color.
 				sidebarColor: "primary",
-				
+
 				// Main sidebar theme : light, white, dark.
 				sidebarTheme: "light",
 

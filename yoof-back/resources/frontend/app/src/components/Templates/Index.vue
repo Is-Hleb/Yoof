@@ -9,7 +9,7 @@
                         <Search></Search>
                         <div class="bloc_2">
                             <div>
-                                <div>
+                                <div id="service">
                                     <h1 class="H1">Как это работает?</h1>
                                     <hr class="line_2">
                                     <h2 class="help">Помогаем покупателям и продавцам электроники находить друг друга</h2>
@@ -74,7 +74,7 @@
                                             </div>
                                         </div>
                                         <div class="news">
-                                            <h1 class="asdasdf" style="margin-top: 200px">ПОПУЛЯРНЫЕ НОВОСТИ</h1>
+                                            <h1 class="asdasdf" id="news" style="margin-top: 200px">ПОПУЛЯРНЫЕ НОВОСТИ</h1>
                                             <div class="ddsa">
                                                 <hr class="line777">
                                             </div>
@@ -133,8 +133,7 @@ export default {
     components: {
         Search,
         Header,
-        Footer
-    },
+        Footer,},
     beforeCreate() {
         this.form = this.$form.createForm(this, { name: 'normal_login' });
     },
@@ -544,12 +543,12 @@ export default {
     #components-layout-demo-side .logo {
         height: 30px;
         width: 100px;
-        margin-left: -30px;
+        margin-left: -50px;
     }
     .authBtn {
         width: 120px;
         font-size: 10px;
-        margin-left: -50px;
+        margin-left: -80px;
     }
     .width-input {
         width: 98%;
