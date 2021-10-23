@@ -1,20 +1,11 @@
+// import auth from "@/router/middleware/auth";
+
 const routes = [
     {
-        path: '',
+        path: '/',
         name: 'index',
-        component: () => import('../components/Templates/Index')
+        component: () => import('../components/IndexPage/Index')
     },
-    {
-        path: '/cabinet',
-        name: 'buyer-cabinet',
-        component: () => import('../components/BuyerCabinet/Index')
-    },
-    {
-        path: '/cabinet2',
-        name: 'seller-cabinet-no-active',
-        component: () => import('../components/SellerCabinetNoActive/Index')
-    },
-
 
 ]
 

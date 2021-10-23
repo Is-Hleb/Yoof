@@ -1,7 +1,7 @@
 <template>
     <div class="footer" style="margin-top: 100px;">
         <div class="body3333">
-            <img src="./img/logo2.png" class="yoof-yelo">
+            <img src="../IndexPage/img/logo2.png" class="yoof-yelo">
             <div>
                 <h1 class="agh">О сервисе</h1>
                 <a class="aa" href="#">Как работает сервис?</a>
@@ -10,9 +10,9 @@
             </div>
             <div>
                 <h1 class="agh">Контакты</h1>
-                <div class="flex"><img src="./img/ins.png" class="ift"><a class="aa" href="#">Instagram</a></div>
-                <div class="flex"><img src="./img/fac.png" class="ift"><a class="aa" href="#">Facebook</a></div>
-                <div class="flex"><img src="./img/tel.png" class="ift"><a class="aa" href="#">Telegram</a></div>
+                <div class="flex"><img src="../IndexPage/img/ins.png" class="ift"><a class="aa" href="#">Instagram</a></div>
+                <div class="flex"><img src="../IndexPage/img/fac.png" class="ift"><a class="aa" href="#">Facebook</a></div>
+                <div class="flex"><img src="../IndexPage/img/tel.png" class="ift"><a class="aa" href="#">Telegram</a></div>
             </div>
         </div>
     </div>

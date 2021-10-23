@@ -1,5 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import middlewarePipeline from "./middlewarePipeline";
+import store from '../store'
+import auth from './middleware/auth'
+import guest from './middleware/guest'
 
 Vue.use(VueRouter)
 
@@ -11,34 +15,60 @@ let routes = [
 	},
 	{
 		path: '/',
-		name: 'Главная',
-		redirect: '/dashboard'
+		name: 'index',
+		redirect: () => {
+		    if(store.state.user.role === 'admin')
+		        return '/dashboard'
+            return '/sign-in'
+        },
+        meta: {
+		    middleware: [
+                auth
+            ]
+        }
 	},
 	{
 		path: '/dashboard',
 		name: 'Основное',
 		layout: "dashboard",
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
+        meta: {
+            middleware: [
+                auth
+            ]
+        },
 		component: () => import(/* webpackChunkName: "dashboard" */ '../views/Dashboard.vue'),
 	},
 	{
 		path: '/layout',
 		name: 'Layout',
 		layout: "dashboard",
+        meta: {
+            middleware: [
+                auth
+            ]
+        },
 		component: () => import('../views/Layout.vue'),
 	},
 	{
 		path: '/tables',
 		name: 'База данных',
 		layout: "dashboard",
+        meta: {
+            middleware: [
+                auth
+            ]
+        },
 		component: () => import('../views/Tables.vue'),
 	},
 	{
 		path: '/billing',
 		name: 'Документы от ЮЛ',
 		layout: "dashboard",
+        meta: {
+            middleware: [
+                auth
+            ]
+        },
 		component: () => import('../views/Billing.vue'),
 	},
 	{
@@ -47,22 +77,23 @@ let routes = [
 		layout: "dashboard",
 		meta: {
 			layoutClass: 'layout-profile',
+            middleware: [
+                auth
+            ]
 		},
 		component: () => import('../views/Profile.vue'),
 	},
 	{
 		path: '/sign-in',
-		name: 'Sign-In',
+		name: 'sign-in',
+        meta: {
+		  middleware: [
+		    guest,
+          ],
+        },
 		component: () => import('../views/Sign-In.vue'),
 	},
-	{
-		path: '/sign-up',
-		name: 'Sign-Up',
-		meta: {
-			layoutClass: 'layout-sign-up',
-		},
-		component: () => import('../views/Sign-Up.vue'),
-	},
+
 ]
 
 // Adding layout property from each route to the meta
@@ -83,7 +114,7 @@ routes = routes.map( ( route ) => addLayoutToRoute( route ) ) ;
 
 const router = new VueRouter({
 	mode: 'hash',
-	base: process.env.BASE_URL,
+	base: '/admin/',
 	routes,
 	scrollBehavior (to, from, savedPosition) {
 		if ( to.hash ) {
@@ -97,7 +128,26 @@ const router = new VueRouter({
 			y: 0,
 			behavior: 'smooth',
 		}
-	}
+	},
+
 })
 
-export default router
+router.beforeEach((to, from, next) => {
+    if (!to.meta.middleware) {
+        return next()
+    }
+    const middleware = to.meta.middleware
+    const context = {
+        to,
+        from,
+        next,
+        store,
+        router: this
+    }
+    return middleware[0]({
+        ...context,
+        next: middlewarePipeline(context, middleware, 1)
+    })
+})
+
+export default router;

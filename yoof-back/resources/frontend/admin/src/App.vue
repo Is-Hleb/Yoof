@@ -23,9 +23,13 @@
 				return "layout-" + ( this.$route.meta.layout || "default" ).toLowerCase() ;
 			}
 		},
-        beforeMount() {
-		    this.$store.dispatch('getToken');
-        }
+        beforeCreate() {
+		    this.$store.dispatch('preload')
+            this.$store.dispatch('loadUsers')
+            this.$store.dispatch('getAllCategories')
+
+        },
+
     })
 
 </script>

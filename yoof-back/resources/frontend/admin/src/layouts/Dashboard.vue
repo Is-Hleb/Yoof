@@ -6,7 +6,8 @@
 	<div>
 
 		<!-- Dashboard Layout -->
-		f<a-layout class="layout-dashboard" id="layout-dashboard" :class="[navbarFixed ? 'navbar-fixed' : '', ! sidebarCollapsed ? 'has-sidebar' : '', layoutClass]">
+		<a-layout class="layout-dashboard" id="layout-dashboard" :class="[navbarFixed ? 'navbar-fixed' : '', ! sidebarCollapsed ? 'has-sidebar' : '', layoutClass]">
+
 
 			<!-- Main Sidebar -->
 			<DashboardSidebar
@@ -122,7 +123,7 @@
 				this.sidebarColor = value ;
 			},
 		},
-		computed: {
+        computed: {
 			// Sets layout's element's class based on route's meta data.
 			layoutClass() {
 				return this.$route.meta.layoutClass ;

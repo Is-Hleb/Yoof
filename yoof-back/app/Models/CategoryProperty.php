@@ -16,6 +16,11 @@ class CategoryProperty extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function searchArguments()
+    {
+        return $this->hasMany(SearchArguments::class);
+    }
+
     public function productPropertries()
     {
         return $this->hasMany(Property::class);

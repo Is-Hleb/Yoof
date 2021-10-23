@@ -1,29 +1,9 @@
 <template>
     <div>
     <div class="main_bloc">
-        <div class="head">
-            <div class="body">
-                <div class="flexbetween aiic">
-                    <div class="menu">
-                        <hr class="ml">
-                        <hr class="ml1">
-                        <hr class="ml">
-                    </div>
-                    <img src="./img/logo1.png" class="yoof2poy">
-                    <div class="flex200000">
-                        <img src="./img/tocha.png" class="tocha">
-                        <h1 class="m mm2">Москва</h1>
-                    </div>
-                    <div class="m2">
-                        <h1 class="m">Вход</h1>
-                        <hr class="hr2">
-                        <h1 class="m">Регистрация</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <head-component></head-component>
         <hr class="line">
-        <img src="./img/heade.png" class="headepo">
+        <img src="../../baseAssets/img/heade.png" class="headepo">
         <div class="bodynomer1">
             <div class="flexbetweennomer1">
                 <h1 class="a">ЛИЧНЫЙ КАБИНЕТ</h1>
@@ -31,14 +11,14 @@
                     <div class="poptop">
                         <div class="flex">
                             <h1 class="a2">Мой баланс:</h1>
-                            <a href="#" class="yelow">0</a><span class="yelow" s>₽</span>
+                            <a href="#" class="yelow">0</a><span class="yelow">₽</span>
                         </div>
-                        <h1 class="a2 top"><span class="yelow" s>+</span> Пополнить баланс</h1>
+                        <h1 class="a2 top"><span class="yelow">+</span> Пополнить баланс</h1>
                     </div>
-                    <img class="img" src="./img/img.png">
+                    <img class="img" src="../../baseAssets/img/img.png">
                     <h1 class="a2">Иван</h1>
                     <h1 class="a3">Иванов</h1>
-                    <img class="exit" src="./img/exit.png">
+                    <img class="exit" src="../../baseAssets/img/exit.png">
                 </div>
             </div>
             <div class="flexcenter">
@@ -78,8 +58,8 @@
                         <div class="papap">
                             <h1 class="steli">123456, Москва, ул. Багратиона, д.9, кв. 35</h1>
                             <div class="flex ml15 pob">
-                                <div class="flex"><img src="./img/izmene.png" class="size17"><h1 class="rededal">Редактировать</h1></div>
-                                <div class="flex"><img src="./img/ydal.png" class="size1418"><h1 class="rededal">Удалить</h1></div>
+                                <div class="flex"><img src="../../baseAssets/img/izmene.png" class="size17"><h1 class="rededal">Редактировать</h1></div>
+                                <div class="flex"><img src="../../baseAssets/img/ydal.png" class="size1418"><h1 class="rededal">Удалить</h1></div>
                             </div>
                         </div>
                         <div class="flex top3">
@@ -98,7 +78,7 @@
                                 <h2 class="h8">Номер заявки</h2>
                                 <div class="mh45"></div>
                                 <div class="flex">
-                                    <img src="./img/boxgal.png" class="size2020">
+                                    <img src="../../baseAssets/img/boxgal.png" class="size2020">
                                     <h1 class="data0100"><span class="color-zel">№325478</span> от<br>01.03.2021
                                     </h1>
                                 </div>
@@ -133,7 +113,7 @@
                                 <h2 class="h8">Настройки</h2>
                                 <div class="mh45"></div>
                                 <div>
-                                    <div class="flex"><img src="./img/ydal.png" class="size1419">
+                                    <div class="flex"><img src="../../baseAssets/img/ydal.png" class="size1419">
                                         <h1 class="ydal">Удалить</h1></div>
                                 </div>
                             </div>
@@ -142,7 +122,7 @@
                                 <div class="mh45"></div>
                                 <div class="flex pofigy">
                                     <h1 class="data0103 color-zel">НАЧАТЬ<br>ТОРГИ</h1>
-                                    <img class="y" src="./img/y.png">
+                                    <img class="y" src="../../baseAssets/img/y.png">
                                 </div>
                             </div>
                         </div>
@@ -167,7 +147,7 @@
                                 </div>
                                 <div class="ta">
                                     <div class="flex pds">
-                                        <img src="./img/boxgal.png" class="size2020">
+                                        <img src="../../baseAssets/img/boxgal.png" class="size2020">
                                         <h1 class="data0100"><span class="color-zel">№325478</span> от 01.03.2021
                                         </h1>
                                     </div>
@@ -182,14 +162,14 @@
                                         <h1 class="data0103 color-zel mess">Сообщения</h1>
                                     </div>
                                     <div class="p10d">
-                                        <div class="flex"><img src="./img/izmene.png" class="size17">
+                                        <div class="flex"><img src="../../baseAssets/img/izmene.png" class="size17">
                                             <h1 class="rededal">Редактировать</h1></div>
-                                        <div class="flex"><img src="./img/ydal.png" class="size1419">
+                                        <div class="flex"><img src="../../baseAssets/img/ydal.png" class="size1419">
                                             <h1 class="rededal">Удалить</h1></div>
                                     </div>
                                     <div class="flex ppd">
                                         <h1 class="data0106663 color-zel">НАЧАТЬ ТОРГИ</h1>
-                                        <img class="y" src="./img/y.png">
+                                        <img class="y" src="../../baseAssets/img/y.png">
                                     </div>
                                 </div>
                             </div>
@@ -282,8 +262,8 @@
                 <div class="flex">
                     <div class="box2">
                         <div class="lpyup">
-                            <img src="./img/like.png" class="like">
-                            <img src="./img/phone.png" class="size">
+                            <img src="../../baseAssets/img/like.png" class="like">
+                            <img src="../../baseAssets/img/phone.png" class="size">
                             <h1 class="data0103">Смартфон Sumsung Galaxy A51 128Гб</h1>
                             <div class="FLEX60">
                                 <h1 class="akty">Актуальная<br>текущая цена</h1>
@@ -292,8 +272,8 @@
                             <button class="torgi">НАЧАТЬ ТОРГИ</button>
                         </div>
                         <div class="lpyup">
-                            <img src="./img/like.png" class="like">
-                            <img src="./img/phone.png" class="size">
+                            <img src="../../baseAssets/img/like.png" class="like">
+                            <img src="../../baseAssets/img/phone.png" class="size">
                             <h1 class="data0103">Смартфон Sumsung Galaxy A51 128Гб</h1>
                             <div class="FLEX60">
                                 <h1 class="akty">Актуальная<br>текущая цена</h1>
@@ -302,8 +282,8 @@
                             <button class="torgi">НАЧАТЬ ТОРГИ</button>
                         </div>
                         <div class="lpyup">
-                            <img src="./img/like.png" class="like">
-                            <img src="./img/phone.png" class="size">
+                            <img src="../../baseAssets/img/like.png" class="like">
+                            <img src="../../baseAssets/img/phone.png" class="size">
                             <h1 class="data0103">Смартфон Sumsung Galaxy A51 128Гб</h1>
                             <div class="FLEX60">
                                 <h1 class="akty">Актуальная<br>текущая цена</h1>
@@ -312,8 +292,8 @@
                             <button class="torgi">НАЧАТЬ ТОРГИ</button>
                         </div>
                         <div class="lpyup">
-                            <img src="./img/like.png" class="like">
-                            <img src="./img/phone.png" class="size">
+                            <img src="../../baseAssets/img/like.png" class="like">
+                            <img src="../../baseAssets/img/phone.png" class="size">
                             <h1 class="data0103">Смартфон Sumsung Galaxy A51 128Гб</h1>
                             <div class="FLEX60">
                                 <h1 class="akty">Актуальная<br>текущая цена</h1>
@@ -323,8 +303,8 @@
                             <button class="torgi">НАЧАТЬ ТОРГИ</button>
                         </div>
                         <div class="lpyup">
-                            <img src="./img/like.png" class="like">
-                            <img src="./img/phone.png" class="size">
+                            <img src="../../baseAssets/img/like.png" class="like">
+                            <img src="../../baseAssets/img/phone.png" class="size">
                             <h1 class="data0103">Смартфон Sumsung Galaxy A51 128Гб</h1>
                             <div class="FLEX60">
                                 <h1 class="akty">Актуальная<br>текущая цена</h1>
@@ -441,7 +421,7 @@
         </div>
         <div class="footer">
             <div class="bodyilp">
-                <img src="./img/logo2.png" class="yoof-yelomhgl">
+                <img src="../../baseAssets/img/logo2.png" class="yoof-yelomhgl">
                 <div class="gdsfgs">
                     <h1 class="hh1">О сервисе</h1>
                     <div class="margin-bottom20"><a class="hh2">Как работает сервис?</a></div>
@@ -450,12 +430,12 @@
                 </div>
                 <div class="nhgikk">
                     <h1 class="hh1">Контакты</h1>
-                    <div class="flex margin-bottom20"><img src="./img/ins.png" class="wh22"><a
+                    <div class="flex margin-bottom20"><img src="../../baseAssets/img/ins.png" class="wh22"><a
                         class="hh2">Instagram</a>
                     </div>
-                    <div class="flex margin-bottom20"><img src="./img/fac.png" class="wh22"><a
+                    <div class="flex margin-bottom20"><img src="../../baseAssets/img/fac.png" class="wh22"><a
                         class="hh2">Facebook</a></div>
-                    <div class="flex margin-bottom20"><img src="./img/tel.png" class="wh22"><a
+                    <div class="flex margin-bottom20"><img src="../../baseAssets/img/tel.png" class="wh22"><a
                         class="hh2">Telegram</a></div>
                 </div>
 
@@ -463,7 +443,7 @@
         </div>
         <div class="popup">
             <div class="popup_2">
-                <img src="./img/krest.png" class="krest">
+                <img src="../../baseAssets/img/krest.png" class="krest">
                 <h1 class="pp">Добавить адрес</h1>
                 <div class="flexlhlooi">
                     <div class="flex aopop">
@@ -493,12 +473,12 @@
 
         <div class="popup-3">
             <div class="popup_33">
-                <img src="./img/krest.png" class="krest">
+                <img src="../../baseAssets/img/krest.png" class="krest">
                 <div class="body0">
                     <div class="flexdddd">
                         <div class="flex wid2">
                             <input type="text" placeholder="Введите модель техники..." class="text-popup">
-                            <img src="./img/lypa.png" class="lypa2">
+                            <img src="../../baseAssets/img/lypa.png" class="lypa2">
                             <button class="button-filtr"><h1 class="pppp2">искать</h1></button>
                         </div>
                     </div>
@@ -508,10 +488,10 @@
                         <div class="box-mini">
                             <div class="dsa">
                                 <div class="box-img"></div>
-                                <img src="./img/super.png" class="size50">
+                                <img src="../../baseAssets/img/super.png" class="size50">
                             </div>
                             <h1 class="pppp10">Ноутбук ASUS VivoBook Max X541NC-DM114T</h1>
-                            <div class="set"><img src="./img/sitiling.png" class="sitiling"></div>
+                            <div class="set"><img src="../../baseAssets/img/sitiling.png" class="sitiling"></div>
                             <div class="FLEX6">
                                 <h1 class="akty">Актуальная<br>текущая цена</h1>
                                 <a href="#" class="cena">20 000 ₽</a>
@@ -521,10 +501,10 @@
                         <div class="box-mini2">
                             <div class="dsa">
                                 <div class="box-img"></div>
-                                <img src="./img/analog.png" class="size50">
+                                <img src="../../baseAssets/img/analog.png" class="size50">
                             </div>
                             <h1 class="pppp10">Ноутбук ASUS VivoBook Max X541NC-DM114T</h1>
-                            <div class="set"><img src="./img/mvideo-2.png" class="Mvideo"></div>
+                            <div class="set"><img src="../../baseAssets/img/mvideo-2.png" class="Mvideo"></div>
                             <div class="FLEX6">
                                 <h1 class="akty">Актуальная<br>текущая цена</h1>
                                 <a href="#" class="cena">20 000 ₽</a>
@@ -534,10 +514,10 @@
                         <div class="box-mini3">
                             <div class="dsa">
                                 <div class="box-img"></div>
-                                <img src="./img/analog.png" class="size50">
+                                <img src="../../baseAssets/img/analog.png" class="size50">
                             </div>
                             <h1 class="pppp10">Ноутбук ASUS VivoBook Max X541NC-DM114T</h1>
-                            <div class="set"><img src="./img/eldorado.png" class="eldorado"></div>
+                            <div class="set"><img src="../../baseAssets/img/eldorado.png" class="eldorado"></div>
                             <div class="FLEX6">
                                 <h1 class="akty">Актуальная<br>текущая цена</h1>
                                 <a href="#" class="cena">20 000 ₽</a>
@@ -557,7 +537,7 @@
 
         <div class="popup-4">
             <div class="popup_44">
-                <img src="./img/krest.png" class="krest1">
+                <img src="../../baseAssets/img/krest.png" class="krest1">
                 <div class="body0">
                     <h1 class="gyl">СРАВНЕНИЕ</h1>
                     <div class="hr-medle">
@@ -596,7 +576,7 @@
         <div class="popup-66">
             <div class="body">
 
-                <img src="./img/krest.png" class="krest">
+                <img src="../../baseAssets/img/krest.png" class="krest">
                 <h1 class="pppp10 fonsize">Заявка №325478</h1>
                 <h2 class="fonsize-slim">Ноутбук ASUS VivoBook Max X541NC-DM114T</h2>
                 <div>
@@ -661,7 +641,7 @@
     <div class="popup-7">
         <div class="popup-77">
             <div class="body">
-                <img src="./img/krest.png" class="krest">
+                <img src="../../baseAssets/img/krest.png" class="krest">
                 <h1 class="pppp10 fonsize">Заявка №325478</h1>
                 <h2 class="fonsize-slim">Ноутбук ASUS VivoBook Max X541NC-DM114T</h2>
                 <div class="jcc">
@@ -712,7 +692,7 @@
     <div class="popup-8">
         <div class="popup-88">
             <div class="body">
-                <img src="./img/krest.png" class="krest">
+                <img src="../../baseAssets/img/krest.png" class="krest">
                 <h1 class="pppp10 fonsize">АУКЦИОН №325478</h1>
                 <h2 class="fonsize-slim">Ноутбук ASUS VivoBook Max X541NC-DM114T</h2>
                 <div class="flex88">
@@ -770,7 +750,7 @@
     <div class="popup-10">
         <div class="popup-100">
             <div class="body">
-                <img src="./img/krest.png" class="krest">
+                <img src="../../baseAssets/img/krest.png" class="krest">
                 <h1 class="pppp10 fonsize">АУКЦИОН №325478</h1>
                 <h2 class="fonsize-slim">Ноутбук ASUS VivoBook Max X541NC-DM114T</h2>
                 <div class="jcc mt50">
@@ -801,7 +781,7 @@
 
     <div class="popup-20">
         <div class="popup_22">
-            <img src="./img/krest.png" class="krest">
+            <img src="../../baseAssets/img/krest.png" class="krest">
             <div class="body">
                 <div class="flexgkyuk"><h1 class="pppp">ФИЛЬТРЫ</h1>
                 </div>
@@ -809,7 +789,7 @@
                     ниже</h1>
                 <div class="flex asw">
                     <input type="text" placeholder="Введите модель техники..." class="text-popup">
-                    <img src="./img/lypa.png" class="lypa">
+                    <img src="../../baseAssets/img/lypa.png" class="lypa">
                     <button class="button-filtr"><h1 class="pppp2">ИСКАТЬ</h1></button>
                 </div>
                 <div class="flexjkh">
@@ -932,12 +912,12 @@
         </div>
         <div class="popup-3">
             <div class="popup_33">
-                <img src="./img/krest.png" class="krest">
+                <img src="../../baseAssets/img/krest.png" class="krest">
                 <div class="body0">
                     <div class="flexdddd">
                         <div class="flex">
                             <input type="text" placeholder="Введите модель техники..." class="text-popup plac">
-                            <img src="./img/lypa.png" class="lypa">
+                            <img src="../../baseAssets/img/lypa.png" class="lypa">
                             <button class="button-filtr"><h1 class="pppp2">ИСКАТЬ</h1></button>
                         </div>
                     </div>
@@ -947,10 +927,10 @@
                         <div class="box-mini">
                             <div class="dsa">
                                 <div class="box-img"></div>
-                                <img src="./img/super.png" class="size50">
+                                <img src="../../baseAssets/img/super.png" class="size50">
                             </div>
                             <h1 class="pppp10">Ноутбук ASUS VivoBook Max X541NC-DM114T</h1>
-                            <div class="set"><img src="./img/sitiling.png" class="sitiling"></div>
+                            <div class="set"><img src="../../baseAssets/img/sitiling.png" class="sitiling"></div>
                             <div class="FLEX6">
                                 <h1 class="akty">Актуальная<br>текущая цена</h1>
                                 <a href="#" class="cena">20 000 ₽</a>
@@ -960,10 +940,10 @@
                         <div class="box-mini2">
                             <div class="dsa">
                                 <div class="box-img"></div>
-                                <img src="./img/analog.png" class="size50">
+                                <img src="../../baseAssets/img/analog.png" class="size50">
                             </div>
                             <h1 class="pppp10">Ноутбук ASUS VivoBook Max X541NC-DM114T</h1>
-                            <div class="set"><img src="./img/Mvideo.png" class="Mvideo"></div>
+                            <div class="set"><img src="../../baseAssets/img/Mvideo.png" class="Mvideo"></div>
                             <div class="FLEX6">
                                 <h1 class="akty">Актуальная<br>текущая цена</h1>
                                 <a href="#" class="cena">20 000 ₽</a>
@@ -973,10 +953,10 @@
                         <div class="box-mini3">
                             <div class="dsa">
                                 <div class="box-img"></div>
-                                <img src="./img/analog.png" class="size50">
+                                <img src="../../baseAssets/img/analog.png" class="size50">
                             </div>
                             <h1 class="pppp10">Ноутбук ASUS VivoBook Max X541NC-DM114T</h1>
-                            <div class="set"><img src="./img/eldorado.png" class="eldorado"></div>
+                            <div class="set"><img src="../../baseAssets/img/eldorado.png" class="eldorado"></div>
                             <div class="FLEX6">
                                 <h1 class="akty">Актуальная<br>текущая цена</h1>
                                 <a href="#" class="cena">20 000 ₽</a>
@@ -998,11 +978,11 @@
                 <div class="body-city">
                     <div class="header-city">
                         <div class="header-min">
-                            <img src="./img/krest.png" class="krest">
-                            <img src="./img/logo1.png" class="sizelog">
+                            <img src="../../baseAssets/img/krest.png" class="krest">
+                            <img src="../../baseAssets/img/logo1.png" class="sizelog">
                             <div class="wid75">
                                 <input type="input" placeholder="Введите название города" class="input-city">
-                                <img src="./img/lypa.png" class="lypa3">
+                                <img src="../../baseAssets/img/lypa.png" class="lypa3">
                                 <hr class="hr-city">
                             </div>
                         </div>
@@ -1634,12 +1614,14 @@
 </template>
 <script>
 import JQuery from 'jquery'
+import HeadComponent from "@/components/Templates/Header";
 const $ = JQuery
 window.$ = $
 
 
 export default {
-    name: "buyer-cabinet",
+    name: "cabinet",
+    components: {HeadComponent},
     data () {
         return {
             errors: [],
@@ -1650,6 +1632,21 @@ export default {
             email: '',
             password: '',
             repeatPassword: ''
+        }
+    },
+    methods: {
+        checkForm: function (e) {
+
+            this.errors = [];
+
+            if (this.name && (this.name.length < 2 || this.name.length > 20)) {
+                this.errors.push('Некорреткно введено имя');
+            }
+            if (this.surname && (this.surname.length <= 3 || this.surname.length > 20)) {
+                this.errors.push('Некорреткно введеная фамилия');
+            }
+
+            e.preventDefault();
         }
     },
     mounted() {
@@ -1840,23 +1837,6 @@ export default {
             $('.button-5').addClass('active');
         });
     },
-    methods: {
-        checkForm: function (e) {
-
-            this.errors = [];
-
-            if (this.name && (this.name.length < 2 || this.name.length > 20)) {
-                this.errors.push('Некорреткно введено имя');
-            }
-            if (this.surname && (this.surname.length <= 3 || this.surname.length > 20)) {
-                this.errors.push('Некорреткно введеная фамилия');
-            }
-
-
-
-            e.preventDefault();
-        }
-    }
 }
 </script>
 

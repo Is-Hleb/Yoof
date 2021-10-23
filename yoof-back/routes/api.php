@@ -1,10 +1,12 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\AuthUser;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\Auth\LoginController;
-
+use App\Http\Controllers\Resources\UserController;
+use App\Http\Controllers\Resources\CategoryController;
+use App\Http\Controllers\Api\AdminController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,24 +18,27 @@ use App\Http\Controllers\Api\Auth\LoginController;
 |
 */
 
-Route::group(['prefix' => '/auth', 'middleware' => 'guest:api'], function () {
+Route::group(['prefix' => '/auth'], function () {
     Route::post('/login', [LoginController::class, 'index']);
     Route::post('/register', [RegisterController::class, 'index']);
 });
 
+Route::get('/api-token', [AuthUser::class, 'token']);
+Route::get('/user', [AuthUser::class, 'user']);
+Route::get('/logout', [AuthUser::class, 'logout']);
+
 Route::group(['middleware' => 'auth:api'], function () {
-    Route::get('/', function () {
-        return "data";
+    Route::group(['middleware' => 'is-admin', 'prefix' => '/admin'], function(){
+        Route::apiResource('users', UserController::class);
+        Route::apiResource('category', CategoryController::class);
+        Route::apiResource('search-argument', \App\Http\Controllers\Resources\SearchArgumentController::class);
+
+        Route::post('/send-mail-to-user', [AdminController::class, 'sendEmailToUser']);
     });
 });
 
-Route::get('/token', function () {
-   return 'Hello World';
-});
+Route::apiResource('category', CategoryController::class)->only('index');
 
-Route::get('/category', function () {
-    return json_encode(\App\Models\Category::all());
-});
 
 Route::get('/category/{id}', function ($id) {
     return json_encode(\App\Models\Category::where('id', $id)->first()->categoryProperties);

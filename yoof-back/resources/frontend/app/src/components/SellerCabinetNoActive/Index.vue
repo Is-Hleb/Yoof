@@ -2,25 +2,7 @@
     <div>
         <div class="main_bloc">
             <notifications group="foo" class="text-notification" />
-            <div class="head">
-                <div class="body">
-                    <div class="flexbetwen22 aicc">
-                        <div class="menu">
-                            <hr class="ml">
-                            <hr class="ml1">
-                            <hr class="ml">
-                        </div>
-                        <img src="./img/logo1.png" class="sdfqw">
-
-                        <div class="m2">
-                            <h1 class="m">Вход</h1>
-                            <hr class="hr2">
-                            <h1 class="m">Регистрация</h1>
-                        </div>
-                    </div>
-                </div>
-                <hr class="line">
-            </div>
+            <head-component/>
             <img src="./img/heade.png" class="g42gsdf">
             <div class="body">
                 <div class="flexbetwen3">
@@ -425,6 +407,7 @@
 import jQuery from "jquery";
 import Notifications from 'vue-notification'
 import Vue from 'vue'
+import HeadComponent from "@/components/Templates/Header";
 
 Vue.use(Notifications);
 
@@ -434,6 +417,7 @@ window.$ = $;
 
 export default {
     name: "Index",
+    components: {HeadComponent},
     data() {
         return {
             isActive: false,

@@ -1,4 +1,4 @@
-<!-- 
+<!--
 	This is the default layout, used in sign-in and sign-up pages.
  -->
 
@@ -49,6 +49,7 @@
 				return this.$route.meta.layoutClass ;
 			}
 		},
+
 	})
 
 </script>
