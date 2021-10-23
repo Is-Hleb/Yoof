@@ -1,58 +1,73 @@
 <template>
-    <a-layout-header style="background: #fff; padding: 0" >
+    <a-layout-header style="background: #fff; padding: 0">
 
         <a-row>
             <a-col :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }">
-                <span class="text-city"><img src="./img/tocha.png" class="icon-city">Москва</span>
+                <span class="text-city"><img src="../IndexPage/img/tocha.png" class="icon-city">Москва</span>
             </a-col>
             <a-col :xs="{ span: 11, offset: 1 }" :lg="{ span: 4, offset: 2 }">
-                <a href=""><img src="./img/logo1.png" class="logo"></a>
+                <a href=""><img src="../IndexPage/img/logo1.png" class="logo"></a>
             </a-col>
             <a-col :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }">
-                <a-button type="primary" ghost class="authBtn" @click="showModal" style="font-family: Roboto; font-weight: 800; color: black; border: black 1px solid;">Вход | Регистрация</a-button>
+                <a-button type="primary" ghost class="authBtn" @click="showModal"
+                          style="font-family: Roboto; font-weight: 800; color: black; border: black 1px solid;">Вход |
+                    Регистрация
+                </a-button>
                 <a-modal v-model="visible" title="Вход | Регистрация" width="700px">
-                    <a-form
+                    <a-form-model
                         id="components-form-demo-normal-login"
                         :form="form"
+                        :model="formData"
                         class="login-form"
                         @submit="handleSubmit"
                     >
-
-                        <a-form-item>
+                        <a-form-model-item>
                             <div class="image-logo-center">
-                                <img src="./img/logo1.png" class="slider-icon3" style="display: block">
+                                <img src="../IndexPage/img/logo1.png" class="slider-icon3" style="display: block">
                             </div>
                             <div class="block-button-auth">`
-                                <button class="button-auth" @click="() => login.action = false" v-bind:class="{ 'button-active': !login.action }"><span class="auth-button-text">Регистрация</span></button>
-                                <button class="button-auth" @click="() => login.action = true" v-bind:class="{ 'button-active': login.action }"><span class="auth-button-text">Вход</span></button>
+                                <button class="button-auth" @click="() => login.action = false"
+                                        v-bind:class="{ 'button-active': !login.action }"><span
+                                    class="auth-button-text">Регистрация</span></button>
+                                <button class="button-auth" @click="() => login.action = true"
+                                        v-bind:class="{ 'button-active': login.action }"><span class="auth-button-text">Вход</span>
+                                </button>
                             </div>
                             <div>
                                 <h1 v-if="login.action" class="text-auth-registration">АВТОРИЗОВАТЬСЯ КАК</h1>
                                 <h1 v-if="!login.action" class="text-auth-registration">ЗАРЕГИСТРИРОВАТЬСЯ КАК</h1>
                                 <div class="block-checkbox">
-                                    <div class="flex"><input class="checkbox-button" type="radio" name="5" id="answer1" v-model="login.isUser" v-bind:value="true" checked="checked"><h3 class="p1">Покупатель</h3></div>
-                                    <div class="flex"><input class="checkbox-button" type="radio" name="5" id="answer2" v-model="login.isUser" v-bind:value="false"><h3 class="p1">Продавец (ЮЛ)</h3></div>
+                                    <div class="flex"><input class="checkbox-button" type="radio" name="5" id="answer1"
+                                                             v-model="login.isUser" v-bind:value="true"
+                                                             checked="checked">
+                                        <h3 class="p1">Покупатель</h3></div>
+                                    <div class="flex"><input class="checkbox-button" type="radio" name="5" id="answer2"
+                                                             v-model="login.isUser" v-bind:value="false">
+                                        <h3 class="p1">Продавец (ЮЛ)</h3></div>
                                 </div>
                             </div>
-                        </a-form-item>
+                        </a-form-model-item>
 
-                        <a-form-item v-if="(login.action && login.isUser) || (login.action && !login.isUser)">
-                            <a-form-item label="E-mail">
+                        <a-form-model-item v-if="login.action">
+                            <a-form-model-item label="E-mail">
                                 <a-input
+                                    v-model="formData.userData.email"
                                     v-decorator="[
-                      'userName',
-                      { rules: [{ required: true, message: 'Данное поле обязательно для ввода'},
-                                { email: true, message: 'Некорректный формат электронной почты' },
-                                {  }
-                                ] },
-                    ]"                             type="mail"
+                                  'userName',
+                                  { rules: [
+                                      { required: true, message: 'Данное поле обязательно для ввода'},
+                                      { email: true, message: 'Некорректный формат электронной почты' },
+                                    ],
+                                     initialValue: formData.userData.email},
+                    ]" type="mail"
                                     placeholder="E-mail"
                                 >
-                                    <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)"/>
                                 </a-input>
-                            </a-form-item>
+                            </a-form-model-item>
                             <a-form-item label="Пароль">
                                 <a-input-password
+                                    v-model="formData.userData.password"
                                     v-decorator="[
                       'password',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' },
@@ -60,9 +75,10 @@
                                     type="password"
                                     placeholder="Пароль"
                                 >
-                                    <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)"/>
                                 </a-input-password>
                                 <a-checkbox
+                                    v-model="formData.userData.rememberMe"
                                     v-decorator="[
                           'remember',
                           {
@@ -74,9 +90,11 @@
                                     Запомнить меня
                                 </a-checkbox>
                             </a-form-item>
-                            <a-form-item align="center" >
+                            <a-form-item align="center">
                                 <a-form-item>
-                                    <a-button type="primary" size="large" html-type="submit" class="login-form-button" style="margin-right: 20px">
+                                    <a-button @click="loginIn" type="primary" size="large" html-type="submit"
+                                              class="login-form-button"
+                                              style="margin-right: 20px">
                                         ВОЙТИ В АККАУНТ
                                     </a-button>
                                 </a-form-item>
@@ -88,18 +106,19 @@
                                 <a-form-item v-if="login.action & login.isUser">
                                     <h1 class="text-socilite">Или авторизуйтесь через аккаунт в социальной сети</h1>
                                     <div>
-                                        <a href="#"><img src="./img/goo.png" class="icon-socilite"></a>
-                                        <a href="#"><img src="./img/vk.png" class="icon-socilite2"></a>
-                                        <a href="#"><img src="./img/fec.png" class="icon-socilite"></a>
+                                        <a href="#"><img src="../IndexPage/img/goo.png" class="icon-socilite"></a>
+                                        <a href="#"><img src="../IndexPage/img/vk.png" class="icon-socilite2"></a>
+                                        <a href="#"><img src="../IndexPage/img/fec.png" class="icon-socilite"></a>
                                     </div>
                                 </a-form-item>
                             </a-form-item>
 
-                        </a-form-item>
+                        </a-form-model-item>
 
                         <a-form-item v-if="(!login.action && login.isUser)">
                             <a-form-item label="Имя">
                                 <a-input
+                                    v-model="formData.roleData.user.name"
                                     v-decorator="[
                       'name',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода'},
@@ -107,32 +126,35 @@
                     ]"
                                     placeholder="Имя"
                                 >
-                                    <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)"/>
                                 </a-input>
                             </a-form-item>
                             <a-form-item label="Фамилия">
                                 <a-input
+                                    v-model="formData.roleData.user.surname"
                                     v-decorator="[
                       'surname',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
                                     placeholder="Фамилия"
                                 >
-                                    <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)"/>
                                 </a-input>
                             </a-form-item>
                             <a-form-item label="Отчество">
                                 <a-input
+                                    v-model="formData.roleData.user.patronymic"
                                     v-decorator="[
                       'patronymic',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
                                     placeholder="Отчество"
                                 >
-                                    <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)"/>
                                 </a-input>
                             </a-form-item>
 
                             <a-form-item label="Телефон">
                                 <a-input
+                                    v-model="formData.roleData.user.phone"
                                     v-decorator="[
                       'telephone',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
@@ -147,12 +169,13 @@
                                             +7
                                         </a-select-option>
                                     </a-select>
-                                    <a-icon slot="prefix" type="phone" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="phone" style="color: rgba(0,0,0,.25)"/>
                                 </a-input>
                             </a-form-item>
 
                             <a-form-item label="Email">
                                 <a-input
+                                    v-model="formData.userData.email"
                                     v-decorator="[
                       'email',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' },
@@ -160,21 +183,22 @@
                                  ]}]"
                                     placeholder="Email"
                                 >
-                                    <a-icon slot="prefix" type="mail" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="mail" style="color: rgba(0,0,0,.25)"/>
                                 </a-input>
                             </a-form-item>
 
                             <a-form-item label="Пароль">
                                 <a-input-password
+                                    v-model="formData.userData.password"
                                     v-decorator="[
                       'password',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
                                     type="password"
                                     placeholder="Пароль"
                                 >
-                                    <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)"/>
                                 </a-input-password>
-                                <a-checkbox w
+                                <a-checkbox v-model="formData.userData.rememberMe"
                                             v-decorator="[
                           'remember',
                           {
@@ -187,9 +211,11 @@
                                 </a-checkbox>
                             </a-form-item>
 
-                            <a-form-item align="center" >
+                            <a-form-item align="center">
                                 <a-form-item>
-                                    <a-button type="primary" size="large" html-type="submit" class="login-form-button" style="margin-right: 20px">
+                                    <a-button @click="signUp" type="primary" size="large" html-type="submit"
+                                              class="login-form-button"
+                                              style="margin-right: 20px">
                                         ЗАРЕГИСТРИРОВАТЬСЯ
                                     </a-button>
                                 </a-form-item>
@@ -202,9 +228,9 @@
                                 <a-form-item v-if="!login.action && login.isUser">
                                     <h1 class="text-socilite">Или зарегистрируйтесь через аккаунт в социальной сети</h1>
                                     <div>
-                                        <a href="#"><img src="./img/goo.png" class="icon-socilite"></a>
-                                        <a href="#"><img src="./img/vk.png" class="icon-socilite2"></a>
-                                        <a href="#"><img src="./img/fec.png" class="icon-socilite"></a>
+                                        <a href="#"><img src="../IndexPage/img/goo.png" class="icon-socilite"></a>
+                                        <a href="#"><img src="../IndexPage/img/vk.png" class="icon-socilite2"></a>
+                                        <a href="#"><img src="../IndexPage/img/fec.png" class="icon-socilite"></a>
                                     </div>
                                 </a-form-item>
                             </a-form-item>
@@ -214,6 +240,7 @@
                         <a-form-item v-if="(!login.action && !login.isUser)">
                             <a-form-item label="Название организации или ИП">
                                 <a-input
+                                    v-model="formData.roleData.company.company_name"
                                     v-decorator="[
                       'organization',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода'},
@@ -221,66 +248,72 @@
                     ]"
                                     placeholder="Название организации или ИП"
                                 >
-                                    <a-icon slot="prefix" type="environment" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="environment" style="color: rgba(0,0,0,.25)"/>
                                 </a-input>
                             </a-form-item>
                             <a-form-item label="Юридический адрес">
                                 <a-input
+                                    v-model="formData.roleData.company.legal_address"
                                     v-decorator="[
                       'legal_address',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
                                     placeholder="Юридический адрес"
                                 >
-                                    <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)"/>
                                 </a-input>
                             </a-form-item>
                             <a-form-item label="Банк">
                                 <a-input
+                                    v-model="formData.roleData.company.bank"
                                     v-decorator="[
                       'Банк',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
                                     placeholder="Банк"
                                 >
-                                    <a-icon slot="prefix" type="bank" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="bank" style="color: rgba(0,0,0,.25)"/>
                                 </a-input>
                             </a-form-item>
 
                             <a-form-item label="БИК банка">
                                 <a-input
+                                    v-model="formData.roleData.company.bank_bik"
                                     v-decorator="[
                       'bic_bank',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
                                     type="number"
                                     placeholder="БИК банка"
                                 >
-                                    <a-icon slot="prefix" type="bank" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="bank" style="color: rgba(0,0,0,.25)"/>
                                 </a-input>
                             </a-form-item>
 
                             <a-form-item label="Расчетный счет">
                                 <a-input
+                                    v-model="formData.roleData.company.checking_account"
                                     v-decorator="[
                       'checking_account',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
                                     type="number"
                                     placeholder="Расчетный счет"
                                 >
-                                    <a-icon slot="prefix" type="dollar" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="dollar" style="color: rgba(0,0,0,.25)"/>
                                 </a-input>
                             </a-form-item>
                             <a-form-item label="ИНН">
                                 <a-input
+                                    v-model="formData.roleData.company.inn"
                                     v-decorator="[
                       'inn',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
                                     type="number"
                                     placeholder="ИНН"
                                 >
-                                    <a-icon slot="prefix" type="mail" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="mail" style="color: rgba(0,0,0,.25)"/>
                                 </a-input>
                             </a-form-item>
                             <a-form-item label="КПП">
                                 <a-input
+                                    v-model="formData.roleData.company.kpp"
                                     v-decorator="[
                       'kpp',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' },
@@ -289,12 +322,13 @@
                                     type="number"
                                     placeholder="КПП"
                                 >
-                                    <a-icon slot="prefix" type="mail" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="mail" style="color: rgba(0,0,0,.25)"/>
                                 </a-input>
                             </a-form-item>
 
                             <a-form-item label="Email">
                                 <a-input
+                                    v-model="formData.userData.email"
                                     v-decorator="[
                       'mail',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' },
@@ -303,11 +337,12 @@
                        ]}]"
                                     placeholder="Email"
                                 >
-                                    <a-icon slot="prefix" type="mail" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="mail" style="color: rgba(0,0,0,.25)"/>
                                 </a-input>
                             </a-form-item>
                             <a-form-item label="Пароль">
                                 <a-input-password
+                                    v-model="formData.userData.password"
                                     v-decorator="[
                       'Пароль',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' },
@@ -317,9 +352,9 @@
                                     type="password"
                                     placeholder="Пароль"
                                 >
-                                    <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)" />
+                                    <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)"/>
                                 </a-input-password>
-                                <a-checkbox w
+                                <a-checkbox v-model="formData.userData.rememberMe"
                                             v-decorator="[
                           'remember',
                           {
@@ -332,9 +367,11 @@
                                 </a-checkbox>
                             </a-form-item>
 
-                            <a-form-item align="center" >
+                            <a-form-item align="center">
                                 <a-form-item>
-                                    <a-button type="primary" size="large" html-type="submit" class="login-form-button" style="margin-right: 20px">
+                                    <a-button @click="signUp" type="primary" size="large" html-type="submit"
+                                              class="login-form-button"
+                                              style="margin-right: 20px">
                                         ЗАРЕГИСТРИРОВАТЬСЯ
                                     </a-button>
                                 </a-form-item>
@@ -347,14 +384,14 @@
                                 <a-form-item v-if="!login.action && login.isUser">
                                     <h1 class="text-socilite">Или зарегистрируйтесь через аккаунт в социальной сети</h1>
                                     <div>
-                                        <a href="#"><img src="./img/goo.png" class="icon-socilite"></a>
-                                        <a href="#"><img src="./img/vk.png" class="icon-socilite2"></a>
-                                        <a href="#"><img src="./img/fec.png" class="icon-socilite"></a>
+                                        <a href="#"><img src="../IndexPage/img/goo.png" class="icon-socilite"></a>
+                                        <a href="#"><img src="../IndexPage/img/vk.png" class="icon-socilite2"></a>
+                                        <a href="#"><img src="../IndexPage/img/fec.png" class="icon-socilite"></a>
                                     </div>
                                 </a-form-item>
                             </a-form-item>
                         </a-form-item>
-                    </a-form>
+                    </a-form-model>
                 </a-modal>
                 <a-modal
                     title="Восстановление пароля"
@@ -366,7 +403,8 @@
                         @submit="handleSubmit"
                     >
                         <a-form-item>
-                            <h1 style="font-family: Roboto; font-size: 20px; color: black; text-align: center; font-weight: 600">Введите адрес электронной почты</h1>
+                            <h1 style="font-family: Roboto; font-size: 20px; color: black; text-align: center; font-weight: 600">
+                                Введите адрес электронной почты</h1>
                             <a-input
                                 v-decorator="[
                       'mail_recovery',
@@ -375,10 +413,13 @@
                     ]"
                                 placeholder="E-mail"
                             >
-                                <a-icon slot="prefix" type="mail" style="color: rgba(0,0,0,.25)" />
+                                <a-icon slot="prefix" type="mail" style="color: rgba(0,0,0,.25)"/>
                             </a-input>
                         </a-form-item>
-                        <a-button @click="handleExit" type="primary" style="display: block; font-family: Roboto; margin-top: 20px; margin-right: auto; margin-left: auto" >ВОССТАНОВИТЬ</a-button>
+                        <a-button @click="handleExit" type="primary"
+                                  style="display: block; font-family: Roboto; margin-top: 20px; margin-right: auto; margin-left: auto">
+                            ВОССТАНОВИТЬ
+                        </a-button>
 
                     </a-form>
                 </a-modal>
@@ -392,10 +433,11 @@ import Vue from 'vue'
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 
+
 Vue.use(Antd);
 export default {
     beforeCreate() {
-        this.form = this.$form.createForm(this, { name: 'normal_login' });
+        this.form = this.$form.createForm(this, {name: 'normal_login'});
     },
     name: 'Header',
     components: {},
@@ -409,7 +451,38 @@ export default {
                 action: true,
                 isUser: false,
             },
-        };
+            formData: {
+                userData: {
+                    email: '',
+                    password: '',
+                    rememberMe: '',
+                },
+                roleData: {
+                    user: {
+                        name: '',
+                        surname: '',
+                        patronymic: '',
+                        phone: '',
+                    },
+                    company: {
+                        company_name: '',
+                        legal_address: '',
+                        bank: '',
+                        bank_bik: '',
+                        checking_account: '',
+                        inn: '',
+                        kpp: '',
+                    }
+                },
+            }
+        }
+    },
+    computed: {
+        errors() {
+            let errors = this.$store.getters.errors;
+            console.log(errors)
+            return errors;
+        }
     },
     methods: {
         showModal() {
@@ -424,8 +497,30 @@ export default {
             this.form.validateFields(() => {
             });
         },
+        loginIn() {
+
+        },
+        signUp() {
+            let data;
+            if (this.login.isUser) {
+                data = {
+                    ...this.formData.userData,
+                    ...this.formData.roleData.user,
+                    role: 'user',
+                }
+            } else {
+                data = {
+                    ...this.formData.roleData.company,
+                    ...this.formData.userData,
+                    role: 'company'
+                }
+            }
+            console.log(data)
+            this.$store.dispatch('signUp', data)
+        }
     }
 }
+
 </script>
 
 <style>
@@ -450,6 +545,7 @@ export default {
 .ant-form-item {
     margin-bottom: 1px;
 }
+
 .ant-carousel .slick-slide {
     text-align: center;
     height: 350px;
@@ -466,12 +562,15 @@ export default {
     background-color: rgba(31, 45, 61, 0.11);
     opacity: 0.3;
 }
+
 .ant-carousel .custom-slick-arrow:before {
     display: none;
 }
+
 .ant-carousel .custom-slick-arrow:hover {
     opacity: 0.5;
 }
+
 .ant-input-search-button {
     background-color: yellowgreen;
     border: yellowgreen 2px solid;
@@ -505,7 +604,7 @@ export default {
     cursor: pointer;
 }
 
-.auth-button-text{
+.auth-button-text {
     font-family: Roboto;
     font-style: normal;
     font-weight: 900;
@@ -554,6 +653,7 @@ export default {
     line-height: 26px;
     color: #000000;
 }
+
 .button-active {
     background: yellow;
 }
@@ -568,15 +668,17 @@ export default {
     display: flex;
     justify-content: center;
 }
+
 .block-checkbox {
     z-index: 1000;
     position: relative;
     display: flex;
     justify-content: center;
 }
+
 .checkbox-button {
     margin-left: 50px;
-    transform:scale(1.5);
+    transform: scale(1.5);
 }
 
 .text-socilite {
@@ -588,14 +690,17 @@ export default {
     text-align: center;
     color: #000000;
 }
+
 .flex {
     position: relative;
     display: flex;
 }
+
 .icon-socilite {
     width: 50px;
     height: 50px;
 }
+
 .icon-socilite2 {
     width: 50px;
     height: 50px;
@@ -608,11 +713,13 @@ export default {
         width: 100px;
         margin-left: -30px;
     }
+
     .authBtn {
         width: 120px;
         font-size: 10px;
         margin-left: -50px;
     }
+
     .text-city {
         display: none;
     }
