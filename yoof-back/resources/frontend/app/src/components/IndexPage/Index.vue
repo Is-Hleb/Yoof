@@ -8,40 +8,33 @@
                         <hr class="line">
                         <Search></Search>
                         <div class="bloc_2">
-                            <div>
+                            <div class="body">
                                 <div id="service">
                                     <h1 class="H1">Как это работает?</h1>
-                                    <hr class="line_2">
+                                    <hr class="line666">
                                     <h2 class="help">Помогаем покупателям и продавцам электроники находить друг друга</h2>
                                 </div>
-                                <div>
-                                    <a-tabs default-active-key="1">
-                                        <a-tab-pane key="1" tab="Шаг 1">
-                                            <img src="./img/1.png" class="slider-icon">
-                                            <h1 class="text-slider">Зарегистрируйтесь, или войдите в свой личный кабинет</h1>
-                                            <img src="./img/img_1.png" class="slider-image">
-                                        </a-tab-pane>
-                                        <a-tab-pane key="2" tab="Шаг 2" force-render>
-                                            <img src="./img/2.png" class="slider-icon2">
-                                            <h1 class="text-slider">Введите в форму поиска модель нужного вам товара,или подберите его <br> при помощинаших умных фильтров</h1>
-                                            <img src="./img/img_2.png" class="slider-image">
-                                        </a-tab-pane>
-                                        <a-tab-pane key="3" tab="Шаг 3">
-                                            <img src="./img/3.png" class="slider-icon">
-                                            <h1 class="text-slider">Поздравляем, вы почти у цели. Ваша заявка отправлена нашим партнёрам, которые готовы предложить вам лучшую цену.<br> Вы можете видеть сколько продавцов выразили заинтересованность поторговаться, снижая цену на интересующий вас товар</h1>
-                                            <img src="./img/img_3.png" class="slider-image">
-                                        </a-tab-pane>
-                                        <a-tab-pane key="4" tab="Шаг 4">
-                                            <img src="./img/4.png" class="slider-icon2">
-                                            <h1 class="text-slider">Для запуска аукциона, вам нужно внести необходимую сумму, обычно это минимальная цена на вашу модель,<br> найденная в интернет-магазинах. После того как вы запустите аукцион, продавцы начнут торги</h1>
-                                            <img src="./img/img_4.png" class="slider-image">
-                                        </a-tab-pane>
-                                        <a-tab-pane key="5" tab="Шаг 5">
-                                            <img src="./img/5.png" class="slider-icon3">
-                                            <h1 class="text-slider">Ура! Торги завершились. Вы можете быть уверены, что купили свой товар по самой лучшей цене.<br> Вам остаётся только дождаться, когда вам привезут вашу покупку</h1>
-                                            <img src="./img/img_5.png" class="slider-image">
-                                        </a-tab-pane>
-                                    </a-tabs>
+                                <div style="display: block">
+                                    <div style="float: left">
+                                        <img src="./img/1.png" class="slider-icon">
+                                        <h3 class="H34">Зарегистрируйтесь, или войдите в свой <br>личный кабинет</h3>
+                                    </div>
+                                    <div style="float: right; margin-top: 100px">
+                                        <img src="./img/2.png" class="slider-icon2">
+                                        <h3 class="H34">Введите в форму поиска модель нужного вам товара,<br>или подберите его при помощи наших умных фильтров</h3>
+                                    </div>
+                                    <div style="float: left; margin-top: 100px">
+                                        <img src="./img/3.png" class="slider-icon">
+                                        <h3 class="H34">Поздравляем, вы почти у цели. Ваша заявка отправлена нашим<br>партнёрам, которые готовы предложить вам лучшую цену. Вы<br>можете видеть сколько продавцов выразили заинтересованность поторговаться, снижая цену на интересующий вас товар</h3>
+                                    </div>
+                                    <div style="float: right; margin-top: 120px">
+                                        <img src="./img/4.png" class="slider-icon2">
+                                        <h3 class="H34">Для запуска аукциона, вам нужно внести необходимую сумму, обычно это минимальная цена на вашу модель, найденная в интернет-магазинах. После того как вы запустите аукцион, продавцы начнут торги</h3>
+                                    </div>
+                                    <div style="float: left; margin-top: 140px">
+                                        <img src="./img/5.png" class="slider-icon3">
+                                        <h3 class="H34">Ура!!! Торги завершились. Вы можете быть уверены, что купили свой товар по самой лучшей цене. Вам остаётся только дождаться, когда вам привезут вашу покупку</h3>
+                                    </div>
                                 </div>
                             </div>
 
@@ -51,32 +44,38 @@
                                         <h1 class="text-service" style="margin-top: 150px;">ПРЕИМУЩЕСТВА СЕРВИСА</h1>
                                         <div class="ddsa"><hr class="line666"></div>
                                         <h2 class="fghfgh">Наш сервис предоставляет широкие возможности</h2>
-                                        <div class="FLEXspectest">
+                                        <div class="FLEXspectest" >
                                             <div class="block-service-benefits">
-                                                <img src="./img/clock.png" class="size">
-                                                <h2 class="h4">ЭКОНОМИЯ ВРЕМЕНИ</h2>
+                                                <div>
+                                                    <h2 class="h4">ЭКОНОМИЯ ВРЕМЕНИ<img src="./img/clock.png" class="size" style="margin-left: 10px"></h2>
+                                                </div>
                                                 <h3 class="h5">Вам не нужно тратить время на посещение магазинов в поиске нужного товара</h3>
                                             </div>
                                             <div class="block-service-benefits">
-                                                <img src="./img/money.png" class="size">
-                                                <h2 class="h4">ЭКОНОМИЯ ДЕНЕГ</h2>
+                                                <div>
+                                                    <h2 class="h4">ЭКОНОМИЯ ДЕНЕГ<img src="./img/money.png" class="size" style="margin-left: 10px"></h2>
+                                                </div>
                                                 <h3 class="h5">Вы приобретаете товар по минимальной цене</h3>
                                             </div>
-                                            <div class="block-service-benefits saving-text-mobile">
-                                                <img src="./img/ocenka.png" class="size">
-                                                <h2 class="h4">ЧЕСТНЫЙ СЕРВИС</h2>
+                                        </div>
+                                        <div class="FLEXspectest">
+                                            <div class="block-service-benefits">
+                                                <div>
+                                                    <h2 class="h4">ЧЕСТНЫЙ СЕРВИС<img src="../../baseAssets/img/ocenka.png" class="size" style="margin-left: 10px"></h2>
+                                                </div>
                                                 <h3 class="h5">Yoof – место, где покупатели знают, что сделанные им предложения абсолютно честны, и условия будут исполнены магазинами так, как они это обещали</h3>
                                             </div>
                                             <div class="block-service-benefits">
-                                                <img src="./img/star.png" class="size">
-                                                <h2 class="h4">ЗАБОТА О КЛИЕНТАХ</h2>
+                                                <div>
+                                                    <h2 class="h4">ЗАБОТА О КЛИЕНТАХ<img src="../../baseAssets/img/star.png" class="size" style="margin-left: 10px"></h2>
+                                                </div>
                                                 <h3 class="h5">Мы стоим на стороне покупателей, и будем делать все, что в наших силах, для того, чтобы покупатели были довольны.</h3>
                                             </div>
                                         </div>
                                         <div class="news">
                                             <h1 class="asdasdf" id="news" style="margin-top: 200px">ПОПУЛЯРНЫЕ НОВОСТИ</h1>
                                             <div class="ddsa">
-                                                <hr class="line777">
+                                                <hr class="line666">
                                             </div>
                                             <h2 class="fghfgh">Статьи, обзоры, новости рынка</h2>
                                             <div class="news-card">
@@ -87,7 +86,7 @@
                                                                 <span class="name-news-text">Apple выпускает новую модель</span>
                                                                 <span class="data-news-text">01.01.2021</span>
                                                                 <img src="./img/news-image2.jpg" class="news-image" style="margin-top: 10px">
-                                                                <a-button type="primary" style="margin-bottom: 8px; position: relative; margin-top: 15px; font-family: Roboto;" block>Читать</a-button>
+                                                                <a-button type="primary" class="btn-read" block>Читать</a-button>
                                                             </a-col>
                                                         </a-row>
                                                     </a-card>
@@ -99,13 +98,13 @@
                                                                 <span class="name-news-text">Apple выпускает новую модель</span>
                                                                 <span class="data-news-text">01.01.2021</span>
                                                                 <img src="./img/news-image2.jpg" class="news-image" style="margin-top: 10px">
-                                                                <a-button type="primary" style="margin-bottom: 8px; position: relative; margin-top: 15px; font-family: Roboto;" block>Читать</a-button>
+                                                                <a-button type="primary" class="btn-read" block>Читать</a-button>
                                                             </a-col>
                                                         </a-row>
                                                     </a-card>
                                                 </div>
                                             </div>
-                                            <button class="buton"><span class="jkj">Посмотреть ещё</span></button>
+                                            <a-button type="primary" class="btn-read-all">Посмотреть ещё</a-button>
                                         </div>
                                     </div>
                                     <Footer />
@@ -350,50 +349,19 @@ export default {
     margin-right: 10px;
 }
 
-.p {
-
-}
 .block-service-benefits {
     margin-bottom: 100px;
     text-align: left;
     height: 143px;
-    width: 240px;
-    margin-top: -25px;
+    width: 300px;
 }
 
-.button-auth {
-    cursor: pointer;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-    border: 3px solid #EBF005;
-    border-radius: 10px;
-    margin-top: 5%;
-    width: 200px;
-    height: 60px;
-    z-index: 1;
-    background-color: white;
-    padding-left: 8px;
-    margin-bottom: 60px;
-}
+
 
 .enterButton {
     background-color: yellow;
 }
 
-.text-auth-registration {
-    text-align: center;
-    height: 60px;
-    margin: 0;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 22px;
-    line-height: 26px;
-    color: #000000;
-}
-.button-active {
-    background: yellow;
-}
 
 .login-form-button {
     font-family: Roboto;
@@ -428,6 +396,25 @@ export default {
     height: 40px;
     text-align: left;
 }
+.btn-read {
+    margin-bottom: 8px;
+    position: relative;
+    margin-top: 15px;
+    font-family: Roboto;
+    background-color: yellowgreen;
+    border: yellowgreen;
+}
+.btn-read-all {
+    margin-top: 40px;
+    height: 40px; width: 300px;
+    background-color: yellowgreen;
+    border: yellowgreen;
+}
+.ant-btn-primary:hover, .ant-btn-primary:focus {
+    background-color: green;
+    border: none;
+}
+
 .data-news-text {
     color: black;
     font-family: "Calibri Light", Roboto, sans-serif;
@@ -539,6 +526,10 @@ export default {
 .mt80 {
     margin-top: 80px;
 }
+.block-work {
+    margin-left: 130px;
+    margin-right: -150px;
+}
 @media screen and (max-width: 550px) {
     #components-layout-demo-side .logo {
         height: 30px;
@@ -566,6 +557,12 @@ export default {
         font-size: 36px;
     }
     .news-card {
+        display: block;
+    }
+    .FLEXspectest {
+        margin-left: 15px;
+    }
+    .block-work {
         display: block;
     }
 }
