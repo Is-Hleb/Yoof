@@ -3,6 +3,6 @@ export const mutations = {
         state.user = data;
     },
     SET_MODAL_ERRORS: (state, errors) => {
-        state.errors = errors;
+        state.errors = errors
     }
 }

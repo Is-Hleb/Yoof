@@ -1,11 +1,11 @@
 <template>
     <a-layout-header style="background: #fff; padding: 0">
-
         <a-row>
             <a-col :xs="{ span: 11, offset: 1 }" :lg="{ span: 9, offset: 2 }">
                 <a href=""><img src="../IndexPage/img/logo1.png" class="logo"></a>
             </a-col>
-            <a-col :xs="{ span: 5, offset: 1 }" :lg="{ span: 9, offset: 2 }">
+
+            <a-col v-if="!isAuth" :xs="{ span: 5, offset: 1 }" :lg="{ span: 9, offset: 2 }">
                 <a-button type="primary" ghost class="authBtn" @click="showModal"
                           style="font-family: Roboto; font-weight: 800; color: black; border: black 1px solid; border: none; box-shadow: none; font-size: 15px">Вход | Регистрация
                 </a-button>
@@ -17,11 +17,12 @@ ut                        :form="form"
                         class="login-form"
                         @submit="handleSubmit"
                     >
-                        <a-form-model-item>
+                        <a-form-item>
                             <div class="image-logo-center">
                                 <img src="../IndexPage/img/logo1.png" class="slider-icon3" style="display: block">
                             </div>
                             <div class="block-button-auth">`
+
                                 <a-button type="primary" class="button-auth" @click="() => login.action = false"
                                         v-bind:class="{ 'button-active': !login.action }"><span class="text-auth-registration2"
                                    >Регистрация</span></a-button>
@@ -34,36 +35,37 @@ ut                        :form="form"
                                 <h1 v-if="!login.action" class="text-auth-registration">ЗАРЕГИСТРИРОВАТЬСЯ КАК</h1>
                                 <div class="block-checkbox">
                                     <div class="flex"><input class="checkbox-button" type="radio" name="5" id="answer1"
-                                                             v-model="login.isUser" v-bind:value="true"
+                                                             v-bind:value="true"
+                                                             v-model="login.isUser"
                                                              checked="checked">
                                         <h3 class="p1">Покупатель</h3></div>
                                     <div class="flex"><input class="checkbox-button" type="radio" name="5" id="answer2"
-                                                             v-model="login.isUser" v-bind:value="false">
+                                                             v-bind:value="false"
+                                                             v-model="login.isUser"
+                                    >
                                         <h3 class="p1">Продавец (ЮЛ)</h3></div>
                                 </div>
                             </div>
-                        </a-form-model-item>
+                        </a-form-item>
 
-                        <a-form-model-item v-if="login.action">
-                            <a-form-model-item label="E-mail">
+                        <a-form-item v-if="login.action">
+                            <a-form-item label="E-mail">
                                 <a-input
-                                    v-model="formData.userData.email"
                                     v-decorator="[
-                                  'userName',
+                                  'email',
                                   { rules: [
                                       { required: true, message: 'Данное поле обязательно для ввода'},
                                       { email: true, message: 'Некорректный формат электронной почты' },
                                     ],
-                                     initialValue: formData.userData.email},
+                                     initialValue: formData.email},
                     ]" type="mail"
                                     placeholder="E-mail"
                                 >
                                     <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)"/>
                                 </a-input>
-                            </a-form-model-item>
+                            </a-form-item>
                             <a-form-item label="Пароль">
                                 <a-input-password
-                                    v-model="formData.userData.password"
                                     v-decorator="[
                       'password',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' },
@@ -74,9 +76,8 @@ ut                        :form="form"
                                     <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)"/>
                                 </a-input-password>
                                 <a-checkbox
-                                    v-model="formData.userData.rememberMe"
                                     v-decorator="[
-                          'remember',
+                          'rememberMe',
                           {
                             valuePropName: 'checked',
                             initialValue: false,
@@ -88,7 +89,7 @@ ut                        :form="form"
                             </a-form-item>
                             <a-form-item align="center">
                                 <a-form-item>
-                                    <a-button @click="loginIn" type="primary" size="large" html-type="submit"
+                                    <a-button type="primary" size="large" html-type="submit"
                                               class="login-form-button"
                                               style="margin-right: 20px">
                                         ВОЙТИ В АККАУНТ
@@ -109,12 +110,11 @@ ut                        :form="form"
                                 </a-form-item>
                             </a-form-item>
 
-                        </a-form-model-item>
+                        </a-form-item>
 
                         <a-form-item v-if="(!login.action && login.isUser)">
                             <a-form-item label="Имя">
                                 <a-input
-                                    v-model="formData.roleData.user.name"
                                     v-decorator="[
                       'name',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода'},
@@ -127,7 +127,6 @@ ut                        :form="form"
                             </a-form-item>
                             <a-form-item label="Фамилия">
                                 <a-input
-                                    v-model="formData.roleData.user.surname"
                                     v-decorator="[
                       'surname',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
@@ -138,7 +137,6 @@ ut                        :form="form"
                             </a-form-item>
                             <a-form-item label="Отчество">
                                 <a-input
-                                    v-model="formData.roleData.user.patronymic"
                                     v-decorator="[
                       'patronymic',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
@@ -150,9 +148,8 @@ ut                        :form="form"
 
                             <a-form-item label="Телефон">
                                 <a-input
-                                    v-model="formData.roleData.user.phone"
                                     v-decorator="[
-                      'telephone',
+                      'phone',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
                                     placeholder="Телефон"
                                 >
@@ -171,7 +168,6 @@ ut                        :form="form"
 
                             <a-form-item label="Email">
                                 <a-input
-                                    v-model="formData.userData.email"
                                     v-decorator="[
                       'email',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' },
@@ -185,7 +181,6 @@ ut                        :form="form"
 
                             <a-form-item label="Пароль">
                                 <a-input-password
-                                    v-model="formData.userData.password"
                                     v-decorator="[
                       'password',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
@@ -194,9 +189,9 @@ ut                        :form="form"
                                 >
                                     <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)"/>
                                 </a-input-password>
-                                <a-checkbox v-model="formData.userData.rememberMe"
-                                            v-decorator="[
-                          'remember',
+                                <a-checkbox
+                                    v-decorator="[
+                          'rememberMe',
                           {
                             valuePropName: 'checked',
                             initialValue: false,
@@ -209,7 +204,7 @@ ut                        :form="form"
 
                             <a-form-item align="center">
                                 <a-form-item>
-                                    <a-button @click="signUp" type="primary" size="large" html-type="submit"
+                                    <a-button type="primary" size="large" html-type="submit"
                                               class="login-form-button"
                                               style="margin-right: 20px">
                                         ЗАРЕГИСТРИРОВАТЬСЯ
@@ -236,9 +231,8 @@ ut                        :form="form"
                         <a-form-item v-if="(!login.action && !login.isUser)">
                             <a-form-item label="Название организации или ИП">
                                 <a-input
-                                    v-model="formData.roleData.company.company_name"
                                     v-decorator="[
-                      'organization',
+                      'company_name',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода'},
                                 ] },
                     ]"
@@ -249,7 +243,6 @@ ut                        :form="form"
                             </a-form-item>
                             <a-form-item label="Юридический адрес">
                                 <a-input
-                                    v-model="formData.roleData.company.legal_address"
                                     v-decorator="[
                       'legal_address',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
@@ -260,9 +253,8 @@ ut                        :form="form"
                             </a-form-item>
                             <a-form-item label="Банк">
                                 <a-input
-                                    v-model="formData.roleData.company.bank"
                                     v-decorator="[
-                      'Банк',
+                      'bank',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
                                     placeholder="Банк"
                                 >
@@ -272,9 +264,8 @@ ut                        :form="form"
 
                             <a-form-item label="БИК банка">
                                 <a-input
-                                    v-model="formData.roleData.company.bank_bik"
                                     v-decorator="[
-                      'bic_bank',
+                      'bank_bik',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
                                     type="number"
                                     placeholder="БИК банка"
@@ -285,7 +276,6 @@ ut                        :form="form"
 
                             <a-form-item label="Расчетный счет">
                                 <a-input
-                                    v-model="formData.roleData.company.checking_account"
                                     v-decorator="[
                       'checking_account',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
@@ -297,7 +287,6 @@ ut                        :form="form"
                             </a-form-item>
                             <a-form-item label="ИНН">
                                 <a-input
-                                    v-model="formData.roleData.company.inn"
                                     v-decorator="[
                       'inn',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' }, ]}]"
@@ -309,7 +298,6 @@ ut                        :form="form"
                             </a-form-item>
                             <a-form-item label="КПП">
                                 <a-input
-                                    v-model="formData.roleData.company.kpp"
                                     v-decorator="[
                       'kpp',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' },
@@ -324,9 +312,8 @@ ut                        :form="form"
 
                             <a-form-item label="Email">
                                 <a-input
-                                    v-model="formData.userData.email"
                                     v-decorator="[
-                      'mail',
+                      'email',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' },
                                 { email: true, message: 'Некорректный формат электронной почты' }
 
@@ -338,9 +325,8 @@ ut                        :form="form"
                             </a-form-item>
                             <a-form-item label="Пароль">
                                 <a-input-password
-                                    v-model="formData.userData.password"
                                     v-decorator="[
-                      'Пароль',
+                      'password',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода' },
                                 { min: 8, max: 25, message: 'Пароль должен быть не меньше 8 и не больше 25 символов' }
 
@@ -350,9 +336,9 @@ ut                        :form="form"
                                 >
                                     <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)"/>
                                 </a-input-password>
-                                <a-checkbox v-model="formData.userData.rememberMe"
-                                            v-decorator="[
-                          'remember',
+                                <a-checkbox
+                                    v-decorator="[
+                          'rememberMe',
                           {
                             valuePropName: 'checked',
                             initialValue: false,
@@ -365,7 +351,7 @@ ut                        :form="form"
 
                             <a-form-item align="center">
                                 <a-form-item>
-                                    <a-button @click="signUp" type="primary" size="large" html-type="submit"
+                                    <a-button type="primary" size="large" html-type="submit"
                                               class="login-form-button"
                                               style="margin-right: 20px">
                                         ЗАРЕГИСТРИРОВАТЬСЯ
@@ -387,7 +373,7 @@ ut                        :form="form"
                                 </a-form-item>
                             </a-form-item>
                         </a-form-item>
-                    </a-form-model>
+                    </a-form>
                 </a-modal>
                 <a-modal
                     title="Восстановление пароля"
@@ -403,7 +389,7 @@ ut                        :form="form"
                                 Введите адрес электронной почты</h1>
                             <a-input
                                 v-decorator="[
-                      'mail_recovery',
+                      'email',
                       { rules: [{ required: true, message: 'Данное поле обязательно для ввода'},
                                 ] },
                     ]"
@@ -420,6 +406,7 @@ ut                        :form="form"
                     </a-form>
                 </a-modal>
             </a-col>
+            <a-button v-else @click="signOut">ВЫйти</a-button>
         </a-row>
     </a-layout-header>
 </template>
@@ -429,14 +416,13 @@ import Vue from 'vue'
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 
-
 Vue.use(Antd);
 export default {
     beforeCreate() {
         this.form = this.$form.createForm(this, {name: 'normal_login'});
     },
     name: 'Header',
-    components: {},
+
     data() {
         return {
             collapsed: false,
@@ -447,40 +433,28 @@ export default {
                 action: true,
                 isUser: false,
             },
-            formData: {
-                userData: {
-                    email: '',
-                    password: '',
-                    rememberMe: '',
-                },
-                roleData: {
-                    user: {
-                        name: '',
-                        surname: '',
-                        patronymic: '',
-                        phone: '',
-                    },
-                    company: {
-                        company_name: '',
-                        legal_address: '',
-                        bank: '',
-                        bank_bik: '',
-                        checking_account: '',
-                        inn: '',
-                        kpp: '',
-                    }
-                },
-            }
+            formData: {},
         }
     },
     computed: {
         errors() {
-            let errors = this.$store.getters.errors;
-            console.log(errors)
-            return errors;
+            return this.$store.getters.getErrors
+        },
+        isAuth() {
+            return this.$store.getters.getAuthStatus
         }
     },
     methods: {
+        openNotification() {
+            let errs = this.errors
+            for (let key in errs) {
+                this.$notification['error']({
+                    message: key,
+                    description: errs[key],
+                    class: 'bg-danger'
+                });
+            }
+        },
         showModal() {
             this.visible = true;
         },
@@ -490,14 +464,46 @@ export default {
         },
         handleSubmit(e) {
             e.preventDefault();
-            this.form.validateFields(() => {
-            });
-        },
-        loginIn() {
+            this.form.validateFields((err, values) => {
+                if (!err) {
+                    values.phone = values.prefix + values.phone;
+                    if (this.login.isUser) {
+                        this.formData = {
+                            role: 'user',
+                            ...values,
+                        }
+                    } else {
+                        this.formData = {
+                            role: 'company',
+                            ...values,
+                        }
+                    }
+
+                    if (this.login.action) {
+                        this.loginIn()
+                    } else {
+                        this.signUp();
+                    }
+                }
+            })
 
         },
+        signOut() {
+            this.visible = false
+            this.$store.dispatch('signOut')
+        },
+        loginIn() {
+            let data = this.formData;
+            this.$store.dispatch('signIn', data).then(() => {
+                this.openNotification()
+            })
+        },
         signUp() {
-            /*let data;
+            let data = this.formData;
+            this.$store.dispatch('signUp', data).then(() => {
+                this.openNotification()
+            })
+            let data;
             if (this.login.isUser) {
                 data = {
                     ...this.formData.userData,
@@ -510,9 +516,9 @@ export default {
                     ...this.formData.userData,
                     role: 'company'
                 }
-            }*/
+            }
             //console.log(data)
-            //this.$store.dispatch('signUp', data)
+            this.$store.dispatch('signUp', data)
         }
     }
 }

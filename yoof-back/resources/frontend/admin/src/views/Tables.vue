@@ -130,9 +130,8 @@ export default ({
             let user = this.table1Data[key]
             this.$store.dispatch('deleteUser', user.id)
         },
-        changeUserStatus(key) {
-            let user = this.table1Data[key]
-            this.$store.dispatch('changeUserStatus', user.id)
+        changeUserStatus(index) {
+            this.$store.dispatch('changeUserStatus', index)
         },
         sortTableByRole(role) {
             this.sortArguments.string = role
