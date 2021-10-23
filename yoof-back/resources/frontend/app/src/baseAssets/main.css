@@ -215,11 +215,12 @@
 }
 
 .line666{
-    margin-top: 4px; width: 100%;
+    margin-top: 4px;
+    margin-bottom: 30px;
+    width: 100%;
     background-color: #EBF005;
     height: 3px;
     padding: 0;
-    margin: 0;
     border: 0;
     border-radius: 3px;
 }
@@ -407,8 +408,9 @@
 
 .FLEXspectest{
     justify-content: space-between;
-    position: relative;
     display: flex;
+    margin-left: 130px;
+    margin-right: 130px;
 }
 
 .FLEX555{
@@ -655,12 +657,13 @@ input{outline:none;}
 
 .bloc_2{
     width: 100%;
-    height: 870px;
+    height: 900px;
     background-color: white;
 }
 
 .help{
     font-family: Roboto;font-style: normal;font-weight: normal;font-size: 22px;line-height: 124.68%;text-align: center;color: #000000;
+    margin-bottom: 80px;
 }
 
 .H1{
@@ -752,7 +755,7 @@ input{outline:none;}
 }
 
 .H32{
-
+    width: 300px;
     height: 68px;
     margin: 0;
     font-family: Roboto;
@@ -1514,7 +1517,7 @@ input[type='radio']:checked::after {
 }
 
 .fghfgh{
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -2473,19 +2476,11 @@ li{
     .wid75{
         width: 100%;
     }
-    ul{
-        width: 155px;
-    }
+
 }
-@media (max-width: 1400px){
-    ul{
-        width: 125px;
-    }
-}
+
 @media (max-width: 1300px){
-    ul{
-        width: 105px;
-    }
+
     .city-div{
         width: 14.28571%;
     }

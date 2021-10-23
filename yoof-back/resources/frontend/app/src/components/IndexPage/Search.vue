@@ -1,13 +1,12 @@
 <template>
     <div class="background-image">.
-        <div class="people">
-            <Sidebar  />
-            <h1 class="h1">ПОЛУЧИТЕ СВОЕ ЭКСКЛЮЗИВНОЕ ПРЕДЛОЖЕНИЕ</h1>
+        <div class="people"><h1 class="h1">ПОЛУЧИТЕ СВОЕ ЭКСКЛЮЗИВНОЕ ПРЕДЛОЖЕНИЕ</h1>
         </div>
         <div class="connect">
             <h2 class="connect2">Сотни магазинов электроники готовы участвовать в аукционе, за право предложить вам свой товар</h2>
         </div>
         <div class="flex mt60">
+
             <a-input-search
                 placeholder="Введите модель техники или воспользуйтесь фильтрами"
                 enter-button="Искать"
@@ -15,9 +14,11 @@
                 class="width-input"
             />
         </div>
-        <div class="flex-space-between">
-            <h2 class="h202"></h2>
-            <h3 class="text-add-filter" @click="() => visibleModalFilter = true"><span class="plusy">+</span> Применить фильтры</h3>
+        <div class="body" style="background-color: transparent">
+            <div class="flex-space-between">
+
+                <h3 class="text-add-filter" @click="() => visibleModalFilter = true"><span class="plusy">+</span> Применить фильтры</h3>
+            </div>
         </div>
         <a-modal
             title="Применение фильтров"
@@ -40,14 +41,122 @@
                         </a-input-search>
                     </div>
                     <div class="flex-filter-block">
-                        <h1 class="ppppp">Холодильники</h1>
-                        <h1 class="ppppp43">Ноутбуки</h1>
-                        <h1 class="ppppp90">Пылесосы</h1>
+                        <a-form-item label="Бытовая техника">
+                            <a-select default-value="Газовые плиты" style="width: 180px; margin-bottom: 20px">
+                                <a-select-option value="2">
+                                    Газовые плиты
+                                </a-select-option>
+                                <a-select-option value="3">
+                                    Стиральные машины
+                                </a-select-option>
+                                <a-select-option value="4">
+                                    Холодильники
+                                </a-select-option>
+                                <a-select-option value="5">
+                                    Вентиляторы
+                                </a-select-option>
+                                <a-select-option value="6">
+                                    Фены
+                                </a-select-option>
+                            </a-select>
+                        </a-form-item>
+                        <a-form-item label="Бытовая техника">
+                            <a-select default-value="Газовые плиты" style="width: 180px; margin-bottom: 20px">
+                                <a-select-option value="2">
+                                    Газовые плиты
+                                </a-select-option>
+                                <a-select-option value="3">
+                                    Стиральные машины
+                                </a-select-option>
+                                <a-select-option value="4">
+                                    Холодильники
+                                </a-select-option>
+                                <a-select-option value="5">
+                                    Вентиляторы
+                                </a-select-option>
+                                <a-select-option value="6">
+                                    Фены
+                                </a-select-option>
+                            </a-select>
+                        </a-form-item>
+                        <a-form-item label="Бытовая техника">
+                            <a-select default-value="Газовые плиты" style="width: 180px; margin-bottom: 20px">
+                                <a-select-option value="2">
+                                    Газовые плиты
+                                </a-select-option>
+                                <a-select-option value="3">
+                                    Стиральные машины
+                                </a-select-option>
+                                <a-select-option value="4">
+                                    Холодильники
+                                </a-select-option>
+                                <a-select-option value="5">
+                                    Вентиляторы
+                                </a-select-option>
+                                <a-select-option value="6">
+                                    Фены
+                                </a-select-option>
+                            </a-select>
+                        </a-form-item>
                     </div>
                     <div class="flex-filter-block">
-                        <h1 class="ppppp">Телевизоры</h1>
-                        <h1 class="ppppp">Смартфоны</h1>
-                        <h1 class="ppppp">Стиральные машины</h1>
+                        <a-form-item label="Бытовая техника">
+                            <a-select default-value="Газовые плиты" style="width: 180px; margin-bottom: 20px">
+                                <a-select-option value="2">
+                                    Газовые плиты
+                                </a-select-option>
+                                <a-select-option value="3">
+                                    Стиральные машины
+                                </a-select-option>
+                                <a-select-option value="4">
+                                    Холодильники
+                                </a-select-option>
+                                <a-select-option value="5">
+                                    Вентиляторы
+                                </a-select-option>
+                                <a-select-option value="6">
+                                    Фены
+                                </a-select-option>
+                            </a-select>
+                        </a-form-item>
+                        <a-form-item label="Бытовая техника">
+                            <a-select default-value="Газовые плиты" style="width: 180px; margin-bottom: 20px">
+                                <a-select-option value="2">
+                                    Газовые плиты
+                                </a-select-option>
+                                <a-select-option value="3">
+                                    Стиральные машины
+                                </a-select-option>
+                                <a-select-option value="4">
+                                    Холодильники
+                                </a-select-option>
+                                <a-select-option value="5">
+                                    Вентиляторы
+                                </a-select-option>
+                                <a-select-option value="6">
+                                    Фены
+                                </a-select-option>
+                            </a-select>
+                        </a-form-item>
+                        <a-form-item label="Бытовая техника">
+                            <a-select default-value="Газовые плиты" style="width: 180px; margin-bottom: 20px">
+                                <a-select-option value="2">
+                                    Газовые плиты
+                                </a-select-option>
+                                <a-select-option value="3">
+                                    Стиральные машины
+                                </a-select-option>
+                                <a-select-option value="4">
+                                    Холодильники
+                                </a-select-option>
+                                <a-select-option value="5">
+                                    Вентиляторы
+                                </a-select-option>
+                                <a-select-option value="6">
+                                    Фены
+                                </a-select-option>
+                            </a-select>
+                        </a-form-item>
                     </div>
                     <div class="flex-filter-block">
                         <div>
@@ -111,11 +220,8 @@
                             <h1 class="ppppp">Показать все ></h1>
                         </div>
                     </div>
-                    <div class="FLEX5 ai fmtp">
-                        <h1 class="ppppp10">Очистить фильтры</h1>
-                        <div class="flex-pop" style="margin-left: 10px"><button class="button-filter-search"><span class="pppp">НАЧАТЬ ПОИСК</span></button></div>
-                        <h1 class="colwhi">Очистить фильтры</h1>
-                    </div>
+                        <div class="flex-pop"><h1 class="ppppp10" style=" margin-right: 20px">Очистить все фильтры</h1><a-button type="primary" style="width: 200px; height: 60px; border-radius: 6px; background-color: yellowgreen"><span class="pppp">НАЧАТЬ ПОИСК</span></a-button></div>
+
                 </div>
             </a-form>
         </a-modal>
@@ -123,12 +229,10 @@
 </template>
 
 <script>
-import Sidebar from "./Sidebar";
 
 export default {
     name: "Search",
     components: {
-      Sidebar
     },
     data() {
         return {
@@ -206,7 +310,7 @@ export default {
 
 
 .width-input {
-    width: 80%;
+    width: 77%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -222,7 +326,7 @@ export default {
     line-height: 21px;
     color: white;
     right: 15px;
-    margin-right: 10px;
+    margin-right: 0px;
 }
 .h1 {
 
@@ -283,6 +387,14 @@ export default {
     font-size: 45px;
     letter-spacing: 0.02em;
 }
+.search-filter-button {
+    font-family: Roboto;
+    width: 230px;
+    height: 55px;
+    position: relative;
+    left: -110%;
+    margin-bottom: 20px;
+}
 .connect {
     margin: 0;
 }
@@ -314,6 +426,10 @@ export default {
     }
     .h1 {
         font-size: 36px;
+    }
+    .search-filter-button {
+        width: 160px;
+        height: 45px;
     }
 
 }

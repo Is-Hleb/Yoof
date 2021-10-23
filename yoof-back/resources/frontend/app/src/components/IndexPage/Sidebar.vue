@@ -1,6 +1,6 @@
 <template>
     <a-layout id="components-layout-demo-custom-trigger" >
-        <a-icon class="trigger trigg" :type="collapsed ? 'menu' : 'menu'" @click="() => (collapsed = !collapsed)" style="position: absolute; top: -23%; left: 30%" />
+        <a-icon class="trigger trigg" :type="collapsed ? 'menu' : 'menu'" @click="() => (collapsed = !collapsed)" style="position: absolute; top: -25%; left: 0%" />
         <a-layout-sider v-model="collapsed" :trigger="null" collapsible theme="light" width="230" hei collapsed-width="0" >
             <a-menu theme="light" mode="inline" :default-selected-keys="['1']" >
                 <a-menu-item key="1">
