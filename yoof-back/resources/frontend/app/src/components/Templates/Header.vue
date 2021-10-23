@@ -1,21 +1,19 @@
 <template>
     <a-layout-header style="background: #fff; padding: 0">
         <a-row>
-            <a-col :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }">
-                <span class="text-city"><img src="../IndexPage/img/tocha.png" class="icon-city">Москва</span>
-            </a-col>
-            <a-col :xs="{ span: 11, offset: 1 }" :lg="{ span: 4, offset: 2 }">
+            <a-col :xs="{ span: 11, offset: 1 }" :lg="{ span: 9, offset: 2 }">
                 <a href=""><img src="../IndexPage/img/logo1.png" class="logo"></a>
             </a-col>
-            <a-col v-if="!isAuth" :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }">
-                <a-button html-type="button" type="primary" ghost class="authBtn" @click="showModal"
-                          style="font-family: Roboto; font-weight: 800; color: black; border: black 1px solid;">Вход |
-                    Регистрация
+
+            <a-col v-if="!isAuth" :xs="{ span: 5, offset: 1 }" :lg="{ span: 9, offset: 2 }">
+                <a-button type="primary" ghost class="authBtn" @click="showModal"
+                          style="font-family: Roboto; font-weight: 800; color: black; border: black 1px solid; border: none; box-shadow: none; font-size: 15px">Вход | Регистрация
                 </a-button>
-                <a-modal v-model="visible" title="Вход | Регистрация" width="700px">
-                    <a-form
+                <a-modal v-model="visible" title="Вход | Регистрация" width="600px">
+                    <a-form-model
                         id="components-form-demo-normal-login"
-                        :form="form"
+ut                        :form="form"
+                        :model="formData"
                         class="login-form"
                         @submit="handleSubmit"
                     >
@@ -24,12 +22,13 @@
                                 <img src="../IndexPage/img/logo1.png" class="slider-icon3" style="display: block">
                             </div>
                             <div class="block-button-auth">`
-                                <button type="button" class="button-auth" @click="() => login.action = false"
-                                        v-bind:class="{ 'button-active': !login.action }"><span
-                                    class="auth-button-text">Регистрация</span></button>
-                                <button type="button" class="button-auth" @click="() => login.action = true"
-                                        v-bind:class="{ 'button-active': login.action }"><span class="auth-button-text">Вход</span>
-                                </button>
+
+                                <a-button type="primary" class="button-auth" @click="() => login.action = false"
+                                        v-bind:class="{ 'button-active': !login.action }"><span class="text-auth-registration2"
+                                   >Регистрация</span></a-button>
+                                <a-button type="primary" class="button-auth" @click="() => login.action = true"
+                                        v-bind:class="{ 'button-active': login.action }"><span class="text-auth-registration2">Вход</span>
+                                </a-button>
                             </div>
                             <div>
                                 <h1 v-if="login.action" class="text-auth-registration">АВТОРИЗОВАТЬСЯ КАК</h1>
@@ -504,6 +503,22 @@ export default {
             this.$store.dispatch('signUp', data).then(() => {
                 this.openNotification()
             })
+            let data;
+            if (this.login.isUser) {
+                data = {
+                    ...this.formData.userData,
+                    ...this.formData.roleData.user,
+                    role: 'user',
+                }
+            } else {
+                data = {
+                    ...this.formData.roleData.company,
+                    ...this.formData.userData,
+                    role: 'company'
+                }
+            }
+            //console.log(data)
+            this.$store.dispatch('signUp', data)
         }
     }
 }
@@ -562,6 +577,10 @@ export default {
     background-color: yellowgreen;
     border: yellowgreen 2px solid;
 }
+.ant-btn-primary:hover {
+    background-color: green;
+    border: green 2px solid;
+}
 
 .ant-carousel .slick-slide h3 {
     color: #fff;
@@ -618,21 +637,18 @@ export default {
     cursor: pointer;
     margin-left: 2.5%;
     margin-right: 2.5%;
-    border: 3px solid #EBF005;
     border-radius: 10px;
     margin-top: 5%;
     width: 200px;
     height: 60px;
-    z-index: 1;
-    background-color: white;
-    padding-left: 8px;
-    margin-bottom: 60px;
+    background-color: yellowgreen;
 }
 
 .text-auth-registration {
     text-align: center;
     height: 60px;
-    margin: 0;
+    margin-top: 20px;
+
     font-family: Roboto;
     font-style: normal;
     font-weight: 900;
@@ -641,13 +657,27 @@ export default {
     color: #000000;
 }
 
+.text-auth-registration2 {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 600;
+}
 .button-active {
-    background: yellow;
+    background-color: green;
 }
 
+.ant-btn-primary:hover, .ant-btn-primary:focus {
+    background-color: yellowgreen;
+}
+.ant-btn-primary {
+    border: black 1px solid;
+}
 .login-form-button {
     font-family: Roboto;
     margin-top: 15px;
+    background-color: yellowgreen;
+    height: 43px;
+    margin-left: 5px;
 }
 
 .block-button-auth {
