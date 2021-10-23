@@ -479,13 +479,14 @@ export default {
                             ...values,
                         }
                     }
+
+                    if (this.login.action) {
+                        this.loginIn()
+                    } else {
+                        this.signUp();
+                    }
                 }
             })
-            if (this.login.action) {
-                this.loginIn()
-            } else {
-                this.signUp();
-            }
 
         },
         signOut() {
@@ -494,24 +495,12 @@ export default {
         },
         loginIn() {
             let data = this.formData;
-            let keys = ['email', 'password'];
-            for (let key in data) {
-                if (key in keys) {
-                    return
-                }
-            }
             this.$store.dispatch('signIn', data).then(() => {
                 this.openNotification()
             })
         },
         signUp() {
             let data = this.formData;
-            let keys = ['email', 'password'];
-            for (let key in data) {
-                if (key in keys) {
-                    return
-                }
-            }
             this.$store.dispatch('signUp', data).then(() => {
                 this.openNotification()
             })
