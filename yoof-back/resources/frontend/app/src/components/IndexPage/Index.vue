@@ -132,7 +132,8 @@ export default {
     components: {
         Search,
         Header,
-        Footer,},
+        Footer,
+    },
     beforeCreate() {
         this.form = this.$form.createForm(this, { name: 'normal_login' });
     },
@@ -169,11 +170,9 @@ export default {
 .text-service {
     margin-top: 10px;
     margin-bottom: 0;
-    font-family: Oswald;
-    font-style: normal;
-    font-weight: bold;
+    font-family: "Cormorant Garamond";
+    font-weight: 600;
     font-size: 50px;
-    line-height: 124.68%;
     color: #000000;
 }
 
@@ -270,7 +269,7 @@ export default {
 
 .body {
     padding: 0 15px;
-    max-width: 1200px;
+    max-width: 1250px;
     position: relative;
     height: 100%;
     margin: 0 auto;
@@ -327,14 +326,13 @@ export default {
 .h1 {
 
     margin-top: -15px;
-    font-family: Oswald;
+    font-family: "Cormorant Garamond";
     font-style: normal;
     font-weight: bold;
     font-size: 50px;
     line-height: 124.68%;
     text-align: center;
     color: white;
-    -webkit-text-stroke: 0.5px black;
 
 }
 
@@ -395,6 +393,7 @@ export default {
     width: 100%;
     height: 40px;
     text-align: left;
+    margin-bottom: 20px;
 }
 .btn-read {
     margin-bottom: 8px;
@@ -411,9 +410,11 @@ export default {
     border: yellowgreen;
 }
 .ant-btn-primary:hover, .ant-btn-primary:focus {
-    background-color: green;
-    border: none;
+    background-color: #07bb14;
+    border: black 1px solid;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 5px 10px rgba(0,0,0,0.22);
 }
+
 
 .data-news-text {
     color: black;
@@ -564,6 +565,12 @@ export default {
     }
     .block-work {
         display: block;
+    }
+    .text-service, .asdasdf {
+        font-size: 38px;
+    }
+    .name-news-text {
+        margin-bottom: 30px;
     }
 }
 
