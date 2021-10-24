@@ -132,7 +132,8 @@ export default {
     components: {
         Search,
         Header,
-        Footer,},
+        Footer,
+    },
     beforeCreate() {
         this.form = this.$form.createForm(this, { name: 'normal_login' });
     },

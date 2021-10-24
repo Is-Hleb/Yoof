@@ -1,7 +1,3 @@
-* {
-    scroll-behavior: smooth;
-}
-
 .blok{
     width: 100%;
     height: 600px;/*1080px*/
@@ -2734,5 +2730,3 @@ li{
         max-height: 15090px;
     }
 }
-
-
