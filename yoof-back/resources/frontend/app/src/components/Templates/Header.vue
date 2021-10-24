@@ -1,18 +1,19 @@
 <template>
     <a-layout-header style="background: #fff; padding: 0">
-
         <a-row>
-            <a-col :xs="{ span: 11, offset: 1 }" :lg="{ span: 9, offset: 2 }">
-                <a href=""><img src="../IndexPage/img/logo1.png" class="logo"></a>
-            </a-col>
-            <a-col :xs="{ span: 5, offset: 1 }" :lg="{ span: 9, offset: 2 }">
-                <a-button type="primary" ghost class="authBtn" @click="showModal"
-                          style="font-family: Roboto; font-weight: 800; color: black; border: black 1px solid; border: none; box-shadow: none; font-size: 15px">Вход | Регистрация
-                </a-button>
+            <a-row type="flex">
+                <a-col flex="auto"><a href=""><img src="../IndexPage/img/logo1.png" class="logo"></a></a-col>
+                <a-col flex="auto">
+                    <a-button type="primary" ghost class="authBtn" @click="showModal"
+                              style="font-family: Roboto; font-weight: 800; color: black; border: black 1px solid; border: none; box-shadow: none; font-size: 15px">
+                        Вход | Регистрация
+                    </a-button>
+                </a-col>
+            </a-row>
                 <a-modal v-model="visible" title="Вход | Регистрация" width="600px">
                     <a-form-model
                         id="components-form-demo-normal-login"
-ut                        :form="form"
+                        :form="form"
                         :model="formData"
                         class="login-form"
                         @submit="handleSubmit"
@@ -90,7 +91,7 @@ ut                        :form="form"
                                 <a-form-item>
                                     <a-button @click="loginIn" type="primary" size="large" html-type="submit"
                                               class="login-form-button"
-                                              style="margin-right: 20px">
+                                              style="margin-right: 20px; ">
                                         ВОЙТИ В АККАУНТ
                                     </a-button>
                                 </a-form-item>
@@ -419,7 +420,6 @@ ut                        :form="form"
 
                     </a-form>
                 </a-modal>
-            </a-col>
         </a-row>
     </a-layout-header>
 </template>
@@ -436,7 +436,9 @@ export default {
         this.form = this.$form.createForm(this, {name: 'normal_login'});
     },
     name: 'Header',
-    components: {},
+    components: {
+
+    },
     data() {
         return {
             collapsed: false,
@@ -569,10 +571,10 @@ export default {
 
 .ant-input-search-button {
     background-color: yellowgreen;
-    border: yellowgreen 2px solid;
+    border: #07bb14 2px solid;
 }
 .ant-btn-primary:hover {
-    background-color: green;
+    background-color: #07bb14;
     border: green 2px solid;
 }
 
@@ -633,9 +635,9 @@ export default {
     margin-right: 2.5%;
     border-radius: 10px;
     margin-top: 5%;
-    width: 200px;
-    height: 60px;
-    background-color: yellowgreen;
+    width: 180px;
+    height: 50px;
+    background-color: #07bb14;
 }
 
 .text-auth-registration {
@@ -653,23 +655,23 @@ export default {
 
 .text-auth-registration2 {
     font-family: Roboto;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
+    text-shadow: 1px 1px black;
 }
 .button-active {
-    background-color: green;
+    background-color: #07bb14;
+    border: black 1px solid;
 }
 
 .ant-btn-primary:hover, .ant-btn-primary:focus {
     background-color: yellowgreen;
 }
-.ant-btn-primary {
-    border: black 1px solid;
-}
+
 .login-form-button {
     font-family: Roboto;
     margin-top: 15px;
-    background-color: yellowgreen;
+    background-color: #07bb14;
     height: 43px;
     margin-left: 5px;
 }
@@ -732,6 +734,9 @@ export default {
     }
 
     .text-city {
+        display: none;
+    }
+    .logo {
         display: none;
     }
 

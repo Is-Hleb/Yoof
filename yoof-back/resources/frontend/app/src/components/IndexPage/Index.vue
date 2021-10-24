@@ -410,9 +410,11 @@ export default {
     border: yellowgreen;
 }
 .ant-btn-primary:hover, .ant-btn-primary:focus {
-    background-color: green;
-    border: none;
+    background-color: #07bb14;
+    border: black 1px solid;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 5px 10px rgba(0,0,0,0.22);
 }
+
 
 .data-news-text {
     color: black;
