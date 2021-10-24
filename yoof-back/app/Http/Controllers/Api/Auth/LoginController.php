@@ -12,34 +12,56 @@ use Illuminate\Support\Str;
 
 class LoginController extends Controller
 {
-    public function index(Request $request) {
+    public function index(Request $request)
+    {
         $validator = Validator::make($request->all(), [
             'email' => 'required',
             'password' => 'required'
         ]);
 
         $data = $validator->safe()->toArray();
-        $user = User::where('email', $data['email'])->first();
 
-        if(!Hash::check($data['password'], $user->password)) {
+        if ($validator->fails()) {
             return \response([
-               'code' => 'err',
-               'data' => 'Неправильный пароль',
+                'code' => 'err',
+                'errors' => $validator->errors()
             ]);
         }
 
+        $user = User::where('email', $data['email'])->first();
         if(!$user) {
+            return \response([
+                'code' => 'err',
+                'errors' => [
+                    'email' => 'Пользователя с такой почтой не существует'
+                ]
+            ]);
+        }
+
+
+        if (!Hash::check($data['password'], $user->password)) {
+            return \response([
+                'code' => 'err',
+                'errors' => [
+                    'Пароль' => 'Вы ввели неправильный пароль'
+                ],
+            ]);
+        }
+
+        if (!$user) {
             return \response([
                 'code' => 'err',
                 'errors' => $validator->errors(),
                 $user
             ]);
         }
+
         $user->api_token = Str::random(60);
         $user->save();
 
         Auth::login($user);
         return \response([
+            'code' => 'success',
             'user' => Auth::user(),
             'token' => Auth::user()->api_token,
             'data' => Auth::user()->data

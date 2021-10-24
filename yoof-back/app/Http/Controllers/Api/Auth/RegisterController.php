@@ -59,7 +59,7 @@ class RegisterController extends Controller
 
         if ($role == 'company') {
             $validator = Validator::make($request->all(), [
-                'name' => 'required | string',
+                'company_name' => 'required | string',
                 'legal_address' => 'required | string',
                 'inn' => 'required',
                 'bank' => 'required',
@@ -69,7 +69,7 @@ class RegisterController extends Controller
             ]);
 
             if ($validator->fails()) {
-                return $validator->errors();
+                return \response(['errors' => $validator->errors(), 'code' => 'err']);
             }
             $data = $validator->safe();
 
@@ -79,7 +79,7 @@ class RegisterController extends Controller
             $responseData['data'] = $companyData;
         }
 
-        Auth::login($user);
+        Auth::login($user, $request->boolean('rememberMe'));
 
         $responseData['token'] = $user->api_token;
         $responseData['code'] = 'success';

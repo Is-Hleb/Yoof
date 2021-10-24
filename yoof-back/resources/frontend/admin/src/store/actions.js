@@ -110,7 +110,6 @@ export const actions = {
         }).then(r => {
             let data = r.data;
             if(r.data.code === 'success') {
-                console.log(r.data);
                 dispatch('getAllCategories')
             }
         })
