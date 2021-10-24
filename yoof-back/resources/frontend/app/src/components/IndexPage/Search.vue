@@ -14,8 +14,7 @@
                 class="width-input"
             />
         </div>
-        <div class="flex-space-between">
-            <h2 class="h202"></h2>
+        <div class="flex-space-between body" style="background-color: transparent">
             <h3 class="text-add-filter" @click="() => visibleModalFilter = true"><span class="plusy">+</span> Применить фильтры</h3>
         </div>
         <a-modal
@@ -203,7 +202,7 @@ export default {
 
 
 .width-input {
-    width: 80%;
+    width: 79%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -218,20 +217,17 @@ export default {
     font-size: 18px;
     line-height: 21px;
     color: white;
-    right: 15px;
-    margin-right: 10px;
 }
 .h1 {
 
     margin-top: -15px;
-    font-family: Oswald;
+    font-family: "Cormorant Garamond";
     font-style: normal;
     font-weight: bold;
     font-size: 50px;
     line-height: 124.68%;
     text-align: center;
     color: white;
-    -webkit-text-stroke: 0.5px black;
 
 }
 
@@ -274,7 +270,7 @@ export default {
 .h1 {
     color: white;
     margin-bottom: 3%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Cormorant Garamond";
     font-style: normal;
     font-weight: bold;
     font-size: 45px;
@@ -312,6 +308,7 @@ export default {
     .h1 {
         font-size: 36px;
     }
+
 
 }
 
