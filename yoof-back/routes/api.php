@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Resources\UserController;
 use App\Http\Controllers\Resources\CategoryController;
 use App\Http\Controllers\Api\AdminController;
+use App\Http\Controllers\Api\StateController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,6 +24,7 @@ Route::group(['prefix' => '/auth'], function () {
     Route::post('/register', [RegisterController::class, 'index']);
 });
 
+Route::get('/state', [StateController::class, 'index']);
 Route::get('/api-token', [AuthUser::class, 'token']);
 Route::get('/user', [AuthUser::class, 'user']);
 Route::get('/logout', [AuthUser::class, 'logout']);

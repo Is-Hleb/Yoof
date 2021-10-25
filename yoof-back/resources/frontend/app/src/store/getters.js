@@ -1,5 +1,11 @@
 export const getters = {
-    errors: state => {
+    getErrors: state => {
         return state.errors;
+    },
+    getUser: state => {
+        return state.user;
+    },
+    getAuthStatus: state => {
+        return !!state.user.token;
     }
 }

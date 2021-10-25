@@ -101,7 +101,7 @@
               this.$emit('sortTableByRole', role)
             },
             changeStatus(row) {
-                let key = row.key;
+                let key = row.id;
                 this.$confirm({
                     title: 'Изменить статус',
                     content: 'ВЫ УВЕРЕНЫ?',
@@ -123,9 +123,6 @@
                     cancelText: 'Нет',
                     onOk: () => {
                         this.$emit('onDelete', key)
-                    },
-                    onCancel() {
-                        console.log('Cancel');
                     },
                 });
             },
