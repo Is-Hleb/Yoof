@@ -47,13 +47,13 @@
                                         <div class="FLEXspectest" >
                                             <div class="block-service-benefits">
                                                 <div>
-                                                    <h2 class="h4">ЭКОНОМИЯ ВРЕМЕНИ<img src="./img/clock.png" class="size" style="margin-left: 10px"></h2>
+                                                    <h2 class="h4"><img src="./img/clock.png" class="size" style="margin-right: 10px">ЭКОНОМИЯ ВРЕМЕНИ</h2>
                                                 </div>
                                                 <h3 class="h5">Вам не нужно тратить время на посещение магазинов в поиске нужного товара</h3>
                                             </div>
                                             <div class="block-service-benefits">
                                                 <div>
-                                                    <h2 class="h4">ЭКОНОМИЯ ДЕНЕГ<img src="./img/money.png" class="size" style="margin-left: 10px"></h2>
+                                                    <h2 class="h4"><img src="./img/money.png" class="size" style="margin-right: 10px">ЭКОНОМИЯ ДЕНЕГ</h2>
                                                 </div>
                                                 <h3 class="h5">Вы приобретаете товар по минимальной цене</h3>
                                             </div>
@@ -61,50 +61,53 @@
                                         <div class="FLEXspectest">
                                             <div class="block-service-benefits">
                                                 <div>
-                                                    <h2 class="h4">ЧЕСТНЫЙ СЕРВИС<img src="../../baseAssets/img/ocenka.png" class="size" style="margin-left: 10px"></h2>
+                                                    <h2 class="h4"><img src="../../baseAssets/img/ocenka.png" class="size" style="margin-right: 10px">ЧЕСТНЫЙ СЕРВИС</h2>
                                                 </div>
                                                 <h3 class="h5">Yoof – место, где покупатели знают, что сделанные им предложения абсолютно честны, и условия будут исполнены магазинами так, как они это обещали</h3>
                                             </div>
                                             <div class="block-service-benefits">
                                                 <div>
-                                                    <h2 class="h4">ЗАБОТА О КЛИЕНТАХ<img src="../../baseAssets/img/star.png" class="size" style="margin-left: 10px"></h2>
+                                                    <h2 class="h4"><img src="../../baseAssets/img/star.png" class="size" style="margin-right: 10px">ЗАБОТА О КЛИЕНТАХ</h2>
                                                 </div>
                                                 <h3 class="h5">Мы стоим на стороне покупателей, и будем делать все, что в наших силах, для того, чтобы покупатели были довольны.</h3>
                                             </div>
                                         </div>
-                                        <div class="news">
-                                            <h1 class="asdasdf" id="news" style="margin-top: 200px">ПОПУЛЯРНЫЕ НОВОСТИ</h1>
-                                            <div class="ddsa">
-                                                <hr class="line666">
-                                            </div>
-                                            <h2 class="fghfgh">Статьи, обзоры, новости рынка</h2>
-                                            <div class="news-card">
-                                                <div class="image">
-                                                    <a-card>
-                                                        <a-row>
-                                                            <a-col :span="20">
-                                                                <span class="name-news-text">Apple выпускает новую модель</span>
-                                                                <span class="data-news-text">01.01.2021</span>
-                                                                <img src="./img/news-image2.jpg" class="news-image" style="margin-top: 10px">
-                                                                <a-button type="primary" class="btn-read" block>Читать</a-button>
-                                                            </a-col>
-                                                        </a-row>
-                                                    </a-card>
+                                        <div class="body">
+                                            <div class="news">
+                                                <h1 class="asdasdf" id="news" style="margin-top: 200px">ПОПУЛЯРНЫЕ НОВОСТИ</h1>
+                                                <div class="ddsa">
+                                                    <hr class="line666">
                                                 </div>
-                                                <div class="image">
-                                                    <a-card>
-                                                        <a-row>
-                                                            <a-col :span="20">
-                                                                <span class="name-news-text">Apple выпускает новую модель</span>
-                                                                <span class="data-news-text">01.01.2021</span>
-                                                                <img src="./img/news-image2.jpg" class="news-image" style="margin-top: 10px">
-                                                                <a-button type="primary" class="btn-read" block>Читать</a-button>
-                                                            </a-col>
-                                                        </a-row>
-                                                    </a-card>
+                                                <h2 class="fghfgh">Статьи, обзоры, новости рынка</h2>
+                                                <div class="news-card">
+                                                    <div class="image">
+                                                        <a-card>
+                                                            <a-row>
+                                                                <a-col :span="30">
+                                                                    <span class="name-news-text">Apple выпускает новую модель</span>
+                                                                    <span class="data-news-text">01.01.2021</span>
+                                                                    <img src="./img/news-image2.jpg" class="news-image" style="margin-top: 10px">
+                                                                    <a-button type="primary" class="btn-read" block>Читать</a-button>
+                                                                </a-col>
+                                                            </a-row>
+                                                        </a-card>
+                                                    </div>
+                                                    <div class="image">
+                                                        <a-card>
+                                                            <a-row>
+                                                                <a-col :span="30">
+                                                                    <span class="name-news-text">Apple выпускает новую модель</span>
+                                                                    <span class="data-news-text">01.01.2021</span>
+                                                                    <img src="./img/news-image2.jpg" class="news-image" style="margin-top: 10px">
+                                                                    <a-button type="primary" class="btn-read" block>Читать</a-button>
+                                                                </a-col>
+                                                            </a-row>
+                                                        </a-card>
+                                                    </div>
+
                                                 </div>
+                                                <a-button type="primary" class="btn-read-all">Посмотреть ещё</a-button>
                                             </div>
-                                            <a-button type="primary" class="btn-read-all">Посмотреть ещё</a-button>
                                         </div>
                                     </div>
                                     <Footer />
@@ -441,8 +444,8 @@ export default {
 }
 
 .news-image {
-    width: 350px;
-    height: 250px;
+    width: 250px;
+    height: 230px;
 }
 
 .block-button-auth {

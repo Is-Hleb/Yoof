@@ -2,7 +2,7 @@
     <a-layout-header style="background: #fff; padding: 0">
         <a-row>
             <a-row type="flex">
-                <a-col flex="auto"><a href=""><img src="../IndexPage/img/logo1.png" class="logo"></a></a-col>
+                <a-col flex="auto"><a href=""><img src="../IndexPage/img/logo1.png" class="logo" style="margin-left: 10px"></a></a-col>
                 <a-col flex="auto">
                     <a-button type="primary" ghost class="authBtn" @click="showModal"
                               style="font-family: Roboto; font-weight: 800; color: black; border: black 1px solid; border: none; box-shadow: none; font-size: 15px">
@@ -537,7 +537,7 @@ export default {
 #components-layout-demo-custom-trigger .logo {
     height: 32px;
     background: rgba(255, 255, 255, 0.2);
-    margin: 16px;
+
 }
 
 .ant-form-item {
@@ -724,7 +724,7 @@ export default {
     #components-layout-demo-side .logo {
         height: 30px;
         width: 100px;
-        margin-left: -30px;
+        margin-left: 17px;
     }
 
     .authBtn {
@@ -734,9 +734,6 @@ export default {
     }
 
     .text-city {
-        display: none;
-    }
-    .logo {
         display: none;
     }
 

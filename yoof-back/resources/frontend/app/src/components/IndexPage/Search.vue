@@ -38,147 +38,54 @@
                                         style="margin-bottom: 10px; margin-top: 10px">
                         </a-input-search>
                     </div>
-                    <div class="flex-filter-block">
+                    <div style="display: block">
+                        <a-layout-header :style="{ zIndex: 1, width: '100%' }" align="center" theme="light">
+                        <a-menu
+                            theme="light"
+                            mode="horizontal"
+                            :default-selected-keys="['1']"
+                            :style="{ lineHeight: '64px', fontSize: '16px' }"
+                        >
+                            <a-menu-item key="1">
+                                Бытовая техника
+                            </a-menu-item>
+                            <a-menu-item key="2">
+                                Компьютерная техника
+                            </a-menu-item>
+                            <a-menu-item key="3">
+                                Бытовая техника
+                            </a-menu-item>
+                        </a-menu>
+                        </a-layout-header>
+                        <a-layout-header :style="{ zIndex: 1, width: '100%' }" align="center" theme="light">
+                            <a-menu
+                                theme="light"
+                                mode="horizontal"
+                                :default-selected-keys="['1']"
+                                :style="{ lineHeight: '64px', fontSize: '13px'}"
+                            >
+                                <a-menu-item key="1">
+                                    Фены
+                                </a-menu-item>
+                                <a-menu-item key="2">
+                                    Холодильники
+                                </a-menu-item>
+                                <a-menu-item key="3">
+                                    Ноутбуки
+                                </a-menu-item>
+                                <a-menu-item key="4">
+                                    Пылесосы
+                                </a-menu-item>
+                                <a-menu-item key="5">
+                                    Ноутбуки
+                                </a-menu-item>
+                            </a-menu>
+                        </a-layout-header>
 
                     </div>
-                    <div class="flex-filter-block">
-                        <a-form-item label="Бытовая техника">
-                            <a-select default-value="Холодильники" style="width: 180px">
-                                <a-select-option value="1">
-                                    Холодильники
-                                </a-select-option>
-                                <a-select-option value="2">
-                                    Фены
-                                </a-select-option>
-                                <a-select-option value="3">
-                                    Газовые плиты
-                                </a-select-option>
-                                <a-select-option value="4">
-                                    Микроволновки
-                                </a-select-option>
-                                <a-select-option value="5">
-                                    Стиральные машины
-                                </a-select-option>
-                                <a-select-option value="6">
-                                    Пылесосы
-                                </a-select-option>
-                            </a-select>
-                        </a-form-item>
-                        <a-form-item label="Бытовая техника">
-                            <a-select default-value="Холодильники" style="width: 180px">
-                                <a-select-option value="1">
-                                    Холодильники
-                                </a-select-option>
-                                <a-select-option value="2">
-                                    Фены
-                                </a-select-option>
-                                <a-select-option value="3">
-                                    Газовые плиты
-                                </a-select-option>
-                                <a-select-option value="4">
-                                    Микроволновки
-                                </a-select-option>
-                                <a-select-option value="5">
-                                    Стиральные машины
-                                </a-select-option>
-                                <a-select-option value="6">
-                                    Пылесосы
-                                </a-select-option>
-                            </a-select>
-                        </a-form-item>
-                        <a-form-item label="Бытовая техника">
-                            <a-select default-value="Холодильники" style="width: 180px">
-                                <a-select-option value="1">
-                                    Холодильники
-                                </a-select-option>
-                                <a-select-option value="2">
-                                    Фены
-                                </a-select-option>
-                                <a-select-option value="3">
-                                    Газовые плиты
-                                </a-select-option>
-                                <a-select-option value="4">
-                                    Микроволновки
-                                </a-select-option>
-                                <a-select-option value="5">
-                                    Стиральные машины
-                                </a-select-option>
-                                <a-select-option value="6">
-                                    Пылесосы
-                                </a-select-option>
-                            </a-select>
-                        </a-form-item>
-                    </div>
-                    <div class="flex-filter-block">
-                        <a-form-item label="Бытовая техника">
-                            <a-select default-value="Холодильники" style="width: 180px">
-                                <a-select-option value="1">
-                                    Холодильники
-                                </a-select-option>
-                                <a-select-option value="2">
-                                    Фены
-                                </a-select-option>
-                                <a-select-option value="3">
-                                    Газовые плиты
-                                </a-select-option>
-                                <a-select-option value="4">
-                                    Микроволновки
-                                </a-select-option>
-                                <a-select-option value="5">
-                                    Стиральные машины
-                                </a-select-option>
-                                <a-select-option value="6">
-                                    Пылесосы
-                                </a-select-option>
-                            </a-select>
-                        </a-form-item>
-                        <a-form-item label="Бытовая техника">
-                            <a-select default-value="Холодильники" style="width: 180px">
-                                <a-select-option value="1">
-                                    Холодильники
-                                </a-select-option>
-                                <a-select-option value="2">
-                                    Фены
-                                </a-select-option>
-                                <a-select-option value="3">
-                                    Газовые плиты
-                                </a-select-option>
-                                <a-select-option value="4">
-                                    Микроволновки
-                                </a-select-option>
-                                <a-select-option value="5">
-                                    Стиральные машины
-                                </a-select-option>
-                                <a-select-option value="6">
-                                    Пылесосы
-                                </a-select-option>
-                            </a-select>
-                        </a-form-item>
-                        <a-form-item label="Бытовая техника">
-                            <a-select default-value="Холодильники" style="width: 180px">
-                                <a-select-option value="1">
-                                    Холодильники
-                                </a-select-option>
-                                <a-select-option value="2">
-                                    Фены
-                                </a-select-option>
-                                <a-select-option value="3">
-                                    Газовые плиты
-                                </a-select-option>
-                                <a-select-option value="4">
-                                    Микроволновки
-                                </a-select-option>
-                                <a-select-option value="5">
-                                    Стиральные машины
-                                </a-select-option>
-                                <a-select-option value="6">
-                                    Пылесосы
-                                </a-select-option>
-                            </a-select>
-                        </a-form-item>
-                    </div>
 
-                    <div class="flex-filter-block">
+
+                    <div class="flex-filter-block" style="margin-top: 30px">
                         <div>
                             <h1 class="pppp">Диагональ</h1>
                             <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">23”–24” (58 см–60см)</p></div>
@@ -242,7 +149,7 @@
                     </div>
                     <div class="FLEX5 ai fmtp">
                         <h1 class="ppppp10">Очистить фильтры</h1>
-                        <div class="flex-pop" style="margin-left: 10px"><a-button type="primary"  style="width: 180px; height: 50px; background-color: yellowgreen; border: yellowgreen"><span class="pppp" style="color: white">НАЧАТЬ ПОИСК</span></a-button></div>
+                        <div class="flex-pop" style="margin-left: 10px; "><a-button type="primary"  style="width: 180px; height: 50px; background-color: yellowgreen; border: yellowgreen;"><span class="pppp" style="color: white">НАЧАТЬ ПОИСК</span></a-button></div>
                     </div>
                 </div>
             </a-form>
@@ -421,6 +328,9 @@ export default {
     font-size: 150%;
     line-height: 124.68%;
     color: white;
+}
+.ant-layout-header {
+    padding: 0 0px;
 }
 
 @media screen and (max-width: 550px) {
