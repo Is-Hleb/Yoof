@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,14 +13,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/admin{any}', function(){
-    return view('admin');
-})->where('any', '.*');
+
+Route::get('/admin{any}', [FrontendController::class, 'admin'], 'https')->where('any', '.*');
 
 
-Route::any('/{any}', function(){
+Route::any('/{any}', function () {
     return view('app');
 })->where('any', '^(?!api).*$');
+
 
 
 

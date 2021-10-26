@@ -14,6 +14,7 @@ class LoginController extends Controller
 {
     public function index(Request $request)
     {
+
         $validator = Validator::make($request->all(), [
             'email' => 'required',
             'password' => 'required'

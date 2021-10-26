@@ -4,15 +4,15 @@
             <a-row type="flex">
                 <a-col flex="auto"><a href=""><img src="../IndexPage/img/logo1.png" class="logo" style="margin-left: 10px"></a></a-col>
                 <a-col flex="auto">
-                    <a-button type="primary" ghost class="authBtn" @click="showModal"
+                    <a-button v-if="!isAuth" type="primary" ghost class="authBtn" @click="showModal"
                               style="font-family: Roboto; font-weight: 800; color: black; border: black 1px solid; border: none; box-shadow: none; font-size: 15px">
                         Вход | Регистрация
                     </a-button>
+                    <a-button v-if="isAuth" @click="signOut">ВЫйти</a-button>
                 </a-col>
             </a-row>
-
                 <a-modal v-model="visible" title="Вход | Регистрация" width="600px">
-                    <a-form-model
+                    <a-form
                         id="components-form-demo-normal-login"
                         :form="form"
                         :model="formData"
@@ -407,9 +407,6 @@
 
                     </a-form>
                 </a-modal>
-
-            </a-col>
-            <a-button v-else @click="signOut">ВЫйти</a-button>
         </a-row>
     </a-layout-header>
 </template>
@@ -425,7 +422,6 @@ export default {
         this.form = this.$form.createForm(this, {name: 'normal_login'});
     },
     name: 'Header',
-
     data() {
         return {
             collapsed: false,
@@ -498,30 +494,22 @@ export default {
         loginIn() {
             let data = this.formData;
             this.$store.dispatch('signIn', data).then(() => {
-                this.openNotification()
+                if(!this.errors) {
+                    this.visible = false;
+                } else {
+                    this.openNotification()
+                }
             })
         },
         signUp() {
             let data = this.formData;
             this.$store.dispatch('signUp', data).then(() => {
-                this.openNotification()
+                if(!this.errors) {
+                    this.visible = false;
+                } else {
+                    this.openNotification()
+                }
             })
-            let data;
-            if (this.login.isUser) {
-                data = {
-                    ...this.formData.userData,
-                    ...this.formData.roleData.user,
-                    role: 'user',
-                }
-            } else {
-                data = {
-                    ...this.formData.roleData.company,
-                    ...this.formData.userData,
-                    role: 'company'
-                }
-            }
-            //console.log(data)
-            this.$store.dispatch('signUp', data)
         }
     }
 }

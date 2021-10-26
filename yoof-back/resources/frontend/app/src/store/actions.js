@@ -13,10 +13,11 @@ const axios = require('axios')
 // }
 
 export const actions = {
-    async getState({commit}) {
+    async getState({commit, getters}) {
         let r = await axios.get('api/state');
         let data = r.data;
-        commit('SET_AUTH_USER', data.user);
+        if(!getters.getAuthStatus)
+            commit('SET_AUTH_USER', data.user);
     },
     async signIn({commit}, userData) {
         let r = await axios.post('api/auth/login', userData)

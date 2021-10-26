@@ -34,7 +34,7 @@
 #31 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #32 /var/www/html/server.php(21): require_once('...')
 #33 {main}
-"} 
+"}
 [2021-10-18 21:39:34] local.ERROR: Call to undefined method App\Models\User::except() {"userId":5,"exception":"[object] (BadMethodCallException(code: 0): Call to undefined method App\\Models\\User::except() at /var/www/html/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:71)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(36): Illuminate\\Database\\Eloquent\\Model::throwBadMethodCallException()
@@ -89,7 +89,7 @@
 #49 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #50 /var/www/html/server.php(21): require_once('...')
 #51 {main}
-"} 
+"}
 [2021-10-18 21:40:38] local.ERROR: Call to a member function toArray() on array {"userId":5,"exception":"[object] (Error(code: 0): Call to a member function toArray() on array at /var/www/html/app/Models/User.php:53)
 [stacktrace]
 #0 /var/www/html/app/Http/Controllers/Resources/UserController.php(18): App\\Models\\User::UsersWithData()
@@ -141,7 +141,7 @@
 #46 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /var/www/html/server.php(21): require_once('...')
 #48 {main}
-"} 
+"}
 [2021-10-18 22:39:22] local.ERROR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known (SQL: insert into `users` (`email`, `email_verified_at`, `role`, `password`, `remember_token`, `updated_at`, `created_at`) values (labadie.willa@example.com, 2021-10-18 22:39:22, user, $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi, hzTPgFO6sD, 2021-10-18 22:39:22, 2021-10-18 22:39:22)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 2002): SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known (SQL: insert into `users` (`email`, `email_verified_at`, `role`, `password`, `remember_token`, `updated_at`, `created_at`) values (labadie.willa@example.com, 2021-10-18 22:39:22, user, $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi, hzTPgFO6sD, 2021-10-18 22:39:22, 2021-10-18 22:39:22)) at /Users/admin/Documents/Projects/Yoof/yoof-back/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /Users/admin/Documents/Projects/Yoof/yoof-back/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback('insert into `us...', Array, Object(Closure))
@@ -280,7 +280,7 @@
 #43 /Users/admin/Documents/Projects/Yoof/yoof-back/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #44 /Users/admin/Documents/Projects/Yoof/yoof-back/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #45 {main}
-"} 
+"}
 [2021-10-18 22:39:56] local.ERROR: SQLSTATE[HY000]: General error: 1364 Field 'api_token' doesn't have a default value (SQL: insert into `users` (`email`, `email_verified_at`, `role`, `password`, `remember_token`, `updated_at`, `created_at`) values (gage30@example.net, 2021-10-18 22:39:56, user, $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi, ZObA1voB3c, 2021-10-18 22:39:56, 2021-10-18 22:39:56)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: HY000): SQLSTATE[HY000]: General error: 1364 Field 'api_token' doesn't have a default value (SQL: insert into `users` (`email`, `email_verified_at`, `role`, `password`, `remember_token`, `updated_at`, `created_at`) values (gage30@example.net, 2021-10-18 22:39:56, user, $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi, ZObA1voB3c, 2021-10-18 22:39:56, 2021-10-18 22:39:56)) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
@@ -364,7 +364,7 @@
 #37 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
 #38 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #39 {main}
-"} 
+"}
 [2021-10-19 10:20:59] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list' (SQL: insert into `users` (`email`, `email_verified_at`, `role`, `password`, `remember_token`, `api_token`, `status`, `updated_at`, `created_at`) values (zchristiansen@example.com, 2021-10-19 10:20:59, user, $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi, fc1vKzvFHl, Jvm2N5QtXpCLnpZRbF8ZOlx35SYHQQ7eueTr0CMIHFeReLwvAXbhuSSgN10U, 1, 2021-10-19 10:20:59, 2021-10-19 10:20:59)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list' (SQL: insert into `users` (`email`, `email_verified_at`, `role`, `password`, `remember_token`, `api_token`, `status`, `updated_at`, `created_at`) values (zchristiansen@example.com, 2021-10-19 10:20:59, user, $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi, fc1vKzvFHl, Jvm2N5QtXpCLnpZRbF8ZOlx35SYHQQ7eueTr0CMIHFeReLwvAXbhuSSgN10U, 1, 2021-10-19 10:20:59, 2021-10-19 10:20:59)) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
@@ -448,7 +448,7 @@
 #37 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
 #38 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #39 {main}
-"} 
+"}
 [2021-10-19 15:57:52] local.ERROR: Method Illuminate\Support\Collection::paginate does not exist. {"userId":1001,"exception":"[object] (BadMethodCallException(code: 0): Method Illuminate\\Support\\Collection::paginate does not exist. at /var/www/html/vendor/laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php:103)
 [stacktrace]
 #0 /var/www/html/app/Http/Controllers/Resources/UserController.php(18): Illuminate\\Support\\Collection->__call()
@@ -500,7 +500,7 @@
 #46 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /var/www/html/server.php(21): require_once('...')
 #48 {main}
-"} 
+"}
 [2021-10-19 15:58:09] local.ERROR: Method Illuminate\Support\Collection::paginate does not exist. {"userId":1001,"exception":"[object] (BadMethodCallException(code: 0): Method Illuminate\\Support\\Collection::paginate does not exist. at /var/www/html/vendor/laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php:103)
 [stacktrace]
 #0 /var/www/html/app/Http/Controllers/Resources/UserController.php(18): Illuminate\\Support\\Collection->__call()
@@ -552,7 +552,7 @@
 #46 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /var/www/html/server.php(21): require_once('...')
 #48 {main}
-"} 
+"}
 [2021-10-19 20:06:16] local.ERROR: syntax error, unexpected token "}" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"}\" at /var/www/html/routes/api.php:32)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
@@ -582,7 +582,7 @@
 #24 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #25 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #26 {main}
-"} 
+"}
 [2021-10-19 20:06:21] local.ERROR: syntax error, unexpected token "}" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"}\" at /var/www/html/routes/api.php:32)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
@@ -612,7 +612,7 @@
 #24 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #25 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #26 {main}
-"} 
+"}
 [2021-10-19 20:06:32] local.ERROR: Cannot use [] for reading {"exception":"[object] (Error(code: 0): Cannot use [] for reading at /var/www/html/routes/api.php:31)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(423): Illuminate\\Routing\\RouteFileRegistrar->{closure}()
@@ -651,7 +651,7 @@
 #33 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #34 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #35 {main}
-"} 
+"}
 [2021-10-19 20:28:34] local.ERROR: Cannot use object of type stdClass as array {"userId":1001,"exception":"[object] (Error(code: 0): Cannot use object of type stdClass as array at /var/www/html/app/Mail/ToUserLetter.php:35)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Mail\\ToUserLetter->build()
@@ -714,7 +714,7 @@
 #57 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #58 /var/www/html/server.php(21): require_once('...')
 #59 {main}
-"} 
+"}
 [2021-10-19 20:29:18] local.ERROR: syntax error, unexpected token "}", expecting ";" {"userId":1001,"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"}\", expecting \";\" at /var/www/html/app/Mail/ToUserLetter.php:35)
 [stacktrace]
 #0 /var/www/html/vendor/composer/ClassLoader.php(346): Composer\\Autoload\\includeFile()
@@ -767,7 +767,7 @@
 #47 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #48 /var/www/html/server.php(21): require_once('...')
 #49 {main}
-"} 
+"}
 [2021-10-20 12:48:02] local.ERROR: SQLSTATE[HY000] [1044] Access denied for user 'yoof'@'%' to database 'yoof-db' (SQL: insert into `users` (`email`, `email_verified_at`, `role`, `password`, `remember_token`, `api_token`, `status`, `updated_at`, `created_at`) values (sbrown@example.net, 2021-10-20 12:48:02, user, $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi, EvPVqmTTaY, pUo61smxeDaKKOnCvz3040db8WTP1FQL8mXM9tC51hw2Xz9V8nh122NiZ1d2, 1, 2021-10-20 12:48:02, 2021-10-20 12:48:02)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1044): SQLSTATE[HY000] [1044] Access denied for user 'yoof'@'%' to database 'yoof-db' (SQL: insert into `users` (`email`, `email_verified_at`, `role`, `password`, `remember_token`, `api_token`, `status`, `updated_at`, `created_at`) values (sbrown@example.net, 2021-10-20 12:48:02, user, $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi, EvPVqmTTaY, pUo61smxeDaKKOnCvz3040db8WTP1FQL8mXM9tC51hw2Xz9V8nh122NiZ1d2, 1, 2021-10-20 12:48:02, 2021-10-20 12:48:02)) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
@@ -857,7 +857,7 @@
 #43 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
 #44 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #45 {main}
-"} 
+"}
 [2021-10-20 12:48:20] local.ERROR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u1354623_yoof.users' doesn't exist (SQL: insert into `users` (`email`, `email_verified_at`, `role`, `password`, `remember_token`, `api_token`, `status`, `updated_at`, `created_at`) values (marcel26@example.com, 2021-10-20 12:48:20, user, $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi, qBWLLAut72, WWERduP91JJaq2VpQMajMRSIYi9etHBJyC6BYgWrASEm2cm5tMzr50njiIqd, 0, 2021-10-20 12:48:20, 2021-10-20 12:48:20)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u1354623_yoof.users' doesn't exist (SQL: insert into `users` (`email`, `email_verified_at`, `role`, `password`, `remember_token`, `api_token`, `status`, `updated_at`, `created_at`) values (marcel26@example.com, 2021-10-20 12:48:20, user, $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi, qBWLLAut72, WWERduP91JJaq2VpQMajMRSIYi9etHBJyC6BYgWrASEm2cm5tMzr50njiIqd, 0, 2021-10-20 12:48:20, 2021-10-20 12:48:20)) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
@@ -941,7 +941,7 @@
 #37 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
 #38 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #39 {main}
-"} 
+"}
 [2021-10-20 19:45:06] local.ERROR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known (SQL: select column_name as `column_name` from information_schema.columns where table_schema = u1354623_yoof and table_name = categories) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 2002): SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known (SQL: select column_name as `column_name` from information_schema.columns where table_schema = u1354623_yoof and table_name = categories) at /Users/admin/Documents/Projects/Yoof/yoof-back/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /Users/admin/Documents/Projects/Yoof/yoof-back/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback('select column_n...', Array, Object(Closure))
@@ -1063,7 +1063,7 @@
 #38 /Users/admin/Documents/Projects/Yoof/yoof-back/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #39 /Users/admin/Documents/Projects/Yoof/yoof-back/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #40 {main}
-"} 
+"}
 [2021-10-20 20:31:50] local.ERROR: array_merge(): Argument #1 must be of type array, App\Models\Category given {"userId":1001,"exception":"[object] (TypeError(code: 0): array_merge(): Argument #1 must be of type array, App\\Models\\Category given at /var/www/html/app/Http/Controllers/Resources/CategoryController.php:22)
 [stacktrace]
 #0 /var/www/html/app/Http/Controllers/Resources/CategoryController.php(22): array_merge()
@@ -1111,7 +1111,7 @@
 #42 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #43 /var/www/html/server.php(21): require_once('...')
 #44 {main}
-"} 
+"}
 [2021-10-20 22:31:00] local.ERROR: Call to a member function toArray() on array {"userId":1001,"exception":"[object] (Error(code: 0): Call to a member function toArray() on array at /var/www/html/app/Http/Controllers/Resources/CategoryController.php:24)
 [stacktrace]
 #0 [internal function]: App\\Http\\Controllers\\Resources\\CategoryController->App\\Http\\Controllers\\Resources\\{closure}()
@@ -1160,7 +1160,7 @@
 #43 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #44 /var/www/html/server.php(21): require_once('...')
 #45 {main}
-"} 
+"}
 [2021-10-20 22:31:20] local.ERROR: Call to a member function toArray() on array {"userId":1001,"exception":"[object] (Error(code: 0): Call to a member function toArray() on array at /var/www/html/app/Http/Controllers/Resources/CategoryController.php:24)
 [stacktrace]
 #0 [internal function]: App\\Http\\Controllers\\Resources\\CategoryController->App\\Http\\Controllers\\Resources\\{closure}()
@@ -1209,7 +1209,7 @@
 #43 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #44 /var/www/html/server.php(21): require_once('...')
 #45 {main}
-"} 
+"}
 [2021-10-21 13:31:45] local.ERROR: Undefined array key "id" {"userId":1001,"exception":"[object] (ErrorException(code: 0): Undefined array key \"id\" at /var/www/html/app/Http/Controllers/Resources/CategoryController.php:93)
 [stacktrace]
 #0 /var/www/html/app/Http/Controllers/Resources/CategoryController.php(93): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -1261,7 +1261,7 @@
 #46 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /var/www/html/server.php(21): require_once('...')
 #48 {main}
-"} 
+"}
 [2021-10-21 15:18:49] local.ERROR: syntax error, unexpected identifier "Route" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected identifier \"Route\" at /var/www/html/routes/api.php:36)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
@@ -1293,7 +1293,7 @@
 #26 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #27 /var/www/html/server.php(21): require_once('...')
 #28 {main}
-"} 
+"}
 [2021-10-21 15:18:49] local.ERROR: syntax error, unexpected identifier "Route" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected identifier \"Route\" at /var/www/html/routes/api.php:36)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
@@ -1325,7 +1325,7 @@
 #26 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #27 /var/www/html/server.php(21): require_once('...')
 #28 {main}
-"} 
+"}
 [2021-10-21 15:21:05] local.ERROR: syntax error, unexpected identifier "Route" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected identifier \"Route\" at /var/www/html/routes/api.php:36)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
@@ -1357,7 +1357,7 @@
 #26 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #27 /var/www/html/server.php(21): require_once('...')
 #28 {main}
-"} 
+"}
 [2021-10-21 15:21:05] local.ERROR: syntax error, unexpected identifier "Route" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected identifier \"Route\" at /var/www/html/routes/api.php:36)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
@@ -1389,7 +1389,7 @@
 #26 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #27 /var/www/html/server.php(21): require_once('...')
 #28 {main}
-"} 
+"}
 [2021-10-21 20:24:51] local.ERROR: Cannot use object of type Symfony\Component\HttpFoundation\FileBag as array {"userId":1001,"exception":"[object] (Error(code: 0): Cannot use object of type Symfony\\Component\\HttpFoundation\\FileBag as array at /var/www/html/app/Http/Controllers/Resources/CategoryController.php:56)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Resources\\CategoryController->store()
@@ -1440,7 +1440,7 @@
 #45 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #46 /var/www/html/server.php(21): require_once('...')
 #47 {main}
-"} 
+"}
 [2021-10-21 20:25:43] local.ERROR: Undefined array key 0 {"userId":1001,"exception":"[object] (ErrorException(code: 0): Undefined array key 0 at /var/www/html/app/Http/Controllers/Resources/CategoryController.php:56)
 [stacktrace]
 #0 /var/www/html/app/Http/Controllers/Resources/CategoryController.php(56): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -1492,7 +1492,7 @@
 #46 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /var/www/html/server.php(21): require_once('...')
 #48 {main}
-"} 
+"}
 [2021-10-21 20:28:18] local.ERROR: Call to a member function getFilename() on null {"userId":1001,"exception":"[object] (Error(code: 0): Call to a member function getFilename() on null at /var/www/html/app/Http/Controllers/Resources/CategoryController.php:57)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Resources\\CategoryController->store()
@@ -1543,7 +1543,7 @@
 #45 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #46 /var/www/html/server.php(21): require_once('...')
 #47 {main}
-"} 
+"}
 [2021-10-21 20:54:33] local.ERROR: Malformed UTF-8 characters, possibly incorrectly encoded {"userId":1001,"exception":"[object] (InvalidArgumentException(code: 0): Malformed UTF-8 characters, possibly incorrectly encoded at /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Response.php:61)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent()
@@ -1598,7 +1598,7 @@
 #49 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #50 /var/www/html/server.php(21): require_once('...')
 #51 {main}
-"} 
+"}
 [2021-10-21 20:55:06] local.ERROR: Malformed UTF-8 characters, possibly incorrectly encoded {"userId":1001,"exception":"[object] (InvalidArgumentException(code: 0): Malformed UTF-8 characters, possibly incorrectly encoded at /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Response.php:61)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent()
@@ -1653,7 +1653,7 @@
 #49 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #50 /var/www/html/server.php(21): require_once('...')
 #51 {main}
-"} 
+"}
 [2021-10-21 20:57:07] local.ERROR: Malformed UTF-8 characters, possibly incorrectly encoded {"userId":1001,"exception":"[object] (InvalidArgumentException(code: 0): Malformed UTF-8 characters, possibly incorrectly encoded at /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Response.php:61)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent()
@@ -1708,7 +1708,7 @@
 #49 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #50 /var/www/html/server.php(21): require_once('...')
 #51 {main}
-"} 
+"}
 [2021-10-21 20:57:59] local.ERROR: Malformed UTF-8 characters, possibly incorrectly encoded {"userId":1001,"exception":"[object] (InvalidArgumentException(code: 0): Malformed UTF-8 characters, possibly incorrectly encoded at /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Response.php:61)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent()
@@ -1763,7 +1763,7 @@
 #49 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #50 /var/www/html/server.php(21): require_once('...')
 #51 {main}
-"} 
+"}
 [2021-10-21 21:02:11] local.ERROR: Malformed UTF-8 characters, possibly incorrectly encoded {"userId":1001,"exception":"[object] (InvalidArgumentException(code: 0): Malformed UTF-8 characters, possibly incorrectly encoded at /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Response.php:61)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent()
@@ -1818,7 +1818,7 @@
 #49 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #50 /var/www/html/server.php(21): require_once('...')
 #51 {main}
-"} 
+"}
 [2021-10-21 21:02:19] local.ERROR: Malformed UTF-8 characters, possibly incorrectly encoded {"userId":1001,"exception":"[object] (InvalidArgumentException(code: 0): Malformed UTF-8 characters, possibly incorrectly encoded at /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Response.php:61)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent()
@@ -1873,7 +1873,7 @@
 #49 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #50 /var/www/html/server.php(21): require_once('...')
 #51 {main}
-"} 
+"}
 [2021-10-21 21:02:35] local.ERROR: Malformed UTF-8 characters, possibly incorrectly encoded {"userId":1001,"exception":"[object] (InvalidArgumentException(code: 0): Malformed UTF-8 characters, possibly incorrectly encoded at /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Response.php:61)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent()
@@ -1928,7 +1928,7 @@
 #49 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #50 /var/www/html/server.php(21): require_once('...')
 #51 {main}
-"} 
+"}
 [2021-10-21 21:03:15] local.ERROR: Malformed UTF-8 characters, possibly incorrectly encoded {"userId":1001,"exception":"[object] (InvalidArgumentException(code: 0): Malformed UTF-8 characters, possibly incorrectly encoded at /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Response.php:61)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent()
@@ -1983,7 +1983,7 @@
 #49 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #50 /var/www/html/server.php(21): require_once('...')
 #51 {main}
-"} 
+"}
 [2021-10-22 11:50:16] local.ERROR: Cannot use object of type Illuminate\Database\Eloquent\Builder as array {"userId":1001,"exception":"[object] (Error(code: 0): Cannot use object of type Illuminate\\Database\\Eloquent\\Builder as array at /var/www/html/app/Http/Controllers/CategoryFileController.php:63)
 [stacktrace]
 #0 /var/www/html/app/Http/Controllers/Resources/CategoryController.php(65): App\\Http\\Controllers\\CategoryFileController->dateBaseFill()
@@ -2035,7 +2035,7 @@
 #46 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /var/www/html/server.php(21): require_once('...')
 #48 {main}
-"} 
+"}
 [2021-10-22 11:50:34] local.ERROR: Cannot use object of type Illuminate\Database\Eloquent\Builder as array {"userId":1001,"exception":"[object] (Error(code: 0): Cannot use object of type Illuminate\\Database\\Eloquent\\Builder as array at /var/www/html/app/Http/Controllers/CategoryFileController.php:63)
 [stacktrace]
 #0 /var/www/html/app/Http/Controllers/Resources/CategoryController.php(65): App\\Http\\Controllers\\CategoryFileController->dateBaseFill()
@@ -2087,7 +2087,7 @@
 #46 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /var/www/html/server.php(21): require_once('...')
 #48 {main}
-"} 
+"}
 [2021-10-22 12:36:13] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_id' in 'where clause' (SQL: select count(*) as aggregate from `properties` where `category_id` = 34) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_id' in 'where clause' (SQL: select count(*) as aggregate from `properties` where `category_id` = 34) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
@@ -2203,7 +2203,7 @@
 #53 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #54 /var/www/html/server.php(21): require_once('...')
 #55 {main}
-"} 
+"}
 [2021-10-22 12:36:18] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_id' in 'where clause' (SQL: select count(*) as aggregate from `properties` where `category_id` = 34) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_id' in 'where clause' (SQL: select count(*) as aggregate from `properties` where `category_id` = 34) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
@@ -2319,7 +2319,7 @@
 #53 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #54 /var/www/html/server.php(21): require_once('...')
 #55 {main}
-"} 
+"}
 [2021-10-22 12:36:23] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_id' in 'where clause' (SQL: select count(*) as aggregate from `properties` where `category_id` = 34) {"userId":1001,"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_id' in 'where clause' (SQL: select count(*) as aggregate from `properties` where `category_id` = 34) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
@@ -2435,7 +2435,7 @@
 #53 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #54 /var/www/html/server.php(21): require_once('...')
 #55 {main}
-"} 
+"}
 [2021-10-22 12:36:39] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_id' in 'where clause' (SQL: select count(*) as aggregate from `properties` where `category_id` = 34) {"userId":1001,"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_id' in 'where clause' (SQL: select count(*) as aggregate from `properties` where `category_id` = 34) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
@@ -2551,7 +2551,7 @@
 #53 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #54 /var/www/html/server.php(21): require_once('...')
 #55 {main}
-"} 
+"}
 [2021-10-22 15:12:25] local.ERROR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u1354623_yoof.categories' doesn't exist (SQL: select * from `categories`) {"userId":1001,"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u1354623_yoof.categories' doesn't exist (SQL: select * from `categories`) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
@@ -2667,7 +2667,7 @@
 #53 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #54 /var/www/html/server.php(21): require_once('...')
 #55 {main}
-"} 
+"}
 [2021-10-22 15:31:55] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_id' in 'where clause' (SQL: select count(*) as aggregate from `properties` where `category_id` = 1) {"userId":1001,"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_id' in 'where clause' (SQL: select count(*) as aggregate from `properties` where `category_id` = 1) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
@@ -2783,7 +2783,7 @@
 #53 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #54 /var/www/html/server.php(21): require_once('...')
 #55 {main}
-"} 
+"}
 [2021-10-22 15:38:34] local.ERROR: Undefined array key "data" {"userId":1001,"exception":"[object] (ErrorException(code: 0): Undefined array key \"data\" at /var/www/html/app/Http/Controllers/Resources/CategoryController.php:113)
 [stacktrace]
 #0 /var/www/html/app/Http/Controllers/Resources/CategoryController.php(113): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -2835,7 +2835,7 @@
 #46 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /var/www/html/server.php(21): require_once('...')
 #48 {main}
-"} 
+"}
 [2021-10-22 15:39:05] local.ERROR: Undefined array key "data" {"userId":1001,"exception":"[object] (ErrorException(code: 0): Undefined array key \"data\" at /var/www/html/app/Http/Controllers/Resources/CategoryController.php:113)
 [stacktrace]
 #0 /var/www/html/app/Http/Controllers/Resources/CategoryController.php(113): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -2887,7 +2887,7 @@
 #46 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /var/www/html/server.php(21): require_once('...')
 #48 {main}
-"} 
+"}
 [2021-10-23 15:05:58] local.ERROR: Target class [StateController] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [StateController] does not exist. at /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\\Container\\Container->build()
@@ -2962,7 +2962,7 @@
 #32 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #33 /var/www/html/server.php(21): require_once('...')
 #34 {main}
-"} 
+"}
 [2021-10-23 15:06:00] local.ERROR: Target class [StateController] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [StateController] does not exist. at /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\\Container\\Container->build()
@@ -3037,7 +3037,7 @@
 #32 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #33 /var/www/html/server.php(21): require_once('...')
 #34 {main}
-"} 
+"}
 [2021-10-23 15:06:03] local.ERROR: Target class [StateController] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [StateController] does not exist. at /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\\Container\\Container->build()
@@ -3112,7 +3112,7 @@
 #32 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #33 /var/www/html/server.php(21): require_once('...')
 #34 {main}
-"} 
+"}
 [2021-10-23 15:06:10] local.ERROR: Target class [StateController] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [StateController] does not exist. at /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\\Container\\Container->build()
@@ -3187,7 +3187,7 @@
 #32 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #33 /var/www/html/server.php(21): require_once('...')
 #34 {main}
-"} 
+"}
 [2021-10-23 15:07:00] local.ERROR: Target class [StateController] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [StateController] does not exist. at /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php:879)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\\Container\\Container->build()
@@ -3262,7 +3262,7 @@
 #32 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #33 /var/www/html/server.php(21): require_once('...')
 #34 {main}
-"} 
+"}
 [2021-10-23 15:07:38] local.ERROR: Attempt to read property "api_token" on null {"exception":"[object] (ErrorException(code: 0): Attempt to read property \"api_token\" on null at /var/www/html/app/Http/Controllers/Api/AuthUser.php:14)
 [stacktrace]
 #0 /var/www/html/app/Http/Controllers/Api/AuthUser.php(14): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -3311,7 +3311,7 @@
 #43 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #44 /var/www/html/server.php(21): require_once('...')
 #45 {main}
-"} 
+"}
 [2021-10-23 15:30:15] local.ERROR: Attempt to read property "password" on null {"exception":"[object] (ErrorException(code: 0): Attempt to read property \"password\" on null at /var/www/html/app/Http/Controllers/Api/Auth/LoginController.php:41)
 [stacktrace]
 #0 /var/www/html/app/Http/Controllers/Api/Auth/LoginController.php(41): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -3359,7 +3359,7 @@
 #42 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #43 /var/www/html/server.php(21): require_once('...')
 #44 {main}
-"} 
+"}
 [2021-10-23 15:30:25] local.ERROR: Attempt to read property "password" on null {"exception":"[object] (ErrorException(code: 0): Attempt to read property \"password\" on null at /var/www/html/app/Http/Controllers/Api/Auth/LoginController.php:41)
 [stacktrace]
 #0 /var/www/html/app/Http/Controllers/Api/Auth/LoginController.php(41): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -3407,4 +3407,35 @@
 #42 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #43 /var/www/html/server.php(21): require_once('...')
 #44 {main}
-"} 
+"}
+[2021-10-25 14:25:10] local.ERROR: The "-p" option does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): The \"-p\" option does not exist. at /Users/admin/Documents/Projects/YoofMain/yoof-back/vendor/symfony/console/Input/ArgvInput.php:115)
+[stacktrace]
+#0 /Users/admin/Documents/Projects/YoofMain/yoof-back/vendor/symfony/console/Input/ArgvInput.php(97): Symfony\\Component\\Console\\Input\\ArgvInput->parseShortOptionSet('port=413')
+#1 /Users/admin/Documents/Projects/YoofMain/yoof-back/vendor/symfony/console/Input/ArgvInput.php(78): Symfony\\Component\\Console\\Input\\ArgvInput->parseShortOption('-port=413')
+#2 /Users/admin/Documents/Projects/YoofMain/yoof-back/vendor/symfony/console/Input/Input.php(55): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#3 /Users/admin/Documents/Projects/YoofMain/yoof-back/vendor/symfony/console/Command/Command.php(258): Symfony\\Component\\Console\\Input\\Input->bind(Object(Symfony\\Component\\Console\\Input\\InputDefinition))
+#4 /Users/admin/Documents/Projects/YoofMain/yoof-back/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#5 /Users/admin/Documents/Projects/YoofMain/yoof-back/vendor/symfony/console/Application.php(978): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 /Users/admin/Documents/Projects/YoofMain/yoof-back/vendor/symfony/console/Application.php(295): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\ServeCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 /Users/admin/Documents/Projects/YoofMain/yoof-back/vendor/symfony/console/Application.php(167): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 /Users/admin/Documents/Projects/YoofMain/yoof-back/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 /Users/admin/Documents/Projects/YoofMain/yoof-back/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /Users/admin/Documents/Projects/YoofMain/yoof-back/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 {main}
+"}
+[2021-10-25 14:29:21] local.ERROR: Class "Barryvdh\Debugbar\ServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"Barryvdh\\Debugbar\\ServiceProvider\" not found at /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:735)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(669): Illuminate\\Foundation\\Application->resolveProvider()
+#1 /var/www/html/app/Providers/AppServiceProvider.php(18): Illuminate\\Foundation\\Application->register()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(672): App\\Providers\\AppServiceProvider->register()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(75): Illuminate\\Foundation\\Application->register()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(649): Illuminate\\Foundation\\ProviderRepository->load()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(152): Illuminate\\Foundation\\Application->bootstrapWith()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(136): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#10 /var/www/html/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#11 /var/www/html/server.php(21): require_once('...')
+#12 {main}
+"}
