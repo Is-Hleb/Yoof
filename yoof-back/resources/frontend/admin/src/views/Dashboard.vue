@@ -67,12 +67,12 @@
                       d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10ZM12 7C12 8.10457 11.1046 9 10 9C8.89543 9 8 8.10457 8 7C8 5.89543 8.89543 5 10 5C11.1046 5 12 5.89543 12 7ZM9.99993 11C7.98239 11 6.24394 12.195 5.45374 13.9157C6.55403 15.192 8.18265 16 9.99998 16C11.8173 16 13.4459 15.1921 14.5462 13.9158C13.756 12.195 12.0175 11 9.99993 11Z"
                       fill="#111827"/>
             </svg>
-            <span class="text-dark">УПРАВЛЕНИЕ МОДЕРАТОРАМИ</span>
+            <span class="text-dark">УПРАВЛЕНИЕ АДМИНИСТРАТОРАМИ</span>
             <collection-create-form
                 ref="collectionForm"
                 :visible="visible"
                 @cancel="handleCancel"
-                @create="handleCreate"
+                @ok="handleOk"
             />
 
         </a-button>
@@ -85,8 +85,6 @@
 
 import CardLineChart from '../components/Cards/CardLineChart' ;
 import WidgetCounter from '../components/Widgets/WidgetCounter' ;
-import CardProjectTable from '../components/Cards/CardProjectTable' ;
-
 
 
 // "Projects" table list of columns and their properties.
@@ -115,80 +113,7 @@ const tableColumns = [
 ];
 
 // "Projects" table list of rows and their properties.
-const tableData = [
-    {
-        key: '1',
-        company: {
-            name: 'Soft UI Shopify Version',
-            logo: 'images/logos/logo-shopify.svg',
-        },
-        members: ["images/face-1.jpg", "images/face-4.jpg", "images/face-2.jpg", "images/face-3.jpg",],
-        budget: '$14,000',
-        completion: 60,
-    },
-    {
-        key: '2',
-        company: {
-            name: 'Progress Track',
-            logo: 'images/logos/logo-atlassian.svg',
-        },
-        members: ["images/face-4.jpg", "images/face-3.jpg",],
-        budget: '$3,000',
-        completion: 10,
-    },
-    {
-        key: '3',
-        company: {
-            name: 'Fix Platform Errors',
-            logo: 'images/logos/logo-slack.svg',
-        },
-        members: ["images/face-1.jpg", "images/face-2.jpg", "images/face-3.jpg",],
-        budget: 'Not Set',
-        completion: {
-            label: '100',
-            status: 'success',
-            value: 100,
-        },
-    },
-    {
-        key: '4',
-        company: {
-            name: 'Launch new Mobile App',
-            logo: 'images/logos/logo-spotify.svg',
-        },
-        members: ["images/face-1.jpg", "images/face-2.jpg",],
-        budget: '$20,600',
-        completion: {
-            label: '100',
-            status: 'success',
-            value: 100,
-        },
-    },
-    {
-        key: '5',
-        company: {
-            name: 'Add the New Landing Page',
-            logo: 'images/logos/logo-jira.svg',
-        },
-        members: ["images/face-1.jpg", "images/face-4.jpg", "images/face-2.jpg", "images/face-3.jpg",],
-        budget: '$4,000',
-        completion: 80,
-    },
-    {
-        key: '6',
-        company: {
-            name: 'Redesign Online Store',
-            logo: 'images/logos/logo-invision.svg',
-        },
-        members: ["images/face-1.jpg", "images/face-4.jpg", "images/face-3.jpg",],
-        budget: '$2,000',
-        completion: {
-            label: 'Cancelled',
-            status: 'exception',
-            value: 100,
-        },
-    },
-];
+
 
 const CollectionCreateForm = {
     props: ['visible'],
@@ -201,33 +126,20 @@ const CollectionCreateForm = {
             title='Управление модераторами'
             okText='Сохранить'
             @cancel="() => { $emit('cancel') }"
-            @ok="() => { $emit('create') }"
+            @ok="() => { $emit('ok') }"
         >
         <a-form layout='vertical' :form="form">
             <a-form-item>
-                <b>Добавление модератора</b>
+                <b>Добавление администратора</b>
                 <a-input
                     class="mt-5"
                     placeholder="Email"
                     v-decorator="[
-                    'AddModerEmail',
+                    'toAddAdminEmail',
                     {
                       rules: [{ type: 'email', message: 'Некорректная почта!' }],
                     }
                   ]"
-                />
-            </a-form-item>
-            <a-form-item>
-                <b>Удаление модератора</b>
-                <a-input
-                    class="mt-5"
-                    placeholder="Email"
-                    v-decorator="[
-              'Del  ModerEmail',
-              {
-                rules: [{ type: 'email', message: 'Некорректная почта!' }],
-              }
-            ]"
                 />
             </a-form-item>
         </a-form>
@@ -239,7 +151,6 @@ export default ({
     components: {
         CardLineChart,
         WidgetCounter,
-        CardProjectTable,
         CollectionCreateForm
     },
     computed: {
@@ -266,12 +177,17 @@ export default ({
                 }
             ]
         },
+        errors() {
+            return this.$store.getters.modalErrors
+        },
+        success() {
+            return this.$store.getters.modalSuccess
+        }
     },
     data() {
         return {
-            tableData,
             tableColumns,
-
+            toAddAdminEmail: '',
             visible: false
         }
     },
@@ -283,15 +199,39 @@ export default ({
             this.visible = false;
         },
         handleCreate() {
+
+        },
+        handleOk() {
+            let email = ""
             const form = this.$refs.collectionForm.form;
             form.validateFields((err, values) => {
                 if (err) {
                     return;
                 }
-                form.resetFields();
-                this.visible = false;
+                email = values.toAddAdminEmail
+                this.$store.dispatch('changeUserAdminStatus', email).then(() => {
+
+                    form.resetFields();
+                    this.visible = false;
+                    let success = this.success
+                    for (let key in success) {
+                        this.$notification['success']({
+                            message: 'Успешно!',
+                            description: success[key]
+                        });
+                    }
+                    this.$store.commit('SET_MODAL_SUCCESS', {})
+
+                }).catch(() => {
+                    let errs = this.errors;
+                    for (let key in errs) {
+                        this.$message.error(errs[key]);
+                    }
+                    this.$store.commit('SET_MODAL_ERRORS', {})
+                })
             });
-        },
+
+        }
     },
 
 })

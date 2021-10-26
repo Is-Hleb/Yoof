@@ -18,11 +18,11 @@ export const actions = {
     loginUser({commit, dispatch}, userData) {
         axios.post('/api/auth/login', userData).then(r => {
             let data = r.data
-            if(r.data.code === 'err') {
+            if (r.data.code === 'err') {
                 commit('SET_MODAL_ERRORS', r.data.data)
                 return;
             }
-            if(data.user.role !== 'admin') {
+            if (data.user.role !== 'admin') {
                 commit('UNSET_USER')
             } else {
                 commit('SET_AUTH_USER', data)
@@ -44,14 +44,12 @@ export const actions = {
         });
     },
     loadUsers({state, commit}) {
-        commit("SET_LOADING", true);
         sendAuthRequest(state, 'GET', '/api/admin/users').then(r => {
             let data = r.data;
-            commit('SET_LOADING', false);
             commit('SET_ALL_USERS', data)
         }).catch(r => {
             commit('UNSET_USER')
-            if(router.currentRoute.name !== 'sign-in') {
+            if (router.currentRoute.name !== 'sign-in') {
                 router.push({name: 'sign-in'}).then()
             }
         })
@@ -75,10 +73,8 @@ export const actions = {
     sendEmailToUser({commit, state}, data) {
         let id = data.index
         let message = data.message
-        commit('SET_LOADING', true)
         sendAuthRequest(state, 'POST', '/api/admin/send-mail-to-user', {message, id}).then(r => {
             if (r.data.code === 'success') {
-                commit('SET_LOADING', false)
             } else {
                 commit('SET_MODAL_ERRORS', r.data.data)
             }
@@ -87,7 +83,7 @@ export const actions = {
     changeUserStatus({commit, state}, index) {
         let user = state.allUsers.filter(item => item.id === index)[0]
         sendAuthRequest(state, 'PUT', '/api/admin/users/' + user.id, {status: !user.status}).then(r => {
-           commit('EDIT_USER', {key: 'status', value: !user.status, id: user.id});
+            commit('EDIT_USER', {key: 'status', value: !user.status, id: user.id});
         })
     },
     getAllCategories({commit, state}) {
@@ -98,7 +94,7 @@ export const actions = {
     },
     deleteCategoryRow({state, dispatch}, row) {
         sendAuthRequest(state, 'DELETE', '/api/admin/category/' + row.id, {type: row.is}).then(r => {
-            if(r.data.code === 'success') {
+            if (r.data.code === 'success') {
                 dispatch('getAllCategories');
             }
         })
@@ -109,16 +105,27 @@ export const actions = {
             data: category.data,
         }).then(r => {
             let data = r.data;
-            if(r.data.code === 'success') {
+            if (r.data.code === 'success') {
                 dispatch('getAllCategories')
             }
         })
     },
     createSearchArgument({state, dispatch}, argument) {
         sendAuthRequest(state, 'POST', '/api/admin/search-argument', argument).then(r => {
-            if(r.data.code === 'success') {
+            if (r.data.code === 'success') {
                 dispatch('getAllCategories')
             }
         })
+    },
+    async changeUserAdminStatus({state, commit, dispatch}, email) {
+        let r = await sendAuthRequest(state, 'POST', '/api/admin/change-user-status', {email: email})
+        let data = r.data
+        if(data.code === 'success') {
+            commit('SET_MODAL_SUCCESS', data.data)
+            dispatch('loadUsers')
+        } else {
+            commit("SET_MODAL_ERRORS", data.data)
+            throw new Error('ERROR')
+        }
     }
- }
+}

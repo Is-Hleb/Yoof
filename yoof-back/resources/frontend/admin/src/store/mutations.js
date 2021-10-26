@@ -20,9 +20,6 @@ export const mutations = {
         localStorage.setItem('isAuth', 'true')
         localStorage.setItem('api_token', data.api_token)
     },
-    SET_MODAL_ERRORS: (state, data) => {
-        state.errors = data.errors
-    },
     SET_AUTH_TOKEN: (state, token) => {
         state.user.api_token = token
         state.user.isAuth = true
@@ -61,5 +58,11 @@ export const mutations = {
     SET_ALL_CATEGORIES: (state, data) => {
         state.categories = data;
     },
+    SET_MODAL_SUCCESS: (state, data) => {
+        state.successMessages = data;
+    },
+    SET_MODAL_ERRORS: (state, data) => {
+        state.errors = data;
+    }
 
 }
