@@ -205,8 +205,8 @@ export default {
     opacity: 0.5;
 }
 .ant-input-search-button {
-    background-color: yellowgreen;
-    border: yellowgreen 2px solid;
+    background-color: #07bb14;
+    border: yellowgreen 2px #07bb14;
 }
 
 .ant-carousel .slick-slide h3 {
@@ -414,10 +414,13 @@ export default {
 }
 .ant-btn-primary:hover, .ant-btn-primary:focus {
     background-color: #07bb14;
-    border: black 1px solid;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 5px 10px rgba(0,0,0,0.22);
+    border: none;
 }
 
+.ant-btn-primary {
+    border: #07bb14;;
+}
 
 .data-news-text {
     color: black;
