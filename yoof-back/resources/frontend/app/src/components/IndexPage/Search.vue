@@ -1,7 +1,6 @@
 <template>
     <div class="background-image">.
         <div class="people">
-
             <h1 class="h1">ПОЛУЧИТЕ СВОЕ ЭКСКЛЮЗИВНОЕ ПРЕДЛОЖЕНИЕ</h1>
         </div>
         <div class="connect">

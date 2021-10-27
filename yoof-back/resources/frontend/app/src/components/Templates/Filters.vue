@@ -3,8 +3,8 @@
         <a-steps :current="current">
             <a-step v-for="item in steps" :key="item.title" :title="item.title" :description="item.description" />
         </a-steps>
-        <div class="steps-action">
-            <a-button v-if="current < steps.length - 1" type="primary" @click="next" style="width: 180px; height: 50px; background-color: #07bb14; border: #07bb14;">
+        <div class="steps-action    ">
+            <a-button v-if="current < steps.length - 1" type="primary" @click="next" class="btn-next">
                 Следующий шаг
                 <a-icon type="arrow-right" />
             </a-button>
@@ -24,12 +24,12 @@
             </a-button>
         </div>
         <div v-if="current === 0" style="margin-top: 30px;" align="center">
-                <a-select :default-value="provinceData[0]" style="width: 300px; margin-bottom: 30px; " @change="handleProvinceChange">
+                <a-select :default-value="provinceData[0]" class="categories" @change="handleProvinceChange">
                     <a-select-option v-for="province in provinceData" :key="province">
                         {{ province }}
                     </a-select-option>
                 </a-select><br>
-                <a-select v-model="secondCity" style="width: 200px">
+                <a-select v-model="secondCity" class="product">
                     <a-select-option v-for="city in cities" :key="city">
                         {{ city }}
                     </a-select-option>
@@ -100,7 +100,7 @@
             </div>
         </div>
 
-        <div v-if="current === 2" style="margin-top: 40px">
+        <div v-if="current === 2" style="margin-top: 35px">
             <a-table :columns="columns" :data-source="data" class="components-table-demo-nested">
                 <a slot="operation" >Publish</a>
                 <a-table
@@ -238,9 +238,35 @@ export default {
     border: none;
 }
 
+.btn-next {
+    width: 180px;
+    height: 50px;
+    background-color: #07bb14;
+    border: #07bb14;
+}
+
+.categories {
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+.product {
+    width: 200px
+}
+
 @media screen and (max-width: 550px) {
     .btn-prev {
-        margin-top: 15px;
+        float: none;
+        margin-top: 20px;
+
     }
+    .categories {
+        width: 200px;
+        float: left;
+    }
+    .product {
+        float: left;
+    }
+
 }
 </style>
