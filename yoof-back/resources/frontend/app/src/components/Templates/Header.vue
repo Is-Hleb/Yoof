@@ -1,16 +1,52 @@
 <template>
     <a-layout-header style="background: #fff; padding: 0">
-        <a-row>
-            <a-row type="flex">
-                <a-col flex="auto"><a href=""><img src="../IndexPage/img/logo1.png" class="logo" style="margin-left: 10px"></a></a-col>
-                <a-col flex="auto">
-                    <a-button v-if="!isAuth" type="primary" ghost class="authBtn" @click="showModal"
-                              style="font-family: Roboto; font-weight: 800; color: black; border: black 1px solid; border: none; box-shadow: none; font-size: 15px">
-                        Вход | Регистрация
-                    </a-button>
-                    <a-button v-if="isAuth" @click="signOut">ВЫйти</a-button>
-                </a-col>
-            </a-row>
+        <a-row type="flex" justify="start">
+            <a-col :span="6">
+                <a-layout id="components-layout-demo-custom-trigger">
+                    <a-icon class="trigger trigg" :type="collapsed ? 'menu' : 'close'" @click="() => (collapsed = !collapsed)" style="margin-left: 30px; margin-right: 15px" />
+
+                    <a-layout-sider v-model="collapsed" :trigger="null" collapsible theme="light" width="230"  collapsed-width="0" >
+                        <a-menu theme="light" mode="inline" :default-selected-keys="['1']" >
+
+                            <a-menu-item key="1">
+                                <a href="#service">
+                                    <a-icon type="user" />
+                                    <span>Как это работает?</span>
+                                </a>
+                            </a-menu-item>
+                            <a-menu-item key="2">
+                                <a-icon type="info-circle" />
+                                <span>Правила использования</span>
+                            </a-menu-item>
+                            <a-menu-item key="3">
+                                <a-icon type="idcard" />
+                                <span>Личный кабинет</span>
+                            </a-menu-item>
+                            <a-menu-item key="4">
+                                <a-icon type="container" />
+                                <span>Публичная оферта</span>
+                            </a-menu-item>
+                            <a-menu-item key="5">
+                                <a href="#news">
+                                    <a-icon type="book" />
+                                    <span>Новости</span>
+                                </a>
+                            </a-menu-item>
+                        </a-menu>
+                    </a-layout-sider>
+                </a-layout>
+            </a-col>
+            <a-col :span="8">
+                <img src="../IndexPage/img/logo1.png" class="logo" style="margin-left: -30px">
+            </a-col>
+            <a-col :span="10">
+                <a-button v-if="!isAuth" type="primary" ghost class="authBtn" @click="showModal"
+                          style=" font-family: Roboto; font-weight: 800; color: black; border: black 1px solid; border: none; box-shadow: none; font-size: 15px">
+                    Вход | Регистрация
+                </a-button>
+                <a-button v-if="isAuth" @click="signOut">ВЫйти</a-button>
+            </a-col>
+
                 <a-modal v-model="visible" title="Вход | Регистрация" width="600px">
                     <a-form
                         id="components-form-demo-normal-login"
@@ -387,7 +423,7 @@
                         @submit="handleSubmit"
                     >
                         <a-form-item>
-                            <h1 style="font-family: Roboto; font-size: 20px; color: black; text-align: center; font-weight: 600">
+                            <h1 style="font-family: Roboto; font-size: 20px; color: black; text-align: center; font-weight: 600;">
                                 Введите адрес электронной почты</h1>
                             <a-input
                                 v-decorator="[
@@ -401,7 +437,7 @@
                             </a-input>
                         </a-form-item>
                         <a-button @click="handleExit" type="primary"
-                                  style="display: block; font-family: Roboto; margin-top: 20px; margin-right: auto; margin-left: auto">
+                                  style="display: block; font-family: Roboto; margin-top: 20px; margin-right: auto; margin-left: auto; background: #07bb14">
                             ВОССТАНОВИТЬ
                         </a-button>
 
@@ -416,6 +452,7 @@ import Vue from 'vue'
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 
+
 Vue.use(Antd);
 export default {
     beforeCreate() {
@@ -424,7 +461,7 @@ export default {
     name: 'Header',
     data() {
         return {
-            collapsed: false,
+            collapsed: true,
             visible: false,
             visibleModalFilter: false,
             passwordRecovry: false,
@@ -434,6 +471,9 @@ export default {
             },
             formData: {},
         }
+    },
+    components: {
+
     },
     computed: {
         errors() {
@@ -517,22 +557,49 @@ export default {
 </script>
 
 <style>
-#components-layout-demo-custom-trigger .trigger {
+#components-layout-demo-custom-trigger, .trigger {
     font-size: 18px;
     line-height: 64px;
-    padding: 0 24px;
     cursor: pointer;
     transition: color 0.3s;
+    background: transparent;
 }
-
 #components-layout-demo-custom-trigger .trigger:hover {
     color: #1890ff;
 }
-
 #components-layout-demo-custom-trigger .logo {
     height: 32px;
     background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+}
+.logo {
+    width: 200px;
+}
+.ant-layout {
+    flex: none;
+    left: 0%;
+    top: 9%;
+}
+.ant-layout-sider {
+    position: absolute;
+    top: 100%;
 
+}
+.nav-link svg {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.nav-link span {
+    vertical-align: middle;
+}
+.ant-menu-submenu-popup {
+    width: 100%;
+}
+.active-city {
+    display: none;
+}
+.active-block {
+    display: none;
 }
 
 .ant-form-item {
@@ -565,7 +632,7 @@ export default {
 }
 
 .ant-input-search-button {
-    background-color: yellowgreen;
+    background-color: #07bb14;
     border: #07bb14 2px solid;
 }
 .ant-btn-primary:hover {
@@ -660,7 +727,7 @@ export default {
 }
 
 .ant-btn-primary:hover, .ant-btn-primary:focus {
-    background-color: yellowgreen;
+    background-color: #07bb14;
 }
 
 .login-form-button {
