@@ -11,8 +11,7 @@ module.exports = {
 	},
     // proxy API requests to Valet during development
     devServer: {
-        proxy: 'https://localhost:8081/',
-        https: true,
+        proxy: 'http://yoof/#/',
         open: process.platform === 'darwin',
         hotOnly: false,
 
