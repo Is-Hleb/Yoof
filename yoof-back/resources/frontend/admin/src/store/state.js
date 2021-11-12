@@ -12,6 +12,8 @@ function mathUser() {
 export const state = {
     user: mathUser(),
     allUsers: [],
-    loading: true,
+    loading: false,
     categories: [],
+    errors: {},
+    successMessages: {},
 }

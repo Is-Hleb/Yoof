@@ -34,7 +34,7 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::apiResource('users', UserController::class);
         Route::apiResource('category', CategoryController::class);
         Route::apiResource('search-argument', \App\Http\Controllers\Resources\SearchArgumentController::class);
-
+        Route::post('/change-user-status', [AdminController::class, 'changeStatus']);
         Route::post('/send-mail-to-user', [AdminController::class, 'sendEmailToUser']);
     });
 });

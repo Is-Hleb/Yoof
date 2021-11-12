@@ -26,12 +26,14 @@ const strChanger = {
 };
 
 export default {
-    getName: state => {
-        return state.user.data.name + ' ' + state.user.data.surname;
-    },
-    allDBUsers: state => {
-        return state.allUsers
-    },
+
+    modalErrors: state => state.errors,
+    modalSuccess: state => state.successMessages,
+    getName: state => state.user.data.name + ' ' + state.user.data.surname,
+    allDBUsers: state => state.allUsers,
+    loading: (state) => state.loading,
+    getUserByKey: state => id => state.allUsers[id],
+
     allUsers: state => {
         let users = [];
         for (let i = 0; i < state.allUsers.length; i++) {
@@ -64,9 +66,7 @@ export default {
         }
         return users;
     },
-    loading: (state) => {
-        return state.loading;
-    },
+
     searchInUsers: (state, getters) => (type, string) => {
         if (type === 'role') {
             let role = string;
@@ -104,9 +104,7 @@ export default {
             return output;
         }
     },
-    getUserByKey: state => id => {
-        return state.allUsers[id]
-    },
+
     allCategories: state => {
         let categories = [];
         let key = 1;
