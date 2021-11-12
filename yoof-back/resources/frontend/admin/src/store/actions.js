@@ -87,7 +87,7 @@ export const actions = {
         })
     },
     getAllCategories({commit, state}) {
-        sendAuthRequest(state, 'GET', '/api/category').then(r => {
+        sendAuthRequest(state, 'GET', '/api/admin/category').then(r => {
             let data = r.data;
             commit("SET_ALL_CATEGORIES", data);
         })
@@ -127,5 +127,15 @@ export const actions = {
             commit("SET_MODAL_ERRORS", data.data)
             throw new Error('ERROR')
         }
+    },
+    loadArticles({state, commit})
+    {
+        sendAuthRequest(state, 'GET', '/api/admin/article/all').then(r => {
+           let data = r.data
+           if(data.code === 'success')
+           {
+               commit('SET_ARTICLES', data.data);
+           }
+        });
     }
 }

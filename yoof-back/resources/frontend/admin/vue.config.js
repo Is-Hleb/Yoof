@@ -2,7 +2,13 @@ module.exports = {
 	runtimeCompiler: true,
 
 	chainWebpack: config => {
-		config
+        if (process.env.NODE_ENV === 'production') {
+            config.module.rule('vue').uses.delete('cache-loader');
+            config.module.rule('js').uses.delete('cache-loader');
+            config.module.rule('ts').uses.delete('cache-loader');
+            config.module.rule('tsx').uses.delete('cache-loader');
+        }
+        config
 			.plugin('html')
 			.tap(args => {
 				args[0].title = 'Muse Vue Ant Design - by Creative Tim'
@@ -12,10 +18,6 @@ module.exports = {
     // proxy API requests to Valet during development
     devServer: {
         proxy: 'http://localhost:8081/',
-        https: true,
-        open: process.platform === 'darwin',
-        hotOnly: false,
-
     },
 
     // output built static files to Laravel's public dir.

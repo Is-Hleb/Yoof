@@ -1,173 +1,130 @@
 <template>
-    <div>
-        <a-steps :current="current">
-            <a-step v-for="item in steps" :key="item.title" :title="item.title" :description="item.description" />
-        </a-steps>
-        <div class="steps-action    ">
-            <a-button v-if="current < steps.length - 1" type="primary" @click="next" class="btn-next">
-                Следующий шаг
-                <a-icon type="arrow-right" />
-            </a-button>
-            <a-button
-                v-if="current == steps.length - 1"
-                type="primary"
-                @click="$message.success('Надеемся, наш фильтр помог Вам!')"
-                v-on:click="modal.destroy()"
-                style="width: 180px; height: 50px; background-color: #07bb14; border: #07bb14"
 
+    <a-modal
+        title="Применение фильтров"
+        :visible="visibleModalFilter"
+        width="1200px"
+        @cancel="$emit('cancel')"
+    >
+        <a-spin :spinning="loading">
+            <a-form
+                class="login-form"
             >
-                Завершить фильтрацию
-            </a-button>
-            <a-button type="primary" v-if="current > 0" @click="prev" class="btn-prev">
-                <a-icon type="arrow-left" />
-                На предыдущий шаг
-            </a-button>
-        </div>
-        <div v-if="current === 0" style="margin-top: 30px;" align="center">
-                <a-select :default-value="provinceData[0]" class="categories" @change="handleProvinceChange">
-                    <a-select-option v-for="province in provinceData" :key="province">
-                        {{ province }}
-                    </a-select-option>
-                </a-select><br>
-                <a-select v-model="secondCity" class="product">
-                    <a-select-option v-for="city in cities" :key="city">
-                        {{ city }}
-                    </a-select-option>
-                </a-select>
-        </div>
-        <div v-if="current === 1">
-            <div class="flex-filter-block" style="margin-top: 30px">
-                <div>
-                    <h1 class="pppp">Диагональ</h1>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">23”–24” (58 см–60см)</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">30”–32” (76 см–81см)</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">40”–43” (101 см–109см)</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">49”–55” (127 см–139см)</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">60”–70” (152 см–178см)</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">70”–80” (178 см–203см)</p></div>
-                    <h1 class="ppppp">Показать все ></h1>
-                </div>
-                <div>
-                    <h1 class="pppp">Цвет</h1>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Цвет"><p class="p">Белый</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Цвет"><p class="p">Серебристый</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Цвет"><p class="p">Черный</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Цвет"><p class="p">Серый</p></div>
-                    <h1 class="ppppp">Показать все ></h1>
-                </div>
-                <div>
-                    <h1 class="pppp">Диагональ</h1>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">23”–24” (58 см–60см)</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">30”–32” (76 см–81см)</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">40”–43” (101 см–109см)</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">49”–55” (127 см–139см)</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">60”–70” (152 см–178см)</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Диагональ"><p class="p">70”–80” (178 см–203см)</p></div>
-                    <h1 class="ppppp">Показать все ></h1>
-                </div>
-            </div>
-            <div class="flex-filter-block">
-                <div>
-                    <h1 class="pppp">Бренд</h1>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">LG</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">SAMSUNG</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">SONY</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">TCL</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">BBK</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">XIAOMI</p></div>
-                    <h1 class="ppppp">Показать все ></h1>
-                </div>
-                <div>
-                    <h1 class="pppp">Бренд</h1>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">LG</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">SAMSUNG</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">SONY</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">TCL</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">BBK</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">XIAOMI</p></div>
-                    <h1 class="ppppp">Показать все ></h1>
-                </div>
-                <div>
-                    <h1 class="pppp">Бренд</h1>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">LG</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">SAMSUNG</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">SONY</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">TCL</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">BBK</p></div>
-                    <div class="flex"><input class="checkbox" type="checkbox" name="Бренд"><p class="p">XIAOMI</p></div>
-                    <h1 class="ppppp">Показать все ></h1>
-                </div>
-            </div>
-        </div>
+                <div class="body0 pad0">
+                    <img src="./img/logo2.png" class="slider-icon" style="display: block">
+                    <div><h1 class="pppp">ФИЛЬТРЫ</h1></div>
+                    <h1 class="pppp fon-size300">Введите модель техники, которую Вы ищете, или воспользуйтесь нашими
+                        умными фильтрами ниже</h1>
+                    <div class="flex asw">
+                        <a-input-search placeholder="Введите модель техники..."
+                                        enter-button="Искать"
+                                        size="large"
+                                        @search="handleSearchAction"
+                                        @input="handleInputAction"
+                                        v-model="searchString"
+                                        style="margin-bottom: 10px; margin-top: 10px">
+                        </a-input-search>
+                    </div>
+                    <div class="category-filters">
+                        <div>
+                            <div v-show="!searchActionActive">
+                                <a-steps :current="current">
+                                    <a-step v-for="item in steps" :key="item.title" :title="item.title"
+                                            :description="item.description"/>
+                                </a-steps>
+                                <div class="steps-action">
+                                    <a-button v-if="current < steps.length - 1" type="primary" @click="next"
+                                              class="btn-next">
+                                        Следующий шаг
+                                        <a-icon type="arrow-right"/>
+                                    </a-button>
+                                    <a-button
+                                        v-if="current == steps.length - 1"
+                                        type="primary"
+                                        @click="$message.success('Надеемся, наш фильтр помог Вам!')"
+                                        v-on:click="modal.destroy()"
+                                        style="width: 180px; height: 50px; background-color: #07bb14; border: #07bb14"
 
-        <div v-if="current === 2" style="margin-top: 35px">
-            <a-table :columns="columns" :data-source="data" class="components-table-demo-nested">
-                <a slot="operation" >Publish</a>
-                <a-table
-                    slot="expandedRowRender"
-                    :columns="innerColumns"
-                    :data-source="innerData"
-                    :pagination="false"
-                >
-                </a-table>
-            </a-table>
-        </div>
-    </div>
+                                    >
+                                        Завершить фильтрацию
+                                    </a-button>
+                                    <a-button type="primary" v-if="current > 0" @click="prev" class="btn-prev">
+                                        <a-icon type="arrow-left"/>
+                                        На предыдущий шаг
+                                    </a-button>
+                                </div>
+                            </div>
+
+                            <div v-if="current === 0" style="margin-top: 30px;" align="center">
+                                <a-select :default-value="groupsNames[0]" class="categories"
+                                          @change="handleGroupNameChange">
+                                    <a-select-option v-for="groupName in groupsNames" :key="groupName">
+                                        {{ groupName }}
+                                    </a-select-option>
+                                </a-select>
+                                <br>
+                                <a-select v-model="selectedCategory" class="product">
+                                    <a-select-option v-for="category in cities" :key="category">
+                                        {{ category }}
+                                    </a-select-option>
+                                </a-select>
+                            </div>
+
+                            <div v-if="current === 1">
+                                <div v-for="flexGroup in filters" :key="flexGroup.key" class="flex-filter-block"
+                                     style="margin-top: 30px">
+                                    <div v-for="(args, name) in flexGroup" :key="name">
+                                        <h1 class="pppp">{{ name }}</h1>
+                                        <div v-for="arg in args" :key="arg.id" class="flex">
+
+                                            <input @change="selectArgAction(arg)" class="checkbox" type="checkbox"
+                                                   :value="arg.id"
+                                                   :name="arg.name">
+                                            <p class="p">{{ arg.name }}</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div v-if="current === 2" style="margin-top: 35px">
+                                <a-table :columns="columns" :data-source="products"
+                                         class="components-table-demo-nested">
+                                    <a slot="operation">Publish</a>
+                                    <template slot="expandedRowRender" slot-scope="row">
+                                        <p v-html="row.description"></p>
+                                    </template>
+                                </a-table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="FLEX5 ai fmtp">
+                        <!--                        <h1 class="ppppp10">Очистить фильтры</h1>
+                                                <div class="flex-pop" style="margin-left: 10px; "><a-button type="primary"  style="width: 180px; height: 50px; background-color: yellowgreen; border: yellowgreen;"><span class="pppp" style="color: white">НАЧАТЬ ПОИСК</span></a-button></div>-->
+                    </div>
+                </div>
+            </a-form>
+        </a-spin>
+    </a-modal>
 </template>
+
+
 <script>
-const provinceData = ['Бытовая техника', 'Кухонная техника', 'Интеллектуально бытовая техника', 'Компьютеры и офис', 'Электроника', 'Мобильные телефоны и аксессуары',];
-const cityData = {
-    'Бытовая техника': ['Холодильник', 'Стиральная машина', 'Фен', 'Увлажнитель воздуха', 'Утюг', 'Швейная машинка', 'Электробритва'],
-    'Кухонная техника': ['Газовая плита', 'Электрическая плита', 'Духовой шкаф', 'Микроволновая печь', 'Хлебопечка', 'Мультиварка'],
-    'Интеллектуально бытовая техника': ['Робот пылесос', 'Интернет холодильник', 'Интернет кофемашина'],
-    'Компьютеры и офис': ['Планшеты', 'Ноутбуки', 'Мини ПК', 'Мыши и клавиатуры', 'Хранение данных'],
-    'Электроника': ['Роботы', 'Аудио- и видеотехника', 'Смарт-часы', 'Видеокамеры 360°', 'Шлемы и очки VR/AR', 'Электрические розетки'],
-    'Мобильные телефоны и аксессуары': ['Мобильные телефоны', 'Смартфоны', 'Чехлы для смартфонов', 'Рации', 'Внешние аккумуляторы'],
-
-};
-
 const columns = [
-    { title: 'Модель и характеристики', dataIndex: 'name', key: 'name' },
-
-
+    {title: 'Модель и характеристики', dataIndex: 'name', key: 'name'},
 ];
-
-const data = [];
-for (let i = 0; i < 3; ++i) {
-    data.push({
-        key: i,
-        name: 'Asus ZenBook 14',
-/*        platform: 'iOS',
-        version: '10.3.4.5654',
-        upgradeNum: 500,
-        creator: 'Jack',
-        createdAt: '2014-12-24 23:12:00',*/
-    });
-
-}
-
-const innerColumns = [
-/*    { title: 'Цвет', dataIndex: 'date', key: 'date' },
-    { title: 'ОЗУ', dataIndex: 'name', key: 'name' },
-    { title: 'SSD', dataIndex: 'ssd', key: 'ssd' },
-    { title: 'Год выпуска', dataIndex: 'year', key: 'year' },
-    { title: 'Страна производства', dataIndex: 'capital', key: 'capital' },*/
-];
-
-const innerData = [];
-for (let i = 0; i < 1; ++i) {
-    innerData.push({
-/*        key: i,
-        date: 'Черный',
-        name: '8 ГБ',
-        ssd: '512 ГБ',
-        capital: 'Китай',
-        year: '2017',*/
-    });
-}
 
 
 export default {
+    props: ['visibleModalFilter', 'searchStringProp'],
+    watch: {
+        searchStringProp(newVal) {
+            this.searchString = newVal;
+            this.handleSearchAction()
+        }
+    },
     data() {
         return {
             current: 0,
@@ -189,28 +146,83 @@ export default {
                     content: '',
                 },
             ],
-            provinceData,
-            cityData,
-            cities: cityData[provinceData[0]],
-            secondCity: cityData[provinceData[0]][0],
-            data,
+            args: [],
+            cities: [],
+            selectedCategory: '',
             columns,
-            innerColumns,
-            innerData,
+            searchString: this.searchStringProp ?? '',
+            searchActionActive: false,
+            letters: 0,
         };
     },
+    computed: {
+        groupsNames() {
+            return this.$store.getters.groups ?? [];
+        },
+        categories() {
+            return this.$store.getters.categories ?? [];
+        },
+        filters() {
+            return this.$store.getters.filters ?? []
+        },
+        loading() {
+            return this.$store.getters.loading
+        },
+        products() {
+            return this.$store.getters.products ?? []
+        }
+    },
+    mounted() {
+        this.$store.dispatch('loadGroups').then(() => {
+            this.cities = this.categories[this.groupsNames[0]]
+            this.selectedCategory = this.categories[this.groupsNames[0]][0];
+        });
+    },
     methods: {
+        selectArgAction(arg) {
+            this.args.push(arg)
+        },
         next() {
-            this.current++;
+            if (this.current + 1 === 1) { // Первый этап -- выбор категорий
+                this.$store.dispatch('loadFilters', this.selectedCategory).then(() => {
+                    this.current++;
+                });
+            } else if (this.current + 1 === 2) { // Второй этап -- поиск
+                this.$store.dispatch('searchByArguments', this.args).then(() => {
+                    this.args = []
+                    this.current++;
+                })
+            }
         },
         prev() {
             this.current--;
         },
-        handleProvinceChange(value) {
-            this.cities = cityData[value];
-            this.secondCity = cityData[value][0];
+        handleGroupNameChange(value) {
+            this.cities = this.categories[value];
+            this.selectedCategory = this.categories[value][0];
         },
+        handleInputAction() {
+            this.searchActionActive = this.searchString !== ''
+            this.current = this.searchActionActive ? 2 : 0;
+            if(!this.searchActionActive) {
+                this.$store.commit('SET_PRODUCTS', [])
+            }
+        },
+        handleSearchAction() {
+            this.letters++;
+            let active = this.searchActionActive = this.searchString !== '',
+                searchString = this.searchString
+            this.current = this.searchActionActive ? 2 : 0;
+
+            if (!active) {
+                this.letters = 0;
+            } else {
+                this.letters = 0;
+                this.$store.dispatch('searchByModel', searchString)
+            }
+        }
     },
+
 };
 </script>
 <style scoped>
@@ -260,10 +272,12 @@ export default {
         margin-top: 20px;
 
     }
+
     .categories {
         width: 200px;
         float: left;
     }
+
     .product {
         float: left;
     }

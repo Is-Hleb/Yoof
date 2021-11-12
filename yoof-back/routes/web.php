@@ -14,7 +14,9 @@ use App\Http\Controllers\FrontendController;
 |
 */
 
-Route::get('/admin{any}', [FrontendController::class, 'admin'], 'https')->where('any', '.*');
+Route::get('/admin{any}', function(){
+    return view('admin');
+})->where('any', '.*');
 
 
 Route::any('/{any}', function () {

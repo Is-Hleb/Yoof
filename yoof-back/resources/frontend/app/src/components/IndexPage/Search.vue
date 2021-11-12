@@ -4,7 +4,8 @@
             <h1 class="h1">ПОЛУЧИТЕ СВОЕ ЭКСКЛЮЗИВНОЕ ПРЕДЛОЖЕНИЕ</h1>
         </div>
         <div class="connect">
-            <h2 class="connect2">Сотни магазинов электроники готовы участвовать в аукционе, за право предложить вам свой товар</h2>
+            <h2 class="connect2">Сотни магазинов электроники готовы участвовать в аукционе, за право предложить вам свой
+                товар</h2>
         </div>
         <div class="flex mt60" style="background-color: transparent">
             <a-popover title="Подсказка">
@@ -16,45 +17,16 @@
                     enter-button="Искать"
                     size="large"
                     class="width-input"
+                    v-model="searchString"
+                    @search="handleSearchAction"
                 />
             </a-popover>
         </div>
         <div class="flex-space-between body" style="background-color: transparent">
-            <h3 class="text-add-filter" @click="() => visibleModalFilter = true" style="margin-top: 23px"><span class="plusy">+</span> Применить фильтры</h3>
+            <h3 class="text-add-filter" @click="() => visibleModalFilter = true" style="margin-top: 23px"><span
+                class="plusy">+</span> Применить фильтры</h3>
         </div>
-        <a-modal
-            title="Применение фильтров"
-            :visible="visibleModalFilter"
-            @cancel="handleExit"
-            width="1200px"
-        >
-            <a-form
-                class="login-form"
-            >
-                <div class="body0 pad0">
-                    <img src="./img/logo2.png" class="slider-icon" style="display: block">
-                    <div><h1 class="pppp">ФИЛЬТРЫ</h1></div>
-                    <h1 class="pppp fon-size300">Введите модель техники, которую Вы ищете, или воспользуйтесь нашими умными фильтрами ниже</h1>
-                    <div class="flex asw">
-                        <a-input-search placeholder="Введите модель техники..."
-                                        enter-button="Искать"
-                                        size="large"
-                                        style="margin-bottom: 10px; margin-top: 10px">
-                        </a-input-search>
-                    </div>
-                    <div class="category-filters">
-                        <Filters />
-
-                    </div>
-
-
-                    <div class="FLEX5 ai fmtp">
-<!--                        <h1 class="ppppp10">Очистить фильтры</h1>
-                        <div class="flex-pop" style="margin-left: 10px; "><a-button type="primary"  style="width: 180px; height: 50px; background-color: yellowgreen; border: yellowgreen;"><span class="pppp" style="color: white">НАЧАТЬ ПОИСК</span></a-button></div>-->
-                    </div>
-                </div>
-            </a-form>
-        </a-modal>
+        <Filters @cancel="handleExit" :search-string-prop="futurePropSearchString" :visible-modal-filter="visibleModalFilter"/>
     </div>
 </template>
 
@@ -66,15 +38,24 @@ import Filters from "../Templates/Filters";
 export default {
     name: "Search",
     components: {
-       Filters
+        Filters
     },
     data() {
         return {
             visible: true,
-            visibleModalFilter: false
+            visibleModalFilter: false,
+            searchString: '',
+            futurePropSearchString: '',
         };
     },
     methods: {
+        handleSearchAction(text) {
+            this.futurePropSearchString = text;
+            this.searchString = '';
+            if(text !== '' && !this.visibleModalFilter) {
+                this.visibleModalFilter = true;
+            }
+        },
         showModal() {
             this.visible = true;
         },
@@ -90,6 +71,7 @@ export default {
 .ant-form-item {
     margin-bottom: 1px;
 }
+
 .ant-carousel .slick-slide {
     text-align: center;
     height: 350px;
@@ -106,9 +88,11 @@ export default {
     background-color: rgba(31, 45, 61, 0.11);
     opacity: 0.3;
 }
+
 .ant-carousel .custom-slick-arrow:before {
     display: none;
 }
+
 .ant-carousel .custom-slick-arrow:hover {
     opacity: 0.5;
 }
@@ -128,10 +112,12 @@ export default {
 }
 
 .flex-filter-block {
-    justify-content: space-between;width: 100%;
+    justify-content: space-between;
+    width: 100%;
     position: relative;
     display: flex;
 }
+
 #components-layout-demo-side .logo {
     height: 40px;
     width: 150px;
@@ -160,6 +146,7 @@ export default {
     line-height: 21px;
     color: white;
 }
+
 .h1 {
 
     margin-top: -15px;
@@ -188,7 +175,7 @@ export default {
 
 }
 
-.button-filter-search{
+.button-filter-search {
     border: 0;
     width: 200px;
     height: 60px;
@@ -209,6 +196,7 @@ export default {
     margin: 0;
     margin-top: 8%;
 }
+
 .h1 {
     color: white;
     margin-bottom: 3%;
@@ -218,9 +206,11 @@ export default {
     font-size: 45px;
     letter-spacing: 0.02em;
 }
+
 .connect {
     margin: 0;
 }
+
 .connect2 {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -230,6 +220,7 @@ export default {
     line-height: 124.68%;
     color: white;
 }
+
 .ant-layout-header {
     padding: 0 0px;
 }
@@ -244,12 +235,15 @@ export default {
     .width-input {
         width: 98%;
     }
+
     .checkbox {
         font-size: 12px
     }
+
     .flex-filter-block {
         display: block;
     }
+
     .h1 {
         font-size: 36px;
     }

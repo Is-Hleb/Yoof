@@ -117,9 +117,24 @@
       <path value="$PROJECT_DIR$/yoof-back/vendor/league/oauth1-client" />
       <path value="$PROJECT_DIR$/yoof-back/vendor/laravel/socialite" />
       <path value="$PROJECT_DIR$/yoof-back/vendor/shuchkin/simplexls" />
+      <path value="$PROJECT_DIR$/yoof-back/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/yoof-back/vendor/laravel/passport" />
+      <path value="$PROJECT_DIR$/yoof-back/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/yoof-back/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/yoof-back/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/yoof-back/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/yoof-back/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/yoof-back/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/yoof-back/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/yoof-back/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/yoof-back/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/yoof-back/vendor/league/oauth2-server" />
+      <path value="$PROJECT_DIR$/yoof-back/vendor/league/event" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.3">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
   <component name="PhpUnit">
     <phpunit_settings>
       <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/yoof-back/vendor/autoload.php" />

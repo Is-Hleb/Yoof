@@ -1,6 +1,5 @@
 <template>
     <div>
-        <a-spin v-if="this.loading"></a-spin>
         <!-- Authors Table -->
         <a-row :gutter="24" type="flex">
 
@@ -42,6 +41,22 @@
         </a-row>
         <!-- / Projects Table -->
 
+        <!-- Projects Table -->
+        <a-row :gutter="24" type="flex">
+
+            <!-- Projects Table Column -->
+            <a-col :span="24" class="mb-24">
+
+                <!-- Projects Table Column -->
+                <CardArticlesTable></CardArticlesTable>
+                <!-- / Projects Table Column -->
+
+            </a-col>
+            <!-- / Projects Table Column -->
+
+        </a-row>
+        <!-- / Projects Table -->
+
     </div>
 
 </template>
@@ -53,9 +68,7 @@ import CardAuthorTable from '../components/Cards/CardAuthorTable' ;
 
 // "Projects" table component.
 import CardCategoriesTable from '../components/Cards/CardCategoriesTable' ;
-import Preloader from "@/components/Preloader/Preloader";
-
-// "Authors" table list of columns and their properties.
+import CardArticlesTable from "../components/Cards/CardArticlesTable";// "Authors" table list of columns and their properties.
 const table1Columns = [
     {
         title: 'ФИО И EMAIL',
@@ -123,7 +136,7 @@ export default ({
     components: {
         CardAuthorTable,
         CardCategoriesTable,
-        Preloader
+        CardArticlesTable
     },
     methods: {
         onDeleteInUsers(key) {

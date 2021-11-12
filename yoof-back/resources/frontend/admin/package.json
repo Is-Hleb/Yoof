@@ -4,12 +4,14 @@
   "private": true,
   "description": "A user-friendly, open source and beautiful dashboard based on Ant Design Vue.",
   "scripts": {
-    "serve": "vue-cli-service serve --open --https",
+    "serve": "vue-cli-service serve --open --watch",
     "build": "rm -rf ../../../public/assets/admin/{js,css,img} && vue-cli-service build --no-clean",
     "dev": "npm run serve"
   },
   "main": "src/main.js",
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^31.0.0",
+    "@ckeditor/ckeditor5-vue2": "^1.0.5",
     "ant-design-vue": "1.7.6",
     "axios": "^0.23.0",
     "chart.js": "3.4.1",
