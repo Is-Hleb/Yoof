@@ -67,8 +67,8 @@ const table1Columns = [
         title: 'СТАТУС АККАУНТА',
         dataIndex: 'status',
         filters: [
-            {text: 'ПОДВЕРЖДЕНЫ', value: 'true'},
-            {text: 'НЕ ПОДВЕРЖДЕНЫ', value: 'false'},
+            {text: 'ПОДТВЕРЖДЕНЫ', value: 'true'},
+            {text: 'НЕ ПОДТВЕРЖДЕНЫ', value: 'false'},
         ],
         onFilter: (value, record) => {
             if (value === 'true')

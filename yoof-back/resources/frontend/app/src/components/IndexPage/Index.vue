@@ -580,6 +580,19 @@ export default {
     }
 }
 
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #07bb14;
+    border-color: #07bb14;
+}
+
+.ant-checkbox-checked:hover {
+    border-color: #7bc862;
+}
+
+.ant-checkbox-wrapper:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner, .ant-checkbox-input:focus + .ant-checkbox-inner {
+    border-color: #07bb14;
+}
+
 
 </style>
 

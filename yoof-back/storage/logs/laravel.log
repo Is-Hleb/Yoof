@@ -3439,3 +3439,214 @@
 #11 /var/www/html/server.php(21): require_once('...')
 #12 {main}
 "}
+[2021-11-01 18:16:28] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list' (SQL: insert into `users` (`email`, `email_verified_at`, `role`, `password`, `remember_token`, `api_token`, `status`, `updated_at`, `created_at`) values (oscar37@example.com, 2021-11-01 18:16:27, user, $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi, hUdY6NJfTU, itgziqNoh5qRfKi3FXfTTc6jzP7yzYlBcVezRvwFV2aP2gbPAbb5NhKLfCvp, 0, 2021-11-01 18:16:27, 2021-11-01 18:16:27)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list' (SQL: insert into `users` (`email`, `email_verified_at`, `role`, `password`, `remember_token`, `api_token`, `status`, `updated_at`, `created_at`) values (oscar37@example.com, 2021-11-01 18:16:27, user, $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi, hUdY6NJfTU, itgziqNoh5qRfKi3FXfTTc6jzP7yzYlBcVezRvwFV2aP2gbPAbb5NhKLfCvp, 0, 2021-11-01 18:16:27, 2021-11-01 18:16:27)) at D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:703)
+[stacktrace]
+#0 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
+#1 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(493): Illuminate\\Database\\Connection->run()
+#2 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(445): Illuminate\\Database\\Connection->statement()
+#3 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Processors\\Processor.php(32): Illuminate\\Database\\Connection->insert()
+#4 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2964): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId()
+#5 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(1641): Illuminate\\Database\\Query\\Builder->insertGetId()
+#6 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1180): Illuminate\\Database\\Eloquent\\Builder->__call()
+#7 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1145): Illuminate\\Database\\Eloquent\\Model->insertAndSetId()
+#8 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(986): Illuminate\\Database\\Eloquent\\Model->performInsert()
+#9 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Factories\\Factory.php(313): Illuminate\\Database\\Eloquent\\Model->save()
+#10 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Traits\\EnumeratesValues.php(234): Illuminate\\Database\\Eloquent\\Factories\\Factory->Illuminate\\Database\\Eloquent\\Factories\\{closure}()
+#11 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Factories\\Factory.php(316): Illuminate\\Support\\Collection->each()
+#12 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Factories\\Factory.php(264): Illuminate\\Database\\Eloquent\\Factories\\Factory->store()
+#13 D:\\OpenServer\\domains\\Yoof\\yoof-back\\database\\seeders\\DatabaseSeeder.php(16): Illuminate\\Database\\Eloquent\\Factories\\Factory->create()
+#14 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Database\\Seeders\\DatabaseSeeder->run()
+#15 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#17 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#18 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#19 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Seeder.php(149): Illuminate\\Container\\Container->call()
+#20 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Seeds\\SeedCommand.php(66): Illuminate\\Database\\Seeder->__invoke()
+#21 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Concerns\\GuardsAttributes.php(157): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#22 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Seeds\\SeedCommand.php(67): Illuminate\\Database\\Eloquent\\Model::unguarded()
+#23 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#24 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#25 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#26 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#27 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#28 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call()
+#29 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Command\\Command.php(299): Illuminate\\Console\\Command->execute()
+#30 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#31 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(978): Illuminate\\Console\\Command->run()
+#32 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(295): Symfony\\Component\\Console\\Application->doRunCommand()
+#33 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(167): Symfony\\Component\\Console\\Application->doRun()
+#34 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run()
+#35 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run()
+#36 D:\\OpenServer\\domains\\Yoof\\yoof-back\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#37 {main}
+
+[previous exception] [object] (PDOException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list' at D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:486)
+[stacktrace]
+#0 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(486): PDO->prepare()
+#1 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(696): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
+#3 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(493): Illuminate\\Database\\Connection->run()
+#4 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(445): Illuminate\\Database\\Connection->statement()
+#5 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Processors\\Processor.php(32): Illuminate\\Database\\Connection->insert()
+#6 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2964): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId()
+#7 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(1641): Illuminate\\Database\\Query\\Builder->insertGetId()
+#8 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1180): Illuminate\\Database\\Eloquent\\Builder->__call()
+#9 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1145): Illuminate\\Database\\Eloquent\\Model->insertAndSetId()
+#10 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(986): Illuminate\\Database\\Eloquent\\Model->performInsert()
+#11 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Factories\\Factory.php(313): Illuminate\\Database\\Eloquent\\Model->save()
+#12 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Traits\\EnumeratesValues.php(234): Illuminate\\Database\\Eloquent\\Factories\\Factory->Illuminate\\Database\\Eloquent\\Factories\\{closure}()
+#13 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Factories\\Factory.php(316): Illuminate\\Support\\Collection->each()
+#14 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Factories\\Factory.php(264): Illuminate\\Database\\Eloquent\\Factories\\Factory->store()
+#15 D:\\OpenServer\\domains\\Yoof\\yoof-back\\database\\seeders\\DatabaseSeeder.php(16): Illuminate\\Database\\Eloquent\\Factories\\Factory->create()
+#16 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Database\\Seeders\\DatabaseSeeder->run()
+#17 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#19 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#20 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#21 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Seeder.php(149): Illuminate\\Container\\Container->call()
+#22 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Seeds\\SeedCommand.php(66): Illuminate\\Database\\Seeder->__invoke()
+#23 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Concerns\\GuardsAttributes.php(157): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#24 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Seeds\\SeedCommand.php(67): Illuminate\\Database\\Eloquent\\Model::unguarded()
+#25 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#26 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#27 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#28 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#29 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#30 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call()
+#31 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Command\\Command.php(299): Illuminate\\Console\\Command->execute()
+#32 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#33 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(978): Illuminate\\Console\\Command->run()
+#34 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(295): Symfony\\Component\\Console\\Application->doRunCommand()
+#35 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(167): Symfony\\Component\\Console\\Application->doRun()
+#36 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run()
+#37 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run()
+#38 D:\\OpenServer\\domains\\Yoof\\yoof-back\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#39 {main}
+"} 
+[2021-11-01 18:16:36] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list' (SQL: insert into `users` (`email`, `email_verified_at`, `role`, `password`, `remember_token`, `api_token`, `status`, `updated_at`, `created_at`) values (dickinson.lester@example.org, 2021-11-01 18:16:36, user, $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi, dScoXVdTgw, lbcTScRnNUDXsRcksJRs6gt6Bv464QK0d22jX2fHnyLGraYNgpbgz2zcO42o, 1, 2021-11-01 18:16:36, 2021-11-01 18:16:36)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list' (SQL: insert into `users` (`email`, `email_verified_at`, `role`, `password`, `remember_token`, `api_token`, `status`, `updated_at`, `created_at`) values (dickinson.lester@example.org, 2021-11-01 18:16:36, user, $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi, dScoXVdTgw, lbcTScRnNUDXsRcksJRs6gt6Bv464QK0d22jX2fHnyLGraYNgpbgz2zcO42o, 1, 2021-11-01 18:16:36, 2021-11-01 18:16:36)) at D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:703)
+[stacktrace]
+#0 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
+#1 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(493): Illuminate\\Database\\Connection->run()
+#2 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(445): Illuminate\\Database\\Connection->statement()
+#3 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Processors\\Processor.php(32): Illuminate\\Database\\Connection->insert()
+#4 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2964): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId()
+#5 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(1641): Illuminate\\Database\\Query\\Builder->insertGetId()
+#6 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1180): Illuminate\\Database\\Eloquent\\Builder->__call()
+#7 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1145): Illuminate\\Database\\Eloquent\\Model->insertAndSetId()
+#8 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(986): Illuminate\\Database\\Eloquent\\Model->performInsert()
+#9 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Factories\\Factory.php(313): Illuminate\\Database\\Eloquent\\Model->save()
+#10 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Traits\\EnumeratesValues.php(234): Illuminate\\Database\\Eloquent\\Factories\\Factory->Illuminate\\Database\\Eloquent\\Factories\\{closure}()
+#11 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Factories\\Factory.php(316): Illuminate\\Support\\Collection->each()
+#12 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Factories\\Factory.php(264): Illuminate\\Database\\Eloquent\\Factories\\Factory->store()
+#13 D:\\OpenServer\\domains\\Yoof\\yoof-back\\database\\seeders\\DatabaseSeeder.php(16): Illuminate\\Database\\Eloquent\\Factories\\Factory->create()
+#14 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Database\\Seeders\\DatabaseSeeder->run()
+#15 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#17 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#18 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#19 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Seeder.php(149): Illuminate\\Container\\Container->call()
+#20 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Seeds\\SeedCommand.php(66): Illuminate\\Database\\Seeder->__invoke()
+#21 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Concerns\\GuardsAttributes.php(157): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#22 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Seeds\\SeedCommand.php(67): Illuminate\\Database\\Eloquent\\Model::unguarded()
+#23 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#24 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#25 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#26 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#27 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#28 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call()
+#29 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Command\\Command.php(299): Illuminate\\Console\\Command->execute()
+#30 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#31 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(978): Illuminate\\Console\\Command->run()
+#32 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(295): Symfony\\Component\\Console\\Application->doRunCommand()
+#33 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(167): Symfony\\Component\\Console\\Application->doRun()
+#34 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run()
+#35 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run()
+#36 D:\\OpenServer\\domains\\Yoof\\yoof-back\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#37 {main}
+
+[previous exception] [object] (PDOException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list' at D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:486)
+[stacktrace]
+#0 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(486): PDO->prepare()
+#1 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(696): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
+#3 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(493): Illuminate\\Database\\Connection->run()
+#4 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(445): Illuminate\\Database\\Connection->statement()
+#5 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Processors\\Processor.php(32): Illuminate\\Database\\Connection->insert()
+#6 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2964): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId()
+#7 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(1641): Illuminate\\Database\\Query\\Builder->insertGetId()
+#8 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1180): Illuminate\\Database\\Eloquent\\Builder->__call()
+#9 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1145): Illuminate\\Database\\Eloquent\\Model->insertAndSetId()
+#10 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(986): Illuminate\\Database\\Eloquent\\Model->performInsert()
+#11 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Factories\\Factory.php(313): Illuminate\\Database\\Eloquent\\Model->save()
+#12 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Traits\\EnumeratesValues.php(234): Illuminate\\Database\\Eloquent\\Factories\\Factory->Illuminate\\Database\\Eloquent\\Factories\\{closure}()
+#13 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Factories\\Factory.php(316): Illuminate\\Support\\Collection->each()
+#14 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Factories\\Factory.php(264): Illuminate\\Database\\Eloquent\\Factories\\Factory->store()
+#15 D:\\OpenServer\\domains\\Yoof\\yoof-back\\database\\seeders\\DatabaseSeeder.php(16): Illuminate\\Database\\Eloquent\\Factories\\Factory->create()
+#16 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Database\\Seeders\\DatabaseSeeder->run()
+#17 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#19 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#20 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#21 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Seeder.php(149): Illuminate\\Container\\Container->call()
+#22 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Seeds\\SeedCommand.php(66): Illuminate\\Database\\Seeder->__invoke()
+#23 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Concerns\\GuardsAttributes.php(157): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#24 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Seeds\\SeedCommand.php(67): Illuminate\\Database\\Eloquent\\Model::unguarded()
+#25 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#26 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#27 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#28 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#29 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#30 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call()
+#31 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Command\\Command.php(299): Illuminate\\Console\\Command->execute()
+#32 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#33 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(978): Illuminate\\Console\\Command->run()
+#34 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(295): Symfony\\Component\\Console\\Application->doRunCommand()
+#35 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(167): Symfony\\Component\\Console\\Application->doRun()
+#36 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run()
+#37 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run()
+#38 D:\\OpenServer\\domains\\Yoof\\yoof-back\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#39 {main}
+"} 
+[2021-11-01 18:17:36] local.ERROR: Command "migreate" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"migreate\" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status at D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php:682)
+[stacktrace]
+#0 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(255): Symfony\\Component\\Console\\Application->find()
+#1 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(167): Symfony\\Component\\Console\\Application->doRun()
+#2 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run()
+#3 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run()
+#4 D:\\OpenServer\\domains\\Yoof\\yoof-back\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#5 {main}
+"} 
+[2021-11-01 18:17:44] local.ERROR: There are no commands defined in the "migreate" namespace.
+
+Did you mean this?
+    migrate {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"migreate\" namespace.
+
+Did you mean this?
+    migrate at D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php:612)
+[stacktrace]
+#0 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(663): Symfony\\Component\\Console\\Application->findNamespace()
+#1 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(255): Symfony\\Component\\Console\\Application->find()
+#2 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\symfony\\console\\Application.php(167): Symfony\\Component\\Console\\Application->doRun()
+#3 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run()
+#4 D:\\OpenServer\\domains\\Yoof\\yoof-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run()
+#5 D:\\OpenServer\\domains\\Yoof\\yoof-back\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#6 {main}
+"} 

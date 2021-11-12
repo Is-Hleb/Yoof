@@ -8,9 +8,8 @@
             @cancel="handleCancel"
         >
             <br>
-            <b>Текст письма
-                <a-textarea v-model="message" placeholder="Электронная почта" class="mb-15"/>
-            </b>
+            <b>Текст письма</b>
+            <a-textarea v-model="message" placeholder="Введите текст письма" class="mb-15 mt-10"/>
         </a-modal>
     </div>
 </template>

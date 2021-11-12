@@ -14,17 +14,18 @@
             </a-col>
         </a-row>
         <!-- / Counter Widgets -->
-
-        <a-button block>
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="fill-muted"
-                      d="M13.5858 3.58579C14.3668 2.80474 15.6332 2.80474 16.4142 3.58579C17.1953 4.36683 17.1953 5.63316 16.4142 6.41421L15.6213 7.20711L12.7929 4.37868L13.5858 3.58579Z"
-                      fill="#111827"/>
-                <path class="fill-muted" d="M11.3787 5.79289L3 14.1716V17H5.82842L14.2071 8.62132L11.3787 5.79289Z"
-                      fill="#111827"/>
-            </svg>
-            <span class="text-dark">СОЗДАТЬ НОВУЮ КАТЕГОРИЮ</span>
-        </a-button>
+        <router-link to="/tables">
+            <a-button block>
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="fill-muted"
+                          d="M13.5858 3.58579C14.3668 2.80474 15.6332 2.80474 16.4142 3.58579C17.1953 4.36683 17.1953 5.63316 16.4142 6.41421L15.6213 7.20711L12.7929 4.37868L13.5858 3.58579Z"
+                          fill="#111827"/>
+                    <path class="fill-muted" d="M11.3787 5.79289L3 14.1716V17H5.82842L14.2071 8.62132L11.3787 5.79289Z"
+                          fill="#111827"/>
+                </svg>
+                <span class="text-dark">СОЗДАТЬ НОВУЮ КАТЕГОРИЮ</span>
+            </a-button>
+        </router-link>
 
         <a-button block class="mt-20">
             <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +38,7 @@
             <span class="text-dark">УПРАВЛЕНИЕ ЗАЯВКАМИ / АУКЦИОНАМИ</span>
         </a-button>
 
-        <a-button block class="mt-20">
+        <a-button block class="mt-20" :isClicked="isClicked">
             <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg"
                  xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>duplicate</title>
@@ -58,9 +59,8 @@
                     </g>
                 </g>
             </svg>
-            <span class="text-dark ml-5">ДОБАВЛЕНИЕ НОВОСТЕЙ</span>
+                <span class="text-dark ml-5">ДОБАВЛЕНИЕ НОВОСТЕЙ</span>
         </a-button>
-
         <a-button class="mt-20" block @click="showModal">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -187,6 +187,7 @@ export default ({
     data() {
         return {
             tableColumns,
+            isClicked: '11'
             toAddAdminEmail: '',
             visible: false
         }
