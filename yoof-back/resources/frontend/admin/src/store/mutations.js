@@ -3,6 +3,7 @@ import router from "@/router";
 export const mutations = {
     SET_AUTH_USER: (state, data) => {
         let secondAttempt = false;
+
         if(state.user.role === 'admin') {
             secondAttempt = true;
         }
@@ -15,10 +16,11 @@ export const mutations = {
             router.push({name: 'index'}).then();
         }
 
-        localStorage.setItem('user', JSON.stringify(state.user));
+
+        localStorage.setItem('user', JSON.stringify(data.user));
         localStorage.setItem('role', 'admin')
         localStorage.setItem('isAuth', 'true')
-        localStorage.setItem('api_token', data.api_token)
+        localStorage.setItem('api_token', data.token)
     },
     SET_AUTH_TOKEN: (state, token) => {
         state.user.api_token = token
@@ -63,6 +65,9 @@ export const mutations = {
     },
     SET_MODAL_ERRORS: (state, data) => {
         state.errors = data;
+    },
+    SET_ARTICLES: (state, data) => {
+        state.articles = data;
     }
 
 }

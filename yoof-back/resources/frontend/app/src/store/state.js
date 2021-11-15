@@ -1,11 +1,14 @@
 function getUser() {
-    if(localStorage.getItem('user')) {
+    try {
         return JSON.parse(localStorage.getItem('user'))
+    } catch (e) {
+        console.log(e.message)
+        return {}
     }
-    return {}
 }
 
 export const state = {
     user: getUser(),
     errors: {},
+    loading: false,
 }

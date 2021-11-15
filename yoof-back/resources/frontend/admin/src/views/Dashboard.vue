@@ -1,5 +1,6 @@
 <template>
     <div>
+        <ShowAddArticle @onClose="() => {this.addArticleModalVisible = false}" :visible="addArticleModalVisible"/>
         <!-- Counter Widgets -->
         <a-row :gutter="24">
             <a-col :span="24" :lg="12" :xl="6" class="mb-24" v-for="(stat, index) in stats" :key="index">
@@ -37,8 +38,7 @@
             </svg>
             <span class="text-dark">УПРАВЛЕНИЕ ЗАЯВКАМИ / АУКЦИОНАМИ</span>
         </a-button>
-
-        <a-button block class="mt-20" :isClicked="isClicked">
+        <a-button block class="mt-20" @click="addArticleAction">
             <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg"
                  xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>duplicate</title>
@@ -85,6 +85,7 @@
 
 import CardLineChart from '../components/Cards/CardLineChart' ;
 import WidgetCounter from '../components/Widgets/WidgetCounter' ;
+import ShowAddArticle from "../components/Modal/ShowAddArticle";
 
 
 // "Projects" table list of columns and their properties.
@@ -112,7 +113,6 @@ const tableColumns = [
     },
 ];
 
-// "Projects" table list of rows and their properties.
 
 
 const CollectionCreateForm = {
@@ -151,7 +151,8 @@ export default ({
     components: {
         CardLineChart,
         WidgetCounter,
-        CollectionCreateForm
+        CollectionCreateForm,
+        ShowAddArticle
     },
     computed: {
         ComputedUsers() {
@@ -189,7 +190,8 @@ export default ({
             tableColumns,
             isClicked: '11'
             toAddAdminEmail: '',
-            visible: false
+            visible: false,
+            addArticleModalVisible: false,
         }
     },
     methods: {
@@ -201,6 +203,9 @@ export default ({
         },
         handleCreate() {
 
+        },
+        addArticleAction() {
+            this.addArticleModalVisible = true;
         },
         handleOk() {
             let email = ""

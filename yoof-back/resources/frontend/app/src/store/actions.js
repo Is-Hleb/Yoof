@@ -15,9 +15,11 @@ const axios = require('axios')
 export const actions = {
     async getState({commit, getters}) {
         let r = await axios.get('api/state');
-        let data = r.data;
+        let data = r.data.data;
         if(!getters.getAuthStatus)
             commit('SET_AUTH_USER', data.user);
+
+        // console.log(data.product.groups);
     },
     async signIn({commit}, userData) {
         let r = await axios.post('api/auth/login', userData)

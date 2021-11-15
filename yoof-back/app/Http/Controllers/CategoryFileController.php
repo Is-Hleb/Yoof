@@ -46,9 +46,9 @@ class CategoryFileController extends Controller
         $characteristics = CategoryProperty::where('category_id', $category->id)->get()->toArray();
 
         $products = [];
-        for($i = 1; $i < sizeof($rows); $i++) {
+        for ($i = 1; $i < sizeof($rows); $i++) {
             $products[] = [
-              'category_id' => $category->id
+                'category_id' => $category->id
             ];
         }
 
@@ -66,19 +66,24 @@ class CategoryFileController extends Controller
                 if (!strlen($value)) {
                     continue;
                 }
-                $propertiesToInsert[] = [ // Создаём свойста продукта
+                $property = [
                     'name' => trim(str_replace(' ', ' ', $characteristic['name'])), // Название текущей характеристики
                     'value' => trim(str_replace(' ', ' ', $value)), // Значение столбца
                     'product_id' => $product->id,
                     'category_property_id' => $characteristic['id'],
                 ];
-                if($insertLimit-- <= 0) {
+                if ($property['name'] == "Модель") { // если нашли модель
+                    $product->name = $property['value']; // записываем значение модели в имя продукта
+                    $product->save();
+                }
+                $propertiesToInsert[] = $property;
+                if ($insertLimit-- <= 0) {
                     Property::insert($propertiesToInsert);
                     $propertiesToInsert = [];
                     $insertLimit = 1000;
                 }
             }
-            if($insertLimit > 0) {
+            if ($insertLimit > 0) {
                 Property::insert($propertiesToInsert);
                 $propertiesToInsert = [];
                 $insertLimit = 1000;

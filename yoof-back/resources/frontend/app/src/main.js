@@ -4,9 +4,12 @@ import axios from 'axios'
 import VueAxios from "vue-axios";
 import router from './router'
 import store from './store'
+import Antd from 'ant-design-vue';
+
 
 import './baseAssets/main.css';
 
+Vue.use(Antd);
 Vue.use(VueAxios, axios);
 
 new Vue({

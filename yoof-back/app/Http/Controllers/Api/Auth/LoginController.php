@@ -49,13 +49,6 @@ class LoginController extends Controller
             ]);
         }
 
-        if (!$user) {
-            return \response([
-                'code' => 'err',
-                'errors' => $validator->errors(),
-                $user
-            ]);
-        }
 
         $user->api_token = Str::random(60);
         $user->save();

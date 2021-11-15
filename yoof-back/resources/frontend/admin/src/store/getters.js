@@ -33,6 +33,38 @@ export default {
     allDBUsers: state => state.allUsers,
     loading: (state) => state.loading,
     getUserByKey: state => id => state.allUsers[id],
+    articles: state => state.articles,
+    axiosConfig: state => {
+        state.axiosConfig.headers.Authorization = "Bearer " + state.user.api_token
+        return state.axiosConfig
+    },
+    articlesRows: state => {
+        let articles = state.articles ?? [],
+            rows = [],
+            cols = [],
+            index = 1,
+            cur = 1
+        for (let key in articles) {
+            cols.push({
+                article: {
+                    ...articles[key],
+                },
+                key: index++
+            })
+            if (cur++ >= 3){
+                rows.push(cols)
+                cols = []
+                cur = 1
+            }
+        }
+        console.log(cols.length)
+        if (cols.length > 0
+        ) {
+            rows.push(cols)
+        }
+        return rows;
+
+    },
 
     allUsers: state => {
         let users = [];
@@ -67,92 +99,98 @@ export default {
         return users;
     },
 
-    searchInUsers: (state, getters) => (type, string) => {
-        if (type === 'role') {
-            let role = string;
-            let users = getters.allUsers
-            if (role === 'all') {
-                return users
-            }
-            return users.filter(item => item.role === role);
-        } else if (type === 'search') {
-            let search = string.toString().toLowerCase().replaceAll(' ', '');
-            let filtered = state.allUsers.filter(item => {
-                let data = item.data;
-                let string = Object.values(data).toString() + Object.values(item).toString()
-                string = string.replaceAll(',', '').replaceAll(' ', '').toLowerCase()
-                return string.indexOf(search) !== -1
-            })
-            let usersFromGetter = getters.allUsers
-            let output = [];
-            for (let i = 0; i < filtered.length; i++) {
-                let user = filtered[i]
-                let description = usersFromGetter.filter(item => item.id === user.id)[0].description
-                output.push({
-                    key: i,
-                    author: {
-                        name: strChanger[user.role],
-                        email: user.email,
-                    },
-                    description,
-                    id: user.id,
-                    role: user.role,
-                    status: user.status,
-                    employed: user.created_at.substr(2, 8),
-                })
-            }
-            return output;
+    searchInUsers
+:
+(state, getters) => (type, string) => {
+    if (type === 'role') {
+        let role = string;
+        let users = getters.allUsers
+        if (role === 'all') {
+            return users
         }
-    },
-
-    allCategories: state => {
-        let categories = [];
-        let key = 1;
-        function mathDescription(arg) {
-            let data = arg
-            let string = ''
-            for (let key in data) {
-                if (['created_at', 'updated_at', 'category_id', 'category_property_id'].includes(key)) {
-                    continue
-                }
-                string += `<b>${strChanger[key]}:</b> ${data[key]}<br>`
-            }
-            return string;
-        }
-        let formatChildren = (item) => {
-            return item.properties.map(prop => {
-                return {
-                    ...prop,
-                    idTitle: `<b>${prop.id}</b>`,
-                    key: key++,
-                    children: prop.searchArguments.map(arg => {
-                        return {
-                            ...arg,
-                            key: key++,
-                            idTitle: `<b class="text-danger">${arg.id}</b>`,
-                            is: 'searchArgument',
-                            type: strChanger['searchArgument'],
-                            description: mathDescription(arg),
-                            productsCount: false,
-                        }
-                    }),
-                    is: 'property',
-                    type: strChanger['property'],
-                }
-            });
-        }
-        for(let index in state.categories) {
-            let item = state.categories[index]
-            categories.push({
-                key: key++,
-                ...item.category,
-                gradation: item.category.gradation_name !== 'invisible' ? ' (' + item.category.gradation_name + ')' : " (Задайте группу)",
-                is: 'category',
-                idTitle: `<b class="text-primary">${item.category.id}</b>`,
-                type: strChanger['category'],
-                children: formatChildren(item)
+        return users.filter(item => item.role === role);
+    } else if (type === 'search') {
+        let search = string.toString().toLowerCase().replaceAll(' ', '');
+        let filtered = state.allUsers.filter(item => {
+            let data = item.data;
+            let string = Object.values(data).toString() + Object.values(item).toString()
+            string = string.replaceAll(',', '').replaceAll(' ', '').toLowerCase()
+            return string.indexOf(search) !== -1
+        })
+        let usersFromGetter = getters.allUsers
+        let output = [];
+        for (let i = 0; i < filtered.length; i++) {
+            let user = filtered[i]
+            let description = usersFromGetter.filter(item => item.id === user.id)[0].description
+            output.push({
+                key: i,
+                author: {
+                    name: strChanger[user.role],
+                    email: user.email,
+                },
+                description,
+                id: user.id,
+                role: user.role,
+                status: user.status,
+                employed: user.created_at.substr(2, 8),
             })
         }
-        return categories;
+        return output;
     }
+},
+
+    allCategories
+:
+state => {
+    let categories = [];
+    let key = 1;
+
+    function mathDescription(arg) {
+        let data = arg
+        let string = ''
+        for (let key in data) {
+            if (['created_at', 'updated_at', 'category_id', 'category_property_id'].includes(key)) {
+                continue
+            }
+            string += `<b>${strChanger[key]}:</b> ${data[key]}<br>`
+        }
+        return string;
+    }
+
+    let formatChildren = (item) => {
+        return item.properties.map(prop => {
+            return {
+                ...prop,
+                idTitle: `<b>${prop.id}</b>`,
+                key: key++,
+                children: prop.searchArguments.map(arg => {
+                    return {
+                        ...arg,
+                        key: key++,
+                        idTitle: `<b class="text-danger">${arg.id}</b>`,
+                        is: 'searchArgument',
+                        type: strChanger['searchArgument'],
+                        description: mathDescription(arg),
+                        productsCount: false,
+                    }
+                }),
+                is: 'property',
+                type: strChanger['property'],
+            }
+        });
+    }
+    for (let index in state.categories) {
+        let item = state.categories[index]
+        categories.push({
+            key: key++,
+            ...item.category,
+            gradation: item.category.gradation_name !== 'invisible' ? ' (' + item.category.gradation_name + ')' : " (Задайте группу)",
+            is: 'category',
+            idTitle: `<b class="text-primary">${item.category.id}</b>`,
+            type: strChanger['category'],
+            children: formatChildren(item)
+        })
+    }
+    return categories;
+}
 }

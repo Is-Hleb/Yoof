@@ -1,7 +1,7 @@
 function mathUser() {
-    if(localStorage.getItem('user')) {
+    try {
         return JSON.parse(localStorage.getItem('user'));
-    } else {
+    } catch (e) {
         return {
             isAuth: false,
             api_token: '',
@@ -16,4 +16,11 @@ export const state = {
     categories: [],
     errors: {},
     successMessages: {},
+    articles: [],
+    axiosConfig: {
+        headers: {
+            'Authorization': '',
+            'Accept': 'application/json'
+        },
+    },
 }

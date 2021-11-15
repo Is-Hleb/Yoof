@@ -13,7 +13,8 @@
         "laravel/socialite": "^5.2",
         "laravel/tinker": "^2.5",
         "shuchkin/simplexls": "^0.9.13",
-      "ext-json": "*"
+      "ext-json": "*",
+      "ext-http": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

@@ -1,4 +1,15 @@
 module.exports = {
+    runtimeCompiler: true,
+
+    chainWebpack: config => {
+        config
+            .plugin('html')
+            .tap(args => {
+                args[0].title = 'Muse Vue Ant Design - by Creative Tim'
+                return args
+            })
+    },
+
     devServer: {
         proxy: 'http://localhost:8081/',
         host: 'localhost'

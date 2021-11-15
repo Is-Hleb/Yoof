@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://localhost'),
+    'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        \App\Providers\RepositoryServiceProvider::class,
 
         /*
          * Application Service Providers...
