@@ -188,7 +188,7 @@ export default ({
     data() {
         return {
             tableColumns,
-            isClicked: '11'
+            isClicked: '11',
             toAddAdminEmail: '',
             visible: false,
             addArticleModalVisible: false,
