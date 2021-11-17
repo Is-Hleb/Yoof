@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
+use \App\Http\Controllers\SocialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +15,28 @@ use App\Http\Controllers\FrontendController;
 |
 */
 
+Route::group(['prefix' => '/auth'], function(){
+   Route::get('/facebook', [SocialController::class, 'facebookRedirect']);
+   Route::get('/facebook/callback', [SocialController::class, 'facebookLogin']);
+   Route::get('/register', function(\Illuminate\Http\Request $request){
+       $data = \Illuminate\Support\Facades\Session::get('data');
+
+       if(!$data) {
+           return redirect()->route('app', '#/');
+       }
+
+       return view('forms.reg', $data);
+   })->name('register')->middleware('guest');
+});
+
 Route::get('/admin{any}', function(){
     return view('admin');
-})->where('any', '.*');
+})->where('any', '.*')->name('admin');
 
 
 Route::any('/{any}', function () {
     return view('app');
-})->where('any', '^(?!api).*$');
+})->where('any', '^(?!api).*$')->name('app');
 
 
 

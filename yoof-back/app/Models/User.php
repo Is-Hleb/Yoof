@@ -26,7 +26,8 @@ class User extends Authenticatable
         'role',
         'api_token',
         'created_at',
-        'status'
+        'status',
+        'fb_id'
     ];
 
     /**
