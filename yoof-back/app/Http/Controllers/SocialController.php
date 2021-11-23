@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SocialToken;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -11,11 +12,11 @@ use Laravel\Socialite\Facades\Socialite;
 class SocialController extends Controller
 {
     /**
-     * @param $regType
+     * @param $driver
      * @param $email
      * @return RedirectResponse
      */
-    private function redirectToRegPage($regType, $email): RedirectResponse
+    private function redirectToRegPage($driver, $email): RedirectResponse
     {
         return redirect()->route('register', '#/')
             ->with(['data' => [
@@ -23,49 +24,42 @@ class SocialController extends Controller
                     'email' => $email,
                 ],
                 'data' => [],
-                'reg_type' => $regType
+                'driver' => $driver
             ]]);
     }
 
-    public function facebookRedirect()
+    private function redirectToApp()
     {
-        return Socialite::driver('facebook')->redirect();
+        return redirect()->route('app', '#/');
     }
 
-    public function facebookLogin()
+    public function redirect($driver)
     {
         try {
-            $user = Socialite::driver('facebook')->user();
-            $isUser = User::where('fb_id', $user->getId())->first();
-            if($isUser) {
-                Auth::login($isUser);
-                return redirect()->route('app', '#/');
-            } else {
-                /** todo Перенести в отдельный роут с регистрацией, c соц сетей брать только почту, ибо ФИО может быть фейком в соц сетях **/
-
-//                $createUser = [
-//                    'email' => $user->getEmail(),
-//                    'password' => Str::random(60),
-//                    'api_token' => Str::random(60),
-//                    'fb_id' => $user->getId(),
-//                ];
-//                $createdUser = User::create($createUser);
-//                $userData = [
-//                    'name' => 'null',
-//                    'surname' => 'null',
-//                    'patronymic' => 'null',
-//                    'api_token' => Str::random(60),
-//                    'user_id' => $createdUser->id,
-//                ];
-//                $data = UserData::create($userData);
-//                Auth::login($createdUser);
-                Session::put('fb_id', $user->getId());
-                return $this->redirectToRegPage('fb', $user->getEmail());
-            }
-
-        } catch (\Exception $exception) {
-            // echo $exception->getMessage();
-            return redirect()->route('app', '#/');
+            return Socialite::driver($driver)->redirect();
+        } catch (\Exception $exception){
+            dd($exception);
+            return $this->redirectToApp();
         }
     }
+
+    public function login($driver)
+    {
+        try {
+            $netUser = Socialite::driver($driver)->user();
+            $token = SocialToken::where('token', $netUser->getId())->first();
+            if($token) {
+                $user = $token->user;
+                Auth::login($user);
+            } else {
+                Session::put('driver', $driver);
+                Session::put('token', $netUser->getId());
+                return $this->redirectToRegPage($driver, $netUser->getEmail());
+            }
+        } catch (\Exception $exception) {
+            dd($exception);
+            return $this->redirectToApp();
+        }
+    }
+
 }

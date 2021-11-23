@@ -1,14 +1,22 @@
-function getUser() {
+function mathUser() {
+    let nullUser = {
+        isAuth: false,
+        api_token: '',
+        role: '',
+    };
     try {
-        return JSON.parse(localStorage.getItem('user'))
+        let user = JSON.parse(localStorage.getItem('user'));
+        if(!user) {
+            return nullUser
+        }
+        return user;
     } catch (e) {
-        console.log(e.message)
-        return {}
+        return nullUser
     }
 }
 
 export const state = {
-    user: getUser(),
+    user: mathUser(),
     errors: {},
     loading: false,
 }

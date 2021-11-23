@@ -16,18 +16,19 @@ use \App\Http\Controllers\SocialController;
 */
 
 Route::group(['prefix' => '/auth'], function(){
-   Route::get('/facebook', [SocialController::class, 'facebookRedirect']);
-   Route::get('/facebook/callback', [SocialController::class, 'facebookLogin']);
-   Route::get('/register', function(\Illuminate\Http\Request $request){
-       $data = \Illuminate\Support\Facades\Session::get('data');
-
-       if(!$data) {
-           return redirect()->route('app', '#/');
-       }
-
-       return view('forms.reg', $data);
-   })->name('register')->middleware('guest');
+   Route::get('/{driver}', [SocialController::class, 'redirect']);
+   Route::get('/{driver}/callback', [SocialController::class, 'login']);
 });
+
+Route::get('/register', function(\Illuminate\Http\Request $request){
+    $data = \Illuminate\Support\Facades\Session::get('data');
+
+    if(!$data) {
+        return redirect()->route('app', '#/');
+    }
+
+    return view('forms.reg', $data);
+})->name('register')->middleware('guest');
 
 Route::get('/admin{any}', function(){
     return view('admin');
