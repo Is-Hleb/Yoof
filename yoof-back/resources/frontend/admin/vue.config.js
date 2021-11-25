@@ -11,13 +11,13 @@ module.exports = {
         config
 			.plugin('html')
 			.tap(args => {
-				args[0].title = 'Muse Vue Ant Design - by Creative Tim'
+				args[0].title = ''
 				return args
 			})
 	},
     // proxy API requests to Valet during development
     devServer: {
-        proxy: 'http://localhost:8081/',
+        proxy: 'http://yoof:8081/',
     },
 
     // output built static files to Laravel's public dir.

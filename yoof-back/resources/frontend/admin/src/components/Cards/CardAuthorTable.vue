@@ -1,6 +1,4 @@
 <template>
-
-
 	<!-- Authors Table Card -->
 	<a-card :bordered="false" class="header-solid h-full" :bodyStyle="{padding: 0,}">
         <template #title>
@@ -10,20 +8,30 @@
 					<h5 class="font-semibold m-0">Пользователи</h5>
 				</a-col>
 				<a-col :span="24" :md="12" style="display: flex; align-items: center; justify-content: flex-end">            <!-- Header Search Input -->
-
 					<a-radio-group v-model="authorsHeaderBtns" size="small">
-						<a-radio-button v-on:click="sortTableByRole('all')">Все</a-radio-button>
-                        <a-radio-button v-on:click="sortTableByRole('user')">Физ. лица</a-radio-button>
-                        <a-radio-button v-on:click="sortTableByRole('company')">Юр. лица</a-radio-button>
-					</a-radio-group>
+						<a-radio-button v-on:click="sortTableByRole('all')" value="all">Все</a-radio-button>
+                        <a-radio-button v-on:click="sortTableByRole('user')" value="fl">Физ. лица</a-radio-button>
+                        <a-radio-button v-on:click="sortTableByRole('company')" value="ul">Юр. лица</a-radio-button>
+                        <a-radio-button v-on:click="sortTableByRole('admin')" value="adm">Админы</a-radio-button>
+                    </a-radio-group>
 				</a-col>
-                <a-input-search v-model="searchText" v-on:input="onSearch" class="header-search mt-15" :class="searchLoading ?  'loading' : ''" placeholder="Введите Email / ФИО / Дату регистрации (yy-mm-dd)" @search="onSearch" >
+                <a-input-search v-model="searchText"
+                                v-on:input="onSearch"
+                                class="header-search mt-15"
+                                :class="searchLoading ?  'loading' : ''"
+                                placeholder="Введите Email / ФИО / Дату регистрации (yy-mm-dd)"
+                                @search="onSearch" >
 
                 </a-input-search>
 			</a-row>
 
 		</template>
-        <show-edit-user v-if="editModalWindow.visible" :index="editModalWindow.key" @modalClose="() => this.editModalWindow.visible = false" :visible="editModalWindow.visible"></show-edit-user>
+        <show-edit-user v-if="editModalWindow.visible"
+                        :index="editModalWindow.key"
+                        @modalClose="() => this.editModalWindow.visible = false"
+                        :visible="editModalWindow.visible"
+        >
+        </show-edit-user>
         <a-table v-if="data.length" :columns="columns" :data-source="data" :pagination="true">
 
 			<template slot="author" slot-scope="author">

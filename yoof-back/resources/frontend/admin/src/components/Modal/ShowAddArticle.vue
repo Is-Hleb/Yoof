@@ -2,7 +2,7 @@
     <div>
         <a-modal
             :visible="visible"
-            width="80%"
+            width="60%"
             style="padding: 2%"
             @ok="handleOk"
             @cancel="$emit('onClose')"
@@ -23,23 +23,30 @@
                 action="/api/admin/article/upload-title-image"
                 :before-upload="beforeUpload"
                 @change="handleChange"
+                style="display: flex; justify-content: center"
             >
                 <img v-if="imageUrl" :src="imageUrl" alt="avatar"/>
                 <div v-else>
                     <a-icon :type="loading ? 'loading' : 'plus'"/>
-                    <div class="ant-upload-text">
-                        Upload
-                    </div>
+                        <div class="ant-upload-text" style="width: 300px">
+                            Загрузить картинку новости
+                        </div>
                 </div>
             </a-upload>
 
             <div v-else-if="action === 'loadTitleText'">
-                <a-input v-model="title"/>
-                <a-button @click="saveTitle">Сохранить</a-button>
+                <h5 style="text-align: center;">Введите название (заголовок) новости </h5>
+                <a-input v-model="title" style="margin: 18px 0" placeholder="Название новости" id="inpTitle"/>
+                <div style="display: flex; justify-content: center">
+                    <a-button type="primary" @click="saveTitle">Дальше</a-button>
+                </div>
             </div>
             <div v-else-if="action === 'loadDescription'">
-                <a-textarea v-model="description"/>
-                <a-button @click="saveDescription">Сохранить</a-button>
+                <h5 style="text-align: center;">Введите краткое описание новости </h5>
+                <a-textarea v-model="description" style="margin: 18px 0; height: 100px" placeholder="Краткое описание новости" id="inpDescription"/>
+                <div style="display: flex; justify-content: center">
+                    <a-button type="primary" @click="saveDescription">Дальше</a-button>
+                </div>
             </div>
             <CardArticleEditor @editorDataChange="handleArticleContent" :id="id" v-else/>
         </a-modal>

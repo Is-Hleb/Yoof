@@ -14,7 +14,7 @@
         }
 
         .register-photo .form-container {
-            display: table;
+            display: flex;
             max-width: 900px;
             width: 90%;
             margin: 0 auto;
@@ -31,6 +31,11 @@
         @media (max-width:991px) {
             .image form {
                 padding: 40px;
+            }
+        }
+        @media (max-width: 500px) {
+            .image {
+                display: none;
             }
         }
 
@@ -85,18 +90,21 @@
             text-decoration: none;
         }
 
+        .image-container {
+            display: flex;
+        }
         .image {
-            display: block;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            height: 100%;
+            width: 50%;
+            height: 10%;
         }
     </style>
 </head>
 <body>
 <section class="register-photo">
-    <div class="form-container"><img class="image" src="{{ asset('img/yoof.png') }}">
+    <div class="form-container">
+        <div class="image-container">
+            <img class="image" src="{{ asset('img/yoof.png') }}" alt="Logo">
+        </div>
         <form id="reg" method="post">
             <h2 class="text-center"><strong>Завершите регистрацию</strong></h2>
             <div class="mb-3">
@@ -104,7 +112,7 @@
             </div>
             <div class="mb-3"><input class="form-control" type="text" name="surname" data-bs-toggle="tooltip" data-bss-tooltip="" placeholder="Имя" required="" title="Введите имя"></div>
             <div class="mb-3"><input class="form-control" type="text" name="patronymic" data-bs-toggle="tooltip" data-bss-tooltip=""  placeholder="Отчество" title="Введите отчество" required=""></div>
-            <div class="mb-3"><input class="form-control" type="text" name="phone" data-bs-toggle="tooltip" data-bss-tooltip=""  placeholder="Номер Телефона" required="" title="Введите номер телефона"></div>
+            <div class="mb-3"><input class="form-control" type="text" name="phone" data-bs-toggle="tooltip" data-bss-tooltip=""  placeholder="Номер телефона" required="" title="Введите номер телефона"></div>
             <div class="mb-3"><input class="form-control" type="email" name="email" value="{{ $user['email'] }}" data-bs-toggle="tooltip" data-bss-tooltip=""  placeholder="Email" title="Введите почту" required=""></div>
             <div class="mb-3"><input class="form-control" type="password" name="password" data-bs-toggle="tooltip" data-bss-tooltip=""  placeholder="Пароль" title="Введите пароль" required=""></div>
             <div class="mb-3"><input class="form-control" type="password" name="passwordRepeat" data-bs-toggle="tooltip" data-bss-tooltip=""  placeholder="Повторите пароль" title="Повторите пароль" required=""></div>

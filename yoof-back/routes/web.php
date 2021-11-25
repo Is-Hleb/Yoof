@@ -15,6 +15,8 @@ use \App\Http\Controllers\SocialController;
 |
 */
 
+Route::get('/reg', function(){ return view('forms.reg', ['user' => ['email' => 'none@none.none']]); });
+
 Route::group(['prefix' => '/auth'], function(){
    Route::get('/{driver}', [SocialController::class, 'redirect']);
    Route::get('/{driver}/callback', [SocialController::class, 'login']);

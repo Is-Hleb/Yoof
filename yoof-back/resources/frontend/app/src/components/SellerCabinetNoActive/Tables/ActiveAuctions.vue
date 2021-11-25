@@ -1,5 +1,7 @@
 <template>
-    <a-table :columns="columns" :data-source="data">
+    <a-table :columns="columns"
+             :data-source="data"
+    >
         <notifications group="foo" class="text-notification" />
         <template slot="action">
             <div>

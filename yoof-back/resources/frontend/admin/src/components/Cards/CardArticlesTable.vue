@@ -6,7 +6,7 @@
             @close="() => this.showArticleModal = false"
             @ok="() => this.showArticleModal = false"
             v-model="showArticleModal"
-            okText="Ok"
+            okText="Закрыть"
             cancelText="Закрыть"
         >
             <div class="card-article">
@@ -24,7 +24,11 @@
                 <a-row>
                     <a-col :span="5">
                         <div style="justify-content: center"> <!-- Редактор карточки -->
-                            <a-input v-model="newArticle.title" type="text" :value="newArticle.title"/>
+                            <a-input v-model="newArticle.title"
+                                     type="text"
+                                     :value="newArticle.title"
+                                     placeholder="Введите название новости.."
+                            />
                             <img
                                 style="object-fit: cover; width: 100%; height: 300px"
                                 alt="Картинка статьи"
@@ -50,7 +54,11 @@
                                     Нажмите или перетащите картинку в эту область
                                 </p>
                             </a-upload-dragger>
-                            <a-textarea v-model="newArticle.description" style="min-height: 200px" :value="newArticle.description"/>
+                            <a-textarea v-model="newArticle.description"
+                                        style="min-height: 200px"
+                                        :value="newArticle.description"
+                                        placeholder="Введите краткое описание новости.."
+                            />
                         </div>
                         <hr>
                         <div style="justify-content: center; margin-top: 2%"> <!-- Итог -->
@@ -71,7 +79,7 @@
                 </a-row>
             </div>
         </a-modal>
-        <a-row v-for="row in rows" :key="row.key" :gutter="16" style="margin-top: 2%">
+        <a-row v-for="row in rows" :key="row.key" :gutter="16" style="margin-top: 2%;">
             <a-col v-for="col in row" :key="col.key" :span="8">
                 <a-card hoverable style="width: 300px;">
                     <h4 @click="setCurArticle(col.article.id)" style="text-align: center; margin: 0;">
@@ -95,7 +103,7 @@
 </template>
 
 <script>
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import  ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import CKEditor from '@ckeditor/ckeditor5-vue2';
 import '@ckeditor/ckeditor5-build-classic/build/translations/ru';
 import Vue from 'vue'
@@ -161,11 +169,11 @@ export default {
         beforeUpload(file) {
             const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
             if (!isJpgOrPng) {
-                this.$message.error('You can only upload JPG file!');
+                this.$message.error('Картинка должна именить разрешение JPG или PNG');
             }
             const isLt2M = file.size / 1024 / 1024 < 2;
             if (!isLt2M) {
-                this.$message.error('Image must smaller than 2MB!');
+                this.$message.error('Картинка слишком большая (больше 2мб)');
             }
             return isJpgOrPng && isLt2M;
         },
@@ -184,14 +192,14 @@ export default {
             this.newArticle = articles.filter(article => article.id === id)[0];
             this.editArticleModal = true;
         },
-        saveArticle() {
-            axios.post('/api/admin/article/edit', {article: this.newArticle}, this.axiosConfig).then(r => {
+        async saveArticle() {
+            await axios.post('/api/admin/article/edit', {article: this.newArticle}, this.axiosConfig).then(r => {
                let data = r.data
                if(data.code === 'success') {
                    this.$notification.open({
                        message: 'СТАТЬЯ УСПЕШНО СОХРАНЕНА',
                        description: 'Статья с названием ' + this.newArticle.title + ' успешно сохранена',
-                       icon: <a-icon type="smile" style="color: #108ee9"/>,
+                       icon: <a-icon type="check" style="color: #108ee9"/>,
                    });
                    this.newArticle = null
                    this.editArticleModal = false
@@ -318,6 +326,13 @@ export default {
 .card-article .content p {
     font-size: 20px;
     margin: 0;
+}
+@media screen and (max-width: 500px) {
+    .ant-row {
+        display: grid;
+        margin-left: 10px;
+    }
+
 }
 
 

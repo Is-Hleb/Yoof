@@ -1,6 +1,7 @@
 <template>
     <div id="card-article-editor">
         <form @submit.prevent="store">
+            <h5 style="text-align: center; margin-bottom: 20px">Введите подробное описание новости </h5>
             <ckeditor @upload :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
         </form>
     </div>
@@ -38,7 +39,7 @@ export default {
     data() {
         return {
             editor: ClassicEditor,
-            editorData: '<p>Пишите на здоровье)</p>',
+            editorData: '',
             editorConfig: {
                 // The configuration of the editor.
                 language: 'ru',
@@ -58,5 +59,6 @@ export default {
 <style>
 #card-article-editor {
     padding: 2%;
+;
 }
 </style>

@@ -1531,7 +1531,6 @@ width: 300px;
 	}
 	.adres{
 		    margin-left: 0;
-		width: 379px;
 	}
 	.lrok{
 		width: 747px;
@@ -1751,3 +1750,9 @@ width: 300px;
     border: #07bb14 2px solid;
 }
 
+.footer {
+    margin-top: 100px
+}
+.checkboxi {
+    background: #07bb14;
+}
