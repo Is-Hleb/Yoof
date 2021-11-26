@@ -6,10 +6,7 @@
             <div class="body">
 
                 <div class="flexcenter" >
-                    <a-tooltip placement="topLeft">
-                        <button class="button-1" :class="{ btnActive: !isActive }" v-on:click="onDataCompany"><span class="bh1 h1a">Данные компании</span></button>
-                        <span slot="title">prompt text</span>
-                    </a-tooltip>
+                    <button class="button-1" :class="{ btnActive: !isActive }" v-on:click="onDataCompany"><span class="bh1 h1a">Данные компании</span></button>
                     <button class="button-2" :class="{ btnActive: isActive }" v-on:click="onNewApplication"><span class="bh2 h1a">Новые заявки</span><div class="boxcifra8" style="margin-left: 7px" v-if="counterNewOrders >= 1">{{ counterNewOrders }}</div></button>
                     <button class="button-3" v-on:click="error"><span class="bh3 h1a">Активные аукционы</span></button>
                     <button class="button-4" v-on:click="error"><span class="bh4 h1a">История аукционов</span></button>
@@ -26,8 +23,8 @@
                             <div class="flex1"><h1 class="h1_1">КПП</h1><a-input type="number" class="text1" /></div>
                             <div class="flex1"><h1 class="h1_1">БИК банка</h1><a-input type="number" class="text1" /></div>
                             <div class="flex1"><h1 class="h1_1">Адрес электронной почты</h1><a-input type="text" class="text1" /></div>
-                            <div class="flex1"><h1 class="h1_1">Сменить пароль</h1><a-input type="text" class="text1" /></div>
-                            <div class="flex1"><h1 class="h1_1">Повторить пароль</h1><a-input type="text" class="text1" /></div>
+                            <div class="flex1"><h1 class="h1_1">Сменить пароль</h1><a-input-password class="input-pass" /></div>
+                            <div class="flex1"><h1 class="h1_1">Повторить пароль</h1><a-input-password class="input-pass" /></div>
                             <div class="lrok"><a-button class="button-6 btnActive" style="height: 40px"><span class="bh1 h1a" style="font-size: 15px">Сохранить изменения</span></a-button></div>
                         </div>
                         <ModalCity :visible="visible" />
@@ -104,9 +101,9 @@
                     </div>
                     <div class="asf04n">
                         <h1 class="hh1">Контакты</h1>
-                        <div class="flexasf2"><img src="./img/ins.png" class="asd2b mr5"><a class="hh2">Instagram</a></div>
-                        <div class="flexasf2"><img src="./img/fac.png" class="asd2b mr5"><a class="hh2">Facebook</a></div>
-                        <div class="flexasf2"><img src="./img/tel.png" class="asd2b mr5"><a class="hh2">Telegram</a></div>
+                        <div class="flexasf2"><img src="./img/ins.png" class="asd2b mr5"><a class="hh2" href="#">Instagram</a></div>
+                        <div class="flexasf2"><img src="./img/fac.png" class="asd2b mr5"><a class="hh2" href="#">Facebook</a></div>
+                        <div class="flexasf2"><img src="./img/tel.png" class="asd2b mr5"><a class="hh2" href="#">Telegram</a></div>
                     </div>
 
                 </div>
