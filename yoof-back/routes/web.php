@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
 use \App\Http\Controllers\SocialController;
+use App\Http\Controllers\Api\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,10 @@ Route::get('/reg', function(){ return view('forms.reg', ['user' => ['email' => '
 Route::group(['prefix' => '/auth'], function(){
    Route::get('/{driver}', [SocialController::class, 'redirect']);
    Route::get('/{driver}/callback', [SocialController::class, 'login']);
+});
+
+Route::group(['as' => 'action', 'prefix' => 'action', 'middleware' => ['guest']], function(){
+    Route::get('/register', [RegisterController::class, 'index'])->name('reg');
 });
 
 Route::get('/register', function(\Illuminate\Http\Request $request){

@@ -8,8 +8,11 @@ const routes = [
     },
     {
         path: '/cabinet',
-        name: 'lc-not-active',
-        component: () => import('../components/SellerCabinetNoActive/Index')
+        name: 'lk',
+        component: () => {
+            /** todo Выбирать кабинет в зависимости от пользователя */
+            return import('../components/SellerCabinetNoActive/Index')
+        }
     },
 ]
 

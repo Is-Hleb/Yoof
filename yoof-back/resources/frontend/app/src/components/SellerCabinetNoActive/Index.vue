@@ -1,13 +1,20 @@
 <template>
     <div>
         <div class="main_bloc">
-            <notifications group="foo" class="text-notification" max="2 " />
-            <HeaderPanelButton   />
+            <notifications group="foo" class="text-notification" max="2 "/>
+            <HeaderPanelButton/>
             <div class="body">
 
-                <div class="flexcenter" >
-                    <button class="button-1" :class="{ btnActive: !isActive }" v-on:click="onDataCompany"><span class="bh1 h1a">Данные компании</span></button>
-                    <button class="button-2" :class="{ btnActive: isActive }" v-on:click="onNewApplication"><span class="bh2 h1a">Новые заявки</span><div class="boxcifra8" style="margin-left: 7px" v-if="counterNewOrders >= 1">{{ counterNewOrders }}</div></button>
+                <div class="flexcenter">
+                    <button class="button-1" :class="{ btnActive: !isActive }" v-on:click="onDataCompany"><span
+                        class="bh1 h1a">Данные компании</span></button>
+                    <button class="button-2" :class="{ btnActive: isActive }" v-on:click="onNewApplication"><span
+                        class="bh2 h1a">Новые заявки</span>
+                        <div class="boxcifra8" style="margin-left: 7px" v-if="counterNewOrders >= 1">{{
+                                counterNewOrders
+                            }}
+                        </div>
+                    </button>
                     <button class="button-3" v-on:click="error"><span class="bh3 h1a">Активные аукционы</span></button>
                     <button class="button-4" v-on:click="error"><span class="bh4 h1a">История аукционов</span></button>
                 </div>
@@ -15,36 +22,64 @@
                 <div class="CompanyData" v-bind:class="{ display:isActive }">
                     <div class="flex3001">
                         <div style="margin-top: 40px">
-                            <div class="flex1"><h1 class="h1_1">Название организации или ИП</h1><input type="text" class="text1"></div>
-                            <div class="flex1"><h1 class="h1_1">Юридический адрес</h1><a-input type="text" class="text1" /></div>
-                            <div class="flex1"><h1 class="h1_1">ИНН</h1><a-input type="number" class="text1" /></div>
-                            <div class="flex1"><h1 class="h1_1">Банк</h1><a-input type="text" class="text1" /></div>
-                            <div class="flex1"><h1 class="h1_1">Расчетный счет</h1><a-input type="number" class="text1" /></div>
-                            <div class="flex1"><h1 class="h1_1">КПП</h1><a-input type="number" class="text1" /></div>
-                            <div class="flex1"><h1 class="h1_1">БИК банка</h1><a-input type="number" class="text1" /></div>
-                            <div class="flex1"><h1 class="h1_1">Адрес электронной почты</h1><a-input type="text" class="text1" /></div>
-                            <div class="flex1"><h1 class="h1_1">Сменить пароль</h1><a-input-password class="input-pass" /></div>
-                            <div class="flex1"><h1 class="h1_1">Повторить пароль</h1><a-input-password class="input-pass" /></div>
-                            <div class="lrok"><a-button class="button-6 btnActive" style="height: 40px"><span class="bh1 h1a" style="font-size: 15px">Сохранить изменения</span></a-button></div>
+                            <div class="flex1"><h1 class="h1_1">Название организации или ИП</h1><input type="text"
+                                                                                                       class="text1">
+                            </div>
+                            <div class="flex1"><h1 class="h1_1">Юридический адрес</h1>
+                                <a-input type="text" class="text1"/>
+                            </div>
+                            <div class="flex1"><h1 class="h1_1">ИНН</h1>
+                                <a-input type="number" class="text1"/>
+                            </div>
+                            <div class="flex1"><h1 class="h1_1">Банк</h1>
+                                <a-input type="text" class="text1"/>
+                            </div>
+                            <div class="flex1"><h1 class="h1_1">Расчетный счет</h1>
+                                <a-input type="number" class="text1"/>
+                            </div>
+                            <div class="flex1"><h1 class="h1_1">КПП</h1>
+                                <a-input type="number" class="text1"/>
+                            </div>
+                            <div class="flex1"><h1 class="h1_1">БИК банка</h1>
+                                <a-input type="number" class="text1"/>
+                            </div>
+                            <div class="flex1"><h1 class="h1_1">Адрес электронной почты</h1>
+                                <a-input type="text" class="text1"/>
+                            </div>
+                            <div class="flex1"><h1 class="h1_1">Сменить пароль</h1>
+                                <a-input-password class="input-pass"/>
+                            </div>
+                            <div class="flex1"><h1 class="h1_1">Повторить пароль</h1>
+                                <a-input-password class="input-pass"/>
+                            </div>
+                            <div class="lrok">
+                                <a-button class="button-6 btnActive" style="height: 40px"><span class="bh1 h1a"
+                                                                                                style="font-size: 15px">Сохранить изменения</span>
+                                </a-button>
+                            </div>
                         </div>
-                        <ModalCity :visible="visible" />
+                        <ModalCity :visible="visible"/>
                         <div class="adres">
                             <div>
                                 <h1 class="h1a-0 mtt">Продаваемые вами категории</h1>
                                 <div>
-                                    <div class="flex"><input type="checkbox" class="checkboxi"><h1 class="h1_1 m5t" >Смартфоны</h1></div>
-                                    <div class="flex"><input  type="checkbox" class="checkboxi"><h1 class="h1_1 m5t">Холодильники</h1></div>
-                                    <div class="flex"><input type="checkbox" class="checkboxi"><h1 class="h1_1 m5t">Телевизоры</h1></div>
-                                    <div class="flex"><input type="checkbox" class="checkboxi"><h1 class="h1_1 m5t">Ноутбуки</h1></div>
+                                    <div class="flex"><input type="checkbox" class="checkboxi">
+                                        <h1 class="h1_1 m5t">Смартфоны</h1></div>
+                                    <div class="flex"><input type="checkbox" class="checkboxi">
+                                        <h1 class="h1_1 m5t">Холодильники</h1></div>
+                                    <div class="flex"><input type="checkbox" class="checkboxi">
+                                        <h1 class="h1_1 m5t">Телевизоры</h1></div>
+                                    <div class="flex"><input type="checkbox" class="checkboxi">
+                                        <h1 class="h1_1 m5t">Ноутбуки</h1></div>
                                     <h1 class="zeleni">Показать все ></h1>
                                 </div>
                             </div>
-                            <div >
+                            <div>
                                 <h1 class="h1a mtaw">Физическое расположение<br>магазина/склада (для самовывоза)</h1>
                                 <div>
-                                    <a-input type="text" class="text1 txt" placeholder="Физическое расположение" />
+                                    <a-input type="text" class="text1 txt" placeholder="Физическое расположение"/>
                                     <h1 class="h1_1 mdm">Возможные города доставки</h1>
-                                    <a-input type="text" class="text1 txt" placeholder="Возможные города доставки" />
+                                    <a-input type="text" class="text1 txt" placeholder="Возможные города доставки"/>
                                 </div>
                             </div>
                             <h1 class="h1a" id="documents">Документы компании</h1>
@@ -53,13 +88,26 @@
                                 <div class="example-2">
                                     <div class="form-group">
                                         <a-upload
-                                            action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                                            :transform-file="transformFile"
+                                            action="/api/company/upload/document"
+                                            :show-upload-list="false"
+                                            @change="handleUploadChange"
+                                            name="upload"
+                                            :headers="requestHeaders"
+                                            :data="{
+                                                type: 'orgn'
+                                            }"
                                             status="done"
                                             width="100"
                                         >
-                                            <a-button> <a-icon type="upload" /> Прикрепить </a-button>
+                                            <a-button>
+                                                <a-icon type="upload"/>
+                                                Прикрепить
+                                            </a-button>
+
                                         </a-upload>
+                                        <div v-if="files['orgn']" @click="downloadFile('orgn')" class="files-list-item">
+                                            <span>{{ files['orgn'] }}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -68,15 +116,31 @@
                                 <div class="example-2">
                                     <div class="form-group">
                                         <a-upload
-                                            action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                                            :transform-file="transformFile"
+                                            action="/api/company/upload/document"
+                                            :show-upload-list="false"
+                                            @change="handleUploadChange"
+                                            name="upload"
+                                            :headers="requestHeaders"
+                                            :data="{
+                                                type: 'inn'
+                                            }"
+                                            status="done"
+                                            width="100"
                                         >
-                                            <a-button> <a-icon type="upload" /> Прикрепить </a-button>
+                                            <a-button>
+                                                <a-icon type="upload"/>
+                                                Прикрепить
+                                            </a-button>
                                         </a-upload>
+                                        <div v-if="files['inn']" @click="downloadFile('inn')" class="files-list-item"
+                                             data-title="Скачать inn файл">
+                                            <span>{{ files['inn'] }}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <a-button class="button-6 btnActive" style="height: 39px; margin-top: 25px;"><span class="cox">АКТИВИРОВАТЬ АККАУНТ</span></a-button>
+                            <a-button class="button-6 btnActive" style="height: 39px; margin-top: 25px;"><span
+                                class="cox">АКТИВИРОВАТЬ АККАУНТ</span></a-button>
                             <h1 class="rdftgh">*Активация аккаунта занимает от 1 до 24 часов</h1>
                         </div>
                     </div>
@@ -101,9 +165,12 @@
                     </div>
                     <div class="asf04n">
                         <h1 class="hh1">Контакты</h1>
-                        <div class="flexasf2"><img src="./img/ins.png" class="asd2b mr5"><a class="hh2" href="#">Instagram</a></div>
-                        <div class="flexasf2"><img src="./img/fac.png" class="asd2b mr5"><a class="hh2" href="#">Facebook</a></div>
-                        <div class="flexasf2"><img src="./img/tel.png" class="asd2b mr5"><a class="hh2" href="#">Telegram</a></div>
+                        <div class="flexasf2"><img src="./img/ins.png" class="asd2b mr5"><a class="hh2" href="#">Instagram</a>
+                        </div>
+                        <div class="flexasf2"><img src="./img/fac.png" class="asd2b mr5"><a class="hh2" href="#">Facebook</a>
+                        </div>
+                        <div class="flexasf2"><img src="./img/tel.png" class="asd2b mr5"><a class="hh2" href="#">Telegram</a>
+                        </div>
                     </div>
 
                 </div>
@@ -134,6 +201,14 @@ export default {
         HeaderPanelButton,
         ActiveAuctions,
         ModalCity
+    },
+    computed: {
+        requestHeaders() {
+            return this.$store.getters.axiosHeaders
+        },
+        files() {
+            return this.$store.getters.files
+        }
     },
     data: () => ({
         visible: false,
@@ -184,36 +259,64 @@ export default {
             this.isActive = false;
             this.dontActive = false;
         },
-        transformFile(file) {
-            return new Promise(resolve => {
-                const reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onload = () => {
-                    const canvas = document.createElement('canvas');
-                    const img = document.createElement('img');
-                    img.src = reader.result;
-                    img.onload = () => {
-                        const ctx = canvas.getContext('2d');
-                        ctx.drawImage(img, 0, 0);
-                        ctx.fillStyle = 'red';
-                        ctx.textBaseline = 'middle';
-                        ctx.fillText('Ant Design', 20, 20);
-                        canvas.toBlob(resolve);
-                    };
-                };
-            });
-        },
         onModalCity() {
             this.visible = false;
             this.visible = true;
 
-        }
+        },
+        handleUploadChange(info) {
+            let r = info.file.response
+            if (info.file.status === 'uploading') {
+                this.loading = true;
+                return;
+            }
+            if (info.file.status === 'done') {
+                // Get this url from response in real world.
+                if (r.code === 'err') {
+                    this.$notification.error({message: "Ошибка", description: r.data})
+                } else {
+                    this.$store.dispatch('loadFiles')
+                    this.$notification.success({
+                        message: "Успешно",
+                        description: "Файл успешно загружен"
+                    });
+                }
+            }
+        },
+        downloadFile(type) {
+            this.axios.get( '/api/company/document/download/' + type, {
+                headers: this.requestHeaders,
+                responseType: 'arraybuffer'
+            })
+                .then(response => {
+                    let blob = new Blob([response.data])
+                    let link = document.createElement('a')
+                    link.href = window.URL.createObjectURL(blob)
+                    link.download = this.files[type]
+                    link.click()
+                })
+        },
     },
+    beforeMount() {
+        this.$store.dispatch('loadFiles');
+    }
 }
 </script>
 
 <style lang="css" src="./assets/Styles.css">
 
-
 </style>
 
+<style lang="css">
+.files-list-item {
+    background: antiquewhite;
+    width: 200px;
+    margin-bottom: 13px;
+    padding: 5px 0;
+    display: inline-flex;
+    justify-content: center;
+    margin-left: 11px;
+    cursor: pointer;
+}
+
+</style>

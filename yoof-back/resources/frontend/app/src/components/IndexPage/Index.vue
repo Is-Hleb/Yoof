@@ -129,7 +129,7 @@
                                                                     <p>
                                                                         {{
                                                                             article.description
-                                                                                ? article.description.size() >= 500
+                                                                                ? article.description.size >= 500
                                                                                     ? article.description.substr(0, 500) + '...'
                                                                                     : article.description
                                                                                 : 'Автор не добавил описание '

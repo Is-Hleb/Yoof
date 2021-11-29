@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\AdminController;
 use App\Http\Controllers\Api\StateController;
 use App\Http\Controllers\Resources\UserApp;
 use App\Http\Controllers\Resources\ArticleResource;
+use App\Http\Controllers\Api\Company\UPDDocsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ use App\Http\Controllers\Resources\ArticleResource;
 Route::group(['prefix' => '/auth'], function () {
     Route::post('/login', [LoginController::class, 'index']);
     Route::post('/register', [RegisterController::class, 'index']);
+
 });
 
 Route::get('/state', [StateController::class, 'index']);
@@ -40,6 +42,9 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::post('/change-user-status', [AdminController::class, 'changeStatus']);
         Route::post('/send-mail-to-user', [AdminController::class, 'sendEmailToUser']);
 
+        Route::get('/document/all', [UPDDocsController::class, 'all']);
+        Route::get('/document/download/{id}/{type}', [UPDDocsController::class, 'adminDownload']);
+
         Route::group(['prefix' => '/article'], function(){
            Route::post('/upload-title', [ArticleResource::class, 'uploadTitle']);
            Route::post('/upload-title-image', [ArticleResource::class, 'uploadTitleImage']);
@@ -50,8 +55,14 @@ Route::group(['middleware' => 'auth:api'], function () {
            Route::get('/all', [ArticleResource::class, 'loadAll']);
            Route::delete('/{id}', [ArticleResource::class, 'deleteArticle']);
         });
-
     });
+
+    Route::group(['prefix' => 'company', 'middleware' => 'is-company'], function(){
+        Route::post('/upload/document', [UPDDocsController::class, 'index']);
+        Route::get('/documents', [UPDDocsController::class, 'get']);
+        Route::get('/document/download/{type}', [UPDDocsController::class, 'download']);
+    });
+
 });
 
 Route::group(['prefix' => '/public'], function () {

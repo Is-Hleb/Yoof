@@ -18,8 +18,8 @@
                                 <a-icon type="info-circle" />
                                 <span>Правила использования</span>
                             </a-menu-item>
-                            <a-menu-item key="3">
-                                <a-icon type="idcard" />
+                            <a-menu-item key="3" @click="router('lk')">
+                                <a-icon type="idcard"/>
                                 <span>Личный кабинет</span>
                             </a-menu-item>
                             <a-menu-item key="4">
@@ -550,6 +550,9 @@ export default {
                     this.openNotification()
                 }
             })
+        },
+        router(name) {
+            this.$router.push({name});
         }
     }
 }

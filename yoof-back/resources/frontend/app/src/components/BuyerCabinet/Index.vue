@@ -610,34 +610,6 @@
             </div>
         </div>
     </div>
-    <!--<div class="popup-6">
-                <div class="popup-66">
-                <div class="body">
-
-                    <img src="./img/krest.png" class="krest">
-                    <h1 class="pppp10 fonsize">Заявка №325478</h1>
-                    <h2 class="fonsize-slim">Ноутбук ASUS VivoBook Max X541NC-DM114T</h2>
-                    <div class="flex">
-                        <div class="tar2">
-                            <h1 class="fonsize-slim2">Начальная стоимость</h1>
-                            <h1 class="fonsize-slim2 mar30">Информация о товаре</h1>
-                            <h1 class="fonsize-slim2 mat192">Доставка</h1>
-                            <h1 class="fonsize-slim2 mar30">Добавить комментарий</h1>
-                        </div>
-                        <div class="wid70">
-                            <h1 class="data0103 asdd">18 000 ₽</h1>
-                            <h2 class="mar0 mar30"><span class="fonsize-slim2">Диагональ/разрешение</span> <span class="data0103">15.6"/1920х1080 пикс.</span><br>
-                                <span class="fonsize-slim2">Процессор</span><span class="data0103 asdd">Intel Pentium N4200 1.1 ГГц</span><br>
-                                <span class="fonsize-slim2">Оперативная память (RAM)</span> <span class="data0103">4 ГБ</span><br>
-                                <span class="fonsize-slim2">Графический контроллер</span> <span class="data0103">GeForce 810M 2ГБ</span><br>
-                                <span class="fonsize-slim2">ОбЪем HDD</span> <span class="data0103">500 ГБ</span></h2>
-                                <h2 class="ylica2 mar50">123456, Москва, ул. Багратиона, д.9, кв. 35</h2>
-                                <input type="text" class="lasttext">
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>-->
     <div class="popup-7">
         <div class="popup-77">
             <div class="body">

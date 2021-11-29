@@ -105,7 +105,7 @@
         <div class="image-container">
             <img class="image" src="{{ asset('img/yoof.png') }}" alt="Logo">
         </div>
-        <form id="reg" method="post">
+        <form id="reg" method="post" action="{{ route('action.reg') }}">
             <h2 class="text-center"><strong>Завершите регистрацию</strong></h2>
             <div class="mb-3">
                 <input class="form-control" type="text" name="name" data-bs-toggle="tooltip" data-bss-tooltip="" placeholder="Фамилия" required="" minlength="4" title="Введите фамилию">
@@ -117,6 +117,7 @@
             <div class="mb-3"><input class="form-control" type="password" name="password" data-bs-toggle="tooltip" data-bss-tooltip=""  placeholder="Пароль" title="Введите пароль" required=""></div>
             <div class="mb-3"><input class="form-control" type="password" name="passwordRepeat" data-bs-toggle="tooltip" data-bss-tooltip=""  placeholder="Повторите пароль" title="Повторите пароль" required=""></div>
             <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background-color: chartreuse;color: var(--bs-gray-900);">Зарегистрироваться</button></div>
+            {{ csrf_field() }}
         </form>
     </div>
 </section>

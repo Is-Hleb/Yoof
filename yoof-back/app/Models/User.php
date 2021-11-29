@@ -54,6 +54,11 @@ class User extends Authenticatable
         return $this->hasOne(SocialToken::class);
     }
 
+    public function files()
+    {
+        return $this->hasMany(File::class);
+    }
+
     public static function UsersWithData(): array
     {
         $users = self::all();

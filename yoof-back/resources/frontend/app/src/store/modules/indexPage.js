@@ -102,6 +102,7 @@ export default {
         loadArticles({commit}) {
             axios.get('api/public/articles').then(r => {
                 if(r.data.code === 'success') {
+                    console.log(r.data.data);
                     commit('SET_ARTICLES', r.data.data);
                 }
             });

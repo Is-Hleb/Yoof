@@ -7,6 +7,7 @@ import {getters} from "./getters";
 
 // #### MODULES ####
 import indexPage from "./modules/indexPage";
+import CabinetPage from "./modules/CabinetPage";
 
 Vue.use(Vuex)
 
@@ -15,7 +16,8 @@ export default new Vuex.Store({
     mutations,
     actions,
     modules: {
-      indexPage,
+        indexPage,
+        CabinetPage,
     },
     getters,
 })
