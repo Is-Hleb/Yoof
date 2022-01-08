@@ -1,5 +1,11 @@
+body {
+    word-break: keep-all;
+    margin: 0;
+    padding: 0;
+}
+
 .main_bloc{
-	
+
 	height: 1300px;
 	margin-bottom: 10px;
 }
@@ -48,8 +54,8 @@ margin-left: 35px;
 }
 .body222{
 	height: 100%;
-	margin-left: 13%;
-	margin-right: 13%;
+    display: flex;
+    justify-content: center;
 }
 .mh45{
 	height: 45px;
@@ -66,6 +72,8 @@ margin-left: 35px;
 font-style: normal;
 font-weight: 500PX;
 font-size: 18px;
+    color: black;
+    margin-left: 10px;
 line-height: 21px;
 }
 .data3303{
@@ -237,7 +245,7 @@ color: #000000;
 .button-2 {
     align-items: center;
     justify-content: center;
-    display: flex;
+    display: inline-flex;
 }
 .boxcifra8{
 	margin-left: 2px;
@@ -322,8 +330,8 @@ color: #000000;
 .m222{
 	height: 3px;
 }
-.menu{ 
-	width: 45px;	
+.menu{
+	width: 45px;
 	background-color: #fff;
 }
 .ml {
@@ -446,6 +454,7 @@ border-radius: 10px;
 .flex{
 	position: relative;
 	display: flex;
+    cursor: pointer;
 }
 .flexte{
 	position: relative;
@@ -454,6 +463,7 @@ border-radius: 10px;
 .flexfasf{
 	margin-left: 30px;
 	position: relative;
+    cursor: pointer;
 	display: flex;
 }
 .flex10{
@@ -504,7 +514,7 @@ border-radius: 10px;
 .flex123{
 	margin-top: 40px;
 	justify-content: space-between;
-	width: 747px;
+
 	position: relative;
 	display: flex;
 }
@@ -528,11 +538,11 @@ border-radius: 10px;
 	margin: 0;
 	margin-bottom: 60px;
 	font-family: Oswald;
-font-style: normal;
-font-weight: bold;
-font-size: 50px;
-line-height: 124.68%;
-color: #000000;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 124.68%;
+    color: #000000;
 }
 
 .bh1 .bh2 .bh3 .bh4 .bh5{
@@ -545,17 +555,24 @@ color: #000000;
 }
 
 .button-1{
-	cursor: pointer;
-	margin-left: 15px;
-	margin-right: 15px;
-	width: 220px;
-	height: 60px;
-	border-radius: 10px;
-	border: 0;
-	background-color: #EBF005;
-	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    cursor: pointer;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 220px;
+    height: 60px;
+    border-radius: 10px;
+    border: 0;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
+.input-pass {
+    margin-bottom: 10px;
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px rgb(0 0 0 / 18%);
+}
 
 
 .button-2{
@@ -607,16 +624,16 @@ color: #000000;
 }
 
 .button-1.active{
-	background-color:#fff;
+	background-color: #07bb14;
 }
 .button-2.active{
-	background-color:#EBF005;
+	background-color: #07bb14;
 }
 .button-3.active{
-	background-color:#EBF005;
+	background-color: #07bb14;
 }
 .button-4.active{
-	background-color:#EBF005;
+	background-color: #07bb14;
 }
 
 .h1_11{
@@ -642,14 +659,12 @@ color: #000000;
 }
 
 .h1_1{
-	margin: 0;margin-bottom: 10px;margin-right: 40px;
-	margin-bottom: 20px;
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: 300;
-	font-size: 18px;
-	line-height: 21px;
-	color: #000000;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
 }
 .h1_1ad{
 	margin-top: 10px;
@@ -681,29 +696,28 @@ color: #1D8C00;
 .cox{
 	font-family: Roboto;
 font-style: normal;
-font-weight: 900;
 font-size: 14px;
 line-height: 124.68%;
 /* or 17px */
 
 display: flex;
+    justify-content: center;
 align-items: center;
 text-align: center;
 color: #000000;
 }
 
 .fgjfs{
-	justify-content: flex-end;display: flex;margin-top: 40px;
+	justify-content: center;
+    display: flex;margin-top: 40px;
 }
 
 .text1{
-	margin-bottom: 10px;
-	 width: 440px;
-    height: 40px;
-    border: 0;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    background-color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+    width: 400px;
+    height: 37px;
     border-radius: 5px;
+    padding: 12px;
 }
 
 .h1a{
@@ -784,7 +798,7 @@ color: #000000;
 	margin: 0;
 	width: 100%;
 	height: 200px;
-	background-image: url(footer.png);
+	background-image: url(../baseAssets/img/footer.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -792,7 +806,6 @@ color: #000000;
 
 .applications{
 	margin-top: 40px;
-	display: none;
 
 }
 
@@ -810,16 +823,13 @@ color: #000000;
 	display: none;
 }
 
-body{
-	margin: 0;
-}
 
 .popup{
 	position: absolute;
 	top: 470px;
 	margin: 0 auto;
 	width: 100%;
-	display: none; 
+	display: none;
 	z-index: 100;
 }
 
@@ -842,20 +852,20 @@ body{
 .popup:before {
 	content: '';
 	background: #000;
-	position: fixed; 
+	position: fixed;
 	left: 0;
 	top: 0;
-	width: 100%; 
+	width: 100%;
 	height: 100%;
 	opacity: 0.7;
 	z-index: 9;
 }
 
 .krest{
-	width: 30px; height: 30px; 
-	margin-top: 15px; 
-	position: absolute;
-	right: 15px; 
+	width: 30px; height: 30px;
+	margin-top: 15px;
+	position: relative;
+    left: 63%;
 	cursor: pointer;
 }
 
@@ -896,7 +906,7 @@ body{
 	position: absolute;
 	margin: 0 auto;
 	width: 100%;
-	display: none; 
+	display: none;
 	z-index: 100;
 }
 
@@ -907,10 +917,10 @@ body{
 .popup-2:before {
 	content: '';
 	background: #000;
-	position: fixed; 
+	position: fixed;
 	left: 0;
 	top: 0;
-	width: 100%; 
+	width: 100%;
 	height: 100%;
 	opacity: 0.7;
 	z-index: 9;
@@ -961,9 +971,9 @@ color: #1D8C00;
 }
 .ppppp:after {
 display: block;
-content: ""; 
-height: 3px; 
-width: 0%; 
+content: "";
+height: 3px;
+width: 0%;
 background-color: #EBF005;
 transition: width 0.4s ease-in-out;
 }
@@ -974,7 +984,7 @@ width: 100%;
 
 .aykcion{
 	margin-top: 40px;
-	display: none;
+
 }
 
 .aykcion.active{
@@ -982,14 +992,16 @@ width: 100%;
 }
 
 .button1{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: #EBF005;
-	border-radius: 10px;
-	border: 0;
-	width: 270px;
-	height: 40px;
+    cursor: pointer;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 220px;
+    height: 60px;
+    border-radius: 10px;
+    border: 0;
+    background: #07bb14;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .button-filtr{
@@ -1027,7 +1039,6 @@ color: #000000;
 
 .histori{
 	margin-top: 40px;
-	display: none;
 }
 
 .histori.active{
@@ -1036,7 +1047,6 @@ color: #000000;
 
 .aktivnei_oykcion{
 	margin-top: 40px;
-	display: none;
 }
 .aktivnei_oykcion.active{
 	display: block;
@@ -1141,7 +1151,7 @@ color: #000000;
 	cursor: pointer;
 
 	margin: 0;
-	
+
 	font-family: Roboto;
 font-style: normal;
 font-weight: normal;
@@ -1162,27 +1172,23 @@ color: #000000;
 	height: 900px;
 	background-color: white;
 	position: relative;
-	z-index: 100;
+
 	margin: 0 auto;
 }
 .popup-6{
 	position: absolute;
 	top: 100px;
 	width: 100%;
-	display: none; 
 	z-index: 100;
 }
 
-.popup-6.active{
-	display: block;
-}
 .popup-6:before {
 	content: '';
 	background: #000;
-	position: fixed; 
+	position: fixed;
 	left: 0;
 	top: 0;
-	width: 100%; 
+	width: 100%;
 	height: 100%;
 	opacity: 0.7;
 	z-index: 9;
@@ -1222,7 +1228,8 @@ color: #000000;
 	font-family: Roboto;
 font-style: normal;
 font-weight: normal;
-font-size: 22px;
+font-size: 18px;
+    margin-top: 10px;
 color: #000000;
 }
 .marr5{
@@ -1307,7 +1314,7 @@ color: #000000;
 	position: absolute;
 	top: 100px;
 	width: 100%;
-	display: none; 
+	display: none;
 	z-index: 100;
 }
 
@@ -1317,10 +1324,10 @@ color: #000000;
 .popup-8:before {
 	content: '';
 	background: #000;
-	position: fixed; 
+	position: fixed;
 	left: 0;
 	top: 0;
-	width: 100%; 
+	width: 100%;
 	height: 100%;
 	opacity: 0.7;
 	z-index: 9;
@@ -1464,7 +1471,7 @@ margin-left: 20px;
 	position: absolute;
 	top: 100px;
 	width: 100%;
-	display: none; 
+	display: none;
 	z-index: 100;
 }
 
@@ -1474,10 +1481,10 @@ margin-left: 20px;
 .popup-10:before {
 	content: '';
 	background: #000;
-	position: fixed; 
+	position: fixed;
 	left: 0;
 	top: 0;
-	width: 100%; 
+	width: 100%;
 	height: 100%;
 	opacity: 0.7;
 	z-index: 9;
@@ -1538,10 +1545,10 @@ margin-left: 20px;
 .popup-city-2:before {
 	content: '';
 	background: #000;
-	position: fixed; 
+	position: fixed;
 	left: 0;
 	top: 0;
-	width: 100%; 
+	width: 100%;
 	height: 100%;
 	opacity: 0.7;
 	z-index: 8;
@@ -1629,6 +1636,8 @@ input.input-city{outline:none;}
 .city:hover{
 	color: #07bb14;
 }
+
+
 .lypa3{
 	position: absolute;
 	top: 15px;
@@ -1672,6 +1681,77 @@ li{
 	margin-left: 16px;
 }
 
+
+.ant-table-tbody {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.ant-table-thead, .ant-table-column-title {
+    font-size: 16px;
+}
+.ant-tooltip-arrow, .ant-tooltip-inner {
+    display: none;
+}
+
+
+.adaptive-table {
+    margin: 0 50px;
+}
+
+.title-application {
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.text-product {
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.description-product {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin-top: 40px;
+    font-weight: 600;
+}
+
+.price-modal {
+    font-weight: 700;
+    margin-left: 35px;
+}
+
+.other-description-product li {
+    color: black;
+    width: 400px;
+    font-size: 15px;
+    display: flex;
+}
+
+.container-modal {
+    padding: 20px 100px;
+}
+
+
+.btn-modal {
+    width: 150px;
+    height: 30px;
+    background-color: #07bb14;
+}
+
+
+
+
+
 @media (max-width: 1980px){
 	.wid75{
 		width: 100%;
@@ -1703,10 +1783,6 @@ li{
 	}
 	.hr_big{
 		width: 1000px;
-	}
-	.body222{
-		margin-right: 0;
-		margin-left: 0;
 	}
 	.mt192{
 		width: 1000px;
@@ -1755,9 +1831,7 @@ li{
 	.adap3{
 		display: block;
 	}
-	.body222{
-		display: none;
-	}
+
 	.popup-66{
 		width: 100%;
 	}
@@ -1772,7 +1846,7 @@ li{
 @media (max-width: 992px){
 	.body{
 		max-width: 750px;
-	}	
+	}
 	.h0{
 		height: 170%;
 	}
@@ -1799,6 +1873,7 @@ li{
 	}
 	.popup-66{
 		height: 1100px;
+        width: 800px;
 	}
 	.mar0 {
 		margin-top: 50px;
@@ -1875,4 +1950,37 @@ li{
 		display: block;
 		max-height: 15090px;
 	}
+}
+
+
+@media screen and (max-width: 550px) {
+    .flex1 {
+        width: auto;
+    }
+    .text1 {
+        width: 260px;
+    }
+    .input-pass {
+        width: 260px;
+    }
+    .a26 {
+        display: grid;
+    }
+    .lrok {
+        flex: none;
+        width: auto;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .adaptive-table {
+        margin: 0;
+    }
+    .container-modal {
+        padding: 0;
+    }
+    .krest {
+        left: 47%;
+    }
 }

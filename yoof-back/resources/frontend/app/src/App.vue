@@ -27,11 +27,11 @@ export default {
         });
 
         axios.interceptors.response.use((response) => {
-            // trigger 'loading=false' event here
             this.$store.commit('SET_LOADING', false)
             return response;
         }, (error) => {
             // trigger 'loading=false' event here
+            // при активации loading=false, активируйте данный store
             this.$store.commit('SET_LOADING', false)
             return Promise.reject(error);
         });

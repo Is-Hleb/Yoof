@@ -11,8 +11,7 @@ module.exports = {
     },
 
     devServer: {
-        proxy: 'http://localhost:8081/',
-        host: 'localhost'
+        proxy: 'https://yoof.online/',
     },
 
     // output built static files to Laravel's public dir.

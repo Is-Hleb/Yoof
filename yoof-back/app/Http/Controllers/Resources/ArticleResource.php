@@ -101,7 +101,7 @@ class ArticleResource extends Controller
         $article = Article::find($articleData['id']);
 
         foreach ($articleData as $key => $value) {
-            if($key == 'id' || $key == 'image') {
+            if ($key == 'id' || $key == 'image') {
                 continue;
             }
             $article->$key = $value;

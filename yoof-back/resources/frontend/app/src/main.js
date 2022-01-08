@@ -11,6 +11,8 @@ import './baseAssets/main.css';
 
 Vue.use(Antd);
 Vue.use(VueAxios, axios);
+Vue.config.devtools = true;
+
 
 new Vue({
   router,

@@ -65,7 +65,7 @@ class AdminController extends Controller
             ]);
         }
 
-        if($user->id == Auth::id()) {
+        if ($user->id == Auth::id()) {
             return \response([
                 'code' => 'err',
                 'data' => ['USER' => 'Это вы себя удалить пытаетесь?']

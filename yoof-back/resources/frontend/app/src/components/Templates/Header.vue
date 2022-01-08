@@ -44,7 +44,7 @@
                           style=" font-family: Roboto; font-weight: 800; color: black; border: black 1px solid; border: none; box-shadow: none; font-size: 15px">
                     Вход | Регистрация
                 </a-button>
-                <a-button v-if="isAuth" @click="signOut">ВЫйти</a-button>
+                <a-button v-if="isAuth" @click="redirectToCabinet">Личный кабинет</a-button>
             </a-col>
 
                 <a-modal v-model="visible" title="Вход | Регистрация" width="600px">
@@ -129,7 +129,9 @@
                                 <a-form-item>
                                     <a-button type="primary" size="large" html-type="submit"
                                               class="login-form-button"
-                                              style="margin-right: 20px; ">
+                                              style="margin-right: 20px; "
+                                              @click="visible = false"
+                                    >
                                         ВОЙТИ В АККАУНТ
                                     </a-button>
                                 </a-form-item>
@@ -244,7 +246,9 @@
                                 <a-form-item>
                                     <a-button type="primary" size="large" html-type="submit"
                                               class="login-form-button"
-                                              style="margin-right: 20px">
+                                              style="margin-right: 20px"
+                                              @click="visible = false"
+                                    >
                                         ЗАРЕГИСТРИРОВАТЬСЯ
                                     </a-button>
                                 </a-form-item>
@@ -484,7 +488,7 @@ export default {
         }
     },
     methods: {
-        openNotification() {
+            openNotification() {
             let errs = this.errors
             for (let key in errs) {
                 this.$notification['error']({
@@ -553,6 +557,9 @@ export default {
         },
         router(name) {
             this.$router.push({name});
+        },
+        redirectToCabinet() {
+            this.$router.push('/cabinet')
         }
     }
 }

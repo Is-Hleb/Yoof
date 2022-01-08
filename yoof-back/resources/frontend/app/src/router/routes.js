@@ -10,10 +10,20 @@ const routes = [
         path: '/cabinet',
         name: 'lk',
         component: () => {
-            /** todo Выбирать кабинет в зависимости от пользователя */
+            /* todo Выбирать кабинет в зависимости от пользователя */
             return import('../components/SellerCabinetNoActive/Index')
         }
     },
+    {
+        path: '/cabinet-user',
+        name: 'lk_user',
+        component: () => {
+            /* todo Выбирать кабинет в зависимости от пользователя */
+            return import('../components/UserCabinet/Index')
+        }
+    },
+
+
 ]
 
 export default routes

@@ -1,17 +1,5 @@
 const axios = require('axios')
 
-// function sendAuthRequest(state, method, url, data = []) {
-//     return axios({
-//         method,
-//         url,
-//         data,
-//         headers: {
-//             'Authorization': 'Bearer ' + state.user.api_token,
-//             'Accept' : 'application/json'
-//         },
-//     })
-// }
-
 export const actions = {
     async getState({commit, getters}) {
         let r = await axios.get('api/state');
@@ -34,6 +22,7 @@ export const actions = {
     async signUp({commit}, userData) {
         let r = await axios.post('api/auth/register', userData)
         let data = r.data;
+        console.log(data);
         if (data.code === 'success') {
             commit('SET_AUTH_USER', data)
             commit('SET_MODAL_ERRORS', {})
@@ -45,5 +34,5 @@ export const actions = {
         axios.get('api/logout').then(() => {
             commit("SET_AUTH_USER", {})
         })
-    }
+    },
 }

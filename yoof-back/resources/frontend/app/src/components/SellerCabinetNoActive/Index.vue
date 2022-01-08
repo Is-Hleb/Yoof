@@ -2,24 +2,30 @@
     <div>
         <div class="main_bloc">
             <notifications group="foo" class="text-notification" max="2 "/>
-            <HeaderPanelButton/>
+            <HeaderPanelButton
+                :accountIsActive="accountIsActive"
+            />
             <div class="body">
 
                 <div class="flexcenter">
-                    <button class="button-1" :class="{ btnActive: !isActive }" v-on:click="onDataCompany"><span
-                        class="bh1 h1a">Данные компании</span></button>
-                    <button class="button-2" :class="{ btnActive: isActive }" v-on:click="onNewApplication"><span
-                        class="bh2 h1a">Новые заявки</span>
+                    <button class="button-1" :class="{ btnActive: navigator === 'dataCompany' }" @click="onDataCompany">
+                        <span class="bh1 h1a">Данные компании</span></button>
+
+                    <button class="button-2" :class="{ btnActive: navigator === 'newApplication' }" @click="onNewApplication">
+                        <span class="bh2 h1a">Новые заявки</span>
                         <div class="boxcifra8" style="margin-left: 7px" v-if="counterNewOrders >= 1">{{
                                 counterNewOrders
                             }}
                         </div>
                     </button>
-                    <button class="button-3" v-on:click="error"><span class="bh3 h1a">Активные аукционы</span></button>
-                    <button class="button-4" v-on:click="error"><span class="bh4 h1a">История аукционов</span></button>
+
+                    <button class="button-3" @click="checkActivatedAccount"
+                            :class="{ btnActive: navigator === 'activeAuctions' }"><span class="bh3 h1a">Активные аукционы</span></button>
+                    <button class="button-4" @click="checkedActivatedBtnHistory"
+                            :class="{ btnActive: navigator === 'history' }"><span class="bh4 h1a">История аукционов</span></button>
                 </div>
 
-                <div class="CompanyData" v-bind:class="{ display:isActive }">
+                <div class="CompanyData" v-if="navigator === 'dataCompany'">
                     <div class="flex3001">
                         <div style="margin-top: 40px">
                             <div class="flex1"><h1 class="h1_1">Название организации или ИП</h1><input type="text"
@@ -82,76 +88,143 @@
                                     <a-input type="text" class="text1 txt" placeholder="Возможные города доставки"/>
                                 </div>
                             </div>
-                            <h1 class="h1a" id="documents">Документы компании</h1>
-                            <div class="flexalingce">
-                                <h1 class="ogr">Свидетельство ОГРН (или<br>лист записи ЕГРЮЛ)</h1>
-                                <div class="example-2">
-                                    <div class="form-group">
-                                        <a-upload
-                                            action="/api/company/upload/document"
-                                            :show-upload-list="false"
-                                            @change="handleUploadChange"
-                                            name="upload"
-                                            :headers="requestHeaders"
-                                            :data="{
+                            <h1 class="h1a" id="documents" style="margin-top: 22px">Документы компании</h1>
+                            <div v-if="!accountIsActive">
+                                <div class="flexalingce">
+                                    <h1 class="ogr">Свидетельство ОГРН (или<br>лист записи ЕГРЮЛ)</h1>
+                                    <div class="example-2">
+                                        <div class="form-group">
+                                            <a-upload
+                                                action="/api/company/upload/document"
+                                                :show-upload-list="false"
+                                                @change="handleUploadChange"
+                                                name="upload"
+                                                :headers="requestHeaders"
+                                                :data="{
                                                 type: 'orgn'
                                             }"
-                                            status="done"
-                                            width="100"
-                                        >
-                                            <a-button>
-                                                <a-icon type="upload"/>
-                                                Прикрепить
-                                            </a-button>
+                                                status="done"
+                                                width="100"
+                                            >
+                                                <a-button>
+                                                    <a-icon type="upload"/>
+                                                    Прикрепить
+                                                </a-button>
 
-                                        </a-upload>
-                                        <div v-if="files['orgn']" @click="downloadFile('orgn')" class="files-list-item">
-                                            <span>{{ files['orgn'] }}</span>
+                                            </a-upload>
+                                            <div v-if="files['orgn']" @click="downloadFile('orgn')" class="files-list-item">
+                                                <span>{{ files['orgn'] }}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="flexalingce">
-                                <h1 class="ogr2">Свидетельство ИНН</h1>
-                                <div class="example-2">
-                                    <div class="form-group">
-                                        <a-upload
-                                            action="/api/company/upload/document"
-                                            :show-upload-list="false"
-                                            @change="handleUploadChange"
-                                            name="upload"
-                                            :headers="requestHeaders"
-                                            :data="{
+                                <div class="flexalingce">
+                                    <h1 class="ogr2">Свидетельство ИНН</h1>
+                                    <div class="example-2">
+                                        <div class="form-group">
+                                            <a-upload
+                                                action="/api/company/upload/document"
+                                                :show-upload-list="false"
+                                                @change="handleUploadChange"
+                                                name="upload"
+                                                :headers="requestHeaders"
+                                                :data="{
                                                 type: 'inn'
                                             }"
-                                            status="done"
-                                            width="100"
-                                        >
-                                            <a-button>
-                                                <a-icon type="upload"/>
-                                                Прикрепить
-                                            </a-button>
-                                        </a-upload>
-                                        <div v-if="files['inn']" @click="downloadFile('inn')" class="files-list-item"
-                                             data-title="Скачать inn файл">
-                                            <span>{{ files['inn'] }}</span>
+                                                status="done"
+                                                width="100"
+                                            >
+                                                <a-button>
+                                                    <a-icon type="upload"/>
+                                                    Прикрепить
+                                                </a-button>
+                                            </a-upload>
+                                            <div v-if="files['inn']" @click="downloadFile('inn')" class="files-list-item"
+                                                 data-title="Скачать inn файл">
+                                                <span>{{ files['inn'] }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a-button class="button-6 btnActive" style="height: 39px; margin-top: 25px;"><span
+                                    class="cox">АКТИВИРОВАТЬ АККАУНТ</span></a-button>
+                                <h1 class="rdftgh">*Активация аккаунта занимает от 1 до 24 часов</h1>
+                            </div>
+                            <div v-if="accountIsActive">
+                                <div class="box100">
+                                    <div class="flexaround5">
+                                        <h1 class="sdf23">Свидетельство ОГРН (или<br>лист записи ЕГРЮЛ)</h1>
+                                        <div class="flex">
+                                            <img src="./img/gal.png" class="size25 marr5">
+                                            <h1 class="h1aaldos mart-2">Готово</h1>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex10">
+                                            <div class="flex" @click="visibleEditDocumentCompany = !visibleEditDocumentCompany">
+                                                <img src="./img/izmene.png" class="size1 marr5">
+                                                <h1 class="red">Редактировать</h1>
+                                            </div>
+                                            <div class="flexfasf" @click="showDeleteConfirm">
+                                                <img src="./img/ydal.png" class="size12 marr5">
+                                                <h1 class="red">Удалить</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box1001">
+                                    <div class="flexaround5">
+                                        <h1 class="sdf23 wid221">Свидетельство ИНН</h1>
+                                        <div class="flex">
+                                            <img src="./img/gal.png" class="size25 marr5">
+                                            <h1 class="h1aaldos mart-2">Готово</h1>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex10">
+                                            <div class="flex" @click="visibleEditDocumentCompany = !visibleEditDocumentCompany">
+                                                <img src="./img/izmene.png" class="size1 marr5">
+                                                <h1 class="red">Редактировать</h1>
+                                            </div>
+                                            <div class="flexfasf" @click="showDeleteConfirm">
+                                                <img src="./img/ydal.png" class="size12 marr5">
+                                                <h1 class="red">Удалить</h1>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <a-button class="button-6 btnActive" style="height: 39px; margin-top: 25px;"><span
-                                class="cox">АКТИВИРОВАТЬ АККАУНТ</span></a-button>
-                            <h1 class="rdftgh">*Активация аккаунта занимает от 1 до 24 часов</h1>
                         </div>
                     </div>
                 </div>
 
-                <div class="applications" v-bind:class="{ displayTrue:dontActive }">
+                <div class="applications" :class="{ displayTrue: navigator === 'newApplication' }">
                     <div class="hr_big" style="margin-right: auto; margin-left: auto">
-                        <ActiveAuctions/>
+                        <new-applications
+                            :accountIsActive="accountIsActive"
+                        >
+                        </new-applications>
                     </div>
                 </div>
 
+                <div class="applications" :class="{ active: navigator === 'activeAuctions' }">
+                    <div class="hr_big" style="margin-right: auto; margin-left: auto">
+                        <active-auctions
+                            :accountIsActive="accountIsActive"
+                        >
+                        </active-auctions>
+                    </div>
+                </div>
+
+                <div class="applications" :class="{ active: navigator === 'history' }">
+                    <div class="hr_big" style="margin-right: auto; margin-left: auto">
+                        <history-auctions
+                            :accountIsActive="accountIsActive"
+                        >
+
+                        </history-auctions>
+                    </div>
+                </div>
             </div>
 
             <div class="footer">
@@ -177,6 +250,11 @@
             </div>
 
         </div>
+        <edit-document-company
+            :visibleEditDocumentCompany="visibleEditDocumentCompany"
+            @handleOk="handleOk"
+        >
+        </edit-document-company>
     </div>
 </template>
 
@@ -186,20 +264,27 @@ import Vue from 'vue'
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 import Notifications from 'vue-notification'
+import NewApplications from "./Tables/NewApplications";
 import ActiveAuctions from "./Tables/ActiveAuctions";
+import HistoryAuctions from "./Tables/HistoryAuctions";
 
 import ModalCity from "./Modal/ModalCity";
 import HeaderPanelButton from "./Templates/HeaderPanelButton";
+import EditDocumentCompany from "./Modal/EditDocumentCompany";
 
 
 Vue.use(Antd);
 Vue.use(Notifications);
 
 export default {
+    emits: ['showModalParticipate'],
     name: "Index",
     components: {
+        EditDocumentCompany,
         HeaderPanelButton,
+        HistoryAuctions,
         ActiveAuctions,
+        NewApplications,
         ModalCity
     },
     computed: {
@@ -213,31 +298,12 @@ export default {
     data: () => ({
         visible: false,
         isActive: false,
+        navigator: 'dataCompany',
         dontActive: false,
         counterNewOrders: 1,
-        steps: [
-            {
-                target: '#start-tour',  // We're using document.querySelector() under the hood
-                header: {
-                    title: 'Демо-тур',
-                },
-                content: `Рады видеть Вас, наша система сейчас вам проведёт демо-тур по личному кабинету!`
-            },
-            {
-                target: '#step-2',
-                content: 'Выберите категории товаров, которые продаёт ваша компания',
-                params: {
-                    placement: 'left',
-                }
-            },
-            {
-                target: '#step-3',
-                content: 'Try it, you\'ll love it!<br>You can put HTML in the steps and completely customize the DOM to suit your needs.',
-                params: {
-                    placement: 'top',
-                }
-            }
-        ]
+        accountIsActive: true,
+        visibleEditDocumentCompany: false,
+        visibleParticipationModal: null
     }),
     methods: {
         error() {
@@ -251,13 +317,27 @@ export default {
                 text: '<span style="font-size: 13px">Ваш аккаунт <u>не активен</u>, поэтому доступ к данному разделу недоступен.<br><br>В разделе «Данные компании» активируйте аккаунт</span>'
             })
         },
+        checkActivatedAccount() {
+          if (this.accountIsActive) {
+            this.navigator = 'activeAuctions'
+          } else {
+              this.error()
+          }
+        },
+        checkedActivatedBtnHistory() {
+          if (this.accountIsActive) {
+              this.navigator = 'history'
+          } else {
+              this.error()
+          }
+        },
         onNewApplication() {
-            this.isActive = true;
-            this.dontActive = true;
+            this.navigator = 'newApplication'
+            this.visibleEditDocumentCompany = false
         },
         onDataCompany() {
-            this.isActive = false;
-            this.dontActive = false;
+            this.navigator = 'dataCompany'
+            this.visibleEditDocumentCompany = false
         },
         onModalCity() {
             this.visible = false;
@@ -296,6 +376,26 @@ export default {
                     link.click()
                 })
         },
+        showDeleteConfirm() {
+            this.$confirm({
+                title: 'Подтверждение',
+                content: 'Вы действительно хотите удалить документ компании?',
+                okText: 'Да',
+                okType: 'danger',
+                cancelText: 'Нет',
+                onOk() {
+                    console.log('OK');
+                },
+                onCancel() {
+                    console.log('Cancel');
+                },
+            });
+        },
+        handleOk() {
+            this.visibleEditDocumentCompany = false
+        },
+
+
     },
     beforeMount() {
         this.$store.dispatch('loadFiles');
