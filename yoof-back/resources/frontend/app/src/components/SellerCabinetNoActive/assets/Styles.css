@@ -1684,12 +1684,8 @@ body {
 }
 
 @media (max-width: 1450px) {
-    .flex3001 {
-        display: block;
-    }
-
     .adres {
-        margin-left: 0;
+        margin-left: 50px;
     }
 
     .aswb {
@@ -1717,7 +1713,7 @@ body {
     }
 
     .adres {
-        margin-left: 0;
+        margin-left: 40px   ;
     }
 
     .fgjfs {
@@ -1743,12 +1739,8 @@ body {
         max-width: 970px;
     }
 
-    .flex3001 {
-        display: block;
-    }
-
     .adres {
-        margin-left: 0;
+        margin-left: 40px;
     }
 
     .lrok {
@@ -1874,7 +1866,12 @@ body {
         margin-right: 0;
         max-width: none;
     }
-
+    .flex3001 {
+        display: block;
+    }
+    .adres {
+        margin: 0;
+    }
     .flexbetwen3 {
         display: block;
     }
